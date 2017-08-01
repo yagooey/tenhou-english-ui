@@ -199,14 +199,6 @@ const translationTablePartial = {
     '三麻雀荘戦': '3 players, Parlor',
     '四麻鳳凰卓': '4 players, Master',
     '三麻鳳凰卓': '3 players, Master',
-    // '四琥東速祝０': '',
-    // '四琥東速祝２': '',
-    // '四琥東速祝５': '',
-    // '四琥南祝０': '',
-    // '四琥南祝２': '',
-    // '四琥南祝５': '',
-    // '三琥東速祝５': '',
-    // '三琥南祝５': '',
     '巡目': ' Turn',
 }
 
@@ -264,9 +256,7 @@ const translationTableTooltip = {
     '三鳳南喰赤速': '3 players, Master, East + South round, Open tanyao, Red dora, Fast',
 }
 
-const exactPhrases = Object.values(translationTableExact);
 const partialPhrases = Object.keys(translationTablePartial);
-const textList = [];
 
 const partialMatch = (originalText) => {
     let key;
@@ -303,9 +293,6 @@ setInterval(() => {
                             }
                         }
                     }
-                } else if (textList.indexOf(originalText) < 0 && exactPhrases.indexOf(originalText) < 0 && originalText.trim().length > 0 && originalText.length < 255) {
-                    textList.push(originalText);
-                    console.log(originalText);
                 }
             }
         }
