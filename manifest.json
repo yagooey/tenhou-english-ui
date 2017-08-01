@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Tenhou English UI",
+    "version": "0.9",
+    "description": "This extension changes the UI text on the Tenhou Web Client to English. After installing this extension, head to http://tenhou.net/3/ to see the result. Note: This will ONLY work for the WEB client. This will not work for the FLASH client",
+    "icons": {
+        "16": "icon.png"
+    },
+    "page_action": {
+        "default_icon": "icon.png",
+        "default_title": "Tenhou English UI"
+    },
+    "permissions": ["declarativeContent"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["http://tenhou.net/3*", "https://tenhou.net/3*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }]
+}
