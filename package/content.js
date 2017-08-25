@@ -1,6 +1,10 @@
 const translationTableExact = {
     // Main
     '天鳳 / Web版': 'Tenhou / Web version',
+    '【イベント告知】': '<Event Notice>',
+    'お試しゲストログイン': 'Guest Login',
+    '新規ID登録': 'New ID',
+    'IDで続きから': 'Existing ID',
     '【入力方法の調整を行っています】': 'Input method has been successfully changed',
     '希望の入力方法ではない場合には': 'If your desired input method is not chosen, ',
     '「設定」から変更をお願いいたします。': 'you can change it via settings.',
@@ -33,6 +37,7 @@ const translationTableExact = {
     '環境': 'Environment',
     ' / 設定': ' / Settings',
     '画面方向:回転': 'Screen orientation:Rotate',
+    '画面方向:Default': 'Screen orientation:Default',
     '※アプリ版でのみご利用いただけます': '※Only applicable in App version',
     '配信ID保護': 'ID protection for live stream',
     '※ログイン画面のID入力を非表示にします': '※Makes your ID hidden on the login page',
@@ -40,7 +45,9 @@ const translationTableExact = {
     '入力補助:3TAP': 'Input Assist: 3TAP',
     '入力補助:2TAP': 'Input Assist: 2TAP',
     '※縦画面のみで表示されます': '※Only displayed when in portrait view',
-    '牌山表示': 'Show wall',
+    '牌山表示:Default': 'Show Wall:Default',
+    '牌山表示:あり': 'Show Wall:On',
+    '牌山表示:なし': 'Show Wall:Off',
     'SEなし': 'No SE',
     '卓': 'Table',
     '標準の画像': 'Use default BG image',
@@ -49,6 +56,7 @@ const translationTableExact = {
     '牌背色:': 'Tile Colour',
     // Lobby
     '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたはダブルタップ※予告なく仕様が変更される場合があります': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). OK/Pass/Tsumogiri is right click or double tap. Specifications are subject to change without notice.',
+    '※下の«»でタブを移動してください。': 'Use the «» buttons below to navigate',
     '接続:': 'Online:',
     '待機:': 'Idle:',
     '終局:': 'Last:',
@@ -273,6 +281,10 @@ setInterval(() => {
 
     for (let i = 0; i < elements.length; i++) {
         for (let j = 0; j < elements[i].childNodes.length; j++) {
+            if (elements[i].tagName.toLowerCase() === 'button') {
+                elements[i].style.overflow = 'hidden';
+            }
+
             let node = elements[i].childNodes[j];
             if (node.nodeType === 3) {
                 let originalText = node.nodeValue;
