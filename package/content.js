@@ -285,7 +285,6 @@ const observerSettings = {
 }
 
 const onMutate = (mutations) => {
-    console.log('tick');
     mutationObserver.disconnect();
     const elements = document.getElementsByTagName('*');
 
