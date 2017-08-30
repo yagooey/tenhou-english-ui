@@ -137,6 +137,7 @@ const translationTableExact = {
     'ポン': 'Pon',
     'チー': 'Chii',
     '槓': 'Kan',
+    'キタ': 'Kita',
     '終局': 'End',
     // Replay & Spectating
     '待ち': 'Waits',
@@ -276,7 +277,16 @@ const partialMatch = (originalText) => {
     return key;
 };
 
-setInterval(() => {
+let mutationObserver;
+
+const observerSettings = {
+    childList: true,
+    subtree: true,
+}
+
+const onMutate = (mutations) => {
+    console.log('tick');
+    mutationObserver.disconnect();
     const elements = document.getElementsByTagName('*');
 
     for (let i = 0; i < elements.length; i++) {
@@ -309,4 +319,9 @@ setInterval(() => {
             }
         }
     };
-}, 16);
+    mutationObserver.observe(document.documentElement, observerSettings);
+}
+
+mutationObserver = new MutationObserver(onMutate);
+
+mutationObserver.observe(document.documentElement, observerSettings);
