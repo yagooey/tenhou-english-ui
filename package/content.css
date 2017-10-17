@@ -1,0 +1,47 @@
+#ranking tr:nth-child(even),
+    table.s #workarea>table:not(#ranking)>tbody>tr:nth-child(4n+1),
+    table.s #workarea>table:not(#ranking)>tbody>tr:nth-child(4n+2) {
+    background-color: #eee;
+}
+
+#yaku0,#yaku1,#yaku2,#yaku3,#yaku4,#yaku5,#yaku6,#yaku7,#yaku8,#yaku9,#yaku10,#yaku11,#yaku12,#yaku13,#yaku14,#yaku15,#yaku16,#yaku17,#yaku18,#yaku19 {
+    font-size: 0.9em;
+}
+
+#translationfloater {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #00F;
+    border: 3px white solid;
+    border-radius: 30px;
+    z-index:99999;
+}
+
+#hdr > div .gray {
+    color: #AAA !important;
+}
+
+#hdr > div {
+    font-size: 0.5em;
+    line-height: 200%;
+    height: 4em;
+}
+
+#pftab,#rnktab {
+    font-size: 0.9em;
+}
+
+div.fixed-select.sscl {
+    font-size: 0.6em;
+}
+
+#panes button {
+    font-size: 130%;
+}
+
+#panes .select-wrapper button {
+    width:16em !important;
+}
