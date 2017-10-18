@@ -815,33 +815,24 @@ let thisPartialTable = {};
 let thisExactTable = {};
 let thisTooltipTable = {};
 
-const partialMatch = function(originalText) {
-    let needle;
-    for (needle of partialPhrases) { // JSLint doesn't like it, but that's ok
-        if (originalText.includes(needle)) {
-            // Exits as soon as a match is found. Saves time,
-            // but requires thoughtful sorting of thisPartialTable
-            // to ensure that no element in it is a substring of a later element
-            return needle;
-        }
-    }
-
-    return null;
-};
-
 const observerSettings = {
+    characterData: true,
     childList: true,
     subtree: true,
 };
 
-function getTranslations(callback) {
-    chrome.storage.local.get('translation', function(storedval) {
+function getTranslationSets(callback) {
+    'use strict';
+    // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
+    // need a callback argument, because chrome.storage.local is only available asynchronously
+    chrome.storage.local.get({ translation: 'off' }, function(storedval) {
+
+        if (storedval.translation === 'off') return callback(false);
+
         if (storedval.translation === lastTranslationSeen && thisExactTable) {
-            if (storedval.translation !== 'off') {
-                // we've already got the right translation, so can go translate immediately
-                callback();
-            }
-            return;
+            // we've already got the right translation, so can go translate immediately
+
+            return callback(true);
         }
 
         lastTranslationSeen = storedval.translation;
@@ -862,8 +853,8 @@ function getTranslations(callback) {
                     for (let i = 1; i < translation.length; i ++) {
                         Object.assign(tableOut, tableIn[translation[i]]); // ECMA6 way of merging objects
                     }
-
                     return tableOut;
+
                 };
 
                 thisExactTable = overlay(exactTranslation);
@@ -892,64 +883,102 @@ function getTranslations(callback) {
 
             partialPhrases = Object.keys(thisPartialTable);
 
-            callback();
+            return callback(true);
         });
     });
 }
 
-const onMutate = function() {
-    mutationObserver.disconnect();
+function translateOneNode(node) {
+    'use strict';
 
-    const elements = document.getElementsByTagName('*');
+    let thisParent = node.parentElement;
+    if (thisParent && thisParent.tagName !== undefined && thisParent.tagName.toLowerCase() === 'button') {
+        thisParent.style.overflow = 'hidden';
+    }
 
-    for (let i = 0; i < elements.length; i++) {
-        if (elements[i].tagName.toLowerCase() === 'button') {
-            elements[i].style.overflow = 'hidden';
-        }
-        for (let j = 0; j < elements[i].childNodes.length; j++) {
-
-            let node = elements[i].childNodes[j];
-            if (node.nodeType === 3) {
-                let originalText = node.nodeValue;
-                if (thisExactTable[originalText]) {
-                    elements[i].replaceChild(document.createTextNode(thisExactTable[originalText]), node);
-                } else {
-                    let partialMatchKey = partialMatch(originalText);
-                    if (partialMatchKey) {
-                        let newText = originalText.replace(partialMatchKey, thisPartialTable[partialMatchKey]);
-                        elements[i].replaceChild(document.createTextNode(newText), node);
-                        if (thisTooltipTable[partialMatchKey]) {
-                            elements[i].setAttribute('title', thisTooltipTable[partialMatchKey]);
-                            if (elements[i].tagName.toLowerCase() === 'span') {
-                                elements[i].parentElement.style.overflow = 'hidden';
-                            } else {
-                                elements[i].style.overflow = 'hidden';
-                            }
-                        }
-                    }
+    let originalText = node.nodeValue;
+    if (!originalText) return;
+    if (thisExactTable[originalText]) {
+        thisParent.replaceChild(document.createTextNode(thisExactTable[originalText]), node);
+    } else {
+        let newText = originalText;
+        let newTooltip = null;
+        for (let needle of partialPhrases) { // JSLint doesn't like it, but that's ok
+            if (newText.includes(needle)) {
+                newText = newText.replace(needle, thisPartialTable[needle]);
+                if (!newTooltip && thisTooltipTable[needle]) {
+                    thisParent.setAttribute('title', thisTooltipTable[needle]);
+                    newTooltip = true;
                 }
             }
         }
+        if (newText !== originalText) {
+            if (thisParent.tagName.toLowerCase() === 'span') {
+                thisParent.parentElement.style.overflow = 'hidden';
+            } else {
+                thisParent.style.overflow = 'hidden';
+            }
+            thisParent.replaceChild(document.createTextNode(newText), node);
+        }
     }
-    mutationObserver.observe(document.documentElement, observerSettings);
+}
+
+const translateTextBeneathANode = function(topNode) {
+    'use strict';
+    const TextNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
+
+    // we are messing with the Dom tree while we iterate over it, so first save in an array
+    let TextNodeList = [];
+    while(TextNodeIterator.nextNode()) {
+        TextNodeList.push(TextNodeIterator.currentNode);
+    }
+    let node;
+    for (node of TextNodeList) {
+        translateOneNode(node);
+    }
 };
 
-getTranslations(function() {
-    let tbox = document.createElement('div');
+function setToObserve() {
+    'use strict';
+    mutationObserver.observe(document.documentElement, observerSettings);
+}
 
+function createOptionsButton() {
+    'use strict';
+    let tbox = document.createElement('div');
+    tbox.appendChild(document.createTextNode('change translation'));
     tbox.setAttribute('id', 'translationfloater');
-    tbox.addEventListener('click', function() {
+    tbox.setAttribute('title', 'Opens the options screen in a new tab');
+    tbox.addEventListener('click', function () {
         chrome.runtime.sendMessage({ 'show': 'options' });
     });
     document.body.appendChild(tbox);
+}
 
-    mutationObserver = new MutationObserver(function() {
-        getTranslations(onMutate);
+function onMutate(mutations) {
+    'use strict';
+    mutationObserver.disconnect();
+    getTranslationSets(function(canTranslate) {
+        if (canTranslate) {
+            mutations.forEach(function(oneMutation) {
+                translateTextBeneathANode(oneMutation.target);
+            });
+        }
+        setToObserve();
     });
-    mutationObserver.observe(document.documentElement, observerSettings);
+}
 
-    if (window.location.href.indexOf('/3') === -1) {
-        // force the statistics pages to translate when first ready
-        onMutate();
+// this is what happens when the page is first loaded:
+
+getTranslationSets(function(canTranslate) {
+    'use strict';
+    if (canTranslate) {
+        translateTextBeneathANode(document.body);
+        if (thisExactTable[document.title]) {
+            document.title = thisExactTable[document.title];
+        }
     }
+    createOptionsButton();
+    mutationObserver = new MutationObserver(onMutate);
+    setToObserve();
 });
