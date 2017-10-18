@@ -2,6 +2,7 @@
 /* jslint browser,for,single,white*/
 
 const exactTranslation = {
+    'off': {},
     'EMA': {
     // Yaku
         '立直': 'Riichi',
@@ -27,7 +28,7 @@ const exactTranslation = {
         '七対子': '7 pairs', // for stats screen
         '自風 南': 'S Seat wind',
         '自風 西': 'W Seat wind',
-        '四槓子': 'Four kongs',
+        '四槓子': '4 kongs',
         '自風 北': 'N Seat wind',
         '清一色': 'Full flush',
         '三暗刻': '3 concealed pungs',
@@ -58,15 +59,15 @@ const exactTranslation = {
         '国士無双１３面': '13 orphans x13',  // for stats screen
         '小四喜': 'Little 4 winds',
         '字一色': 'All honours',
-        '三槓子': 'Three kongs',
-        '四暗刻單騎': '4 concealed pungs, pair wait',
-        '四暗刻単騎': '4 concealed pungs, pair wait',  // for stats screen
+        '三槓子': '3 kongs',
+        '四暗刻單騎': '4 concealed pungs (single wait)',
+        '四暗刻単騎': '4 concealed pungs (single wait)',  // for stats screen
         '綠一色': 'All green',
         '緑一色': 'All green', // for stats screen
         '九蓮宝燈': '9 gates',
         '九蓮寶燈': '9 gates', // for stats screen
-        '純正九蓮宝燈': '9 gates x9',
-        '純正九蓮寶燈': '9 gates x9', // for stats screen
+        '純正九蓮宝燈': '9 gates (9 wait)',
+        '純正九蓮寶燈': '9 gates (9 wait)', // for stats screen
         '清老頭': 'All terminals',
         '地和': 'Earth\'s blessing',
         '大四喜': 'Big 4 winds',
@@ -76,7 +77,7 @@ const exactTranslation = {
 
         // practice play options
         '四般東喰赤速': '4p E-only fast',
-        '(４人打 東風 喰断アリ 赤アリ 速)': '4p East, fast against 3 bots (bots don\'t try to win)',
+        '(４人打 東風 喰断アリ 赤アリ 速)': '4p East only, fast, play against 3 bots (bots don\'t try to win)',
 
         '四般東喰赤': '4p E-only',
         '(４人打 東風 喰断アリ 赤アリ)': '4p East only, play against 3 bots',
@@ -92,18 +93,18 @@ const exactTranslation = {
 
         // double yakuman TOFIX not currently exhaustive
 
-        '小四喜 字一色': 'Little 4 winds + all honours',
-        '大四喜 字一色': 'Big 4 winds + all honours',
+        '小四喜 字一色': 'Little 4 winds + All honours',
+        '大四喜 字一色': 'Big 4 winds + All honours',
         '大三元 四暗刻': '3 dragons + 4 concealed pungs',
-        '大三元 字一色': '3 dragons + all honours',
-        '小四喜 四暗刻単騎': 'Little 4 winds + 4 concealed pungs, pair wait',
-        '四暗刻単騎 清老頭': '4 concealed pungs, pair wait + All terminals',
+        '大三元 字一色': '3 dragons + All honours',
+        '小四喜 四暗刻単騎': 'Little 4 winds + 4 concealed pungs (single wait)',
+        '四暗刻単騎 清老頭': '4 concealed pungs (single wait) + All terminals',
 
     },
     'rad': {
         '立直': 'Ready-riichi',
         '平和': 'Pinfu no-point',
-        '拔き': 'North is dora',
+        '拔き': 'Melded North',
         '東風+4局サドンデス': 'East',
         '東南+4局サドンデス': 'East & South',
         'ウマ': 'Placement bonus',
@@ -121,7 +122,7 @@ const exactTranslation = {
         '平均祝儀': 'Avg parlor bonuses',
     },
     'romaji': {
-    // Main
+        // Main
         '天鳳 / Web版': 'Tenhou / Web version',
         '【イベント告知】': '<Event Notice>',
         'お試しゲストログイン': 'Guest Login',
@@ -247,6 +248,7 @@ const exactTranslation = {
         '３位率': '3rd rt',
         '４位率': '4th rt',
         '飛び率': 'Bust rt',
+        '対戦数': '# of games',
         '平均得点': 'Avg points',
         '平均順位': 'Avg placing',
         '平均収支': 'Avg income',
@@ -357,7 +359,7 @@ const exactTranslation = {
         '大四喜': 'Daisuushi',
         '小四喜': 'Shousuushi',
         '四槓子': 'Suukantsu',
-        '数え役満': 'kazoe-yakuman',
+        '数え役満': 'Kazoe-yakuman',
 
         // double yakuman TOFIX not currently exhaustive
 
@@ -396,38 +398,39 @@ const exactTranslation = {
 };
 
 const partialTranslation = {
+    'off': {},
     'EMA': {
-        '四般東喰赤速': '4p Novice E Fst',
+        '四般東喰赤速': '4p Novice E Fast',
         '四般東喰赤': '4p Novice E',
-        '四般南喰赤速': '4p Novice E+S Fst',
+        '四般南喰赤速': '4p Novice E+S Fast',
         '四般南喰赤': '4p Novice E+S',
-        '三般東喰赤速': '3p Novice E Fst',
+        '三般東喰赤速': '3p Novice E Fast',
         '三般東喰赤': '3p Novice E',
-        '三般南喰赤速': '3p Novice E+S Fst',
+        '三般南喰赤速': '3p Novice E+S Fast',
         '三般南喰赤': '3p Novice E+S',
-        '四上東喰赤速': '4p Dan E Fst',
+        '四上東喰赤速': '4p Dan E Fast',
         '四上東喰赤': '4p Dan E',
-        '四上南喰赤速': '4p Dan E+S Fst',
+        '四上南喰赤速': '4p Dan E+S Fast',
         '四上南喰赤': '4p Dan E+S',
-        '三上東喰赤速': '3p Dan E Fst',
+        '三上東喰赤速': '3p Dan E Fast',
         '三上東喰赤': '3p Dan E',
-        '三上南喰赤速': '3p Dan E+S Fst',
+        '三上南喰赤速': '3p Dan E+S Fast',
         '三上南喰赤': '3p Dan E+S',
-        '四特東喰赤速': '4p Upperdan E Fst',
+        '四特東喰赤速': '4p Upperdan E Fast',
         '四特東喰赤': '4p Upperdan E',
-        '四特南喰赤速': '4p Upperdan E+S Fst',
+        '四特南喰赤速': '4p Upperdan E+S Fast',
         '四特南喰赤': '4p Upperdan E+S',
-        '三特東喰赤速': '3p Upperdan E Fst',
+        '三特東喰赤速': '3p Upperdan E Fast',
         '三特東喰赤': '3p Upperdan E',
-        '三特南喰赤速': '3p Upperdan E+S Fst',
+        '三特南喰赤速': '3p Upperdan E+S Fast',
         '三特南喰赤': '3p Upperdan E+S',
-        '四鳳東喰赤速': '4p Phoenix E Fst',
+        '四鳳東喰赤速': '4p Phoenix E Fast',
         '四鳳東喰赤': '4p Phoenix E',
-        '四鳳南喰赤速': '4p 7Phoenix E+S Fst',
+        '四鳳南喰赤速': '4p 7Phoenix E+S Fast',
         '四鳳南喰赤': '4p Phoenix E+S',
-        '三鳳東喰赤速': '3p Phoenix E Fst',
+        '三鳳東喰赤速': '3p Phoenix E Fast',
         '三鳳東喰赤': '3p Phoenix E',
-        '三鳳南喰赤速': '3p Phoenix E+S Fst',
+        '三鳳南喰赤速': '3p Phoenix E+S Fast',
         '三鳳南喰赤': '3p Phoenix E+S',
         '四麻上級卓': '4p, Dan',
         '三麻上級卓': '3p, Dan',
@@ -442,13 +445,13 @@ const partialTranslation = {
         '新人': 'New',
         '９級': '9k',
         '８級': '8k',
-        '７級': '７k',
-        '６級': '６k',
-        '５級': '５k',
-        '４級': '４k',
-        '３級': '３k',
-        '２級': '２k',
-        '１級': '１k',
+        '７級': '7k',
+        '６級': '6k',
+        '５級': '5k',
+        '４級': '4k',
+        '３級': '3k',
+        '２級': '2k',
+        '１級': '1k',
         '初段': '1d',
         '二段': '2d',
         '三段': '3d',
@@ -460,37 +463,37 @@ const partialTranslation = {
         '九段': '9d',
         '十段': '10d',
         '天鳳位': 'Immortal',
-        '四般東喰赤速': '4p Novice E Fst',
+        '四般東喰赤速': '4p Novice E Fast',
         '四般東喰赤': '4p Novice E',
-        '四般南喰赤速': '4p Novice E+S Fst',
+        '四般南喰赤速': '4p Novice E+S Fast',
         '四般南喰赤': '4p Novice E+S',
-        '三般東喰赤速': '3p Novice E Fst',
+        '三般東喰赤速': '3p Novice E Fast',
         '三般東喰赤': '3p Novice E',
-        '三般南喰赤速': '3p Novice E+S Fst',
+        '三般南喰赤速': '3p Novice E+S Fast',
         '三般南喰赤': '3p Novice E+S',
-        '四上東喰赤速': '4p 1k+ E Fst',
+        '四上東喰赤速': '4p 1k+ E Fast',
         '四上東喰赤': '4p 1k+ E',
-        '四上南喰赤速': '4p 1k+ E+S Fst',
+        '四上南喰赤速': '4p 1k+ E+S Fast',
         '四上南喰赤': '4p 1k+ E+S',
-        '三上東喰赤速': '3p 1k+ E Fst',
+        '三上東喰赤速': '3p 1k+ E Fast',
         '三上東喰赤': '3p 1k+ E',
-        '三上南喰赤速': '3p 1k+ E+S Fst',
+        '三上南喰赤速': '3p 1k+ E+S Fast',
         '三上南喰赤': '3p 1k+ E+S',
-        '四特東喰赤速': '4p 4d1800+ E Fst',
+        '四特東喰赤速': '4p 4d1800+ E Fast',
         '四特東喰赤': '4p 4d1800+ E',
-        '四特南喰赤速': '4p 4d1800+ E+S Fst',
+        '四特南喰赤速': '4p 4d1800+ E+S Fast',
         '四特南喰赤': '4p 4d1800+ E+S',
-        '三特東喰赤速': '3p 4d1800+ E Fst',
+        '三特東喰赤速': '3p 4d1800+ E Fast',
         '三特東喰赤': '3p 4d1800+ E',
-        '三特南喰赤速': '3p 4d1800+ E+S Fst',
+        '三特南喰赤速': '3p 4d1800+ E+S Fast',
         '三特南喰赤': '3p 4d1800+ E+S',
-        '四鳳東喰赤速': '4p 7d2000+ E Fst',
+        '四鳳東喰赤速': '4p 7d2000+ E Fast',
         '四鳳東喰赤': '4p 7d2000+ E',
-        '四鳳南喰赤速': '4p 7d2000+ E+S Fst',
+        '四鳳南喰赤速': '4p 7d2000+ E+S Fast',
         '四鳳南喰赤': '4p 7d2000+ E+S',
-        '三鳳東喰赤速': '3p 7d2000+ E Fst',
+        '三鳳東喰赤速': '3p 7d2000+ E Fast',
         '三鳳東喰赤': '3p 7d2000+ E',
-        '三鳳南喰赤速': '3p 7d2000+ E+S Fst',
+        '三鳳南喰赤速': '3p 7d2000+ E+S Fast',
         '三鳳南喰赤': '3p 7d2000+ E+S',
         '四麻上級卓': '4p, 1k+',
         '三麻上級卓': '3p, 1k+',
@@ -522,38 +525,38 @@ const partialTranslation = {
         '八段': '八段',
         '九段': '九段',
         '十段': '十段',
-        '四般東喰赤速': '4, Ippan , Est, Fas',
-        '四般東喰赤': '4, Ippan , Est',
-        '四般南喰赤速': '4, Ippan , Sth, Fas',
-        '四般南喰赤': '4, Ippan , Sth',
-        '三般東喰赤速': '3, Ippan , Est, Fas',
-        '三般東喰赤': '3, Ippan , Est',
-        '三般南喰赤速': '3, Ippan , Sth, Fas',
-        '三般南喰赤': '3, Ippan , Sth',
-        '四上東喰赤速': '4, Joukyuu, Est, Fas',
-        '四上東喰赤': '4, Joukyuu, Est',
-        '四上南喰赤速': '4, Joukyuu, Sth, Fas',
-        '四上南喰赤': '4, Joukyuu, Sth',
-        '三上東喰赤速': '3, Joukyuu, Est, Fas',
-        '三上東喰赤': '3, Joukyuu, Est',
-        '三上南喰赤速': '3, Joukyuu, Sth, Fas',
-        '三上南喰赤': '3, Joukyuu, Sth',
-        '四特東喰赤速': '4, Tokujou, Est, Fas',
-        '四特東喰赤': '4, Tokujou, Est',
-        '四特南喰赤速': '4, Tokujou, Sth, Fas',
-        '四特南喰赤': '4, Tokujou, Sth',
-        '三特東喰赤速': '3, Tokujou, Est, Fas',
-        '三特東喰赤': '3, Tokujou, Est',
-        '三特南喰赤速': '3, Tokujou, Sth, Fas',
-        '三特南喰赤': '3, Tokujou, Sth',
-        '四鳳東喰赤速': '4, Houou, Est, Fas',
-        '四鳳東喰赤': '4, Houou, Est',
-        '四鳳南喰赤速': '4, Houou, Sth, Fas',
-        '四鳳南喰赤': '4, Houou, Sth',
-        '三鳳東喰赤速': '3, Houou, Est, Fas',
-        '三鳳東喰赤': '3, Houou, Est',
-        '三鳳南喰赤速': '3, Houou, Sth, Fas',
-        '三鳳南喰赤': '3, Houou, Sth',
+        '四般東喰赤速': '4, Ippan, Tonpu, Fast',
+        '四般東喰赤': '4, Ippan, Tonpu',
+        '四般南喰赤速': '4, Ippan, Hanchan, Fast',
+        '四般南喰赤': '4, Ippan, Hanchan',
+        '三般東喰赤速': '3, Ippan, Tonpu, Fast',
+        '三般東喰赤': '3, Ippan, Tonpu',
+        '三般南喰赤速': '3, Ippan, Hanchan, Fast',
+        '三般南喰赤': '3, Ippan, Hanchan',
+        '四上東喰赤速': '4, Joukyuu, Tonpu, Fast',
+        '四上東喰赤': '4, Joukyuu, Tonpu',
+        '四上南喰赤速': '4, Joukyuu, Hanchan, Fast',
+        '四上南喰赤': '4, Joukyuu, Hanchan',
+        '三上東喰赤速': '3, Joukyuu, Tonpu, Fast',
+        '三上東喰赤': '3, Joukyuu, Tonpu',
+        '三上南喰赤速': '3, Joukyuu, Hanchan, Fast',
+        '三上南喰赤': '3, Joukyuu, Hanchan',
+        '四特東喰赤速': '4, Tokujou, Tonpu, Fast',
+        '四特東喰赤': '4, Tokujou, Tonpu',
+        '四特南喰赤速': '4, Tokujou, Hanchan, Fast',
+        '四特南喰赤': '4, Tokujou, Hanchan',
+        '三特東喰赤速': '3, Tokujou, Tonpu, Fast',
+        '三特東喰赤': '3, Tokujou, Tonpu',
+        '三特南喰赤速': '3, Tokujou, Hanchan, Fast',
+        '三特南喰赤': '3, Tokujou, Hanchan',
+        '四鳳東喰赤速': '4, Houou, Tonpu, Fast',
+        '四鳳東喰赤': '4, Houou, Tonpu',
+        '四鳳南喰赤速': '4, Houou, Hanchan, Fast',
+        '四鳳南喰赤': '4, Houou, Hanchan',
+        '三鳳東喰赤速': '3, Houou, Tonpu, Fast',
+        '三鳳東喰赤': '3, Houou, Tonpu',
+        '三鳳南喰赤速': '3, Houou, Hanchan, Fast',
+        '三鳳南喰赤': '3, Houou, Hanchan',
         '四麻上級卓': '4 players, Joukyuu',
         '三麻上級卓': '3 players, Joukyuu',
         '四麻特上卓': '4 players, Tokujou',
@@ -569,16 +572,17 @@ const partialTranslation = {
 };
 
 const partialTranslationForStats = {
+    'off': {},
     'EMA': {
-        '般南喰赤': '4p, novice, E+S',
-        '般東喰赤': '4p, novice, E',
+        '般南喰赤': '4p, Novice, E+S',
+        '般東喰赤': '4p, Novice, E',
         '上南喰赤': '4p, Dan, E+S',
         '上東喰赤': '4p, Dan, E',
         '特南喰赤': '4p, Upperdan, E+S',
         '特東喰赤': '4p, Upperdan, E',
         '鳳南喰赤': '4p, Phoenix, E+S',
         '鳳東喰赤': '4p, Phoenix, E',
-        '一般': 'novice',
+        '一般': 'Novice',
         '上級': 'Dan',
         '特上': 'Upperdan',
         '鳳凰': 'Phoenix',
@@ -593,15 +597,15 @@ const partialTranslationForStats = {
     },
     'rad': {
         '全ルールの役満': 'Limit-hands only',
-        '般南喰赤': '4p, novice, E+S',
-        '般東喰赤': '4p, novice, E',
+        '般南喰赤': '4p, Novice, E+S',
+        '般東喰赤': '4p, Novice, E',
         '上南喰赤': '4p, 1k+, E+S',
         '上東喰赤': '4p, 1k+, E',
         '特南喰赤': '4p, 4D1800+, E+S',
         '特東喰赤': '4p, 4D1800+, E',
         '鳳南喰赤': '4p, 7D2000+, E+S',
         '鳳東喰赤': '4p, 7D2000+, E',
-        '一般': 'novice',
+        '一般': 'Novice',
         '上級': '1k+',
         '特上': '4d1800+',
         '鳳凰': '7d2000+',
@@ -635,7 +639,7 @@ const partialTranslationForStats = {
         '在位数': 'Count',
         '４人打ち': '4p',
         '３人打ち': '3p',
-        '平均R': 'Ave.R',
+        '平均R': 'Avg.R',
 
         // sc/?rate*
 
@@ -649,13 +653,13 @@ const partialTranslationForStats = {
 const tooltips = {
     EMA: {
     // Game types
-        '四般東喰赤速': '4p, novice, East, Open all-simples, Red dora, Fast',
-        '四般南喰赤': '4p, novice, East + South, Open all-simples, Red dora',
-        '四般南喰赤速': '4p, novice, East + South, Open all-simples, Red dora, Fast',
-        '三般東喰赤': '3p, novice, East, Open all-simples, Red dora',
-        '三般東喰赤速': '3p, novice, East, Open all-simples, Red dora, Fast',
-        '三般南喰赤': '3p, novice, East + South, Open all-simples, Red dora',
-        '三般南喰赤速': '3p, novice, East + South, Open all-simples, Red dora, Fast',
+        '四般東喰赤速': '4p, Novice, East, Open all-simples, Red dora, Fast',
+        '四般南喰赤': '4p, Novice, East + South, Open all-simples, Red dora',
+        '四般南喰赤速': '4p, Novice, East + South, Open all-simples, Red dora, Fast',
+        '三般東喰赤': '3p, Novice, East, Open all-simples, Red dora',
+        '三般東喰赤速': '3p, Novice, East, Open all-simples, Red dora, Fast',
+        '三般南喰赤': '3p, Novice, East + South, Open all-simples, Red dora',
+        '三般南喰赤速': '3p, Novice, East + South, Open all-simples, Red dora, Fast',
         '四上東喰赤': '4p, Dan, East, Open all-simples, Red dora',
         '四上東喰赤速': '4p, Dan+, East, Open all-simples, Red dora, Fast',
         '四上南喰赤': '4p, Dan, East + South, Open all-simples, Red dora',
@@ -706,13 +710,13 @@ const tooltips = {
         '天鳳位' : null,
 
         // Game types
-        '四般東喰赤速': '4p, novice, East, Open all simples, Red dora, Fast',
-        '四般南喰赤': '4p, novice, East + South, Open all simples, Red dora',
-        '四般南喰赤速': '4p, novice, East + South, Open all simples, Red dora, Fast',
-        '三般東喰赤': '3p, novice, East, Open all simples, Red dora',
-        '三般東喰赤速': '3p, novice, East, Open all simples, Red dora, Fast',
-        '三般南喰赤': '3p, novice, East + South, Open all simples, Red dora',
-        '三般南喰赤速': '3p, novice, East + South, Open all simples, Red dora, Fast',
+        '四般東喰赤速': '4p, Novice, East, Open all simples, Red dora, Fast',
+        '四般南喰赤': '4p, Novice, East + South, Open all simples, Red dora',
+        '四般南喰赤速': '4p, Novice, East + South, Open all simples, Red dora, Fast',
+        '三般東喰赤': '3p, Novice, East, Open all simples, Red dora',
+        '三般東喰赤速': '3p, Novice, East, Open all simples, Red dora, Fast',
+        '三般南喰赤': '3p, Novice, East + South, Open all simples, Red dora',
+        '三般南喰赤速': '3p, Novice, East + South, Open all simples, Red dora, Fast',
         '四上東喰赤': '4p, 1k+, East, Open all simples, Red dora',
         '四上東喰赤速': '4p, 1k+, East, Open all simples, Red dora, Fast',
         '四上南喰赤': '4p, 1k+, East + South, Open all simples, Red dora',
@@ -805,7 +809,6 @@ let thisExactTable = {};
 let thisTooltipTable = {};
 
 const partialMatch = function(originalText) {
-    'use strict';
     let needle;
     for (needle of partialPhrases) { // JSLint doesn't like it, but that's ok
         if (originalText.includes(needle)) {
@@ -816,7 +819,7 @@ const partialMatch = function(originalText) {
         }
     }
 
-    return false;
+    return null;
 };
 
 const observerSettings = {
@@ -825,14 +828,12 @@ const observerSettings = {
 };
 
 function getTranslations(callback) {
-    'use strict';
-    chrome.storage.local.get({ translation: 'off' }, function(storedval) {
-        if (
-            (storedval.translation === lastTranslationSeen && thisExactTable)
-            || storedval.translation === 'off') {
-            // we've already got the right translation, so can go translate immediately
-            callback.call();
-
+    chrome.storage.local.get('translation', function(storedval) {
+        if (storedval.translation === lastTranslationSeen && thisExactTable) {
+            if (storedval.translation !== 'off') {
+                // we've already got the right translation, so can go translate immediately
+                callback();
+            }
             return;
         }
 
@@ -884,14 +885,12 @@ function getTranslations(callback) {
 
             partialPhrases = Object.keys(thisPartialTable);
 
-            callback.call();
+            callback();
         });
     });
 }
 
 const onMutate = function() {
-    'use strict';
-
     mutationObserver.disconnect();
 
     const elements = document.getElementsByTagName('*');
@@ -929,12 +928,11 @@ const onMutate = function() {
 };
 
 getTranslations(function() {
-    'use strict';
     let tbox = document.createElement('div');
 
     tbox.setAttribute('id', 'translationfloater');
     tbox.addEventListener('click', function() {
-        chrome.runtime.sendMessage({ 'show':'options' });
+        chrome.runtime.sendMessage({ 'show': 'options' });
     });
     document.body.appendChild(tbox);
 
