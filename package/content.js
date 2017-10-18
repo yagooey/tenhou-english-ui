@@ -38,6 +38,20 @@ const translationTableExact = {
     '再接続しますか？': 'Reconnect?',
     'Wi-Fi(無線LAN)やbluetoothは電子レンジや近隣利用者の影響を受け接続が切れる場合があります': 'The connection may be broken due to inteference of microwave ovens or neighboring users',
     '入力してあるIDをクリアしますがよろしいですか？IDを紛失しないようにコピーしてください。': 'Clear the login ID field? Please consider keeping a copy of the ID to avoid losing it',
+    'このプレーヤ名で新しいIDを作成しますか？': 'Would you like to create a new ID with this player name?',
+    '移動するロビー番号を入力してください。': 'Please enter the lobby number to be moved.',
+    '例)L8141, C00112233': 'Example) L8141, C00112233',
+    'または 8141, 00112233': 'Or 8141, 00112233',
+    '※アプリ版以外で作成したIDも使用可能です。': '* IDs created with application version can also be used',
+    'プレーヤ名を8文字以内で入力してください': 'Please enter player name up to 8 characters',
+    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
+    'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
+    'この接続元からの新規登録は約７日間行なえません(ERR1006)': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
+    'IDが正しくありません': 'Incorrect ID',
+    'プレーヤID(半角19文字)を入力してください': 'Please enter Player ID (19 half-width characters)',
+    '登録が完了しました。IDを紛失しないようにコピーしてください。': 'Registration has been completed. Please copy the ID so that it will not be lost.',
+    '(※180日以上対戦を行っていないIDは削除されますのでご注意ください)': '(Please be aware that IDs not playing against 180 days or more will be deleted)',
+
     // Settings
     '環境': 'Environment',
     ' / 設定': ' / Settings',
@@ -60,7 +74,7 @@ const translationTableExact = {
     '牌': 'Tile',
     '牌背色:': 'Tile Colour',
     // Lobby
-    '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたはダブルタップ': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
+    '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
     '※下の«»でタブを移動してください。': 'Use the «» buttons below to navigate',
     '接続:': 'Online:',
     '待機:': 'Idle:',
@@ -79,6 +93,12 @@ const translationTableExact = {
     '三麻:': '3P',
     '東風+4局サドンデス': 'east + 4 rounds of sudden death',
     '東南+4局サドンデス': 'east south + 4 rounds of sudden death',
+    '(４人打 東風 喰断アリ 赤アリ 速)': '(4-seat, east wind, red dora, fast speed)',
+    '(４人打 東風 喰断アリ 赤アリ)': '(4-seat, east wind, red dora, normal speed)',
+    '(３人打 東風 喰断アリ 赤アリ)': '(3-seat, east wind, red dora, normal speed)',
+    '(４人打 東風 喰断アリ 赤アリ 祝儀)': '(4-seat, east wind, red dora, fast speed, donation)',
+    '(３人打 東風 喰断アリ 赤アリ 祝儀)': '(3-seat, east wind, red dora, fast speed, donation)',
+
     'ウマ': 'Uma',
     '1本場': 'Honba',
     '後': 'after',
@@ -273,7 +293,20 @@ const translationTablePartial = {
     '三麻雀荘戦': '3 players, Parlor',
     '四麻鳳凰卓': '4 players, Master',
     '三麻鳳凰卓': '3 players, Master',
+    '四若東速祝': '4, Yth, Est, Fas, Cfg',
+    '三若東速祝': '3, Yth, Est, Fas, Cfg',
+    '四琥東速祝': '4, Szn, Est, Fas, Cfg',
+    '四琥南祝': '4, Szn, Sth, Cfg',
+    '三琥東速祝': '3, Szn, Est, Fas, Cfg',
+    '三琥南祝': '3, Szn, Sth, Cfg',
+    '四琥東速祝': '4, Szn, Est, Fas, Cfg',
+    '四琥南祝': '4, Szn, Sth, Cfg',
+    '三琥東速祝': '3, Szn, Est, Fas, Cfg',
+    '三琥南祝': '3, Szn, Sth, Cfg',
+
     '巡目': ' Turn',
+    '個室': 'Lobby:',
+    '大会': 'Tournament:',
 }
 
 const translationTableTooltip = {
