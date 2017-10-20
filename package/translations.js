@@ -340,6 +340,9 @@ const exactTranslation = {
     'ロビーの移動': {
         'DEFAULT': 'Change lobby',
     },
+    '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': {
+        'DEFAULT': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
+    },
     'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
         'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
     },
@@ -377,7 +380,7 @@ const exactTranslation = {
         'DEFAULT': 'Registration has been completed. Please copy the ID so that it will not be lost.',
     },
     '(※180日以上対戦を行っていないIDは削除されますのでご注意ください)': {
-        'DEFAULT': '(Please be aware that IDs not playing against 180 days or more will be deleted)',
+        'DEFAULT': '(Please be aware that IDs not playing for 180 days or more will be deleted)',
     },
 
     // Settings
@@ -1358,6 +1361,12 @@ const partialTranslationForStats = {
     },
     '名前': {
         'DEFAULT': 'Player',
+    },
+    '残り': {
+        'DEFAULT': 'More: ',
+    },
+    '件を表示': {
+        'DEFAULT': ' - show',
     },
 };
 
