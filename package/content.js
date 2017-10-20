@@ -160,6 +160,7 @@ const translationTableExact = {
     '不聴宣言': 'Noten',
     '自動和了': 'Auto ron',
     'ツモ切り': 'Auto discard',
+    ' 鳴き': 'Call',
     'ポン': 'Pon',
     'チー': 'Chii',
     '槓': 'Kan',
