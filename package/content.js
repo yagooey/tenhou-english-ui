@@ -2,9 +2,14 @@
 /* jslint browser,for,single,white*/
 
 const exactTranslation = {
-    'off': {},
     'EMA': {
-    // Yaku
+        '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': '● To make the address bar smaller, scroll down and then slowly scroll upwards  ● Right-click (or double-tap on empty regions) for: OK / pass / discard drawn tile',
+        '連対率': '1st + 2nd rt',
+        '東風+4局サドンデス': 'East-only + 4 rounds of sudden death',
+        '東南+4局サドンデス': 'East + South + 4 rounds of sudden death',
+
+        // Yaku
+
         '立直': 'Riichi',
         '赤ドラ': 'Red fives',
         '斷么九': 'All simples', // for stats screen
@@ -54,9 +59,9 @@ const exactTranslation = {
         '純全帯幺九': 'Terminals in all sets', // for stats screen
         '四暗刻': '4 concealed pungs',
         '國士無雙': '13 orphans',
-        '國士無雙13面': '13 orphans x13',
+        '國士無雙13面': '13 orphans (13 wait)',
         '国士無双': '13 orphans',  // for stats screen
-        '国士無双１３面': '13 orphans x13',  // for stats screen
+        '国士無双１３面': '13 orphans (13 wait)',  // for stats screen
         '小四喜': 'Little 4 winds',
         '字一色': 'All honours',
         '三槓子': '3 kongs',
@@ -103,12 +108,11 @@ const exactTranslation = {
         '大三元 字一色': '3 dragons + All honours',
         '小四喜 四暗刻単騎': 'Little 4 winds + 4 concealed pungs (single wait)',
         '四暗刻単騎 清老頭': '4 concealed pungs (single wait) + All terminals',
-
     },
     'rad': {
         '立直': 'Ready-riichi',
         '平和': 'Pinfu no-point',
-        '拔き': 'Melded North',
+        '拔き': 'Melded North dora',
         '東風+4局サドンデス': 'East',
         '東南+4局サドンデス': 'East & South',
         'ウマ': 'Placement bonus',
@@ -127,11 +131,15 @@ const exactTranslation = {
     },
     'romaji': {
         // Main
+        'オンライン対戦麻雀 天鳳 / ランキング': 'Tenhou monthly mahjong statistics',
+        'オンライン対戦麻雀 天鳳 / 役満': 'Yakuman this month',
+        'オンライン対戦麻雀 天鳳 / 接続人数': 'Number of simultaneous users each hour this month',
         '天鳳 / Web版': 'Tenhou / Web version',
         '【イベント告知】': '<Event Notice>',
         'お試しゲストログイン': 'Guest Login',
         '新規ID登録': 'New ID',
         'IDで続きから': 'Existing ID',
+        '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': '● To make the address bar smaller, scroll down and then slowly scroll upwards  ● Right-click (or double-tap on empty regions) for: OK / pass / tsumogiri',
         '【入力方法の調整を行っています】': 'Input method has been successfully changed',
         '希望の入力方法ではない場合には': 'If your desired input method is not chosen, ',
         '「設定」から変更をお願いいたします。': 'you can change it via settings.',
@@ -232,8 +240,8 @@ const exactTranslation = {
         '4位': '4th',
         '四麻:': '4P',
         '三麻:': '3P',
-        '東風+4局サドンデス': 'east + 4 rounds of sudden death',
-        '東南+4局サドンデス': 'east south + 4 rounds of sudden death',
+        '東風+4局サドンデス': 'Tonpuusen + 4 rounds of sudden death',
+        '東南+4局サドンデス': 'Hanchan + 4 rounds of sudden death',
         'ウマ': 'Uma',
         '1本場': 'Honba',
         '後': 'after',
@@ -284,13 +292,14 @@ const exactTranslation = {
         '●「長押し」または「右クリック」から別タブで開く/URLのコピーなどが行えます●観戦は５分遅れ': 'Long press or right click to bring up the context menu. Games are delayed five minutes in spectating mode.',
         '観戦可能な対戦はありません': 'There are no matches that can be watched.',
         '画像や音声がロードされていて正常に描画/再生可能かを確認するための機能です。もし異常があればゲームの進行に支障が出る場合がありますので、このページをリロードしてください。': 'You may use this feature to test whether image and sound files can be properly loaded. If there exists any abnormality which may hinder the progress of the game, please refresh this page.',
-        '上級卓の入場条件(１級以上または有効期限60日以上)を満たしていません※七段R2000以上は入場できません': 'Must be at least 1 Kyuu to enter Joukyuu (Intermediate). ※Not available after 7 Dan & R2000',
-        '特上卓の入場条件(四段R1800以上を満たしていません': 'Must be at least 4 Dan & R1800 to enter Tokujou (Expert).',
-        '雀荘戦の入場条件(四段R1800以上の有料会員)を満たしていません': 'Must be at least 4 Dan & R1800 to enter Janso (Parlor). Not available to free players.',
-        '鳳凰卓の入場条件(七段R2000以上の有料会員)を満たしていません': 'Must be at least 7 Dan & R2000 to enter Houou (Master). Not available to free players.',
+        '上級卓の入場条件(１級以上または有効期限60日以上)を満たしていません※七段R2000以上は入場できません': 'Must be at least 1 Kyuu to enter Joukyuu (Lower dan). ※Not available after 7 dan + R2000',
+        '特上卓の入場条件(四段R1800以上を満たしていません': 'Must be at least 4 dan + R1800 to enter Tokujou (Upper dan).',
+        '雀荘戦の入場条件(四段R1800以上の有料会員)を満たしていません': 'Must be at least 4 dan + R1800 to enter Janso (Parlor). Only available with subscription.',
+        '鳳凰卓の入場条件(七段R2000以上の有料会員)を満たしていません': 'Must be at least 7 dan + R2000 to enter Houou (Phoenix). Only available with subscription.',
         '上にゆっくりスクロールしてください': 'Scroll down slowly until this message disappears',
 
         // Game
+
         '對局': 'Start',
         '鳴きなし': 'No call',
         '自動理牌': 'Sort',
@@ -306,7 +315,6 @@ const exactTranslation = {
         '飜': 'Han',
         '符': 'Fu',
         '点': 'Points',
-
         // Yaku
         '門前清自摸和': 'Menzen tsumo',
         '立直': 'Riichi',
@@ -392,6 +400,7 @@ const exactTranslation = {
         '赤ドラ': 'Akadora',
 
         // Replay & Spectating
+
         '待ち': 'Waits',
         '手牌': 'Hand',
         '牌山': 'Wall',
@@ -399,21 +408,21 @@ const exactTranslation = {
         '(匿名表示 OFF)': '(ID Display OFF)',
 
         // stats
+
         'ランキング': 'Summary stats',
         ' 接続人数': 'Players by hour (JST: UTC+9)',
         '接続人数': 'Players by hour',
         '※最大同時接続人数': 'Maximum number of simultaneous users',
         '役': 'Yaku and dora',
 
-    // The following are commented out as they are only available in Japanese
+        // The following are commented out as they are only available in Japanese
 
-    // 'マニュアル': 'Manual',
-    // '検索': 'Search this site',
+        // 'マニュアル': 'Manual',
+        // '検索': 'Search this site',
     },
 };
 
 const partialTranslation = {
-    'off': {},
     'EMA': {
         '四般東喰赤速': '4p Novice E Fast',
         '四般東喰赤': '4p Novice E',
@@ -423,22 +432,22 @@ const partialTranslation = {
         '三般東喰赤': '3p Novice E',
         '三般南喰赤速': '3p Novice E+S Fast',
         '三般南喰赤': '3p Novice E+S',
-        '四上東喰赤速': '4p Dan E Fast',
-        '四上東喰赤': '4p Dan E',
-        '四上南喰赤速': '4p Dan E+S Fast',
-        '四上南喰赤': '4p Dan E+S',
-        '三上東喰赤速': '3p Dan E Fast',
-        '三上東喰赤': '3p Dan E',
-        '三上南喰赤速': '3p Dan E+S Fast',
-        '三上南喰赤': '3p Dan E+S',
-        '四特東喰赤速': '4p Upperdan E Fast',
-        '四特東喰赤': '4p Upperdan E',
-        '四特南喰赤速': '4p Upperdan E+S Fast',
-        '四特南喰赤': '4p Upperdan E+S',
-        '三特東喰赤速': '3p Upperdan E Fast',
-        '三特東喰赤': '3p Upperdan E',
-        '三特南喰赤速': '3p Upperdan E+S Fast',
-        '三特南喰赤': '3p Upperdan E+S',
+        '四上東喰赤速': '4p Lower dan E Fast',
+        '四上東喰赤': '4p Lower dan E',
+        '四上南喰赤速': '4p Lower dan E+S Fast',
+        '四上南喰赤': '4p Lower dan E+S',
+        '三上東喰赤速': '3p Lower dan E Fast',
+        '三上東喰赤': '3p Lower dan E',
+        '三上南喰赤速': '3p Lower dan E+S Fast',
+        '三上南喰赤': '3p Lower dan E+S',
+        '四特東喰赤速': '4p Upper dan E Fast',
+        '四特東喰赤': '4p Upper dan E',
+        '四特南喰赤速': '4p Upper dan E+S Fast',
+        '四特南喰赤': '4p Upper dan E+S',
+        '三特東喰赤速': '3p Upper dan E Fast',
+        '三特東喰赤': '3p Upper dan E',
+        '三特南喰赤速': '3p Upper dan E+S Fast',
+        '三特南喰赤': '3p Upper dan E+S',
         '四鳳東喰赤速': '4p Phoenix E Fast',
         '四鳳東喰赤': '4p Phoenix E',
         '四鳳南喰赤速': '4p 7Phoenix E+S Fast',
@@ -447,10 +456,10 @@ const partialTranslation = {
         '三鳳東喰赤': '3p Phoenix E',
         '三鳳南喰赤速': '3p Phoenix E+S Fast',
         '三鳳南喰赤': '3p Phoenix E+S',
-        '四麻上級卓': '4p, Dan',
-        '三麻上級卓': '3p, Dan',
-        '四麻特上卓': '4p, Upperdan',
-        '三麻特上卓': '3p, Upperdan',
+        '四麻上級卓': '4p, Lower dan',
+        '三麻上級卓': '3p, Lower dan',
+        '四麻特上卓': '4p, Upper dan',
+        '三麻特上卓': '3p, Upper dan',
         '四麻雀荘戦': '4p, Parlor',
         '三麻雀荘戦': '3p, Parlor',
         '四麻鳳凰卓': '4p, Phoenix',
@@ -494,42 +503,42 @@ const partialTranslation = {
         '三上東喰赤': '3p 1k+ E',
         '三上南喰赤速': '3p 1k+ E+S Fast',
         '三上南喰赤': '3p 1k+ E+S',
-        '四特東喰赤速': '4p 4d1800+ E Fast',
-        '四特東喰赤': '4p 4d1800+ E',
-        '四特南喰赤速': '4p 4d1800+ E+S Fast',
-        '四特南喰赤': '4p 4d1800+ E+S',
-        '三特東喰赤速': '3p 4d1800+ E Fast',
-        '三特東喰赤': '3p 4d1800+ E',
-        '三特南喰赤速': '3p 4d1800+ E+S Fast',
-        '三特南喰赤': '3p 4d1800+ E+S',
-        '四鳳東喰赤速': '4p 7d2000+ E Fast',
-        '四鳳東喰赤': '4p 7d2000+ E',
-        '四鳳南喰赤速': '4p 7d2000+ E+S Fast',
-        '四鳳南喰赤': '4p 7d2000+ E+S',
-        '三鳳東喰赤速': '3p 7d2000+ E Fast',
-        '三鳳東喰赤': '3p 7d2000+ E',
-        '三鳳南喰赤速': '3p 7d2000+ E+S Fast',
-        '三鳳南喰赤': '3p 7d2000+ E+S',
+        '四特東喰赤速': '4p 4d+ R1800+ E Fast',
+        '四特東喰赤': '4p 4d+ R1800+ E',
+        '四特南喰赤速': '4p 4d+ R1800+ E+S Fast',
+        '四特南喰赤': '4p 4d+ R1800+ E+S',
+        '三特東喰赤速': '3p 4d+ R1800+ E Fast',
+        '三特東喰赤': '3p 4d+ R1800+ E',
+        '三特南喰赤速': '3p 4d+ R1800+ E+S Fast',
+        '三特南喰赤': '3p 4d+ R1800+ E+S',
+        '四鳳東喰赤速': '4p 7d+ R2000+ E Fast',
+        '四鳳東喰赤': '4p 7d+ R2000+ E',
+        '四鳳南喰赤速': '4p 7d+ R2000+ E+S Fast',
+        '四鳳南喰赤': '4p 7d+ R2000+ E+S',
+        '三鳳東喰赤速': '3p 7d+ R2000+ E Fast',
+        '三鳳東喰赤': '3p 7d+ R2000+ E',
+        '三鳳南喰赤速': '3p 7d+ R2000+ E+S Fast',
+        '三鳳南喰赤': '3p 7d+ R2000+ E+S',
         '四麻上級卓': '4p, 1k+',
         '三麻上級卓': '3p, 1k+',
-        '四麻特上卓': '4p, 4d1800+',
-        '三麻特上卓': '3p, 4d1800+',
+        '四麻特上卓': '4p, 4d+ R1800+',
+        '三麻特上卓': '3p, 4d+ R1800+',
         '四麻雀荘戦': '4p, Parlor',
         '三麻雀荘戦': '3p, Parlor',
-        '四麻鳳凰卓': '4p, 7d2000+',
-        '三麻鳳凰卓': '3p, 7d2000+',
+        '四麻鳳凰卓': '4p, 7d+ R2000+',
+        '三麻鳳凰卓': '3p, 7d+ R2000+',
     },
     'romaji': {
         '新人': '新人',
-        '９級': '９級',
-        '８級': '８級',
-        '７級': '７級',
-        '６級': '６級',
-        '５級': '５級',
-        '４級': '４級',
-        '３級': '３級',
-        '２級': '２級',
-        '１級': '１級',
+        '９級': '9級',
+        '８級': '8級',
+        '７級': '7級',
+        '６級': '6級',
+        '５級': '5級',
+        '４級': '4級',
+        '３級': '3級',
+        '２級': '2級',
+        '１級': '1級',
         '初段': '初段',
         '二段': '二段',
         '三段': '三段',
@@ -540,14 +549,14 @@ const partialTranslation = {
         '八段': '八段',
         '九段': '九段',
         '十段': '十段',
-        '四般東喰赤速': '4, Ippan, Tonpu, Fast',
-        '四般東喰赤': '4, Ippan, Tonpu',
-        '四般南喰赤速': '4, Ippan, Hanchan, Fast',
-        '四般南喰赤': '4, Ippan, Hanchan',
-        '三般東喰赤速': '3, Ippan, Tonpu, Fast',
-        '三般東喰赤': '3, Ippan, Tonpu',
-        '三般南喰赤速': '3, Ippan, Hanchan, Fast',
-        '三般南喰赤': '3, Ippan, Hanchan',
+        '四般東喰赤速': '4, Ippan , Tonpu, Fast',
+        '四般東喰赤': '4, Ippan , Tonpu',
+        '四般南喰赤速': '4, Ippan , Hanchan, Fast',
+        '四般南喰赤': '4, Ippan , Hanchan',
+        '三般東喰赤速': '3, Ippan , Tonpu, Fast',
+        '三般東喰赤': '3, Ippan , Tonpu',
+        '三般南喰赤速': '3, Ippan , Hanchan, Fast',
+        '三般南喰赤': '3, Ippan , Hanchan',
         '四上東喰赤速': '4, Joukyuu, Tonpu, Fast',
         '四上東喰赤': '4, Joukyuu, Tonpu',
         '四上南喰赤速': '4, Joukyuu, Hanchan, Fast',
@@ -589,19 +598,18 @@ const partialTranslation = {
 };
 
 const partialTranslationForStats = {
-    'off': {},
     'EMA': {
         '般南喰赤': '4p, Novice, E+S',
         '般東喰赤': '4p, Novice, E',
-        '上南喰赤': '4p, Dan, E+S',
-        '上東喰赤': '4p, Dan, E',
-        '特南喰赤': '4p, Upperdan, E+S',
-        '特東喰赤': '4p, Upperdan, E',
+        '上南喰赤': '4p, Lower dan, E+S',
+        '上東喰赤': '4p, Lower dan, E',
+        '特南喰赤': '4p, Upper dan, E+S',
+        '特東喰赤': '4p, Upper dan, E',
         '鳳南喰赤': '4p, Phoenix, E+S',
         '鳳東喰赤': '4p, Phoenix, E',
         '一般': 'Novice',
-        '上級': 'Dan',
-        '特上': 'Upperdan',
+        '上級': 'Lower dan',
+        '特上': 'Upper dan',
         '鳳凰': 'Phoenix',
         '三東喰赤': '3p E',
         '三南喰赤': '3p E+S',
@@ -618,14 +626,14 @@ const partialTranslationForStats = {
         '般東喰赤': '4p, Novice, E',
         '上南喰赤': '4p, 1k+, E+S',
         '上東喰赤': '4p, 1k+, E',
-        '特南喰赤': '4p, 4D1800+, E+S',
-        '特東喰赤': '4p, 4D1800+, E',
-        '鳳南喰赤': '4p, 7D2000+, E+S',
-        '鳳東喰赤': '4p, 7D2000+, E',
+        '特南喰赤': '4p, 4d+ R1800+, E+S',
+        '特東喰赤': '4p, 4d+ R1800+, E',
+        '鳳南喰赤': '4p, 7d+ R2000+, E+S',
+        '鳳東喰赤': '4p, 7d+ R2000+, E',
         '一般': 'Novice',
         '上級': '1k+',
-        '特上': '4d1800+',
-        '鳳凰': '7d2000+',
+        '特上': '4d+ R1800+',
+        '鳳凰': '7d+ R2000+',
     },
     'romaji': {
         '全ルールの役満': 'list yakuman only',
@@ -638,7 +646,6 @@ const partialTranslationForStats = {
         '%*飜': 'win% x han/yaku',
         '%*複': 'win% x tot.han',
         '※統計情報は毎月リセットされます': 'Statistics are reset monthly',
-        'オンライン対戦麻雀 天鳳 / ランキング': 'Tenhou monthly mahjong statistics',
         '役満': 'Recent yakuman hands',
         '対戦数': '# of games',
 
@@ -669,7 +676,9 @@ const partialTranslationForStats = {
 
 const tooltips = {
     EMA: {
-    // Game types
+
+        // Game types
+
         '四般東喰赤速': '4p, Novice, East, Open all-simples, Red dora, Fast',
         '四般南喰赤': '4p, Novice, East + South, Open all-simples, Red dora',
         '四般南喰赤速': '4p, Novice, East + South, Open all-simples, Red dora, Fast',
@@ -677,22 +686,22 @@ const tooltips = {
         '三般東喰赤速': '3p, Novice, East, Open all-simples, Red dora, Fast',
         '三般南喰赤': '3p, Novice, East + South, Open all-simples, Red dora',
         '三般南喰赤速': '3p, Novice, East + South, Open all-simples, Red dora, Fast',
-        '四上東喰赤': '4p, Dan, East, Open all-simples, Red dora',
-        '四上東喰赤速': '4p, Dan+, East, Open all-simples, Red dora, Fast',
-        '四上南喰赤': '4p, Dan, East + South, Open all-simples, Red dora',
-        '四上南喰赤速': '4p, Dan, East + South, Open all-simples, Red dora, Fast',
-        '三上東喰赤': '3p, Dan, East, Open all-simples, Red dora',
-        '三上東喰赤速': '3p, Dan, East, Open all-simples, Red dora, Fast',
-        '三上南喰赤': '3p, Dan, East + South, Open all-simples, Red dora',
-        '三上南喰赤速': '3p, Dan, East + South, Open all-simples, Red dora, Fast',
-        '四特東喰赤': '4p, Upperdan, East, Open all-simples, Red dora',
-        '四特東喰赤速': '4p, Upperdan, East, Open all-simples, Red dora, Fast',
-        '四特南喰赤': '4p, Upperdan, East + South, Open all-simples, Red dora',
-        '四特南喰赤速': '4p, Upperdan, East + South, Open all-simples, Red dora, Fast',
-        '三特東喰赤': '3p, Upperdan, East, Open all-simples, Red dora',
-        '三特東喰赤速': '3p, Upperdan, East, Open all-simples, Red dora, Fast',
-        '三特南喰赤': '3p, Upperdan, East + South, Open all-simples, Red dora',
-        '三特南喰赤速': '3p, Upperdan, East + South, Open all-simples, Red dora, Fast',
+        '四上東喰赤': '4p, Lower dan, East, Open all-simples, Red dora',
+        '四上東喰赤速': '4p, Lower dan, East, Open all-simples, Red dora, Fast',
+        '四上南喰赤': '4p, Lower dan, East + South, Open all-simples, Red dora',
+        '四上南喰赤速': '4p, Lower dan, East + South, Open all-simples, Red dora, Fast',
+        '三上東喰赤': '3p, Lower dan, East, Open all-simples, Red dora',
+        '三上東喰赤速': '3p, Lower dan, East, Open all-simples, Red dora, Fast',
+        '三上南喰赤': '3p, Lower dan, East + South, Open all-simples, Red dora',
+        '三上南喰赤速': '3p, Lower dan, East + South, Open all-simples, Red dora, Fast',
+        '四特東喰赤': '4p, Upper dan, East, Open all-simples, Red dora',
+        '四特東喰赤速': '4p, Upper dan, East, Open all-simples, Red dora, Fast',
+        '四特南喰赤': '4p, Upper dan, East + South, Open all-simples, Red dora',
+        '四特南喰赤速': '4p, Upper dan, East + South, Open all-simples, Red dora, Fast',
+        '三特東喰赤': '3p, Upper dan, East, Open all-simples, Red dora',
+        '三特東喰赤速': '3p, Upper dan, East, Open all-simples, Red dora, Fast',
+        '三特南喰赤': '3p, Upper dan, East + South, Open all-simples, Red dora',
+        '三特南喰赤速': '3p, Upper dan, East + South, Open all-simples, Red dora, Fast',
         '四鳳東喰赤': '4p, Phoenix, East, Open all-simples, Red dora',
         '四鳳東喰赤速': '4p, Phoenix, East, Open all-simples, Red dora, Fast',
         '四鳳南喰赤': '4p, Phoenix, East + South, Open all-simples, Red dora',
@@ -703,7 +712,7 @@ const tooltips = {
         '三鳳南喰赤速': '3p, Phoenix, East + South, Open all-simples, Red dora, Fast',
     },
     rad: {
-    // by setting a tooltip to null, it overrides lower-priority translations, and prevents a tooltip being created
+        // by setting a tooltip to null, it overrides lower-priority translations, and prevents a tooltip being created
         '新人': null,
         '９級': null,
         '８級': null,
@@ -725,7 +734,6 @@ const tooltips = {
         '九段': null,
         '十段': null,
         '天鳳位' : null,
-
         // Game types
         '四般東喰赤速': '4p, Novice, East, Open all simples, Red dora, Fast',
         '四般南喰赤': '4p, Novice, East + South, Open all simples, Red dora',
@@ -742,25 +750,25 @@ const tooltips = {
         '三上東喰赤速': '3p, 1k+, East, Open all simples, Red dora, Fast',
         '三上南喰赤': '3p, 1k+, East + South, Open all simples, Red dora',
         '三上南喰赤速': '3p, 1k+, East + South, Open all simples, Red dora, Fast',
-        '四特東喰赤': '4p, 4d1800+, East, Open all simples, Red dora',
-        '四特東喰赤速': '4p, 4d1800+, East, Open all simples, Red dora, Fast',
-        '四特南喰赤': '4p, 4d1800+, East + South, Open all simples, Red dora',
-        '四特南喰赤速': '4p, 4d1800+, East + South, Open all simples, Red dora, Fast',
-        '三特東喰赤': '3p, 4d1800+, East, Open all simples, Red dora',
-        '三特東喰赤速': '3p, 4d1800+, East, Open all simples, Red dora, Fast',
-        '三特南喰赤': '3p, 4d1800+, East + South, Open all simples, Red dora',
-        '三特南喰赤速': '3p, 4d1800+, East + South, Open all simples, Red dora, Fast',
-        '四鳳東喰赤': '4p, 7d2000+, East, Open all simples, Red dora',
-        '四鳳東喰赤速': '4p, 7d2000+, East, Open all simples, Red dora, Fast',
-        '四鳳南喰赤': '4p, 7d2000+, East + South, Open all simples, Red dora',
-        '四鳳南喰赤速': '4p, 7d2000+, East + South, Open all simples, Red dora, Fast',
-        '三鳳東喰赤': '3p, 7d2000+, East, Open all simples, Red dora',
-        '三鳳東喰赤速': '3p, 7d2000+, East, Open all simples, Red dora, Fast',
-        '三鳳南喰赤': '3p, 7d2000+, East + South, Open all simples, Red dora',
-        '三鳳南喰赤速': '3p, 7d2000+, East + South, Open all simples, Red dora, Fast',
+        '四特東喰赤': '4p, 4d+ R1800+, East, Open all simples, Red dora',
+        '四特東喰赤速': '4p, 4d+ R1800+, East, Open all simples, Red dora, Fast',
+        '四特南喰赤': '4p, 4d+ R1800+, East + South, Open all simples, Red dora',
+        '四特南喰赤速': '4p, 4d+ R1800+, East + South, Open all simples, Red dora, Fast',
+        '三特東喰赤': '3p, 4d+ R1800+, East, Open all simples, Red dora',
+        '三特東喰赤速': '3p, 4d+ R1800+, East, Open all simples, Red dora, Fast',
+        '三特南喰赤': '3p, 4d+ R1800+, East + South, Open all simples, Red dora',
+        '三特南喰赤速': '3p, 4d+ R1800+, East + South, Open all simples, Red dora, Fast',
+        '四鳳東喰赤': '4p, 7d+ R2000+, East, Open all simples, Red dora',
+        '四鳳東喰赤速': '4p, 7d+ R2000+, East, Open all simples, Red dora, Fast',
+        '四鳳南喰赤': '4p, 7d+ R2000+, East + South, Open all simples, Red dora',
+        '四鳳南喰赤速': '4p, 7d+ R2000+, East + South, Open all simples, Red dora, Fast',
+        '三鳳東喰赤': '3p, 7d+ R2000+, East, Open all simples, Red dora',
+        '三鳳東喰赤速': '3p, 7d+ R2000+, East, Open all simples, Red dora, Fast',
+        '三鳳南喰赤': '3p, 7d+ R2000+, East + South, Open all simples, Red dora',
+        '三鳳南喰赤速': '3p, 7d+ R2000+, East + South, Open all simples, Red dora, Fast',
     },
     'romaji': {
-    // Ranks
+        // Ranks
         '新人': 'rookie',
         '９級': '9kyuu',
         '８級': '8kyuu',
@@ -781,8 +789,7 @@ const tooltips = {
         '八段': '8dan',
         '九段': '9dan',
         '十段': '10dan',
-        '天鳳位' : 'tenhoui',
-
+        '天鳳位' : 'Tenhoui',
         // Game types
         '四般東喰赤速': '4 players, Ippan, East round, Open tanyao, Red dora, Fast',
         '四般南喰赤': '4 players, Ippan, East + South round, Open tanyao, Red dora',
@@ -825,33 +832,24 @@ let thisPartialTable = {};
 let thisExactTable = {};
 let thisTooltipTable = {};
 
-const partialMatch = function(originalText) {
-    let needle;
-    for (needle of partialPhrases) { // JSLint doesn't like it, but that's ok
-        if (originalText.includes(needle)) {
-            // Exits as soon as a match is found. Saves time,
-            // but requires thoughtful sorting of thisPartialTable
-            // to ensure that no element in it is a substring of a later element
-            return needle;
-        }
-    }
-
-    return null;
-};
-
 const observerSettings = {
+    characterData: true,
     childList: true,
     subtree: true,
 };
 
-function getTranslations(callback) {
-    chrome.storage.local.get('translation', function(storedval) {
+function getTranslationSets(callback) {
+    'use strict';
+    // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
+    // need a callback argument, because chrome.storage.local is only available asynchronously
+    chrome.storage.local.get({ translation: 'off' }, function(storedval) {
+
+        if (storedval.translation === 'off') return callback(false);
+
         if (storedval.translation === lastTranslationSeen && thisExactTable) {
-            if (storedval.translation !== 'off') {
-                // we've already got the right translation, so can go translate immediately
-                callback();
-            }
-            return;
+            // we've already got the right translation, so can go translate immediately
+
+            return callback(true);
         }
 
         lastTranslationSeen = storedval.translation;
@@ -872,8 +870,8 @@ function getTranslations(callback) {
                     for (let i = 1; i < translation.length; i ++) {
                         Object.assign(tableOut, tableIn[translation[i]]); // ECMA6 way of merging objects
                     }
-
                     return tableOut;
+
                 };
 
                 thisExactTable = overlay(exactTranslation);
@@ -902,64 +900,102 @@ function getTranslations(callback) {
 
             partialPhrases = Object.keys(thisPartialTable);
 
-            callback();
+            return callback(true);
         });
     });
 }
 
-const onMutate = function() {
-    mutationObserver.disconnect();
+function translateOneNode(node) {
+    'use strict';
 
-    const elements = document.getElementsByTagName('*');
+    let thisParent = node.parentElement;
+    if (thisParent && thisParent.tagName !== undefined && thisParent.tagName.toLowerCase() === 'button') {
+        thisParent.style.overflow = 'hidden';
+    }
 
-    for (let i = 0; i < elements.length; i++) {
-        if (elements[i].tagName.toLowerCase() === 'button') {
-            elements[i].style.overflow = 'hidden';
-        }
-        for (let j = 0; j < elements[i].childNodes.length; j++) {
-
-            let node = elements[i].childNodes[j];
-            if (node.nodeType === 3) {
-                let originalText = node.nodeValue;
-                if (thisExactTable[originalText]) {
-                    elements[i].replaceChild(document.createTextNode(thisExactTable[originalText]), node);
-                } else {
-                    let partialMatchKey = partialMatch(originalText);
-                    if (partialMatchKey) {
-                        let newText = originalText.replace(partialMatchKey, thisPartialTable[partialMatchKey]);
-                        elements[i].replaceChild(document.createTextNode(newText), node);
-                        if (thisTooltipTable[partialMatchKey]) {
-                            elements[i].setAttribute('title', thisTooltipTable[partialMatchKey]);
-                            if (elements[i].tagName.toLowerCase() === 'span') {
-                                elements[i].parentElement.style.overflow = 'hidden';
-                            } else {
-                                elements[i].style.overflow = 'hidden';
-                            }
-                        }
-                    }
+    let originalText = node.nodeValue;
+    if (!originalText) return;
+    if (thisExactTable[originalText]) {
+        thisParent.replaceChild(document.createTextNode(thisExactTable[originalText]), node);
+    } else {
+        let newText = originalText;
+        let newTooltip = null;
+        for (let needle of partialPhrases) { // JSLint doesn't like it, but that's ok
+            if (newText.includes(needle)) {
+                newText = newText.replace(needle, thisPartialTable[needle]);
+                if (!newTooltip && thisTooltipTable[needle]) {
+                    thisParent.setAttribute('title', thisTooltipTable[needle]);
+                    newTooltip = true;
                 }
             }
         }
+        if (newText !== originalText) {
+            if (thisParent.tagName.toLowerCase() === 'span') {
+                thisParent.parentElement.style.overflow = 'hidden';
+            } else {
+                thisParent.style.overflow = 'hidden';
+            }
+            thisParent.replaceChild(document.createTextNode(newText), node);
+        }
     }
-    mutationObserver.observe(document.documentElement, observerSettings);
+}
+
+const translateTextBeneathANode = function(topNode) {
+    'use strict';
+    const TextNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
+
+    // we are messing with the Dom tree while we iterate over it, so first save in an array
+    let TextNodeList = [];
+    while(TextNodeIterator.nextNode()) {
+        TextNodeList.push(TextNodeIterator.currentNode);
+    }
+    let node;
+    for (node of TextNodeList) {
+        translateOneNode(node);
+    }
 };
 
-getTranslations(function() {
-    let tbox = document.createElement('div');
+function setToObserve() {
+    'use strict';
+    mutationObserver.observe(document.documentElement, observerSettings);
+}
 
+function createOptionsButton() {
+    'use strict';
+    let tbox = document.createElement('div');
+    tbox.appendChild(document.createTextNode('change translation'));
     tbox.setAttribute('id', 'translationfloater');
-    tbox.addEventListener('click', function() {
+    tbox.setAttribute('title', 'Opens the options screen in a new tab');
+    tbox.addEventListener('click', function () {
         chrome.runtime.sendMessage({ 'show': 'options' });
     });
     document.body.appendChild(tbox);
+}
 
-    mutationObserver = new MutationObserver(function() {
-        getTranslations(onMutate);
+function onMutate(mutations) {
+    'use strict';
+    mutationObserver.disconnect();
+    getTranslationSets(function(canTranslate) {
+        if (canTranslate) {
+            mutations.forEach(function(oneMutation) {
+                translateTextBeneathANode(oneMutation.target);
+            });
+        }
+        setToObserve();
     });
-    mutationObserver.observe(document.documentElement, observerSettings);
+}
 
-    if (window.location.href.indexOf('/3') === -1) {
-        // force the statistics pages to translate when first ready
-        onMutate();
+// this is what happens when the page is first loaded:
+
+getTranslationSets(function(canTranslate) {
+    'use strict';
+    if (canTranslate) {
+        translateTextBeneathANode(document.body);
+        if (thisExactTable[document.title]) {
+            document.title = thisExactTable[document.title];
+        }
     }
+    createOptionsButton();
+    mutationObserver = new MutationObserver(onMutate);
+    setToObserve();
 });
