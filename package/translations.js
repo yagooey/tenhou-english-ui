@@ -816,7 +816,7 @@ const exactTranslation = {
     },
     '槓': {
         'DEFAULT': 'Kan',
-        'EMA_ENG': 'Kang',
+        'EMA_ENG': 'Kong',
     },
     'キタ': {
         'DEFAULT': 'Kita',
