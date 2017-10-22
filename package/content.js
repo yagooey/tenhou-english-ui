@@ -1,5 +1,6 @@
 /* global window,chrome,MutationObserver*/
-/* jslint browser,for,single,white*/
+
+'use strict';
 
 let partialPhrases;
 let mutationObserver;
@@ -15,15 +16,14 @@ const observerSettings = {
 };
 
 function getTranslationSets(callback) {
-    'use strict';
     // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
-    // need a callback argument, because chrome.storage.local is only available asynchronously
+    // Need a callback argument, because chrome.storage.local is only available asynchronously
     chrome.storage.local.get({ translation: 'off' }, function(storedval) {
 
         if (storedval.translation === 'off') return callback(false);
 
         if (storedval.translation === lastTranslationSeen && thisExactTable) {
-            // we've already got the right translation, so can go translate immediately
+            // We've already got the right translation, so can go translate immediately
 
             return callback(true);
         }
@@ -61,7 +61,7 @@ function getTranslationSets(callback) {
                 thisStatsTable = overlay(partialTranslationForStats);
                 thisTooltipTable = overlay(tooltips);
 
-                // the cascaded translations are stored in local storage
+                // The cascaded translations are stored in local storage
                 // (not sync, as the translations are too large for sync)
                 // so that the cascading is only done
                 // when the translation type is changed by the user on the options screen,
@@ -73,7 +73,6 @@ function getTranslationSets(callback) {
                     stats: thisStatsTable,
                     tooltip: thisTooltipTable,
                 } });
-
             }
 
             if (window.location.href.indexOf('/3') === -1) {
@@ -88,8 +87,6 @@ function getTranslationSets(callback) {
 }
 
 function translateOneNode(node) {
-    'use strict';
-
     let thisParent = node.parentElement;
     if (thisParent && thisParent.tagName !== undefined && thisParent.tagName.toLowerCase() === 'button') {
         thisParent.style.overflow = 'hidden';
@@ -102,7 +99,7 @@ function translateOneNode(node) {
     } else {
         let newText = originalText;
         let newTooltip = null;
-        for (let needle of partialPhrases) { // JSLint doesn't like it, but that's ok
+        for (let needle of partialPhrases) {
             if (newText.includes(needle)) {
                 newText = newText.replace(needle, thisPartialTable[needle]);
                 if (!newTooltip && thisTooltipTable[needle]) {
@@ -123,10 +120,9 @@ function translateOneNode(node) {
 }
 
 const translateTextBeneathANode = function(topNode) {
-    'use strict';
     const TextNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
 
-    // we are messing with the Dom tree while we iterate over it, so first save in an array
+    // We are messing with the Dom tree while we iterate over it, so first save in an array
     let TextNodeList = [];
     while(TextNodeIterator.nextNode()) {
         TextNodeList.push(TextNodeIterator.currentNode);
@@ -138,24 +134,25 @@ const translateTextBeneathANode = function(topNode) {
 };
 
 function setToObserve() {
-    'use strict';
     mutationObserver.observe(document.documentElement, observerSettings);
 }
 
 function createOptionsButton() {
-    'use strict';
-    let tbox = document.createElement('div');
-    tbox.appendChild(document.createTextNode('change translation'));
-    tbox.setAttribute('id', 'translationfloater');
-    tbox.setAttribute('title', 'Opens the options screen in a new tab');
-    tbox.addEventListener('click', function () {
-        chrome.runtime.sendMessage({ 'show': 'options' });
-    });
-    document.body.appendChild(tbox);
+    chrome.storage.local.get({ showOverlay: true }, (storedVal) => {
+        if (storedVal.showOverlay) {
+            let tbox = document.createElement('div');
+            tbox.appendChild(document.createTextNode('change translation'));
+            tbox.setAttribute('id', 'translationfloater');
+            tbox.setAttribute('title', 'Opens the options screen in a new tab');
+            tbox.addEventListener('click', function () {
+                chrome.runtime.sendMessage({ 'show': 'options' });
+            });
+            document.body.appendChild(tbox);
+        }
+    })
 }
 
 function onMutate(mutations) {
-    'use strict';
     mutationObserver.disconnect();
     getTranslationSets(function(canTranslate) {
         if (canTranslate) {
@@ -167,10 +164,8 @@ function onMutate(mutations) {
     });
 }
 
-// this is what happens when the page is first loaded:
-
+// This is what happens when the page is first loaded
 getTranslationSets(function(canTranslate) {
-    'use strict';
     if (canTranslate) {
         translateTextBeneathANode(document.body);
         if (thisExactTable[document.title]) {
