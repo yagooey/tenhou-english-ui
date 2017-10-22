@@ -30,7 +30,7 @@
           "*://tenhou.net/ranking.html", 
           "*://tenhou.net/stat/*"
       ],
-      "js": [ "content.js" ],
+      "js": [ "translations.js", "content.js" ],
       "css": [ "content.css" ],
       "run_at": "document_end"
    } ],
