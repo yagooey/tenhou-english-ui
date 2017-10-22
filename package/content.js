@@ -18,7 +18,7 @@ const observerSettings = {
 function getTranslationSets(callback) {
     // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
     // Need a callback argument, because chrome.storage.local is only available asynchronously
-    chrome.storage.local.get({ translation: 'off' }, function(storedval) {
+    chrome.storage.local.get({ translation: 'DEFAULT' }, function(storedval) {
 
         if (storedval.translation === 'off') return callback(false);
 

@@ -746,6 +746,21 @@ const exactTranslation = {
     '●「長押し」または「右クリック」から別タブで開く/URLのコピーなどが行えます●観戦は５分遅れ': {
         'DEFAULT': 'Long press or right click to bring up the context menu. Games are delayed five minutes in spectating mode.',
     },
+    'すべての牌譜一覧を表示': {
+        'DEFAULT': 'List all replays',
+    },
+    'この端末に記録されている牌譜を表示': {
+        'DEFAULT': 'List replays on this device',
+    },
+    '※有料会員の状態で打った牌譜のみ検索できます': {
+        'DEFAULT': '※Subscribed users can access all replays from any device',
+    },
+    '※１０日前までの牌譜が検索可能です': {
+        'DEFAULT': '※Replays will be kept for a period of 10 days'
+    },
+    '牌譜の検索やダウンロードはこちらから行えます': {
+        'DEFAULT': 'Find and download game replays here',
+    },
     '観戦可能な対戦はありません': {
         'DEFAULT': 'There are no matches that can be watched.',
     },
