@@ -5,23 +5,33 @@
    "description": "Change the UI text on the Tenhou HTML5 Web Client from Japanese to English",
    "icons": {
       "16": "icons/tenhou-16.png",
+      "19": "icons/tenhou-19.png",
       "32": "icons/tenhou-32.png",
+      "38": "icons/tenhou-38.png",
       "64": "icons/tenhou-64.png",
       "128": "icons/tenhou-128.png"
+   },
+   "applications": {
+      "gecko": {
+         "id": "zefiris-tenhou-english-ui@gitlab.com",
+         "strict_min_version": "56.0"
+      }
    },
    "page_action": {
       "default_icon": {
         "16": "icons/tenhou-16.png",
+        "19": "icons/tenhou-19.png",
         "32": "icons/tenhou-32.png",
+        "38": "icons/tenhou-38.png",
         "64": "icons/tenhou-64.png",
         "128": "icons/tenhou-128.png"
       },
+      "default_popup": "options.html",
       "default_title": "Tenhou English UI"
    },
-   "permissions": [ "declarativeContent", "storage" ],
+   "permissions": [ "storage", "tabs", "activeTab" ],
    "background": {
-      "scripts": [ "background.js" ],
-      "persistent": true
+      "scripts": [ "background.js" ]
    },
    "content_scripts": [ {
       "matches": [

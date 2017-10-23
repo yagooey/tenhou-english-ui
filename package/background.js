@@ -22,3 +22,20 @@ chrome.runtime.onInstalled.addListener(function(object) {
 chrome.runtime.onMessage.addListener(function(msg) {
     chrome.runtime.openOptionsPage();
 });
+
+function showIconForTab(tab) {
+    if (tab.url.includes("tenhou.net")) {
+      browser.pageAction.show(tab.id);
+    }
+}
+
+let gettingAllTabs = browser.tabs.query({ url: '*://tenhou/net/*' });
+gettingAllTabs.then((tabs) => {
+    for (let tab of tabs) {
+      showIconForTab(tab);
+    }
+});
+
+browser.tabs.onUpdated.addListener((id, changeInfo, tab) => {
+    showIconForTab(tab);
+});
