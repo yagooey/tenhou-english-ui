@@ -1,7 +1,7 @@
 {
    "manifest_version": 2,
    "name": "Tenhou English UI",
-   "version": "3.2.0",
+   "version": "4.0",
    "description": "Change the UI text on the Tenhou HTML5 Web Client from Japanese to English",
    "icons": {
       "16": "icons/tenhou-16.png",
@@ -26,11 +26,11 @@
    "content_scripts": [ {
       "matches": [
           "*://tenhou.net/3*",
-          "*://tenhou.net/sc/*", 
-          "*://tenhou.net/ranking.html", 
+          "*://tenhou.net/sc/*",
+          "*://tenhou.net/ranking.html",
           "*://tenhou.net/stat/*"
       ],
-      "js": [ "content.js" ],
+      "js": [ "translations.js", "content.js" ],
       "css": [ "content.css" ],
       "run_at": "document_end"
    } ],
