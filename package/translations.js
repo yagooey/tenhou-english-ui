@@ -205,11 +205,11 @@ const exactTranslation = {
         'EMA_ENG': '13 orphans (13 wait)',
     },
     '国士無双': {
-        'DEFAULT': '13 orphans',
+        'DEFAULT': 'Kokushi musou',
         'EMA_ENG': '13 orphans',
     },
     '国士無双１３面': {
-        'DEFAULT': '13 orphans x13',
+        'DEFAULT': 'Kokushi musou 13 men',
         'EMA_ENG': '13 orphans (13 wait)',
     },
     '小四喜': {
