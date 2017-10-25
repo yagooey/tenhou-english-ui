@@ -79,7 +79,11 @@ function getTranslationSets(callback) {
                 Object.assign(thisPartialTable, thisStatsTable);
             }
 
-            partialPhrases = Object.keys(thisPartialTable);
+            // Sort by key length, so that when performing partial matching,
+            // the entry with more matching characters will have priority
+            partialPhrases = Object.keys(thisPartialTable).sort((a, b) => {
+                return b.length - a.length;
+            });
 
             return callback(true);
         });
@@ -98,16 +102,17 @@ function translateOneNode(node) {
         thisParent.replaceChild(document.createTextNode(thisExactTable[originalText]), node);
     } else {
         let newText = originalText;
-        let newTooltip = null;
+
         for (let needle of partialPhrases) {
             if (newText.includes(needle)) {
                 newText = newText.replace(needle, thisPartialTable[needle]);
-                if (!newTooltip && thisTooltipTable[needle]) {
+                if (thisTooltipTable[needle]) {
                     thisParent.setAttribute('title', thisTooltipTable[needle]);
-                    newTooltip = true;
                 }
+                break;
             }
         }
+
         if (newText !== originalText) {
             if (thisParent.tagName.toLowerCase() === 'span') {
                 thisParent.parentElement.style.overflow = 'hidden';
