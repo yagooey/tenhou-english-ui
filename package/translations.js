@@ -1,4 +1,4 @@
-3pconst exactTranslation = {
+const exactTranslation = {
 
     // Yaku
 
