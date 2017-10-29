@@ -1252,12 +1252,12 @@ const partialTranslation = {
     '四麻特上卓': {
         'DEFAULT': '4 players, Tokujou',
         'EMA_ENG': '4p, Upper dan',
-        'ENG': '4p, 7d+R1800+',
+        'ENG': '4p, 4d+R1800+',
     },
     '三麻特上卓': {
         'DEFAULT': '3 players, Tokujou',
         'EMA_ENG': '3p, Upper dan',
-        'ENG': '3p, 7d+R1800+',
+        'ENG': '3p, 4d+R1800+',
     },
     '四麻雀荘戦': {
         'DEFAULT': '4 players, Jansou',
