@@ -2,6 +2,9 @@ const exactTranslation = {
 
     // Yaku
 
+    '流局滿貫': {
+        'DEFAULT': 'Nagashi Mangan',
+    },
     '立直': {
         'DEFAULT': 'Riichi',
         'EMA_ENG': 'Riichi',
