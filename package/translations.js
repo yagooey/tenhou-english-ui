@@ -2,6 +2,9 @@ const exactTranslation = {
 
     // Yaku
 
+    '流局滿貫': {
+        'DEFAULT': 'Nagashi Mangan',
+    },
     '立直': {
         'DEFAULT': 'Riichi',
         'EMA_ENG': 'Riichi',
@@ -807,20 +810,8 @@ const exactTranslation = {
     '對局': {
         'DEFAULT': 'Start',
     },
-    '鳴きなし': {
-        'DEFAULT': 'No call',
-    },
-    '自動理牌': {
-        'DEFAULT': 'Sort',
-    },
     '不聴宣言': {
         'DEFAULT': 'Noten',
-    },
-    '自動和了': {
-        'DEFAULT': 'Auto ron',
-    },
-    'ツモ切り': {
-        'DEFAULT': 'Auto discard',
     },
     ' 鳴き': {
         'DEFAULT': 'Call',
@@ -919,6 +910,18 @@ const exactTranslation = {
 };
 
 const partialTranslation = {
+    '鳴きなし': {
+        'DEFAULT': 'No call',
+    },
+    '自動理牌': {
+        'DEFAULT': 'Sort',
+    },
+    '自動和了': {
+        'DEFAULT': 'Auto ron',
+    },
+    'ツモ切り': {
+        'DEFAULT': 'Auto discard',
+    },
     '四般東喰赤速': {
         'DEFAULT': '4 Ippan Tonpu Fast',
         'EMA_ENG': '4p Novice E Fast',
