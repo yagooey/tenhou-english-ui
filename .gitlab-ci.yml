@@ -3,11 +3,15 @@
 # Download the latest version and compare with the cached version
 check_latest_version:
     script:
+        - echo "Downloading latest web client from Tenhou..."
         - curl -L http://tenhou.net/3/latest.js -o latest.js
+        - echo "Downloading cached web client from last run..."
         - curl -L https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.js?job=check_latest_version -o cached.js
+        - echo "Checking for differences..."
         - diff latest.js cached.js
     allow_failure: true
     artifacts:
+        when: always
         paths:
         - latest.js
     only:
