@@ -142,21 +142,6 @@ function setToObserve() {
     mutationObserver.observe(document.documentElement, observerSettings);
 }
 
-function createOptionsButton() {
-    chrome.storage.local.get({ showOverlay: true }, (storedVal) => {
-        if (storedVal.showOverlay) {
-            let tbox = document.createElement('div');
-            tbox.appendChild(document.createTextNode('change translation'));
-            tbox.setAttribute('id', 'translationfloater');
-            tbox.setAttribute('title', 'Opens the options screen in a new tab');
-            tbox.addEventListener('click', function () {
-                chrome.runtime.sendMessage({ 'show': 'options' });
-            });
-            document.body.appendChild(tbox);
-        }
-    })
-}
-
 function onMutate(mutations) {
     mutationObserver.disconnect();
     getTranslationSets(function(canTranslate) {
@@ -177,7 +162,6 @@ getTranslationSets(function(canTranslate) {
             document.title = thisExactTable[document.title];
         }
     }
-    createOptionsButton();
     mutationObserver = new MutationObserver(onMutate);
     setToObserve();
 });

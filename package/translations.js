@@ -448,6 +448,21 @@ const exactTranslation = {
     '牌背色:': {
         'DEFAULT': 'Tile Colour',
     },
+    'あり': {
+        'DEFAULT': 'On',
+    },
+    'なし': {
+        'DEFAULT': 'Off',
+    },
+    '※「鳴きなし」他が常時手牌下に表示されます': {
+        'DEFAULT': 'On: on-screen beneath your tiles; Off: appear on button press',
+    },
+    'Desktop入力:あり': {
+        'DEFAULT': 'In-game options: on-screen',
+    },
+    'Desktop入力:なし': {
+        'DEFAULT': 'In-game options: from button',
+    },
 
     // Practice play game modes
 
