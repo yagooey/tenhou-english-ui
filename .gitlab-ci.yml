@@ -12,3 +12,4 @@ check_latest_version:
         - latest.js
     only:
         - schedules
+        - web
