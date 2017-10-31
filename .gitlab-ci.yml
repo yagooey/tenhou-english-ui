@@ -5,3 +5,5 @@ get_latest_version:
     artifacts:
         paths:
         - latest.js
+    only:
+        - schedules
