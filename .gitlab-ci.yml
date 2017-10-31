@@ -1,7 +1,12 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for all available options
 
-get_latest_version:
-    script: curl -L http://tenhou.net/3/latest.js -o latest.js
+# Download the latest version and compare with the cached version
+check_latest_version:
+    script:
+        - curl -L http://tenhou.net/3/latest.js -o latest.js
+        - curl -L https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.js?job=check_latest_version -o cached.js
+        - diff latest.js cached.js
+    allow_failure: true
     artifacts:
         paths:
         - latest.js
