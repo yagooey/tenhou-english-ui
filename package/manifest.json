@@ -1,7 +1,7 @@
 {
    "manifest_version": 2,
    "name": "Tenhou English UI",
-   "version": "4.1",
+   "version": "4.2",
    "description": "Change the UI text on the Tenhou HTML5 Web Client from Japanese to English",
    "icons": {
       "16": "icons/tenhou-16.png",

@@ -128,12 +128,12 @@ const translateTextBeneathANode = function(topNode) {
     const TextNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
 
     // We are messing with the Dom tree while we iterate over it, so first save in an array
-    let TextNodeList = [];
+    let textNodeList = [];
     while(TextNodeIterator.nextNode()) {
-        TextNodeList.push(TextNodeIterator.currentNode);
+        textNodeList.push(TextNodeIterator.currentNode);
     }
     let node;
-    for (node of TextNodeList) {
+    for (node of textNodeList) {
         translateOneNode(node);
     }
 };
