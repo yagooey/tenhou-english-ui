@@ -11,12 +11,6 @@
       "64": "icons/tenhou-64.png",
       "128": "icons/tenhou-128.png"
    },
-   "applications": {
-      "gecko": {
-         "id": "zefiris-tenhou-english-ui@gitlab.com",
-         "strict_min_version": "56.0"
-      }
-   },
    "page_action": {
       "default_icon": {
         "16": "icons/tenhou-16.png",
@@ -27,7 +21,7 @@
         "128": "icons/tenhou-128.png"
       },
       "default_popup": "options.html",
-      "default_title": "Tenhou English UI"
+      "default_title": "Tenhou English UI - change translation"
    },
    "permissions": [ "storage", "tabs", "activeTab" ],
    "background": {

@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8" />
     <title>Tenhou translation options</title>
+    <style>body{min-width: 300px;}</style>
+    <style>label{display:block; padding-bottom:0.3em;}</style>
 </head>
 <body>
 <form name='optionform' id='optionform'>
@@ -17,24 +19,18 @@ Translations should be comma-separated, in ascending order of priority.
 <label>
     <input type="radio" name="translation" value="off"><strong>None</strong>: Do not translate <i>(字一色, ウマ, 祝儀, 鳳)</i>
 </label>
-<br />
 <label>
     <input type="radio" name="translation" value="DEFAULT" checked="checked"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsuuiisou, Uma, Shuugi, Houou)</i>
 </label>
-<br />
 <label>
     <input type="radio" name="translation" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>: Consistent with terminology from the European MahJong Association (EMA) <i>(All honours, Uma, Shuugi, Phoenix)</i>
 </label>
-<br />
 <label>
-    <input type="radio" name="translation" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>: All the EMA terms and more <i>(All honours, placement bonus, parlor bonuses, 7dan+ R2000+)</i>
+    <input type="radio" name="translation" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>: All the EMA terms and more <i>(All honours, placement bonus, parlor bonuses, 7dan+&nbsp;R2000+)</i>
 </label>
-<br /><br />
 </fieldset>
+The new translation may only take full effect when you refresh the page. Don't do this during a game!
 </form>
-<p>
-You can change this again at any time, by visiting Chrome&nbsp;menu > More&nbsp;tools > Extensions > Tenhou&nbsp;English&nbsp;UI > Options, or by clicking on the round blue button in the top-left of any tenhou page. But note that the new translation will only take full effect when you refresh the page. Don't do that during a game!
-</p>
 <script src="options.js"></script>
 </body>
 </html>
