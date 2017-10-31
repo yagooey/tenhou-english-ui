@@ -1,0 +1,7 @@
+# See https://docs.gitlab.com/ce/ci/yaml/README.html for all available options
+
+get_latest_version:
+    script: curl -L http://tenhou.net/3/latest.js -o latest.js
+    artifacts:
+        paths:
+        - latest.js
