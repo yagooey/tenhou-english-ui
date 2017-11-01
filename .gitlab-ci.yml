@@ -28,6 +28,7 @@ find_new_strings:
         - npm install
         - node extract-strings latest.js > latest.json
         - diff cached.json latest.json
+    allow_failure: true
     artifacts:
         when: always
         paths:
