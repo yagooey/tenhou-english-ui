@@ -24,10 +24,9 @@ find_new_strings:
     stage: test2
     script:
         - curl -L http://tenhou.net/3/latest.js -o latest.js
-        - curl -L https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.json?job=find_new_strings -o cached.js
+        - curl -L https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.json?job=find_new_strings -o cached.json
         - npm install
         - node extract-strings latest.js > latest.json
-        - node extract-strings cached.js > cached.json
         - diff cached.json latest.json
     artifacts:
         when: always
