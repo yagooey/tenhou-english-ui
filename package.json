@@ -1,0 +1,7 @@
+{
+  "name": "tenhou-english-ui-ci-tools",
+  "version": "0.0.1",
+  "dependencies": {
+    "esprima": "^4.0.0"
+  }
+}

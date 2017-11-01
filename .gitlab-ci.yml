@@ -1,19 +1,39 @@
 # See https://docs.gitlab.com/ce/ci/yaml/README.html for all available options
+image: node:latest
 
-# Download the latest version and compare with the cached version
-check_latest_version:
+stages:
+    - test1
+    - test2
+
+# Download the latest web client and compare with the cached version
+check_game_version:
+    stage: test1
     script:
-        - echo "Downloading latest web client from Tenhou..."
         - curl -L http://tenhou.net/3/latest.js -o latest.js
-        - echo "Downloading cached web client from last run..."
-        - curl -Lv https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.js?job=check_latest_version -o cached.js
-        - echo "Checking for differences..."
-        - diff latest.js cached.js
+        - curl -L https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.js?job=find_new_strings -o cached.js
+        - diff cached.js latest.js
     allow_failure: true
+    only:
+        - schedules
+        - web
+
+# Extract strings from web client
+# if new strings are found, mark the build as FAIL
+# check console output for differences
+find_new_strings:
+    stage: test2
+    script:
+        - curl -L http://tenhou.net/3/latest.js -o latest.js
+        - curl -L https://gitlab.com/zefiris/tenhou-english-ui/-/jobs/artifacts/automation/raw/latest.json?job=find_new_strings -o cached.json
+        - npm install
+        - node extract-strings latest.js > latest.json
+        - node extract-strings cached.js > cached.json
+        - diff cached.json latest.json
     artifacts:
         when: always
         paths:
         - latest.js
+        - latest.json
     only:
         - schedules
         - web
