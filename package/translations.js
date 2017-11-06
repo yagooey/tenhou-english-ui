@@ -373,6 +373,9 @@ const exactTranslation = {
     'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
         'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
     },
+    '大会ロビーが見つかりませんでした。(ERR1019)': {
+        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
+    },
     'IDが正しくありません': {
         'DEFAULT': 'Incorrect ID',
     },
@@ -1585,12 +1588,6 @@ const partialTranslationForStats = {
     },
     '統計': {
         'DEFAULT': 'frequencies',
-    },
-    '上': {
-        'DEFAULT': 'upper ',
-    },
-    '下': {
-        'DEFAULT': 'lower ',
     },
     '上＝出現率％ (和了数/全和了数*100)': {
         'DEFAULT': 'Upper number: the percentage of winning hands that got this score',
