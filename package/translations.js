@@ -373,6 +373,9 @@ const exactTranslation = {
     'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
         'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
     },
+    '大会ロビーが見つかりませんでした。(ERR1019)': {
+        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
+    },
     'IDが正しくありません': {
         'DEFAULT': 'Incorrect ID',
     },
@@ -1524,7 +1527,7 @@ const partialTranslationForStats = {
         'DEFAULT': 'Statistics are reset monthly',
     },
     '役満': {
-        'DEFAULT': 'Recent yakuman hands',
+        'DEFAULT': 'yakuman',
     },
     '対戦数': {
         'DEFAULT': '# of games',
@@ -1564,6 +1567,36 @@ const partialTranslationForStats = {
     },
     '件を表示': {
         'DEFAULT': ' - show',
+    },
+    '満貫未満': {
+        'DEFAULT': 'less than mangan',
+    },
+    '満貫': {
+        'DEFAULT': 'mangan',
+    },
+    '跳満': {
+        'DEFAULT': 'haneman',
+    },
+    '倍満': {
+        'DEFAULT': 'baiman',
+    },
+    '三倍満': {
+        'DEFAULT': 'sanbaiman',
+    },
+    '満貫統計': {
+        'DEFAULT': 'mangan-yakuman frequencies',
+    },
+    '統計': {
+        'DEFAULT': 'frequencies',
+    },
+    '上＝出現率％ (和了数/全和了数*100)': {
+        'DEFAULT': 'Upper number: the percentage of winning hands that got this score',
+    },
+    '下＝１位達成者の割合％ (１位の和了数/１～４位の和了数*100)': {
+        'DEFAULT': 'Lower number: Of all the players that won a hand with this score, this is the percentage that went on to get 1st place in that game',
+    },
+    '統計情報は毎月リセットされます': {
+        'DEFAULT': 'Statistics are reset at midnight (JST) on the first day of each calendar month',
     },
 };
 

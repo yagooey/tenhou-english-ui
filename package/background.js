@@ -9,10 +9,6 @@ chrome.runtime.onInstalled.addListener(function(object) {
     }
 });
 
-chrome.runtime.onMessage.addListener(function(msg) {
-    chrome.runtime.openOptionsPage();
-});
-
 
 function showIconForTab(tab) {
     if (tab.url.includes("tenhou.net")) {
