@@ -284,7 +284,35 @@ const exactTranslation = {
         'EMA_ENG': 'Counted yakuman',
     },
 
+    '滿貫': {
+        'DEFAULT': 'mangan',
+    },
+    '跳滿': {
+        'DEFAULT': 'haneman',
+    },
+    '倍滿': {
+        'DEFAULT': 'baiman',
+    },
+    '三倍滿': {
+        'DEFAULT': 'sanbaiman',
+    },
+    '役滿': {
+        'DEFAULT': 'yakuman',
+    },
+    '点∀': {
+        'DEFAULT': 'from each',
+    },
+
     // Main
+
+    '四家立直': {
+        'DEFAULT': 'Draw - Suuchariiichi ryuukyoku',
+        'EMA_ENG': 'Draw - quadruple riichi',
+    },
+    '三家和了': {
+        'DEFAULT': 'Draw - Sancha ho',
+        'EMA_ENG': 'Draw - triple ron',
+    },
 
     'オンライン対戦麻雀 天鳳 / ランキング': {
         'DEFAULT': 'Tenhou / Rankings',

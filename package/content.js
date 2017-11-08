@@ -125,12 +125,13 @@ function translateOneNode(node, restore = false) {
         return;
     }
 
-    if (thisExactTable[originalText]) {
-        const newNode = document.createTextNode(thisExactTable[originalText]);
+    let newText = thisExactTable[originalText.trim()];
+    if (newText) {
+        const newNode = document.createTextNode(newText);
         newNode.originalValue = originalText;
         thisParent.replaceChild(newNode, node);
     } else {
-        let newText = originalText;
+        newText = originalText;
 
         for (let needle of partialPhrases) {
             if (newText.includes(needle)) {
