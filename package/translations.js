@@ -840,6 +840,14 @@ const exactTranslation = {
         'DEFAULT': 'Ryuukyoku',
         'EMA_ENG': 'Redeal',
     },
+    '四風連打': {
+        'DEFAULT': 'Sufurenda',
+        'EMA_ENG': '4 consecutive winds',
+    },
+    '九種九牌': {
+        'DEFAULT': 'Kyuushu-kyuuhai',
+        'EMA_ENG': '9 different terminals/honors'
+    }
     '四家立直': {
         'DEFAULT': 'Suuchariichi',
         'EMA_ENG': 'Quadruple riichi',
@@ -847,6 +855,10 @@ const exactTranslation = {
     '三家和了': {
         'DEFAULT': 'Sancha hou',
         'EMA_ENG': 'Triple ron',
+    },
+    '四槓散了': {
+        'DEFAULT': 'Su-kaikan',
+        'EMA_ENG': '4 kongs redeal',
     },
     'カン': {
         'DEFAULT': 'Kan',
