@@ -283,7 +283,6 @@ const exactTranslation = {
         'DEFAULT': 'Kazoe-yakuman',
         'EMA_ENG': 'Counted yakuman',
     },
-
     '滿貫': {
         'DEFAULT': 'Mangan',
     },
@@ -1613,16 +1612,16 @@ const partialTranslationForStats = {
         'DEFAULT': 'less than mangan',
     },
     '満貫': {
-        'DEFAULT': 'Mangan',
+        'DEFAULT': 'mangan',
     },
     '跳満': {
-        'DEFAULT': 'Haneman',
+        'DEFAULT': 'haneman',
     },
     '倍満': {
-        'DEFAULT': 'Baiman',
+        'DEFAULT': 'baiman',
     },
     '三倍満': {
-        'DEFAULT': 'Sanbaiman',
+        'DEFAULT': 'sanbaiman',
     },
     '満貫統計': {
         'DEFAULT': 'mangan-yakuman frequencies',
