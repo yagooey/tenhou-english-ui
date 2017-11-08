@@ -125,7 +125,7 @@ function translateOneNode(node, restore = false) {
         return;
     }
 
-    let newText = thisExactTable[originalText.trim()];
+    let newText = thisExactTable[originalText];
     if (newText) {
         const newNode = document.createTextNode(newText);
         newNode.originalValue = originalText;

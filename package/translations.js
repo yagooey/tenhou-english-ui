@@ -285,34 +285,26 @@ const exactTranslation = {
     },
 
     '滿貫': {
-        'DEFAULT': 'mangan',
+        'DEFAULT': 'Mangan',
     },
     '跳滿': {
-        'DEFAULT': 'haneman',
+        'DEFAULT': 'Haneman',
     },
     '倍滿': {
-        'DEFAULT': 'baiman',
+        'DEFAULT': 'Baiman',
     },
     '三倍滿': {
-        'DEFAULT': 'sanbaiman',
+        'DEFAULT': 'Sanbaiman',
     },
     '役滿': {
-        'DEFAULT': 'yakuman',
+        'DEFAULT': 'Yakuman',
     },
     '点∀': {
-        'DEFAULT': 'from each',
+        'DEFAULT': 'Points ∀'
+        'EMA_ENG': 'Points each',
     },
 
     // Main
-
-    '四家立直': {
-        'DEFAULT': 'Draw - Suuchariiichi ryuukyoku',
-        'EMA_ENG': 'Draw - quadruple riichi',
-    },
-    '三家和了': {
-        'DEFAULT': 'Draw - Sancha ho',
-        'EMA_ENG': 'Draw - triple ron',
-    },
 
     'オンライン対戦麻雀 天鳳 / ランキング': {
         'DEFAULT': 'Tenhou / Rankings',
@@ -845,7 +837,16 @@ const exactTranslation = {
         'DEFAULT': 'Riichi',
     },
     '流局': {
-        'DEFAULT': 'Redeal',
+        'DEFAULT': 'Ryuukyoku',
+        'EMA_ENG': 'Redeal',
+    },
+    '四家立直': {
+        'DEFAULT': 'Suuchariichi',
+        'EMA_ENG': 'Quadruple riichi',
+    },
+    '三家和了': {
+        'DEFAULT': 'Sancha hou',
+        'EMA_ENG': 'Triple ron',
     },
     'カン': {
         'DEFAULT': 'Kan',
@@ -1600,16 +1601,16 @@ const partialTranslationForStats = {
         'DEFAULT': 'less than mangan',
     },
     '満貫': {
-        'DEFAULT': 'mangan',
+        'DEFAULT': 'Mangan',
     },
     '跳満': {
-        'DEFAULT': 'haneman',
+        'DEFAULT': 'Haneman',
     },
     '倍満': {
-        'DEFAULT': 'baiman',
+        'DEFAULT': 'Baiman',
     },
     '三倍満': {
-        'DEFAULT': 'sanbaiman',
+        'DEFAULT': 'Sanbaiman',
     },
     '満貫統計': {
         'DEFAULT': 'mangan-yakuman frequencies',
