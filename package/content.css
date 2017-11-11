@@ -47,3 +47,7 @@ div.fixed-select.sscl {
 #panes .select-wrapper button {
     width:16em !important;
 }
+
+#sc0 > span, #sc1 > span, #sc2 > span, #sc3 > span {
+    font-family: cwTeX-Q-Kai-T;
+}
