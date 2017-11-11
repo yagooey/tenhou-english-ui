@@ -299,7 +299,7 @@ const exactTranslation = {
         'DEFAULT': 'Yakuman',
     },
     '点∀': {
-        'DEFAULT': 'Points ∀'
+        'DEFAULT': 'Points ∀',
         'EMA_ENG': 'Points each',
     },
 
