@@ -29,6 +29,42 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     }
 });
 
+let holdingKeyDown = false;
+let toggleTranslationOff;
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Control' && holdingKeyDown === false) {
+        chrome.storage.local.get({ translation: 'DEFAULT' }, function(storedval) {
+            holdingKeyDown = storedval.translation;
+            toggleTranslationOff = holdingKeyDown !== 'off';
+            if (toggleTranslationOff) {
+                mutationObserver.disconnect();
+            }
+            chrome.storage.local.set({
+                translation: toggleTranslationOff ? 'off' : 'DEFAULT',
+            }, function() {
+                getTranslationSets(function() {
+                    translateTextBeneathANode(document.body, toggleTranslationOff);
+                });
+            });
+        });
+    }
+});
+
+document.addEventListener('keyup', function (event) {
+    if (event.key === 'Control' && holdingKeyDown !== false) {
+        chrome.storage.local.set({
+            translation: holdingKeyDown,
+        }, function() {
+            if (toggleTranslationOff) {
+                setToObserve();
+            }
+            holdingKeyDown = false;
+            translateTextBeneathANode(document.body, !toggleTranslationOff);
+        });
+    }
+});
+
 function getTranslationSets(callback) {
     // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
     // Need a callback argument, because chrome.storage.local is only available asynchronously
@@ -36,7 +72,7 @@ function getTranslationSets(callback) {
 
         if (storedval.translation === 'off') return callback(false);
 
-        if (storedval.translation === lastTranslationSeen && thisExactTable) {
+        if (storedval.translation === lastTranslationSeen && Object.keys(thisExactTable).length > 0) {
             // We've already got the right translation, so can go translate immediately
 
             return callback(true);
