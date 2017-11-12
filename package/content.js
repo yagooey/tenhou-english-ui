@@ -29,6 +29,32 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     }
 });
 
+let holdingKeyDown = false;
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Control' && !holdingKeyDown) {
+        holdingKeyDown = true;
+        mutationObserver.disconnect();
+        chrome.storage.local.set({
+            translation: 'off',
+        }, function () {
+            translateTextBeneathANode(document.body, true);
+        });
+    }
+});
+
+document.addEventListener('keyup', function (event) {
+    if (holdingKeyDown) {
+        holdingKeyDown = false;
+        chrome.storage.local.set({
+            translation: lastTranslationSeen,
+        }, function () {
+            setToObserve();
+            translateTextBeneathANode(document.body);
+        });
+    }
+});
+
 function getTranslationSets(callback) {
     // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
     // Need a callback argument, because chrome.storage.local is only available asynchronously
