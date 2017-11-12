@@ -29,7 +29,29 @@ Translations should be comma-separated, in ascending order of priority.
     <input type="radio" name="translation" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>: All the EMA terms and more <i>(All honours, placement bonus, parlor bonuses, 7dan+&nbsp;R2000+)</i>
 </label>
 </fieldset>
-You can toggle the translation on and off by holding down the <kbd>&lt;Ctrl&gt;</kbd> key when on the Tenhou site.
+
+<hr>
+
+<label>
+    <input type="checkbox" name="useToggler" id="useToggler" value="on">Toggle the translation set by holding down the <kbd>&lt;Ctrl&gt;</kbd> key when on the Tenhou site.
+</label>
+
+<fieldset id='toggleToSet'>
+Translation set to toggle to:
+<label>
+    <input type="radio" name="toggleTo" value="off" checked="checked"><strong>None</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT"><strong>Romaji</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>
+</label>
+</fieldset>
+
 </form>
 <script src="options.js"></script>
 </body>
