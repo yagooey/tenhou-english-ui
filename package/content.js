@@ -15,6 +15,20 @@ const observerSettings = {
     subtree: true,
 };
 
+chrome.runtime.onMessage.addListener((request, sender) => {
+    // Listen for option changed
+    if (request.translate === 'all') {
+        getTranslationSets((shouldTranslate) => {
+            // First restore all nodes to their original value, then translate them afterwards
+            translateTextBeneathANode(document.body, true);
+            if (shouldTranslate) {
+                // TODO: Modify logic to only traverse the tree once
+                translateTextBeneathANode(document.body);
+            }
+        });
+    }
+});
+
 function getTranslationSets(callback) {
     // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
     // Need a callback argument, because chrome.storage.local is only available asynchronously
@@ -79,77 +93,86 @@ function getTranslationSets(callback) {
                 Object.assign(thisPartialTable, thisStatsTable);
             }
 
-            partialPhrases = Object.keys(thisPartialTable);
+            // Sort by key length, so that when performing partial matching,
+            // the entry with more matching characters will have priority
+            partialPhrases = Object.keys(thisPartialTable).sort((a, b) => {
+                return b.length - a.length;
+            });
 
             return callback(true);
         });
     });
 }
 
-function translateOneNode(node) {
+/**
+ * Translate a node
+ * If restore is set to true, revert the node to original text instead
+ */
+function translateOneNode(node, restore = false) {
     let thisParent = node.parentElement;
     if (thisParent && thisParent.tagName !== undefined && thisParent.tagName.toLowerCase() === 'button') {
         thisParent.style.overflow = 'hidden';
     }
 
     let originalText = node.nodeValue;
-    if (!originalText) return;
-    if (thisExactTable[originalText]) {
-        thisParent.replaceChild(document.createTextNode(thisExactTable[originalText]), node);
+    if (!originalText) {
+        return;
+    }
+
+    if (restore && node.originalValue) {
+        // Restore the node back to its original value
+        thisParent.replaceChild(document.createTextNode(node.originalValue), node);
+        return;
+    }
+
+    let newText = thisExactTable[originalText.trim()];
+    if (newText) {
+        const newNode = document.createTextNode(newText);
+        newNode.originalValue = originalText;
+        thisParent.replaceChild(newNode, node);
     } else {
-        let newText = originalText;
-        let newTooltip = null;
+        newText = originalText;
+
         for (let needle of partialPhrases) {
             if (newText.includes(needle)) {
                 newText = newText.replace(needle, thisPartialTable[needle]);
-                if (!newTooltip && thisTooltipTable[needle]) {
+                if (thisTooltipTable[needle]) {
                     thisParent.setAttribute('title', thisTooltipTable[needle]);
-                    newTooltip = true;
                 }
+                break;
             }
         }
+
         if (newText !== originalText) {
             if (thisParent.tagName.toLowerCase() === 'span') {
                 thisParent.parentElement.style.overflow = 'hidden';
             } else {
                 thisParent.style.overflow = 'hidden';
             }
-            thisParent.replaceChild(document.createTextNode(newText), node);
+
+            const newNode = document.createTextNode(newText);
+            newNode.originalValue = originalText;
+            thisParent.replaceChild(newNode, node);
         }
     }
 }
 
-const translateTextBeneathANode = function(topNode) {
-    const TextNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
+const translateTextBeneathANode = function(topNode, restore = false) {
+    const textNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
 
     // We are messing with the Dom tree while we iterate over it, so first save in an array
-    let TextNodeList = [];
-    while(TextNodeIterator.nextNode()) {
-        TextNodeList.push(TextNodeIterator.currentNode);
+    let textNodeList = [];
+    while(textNodeIterator.nextNode()) {
+        textNodeList.push(textNodeIterator.currentNode);
     }
     let node;
-    for (node of TextNodeList) {
-        translateOneNode(node);
+    for (node of textNodeList) {
+        translateOneNode(node, restore);
     }
 };
 
 function setToObserve() {
     mutationObserver.observe(document.documentElement, observerSettings);
-}
-
-function createOptionsButton() {
-    chrome.storage.local.get({ showOverlay: true }, (storedVal) => {
-        if (storedVal.showOverlay) {
-            let tbox = document.createElement('div');
-            tbox.appendChild(document.createTextNode('change translation'));
-            tbox.setAttribute('id', 'translationfloater');
-            tbox.setAttribute('title', 'Opens the options screen in a new tab');
-            tbox.addEventListener('click', function () {
-                chrome.runtime.sendMessage({ 'show': 'options' });
-            });
-            document.body.appendChild(tbox);
-        }
-    })
 }
 
 function onMutate(mutations) {
@@ -172,7 +195,6 @@ getTranslationSets(function(canTranslate) {
             document.title = thisExactTable[document.title];
         }
     }
-    createOptionsButton();
     mutationObserver = new MutationObserver(onMutate);
     setToObserve();
 });

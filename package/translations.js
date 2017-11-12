@@ -2,6 +2,9 @@ const exactTranslation = {
 
     // Yaku
 
+    '流局滿貫': {
+        'DEFAULT': 'Nagashi Mangan',
+    },
     '立直': {
         'DEFAULT': 'Riichi',
         'EMA_ENG': 'Riichi',
@@ -205,11 +208,11 @@ const exactTranslation = {
         'EMA_ENG': '13 orphans (13 wait)',
     },
     '国士無双': {
-        'DEFAULT': '13 orphans',
+        'DEFAULT': 'Kokushi musou',
         'EMA_ENG': '13 orphans',
     },
     '国士無双１３面': {
-        'DEFAULT': '13 orphans x13',
+        'DEFAULT': 'Kokushi musou 13 men',
         'EMA_ENG': '13 orphans (13 wait)',
     },
     '小四喜': {
@@ -281,7 +284,35 @@ const exactTranslation = {
         'EMA_ENG': 'Counted yakuman',
     },
 
+    '滿貫': {
+        'DEFAULT': 'mangan',
+    },
+    '跳滿': {
+        'DEFAULT': 'haneman',
+    },
+    '倍滿': {
+        'DEFAULT': 'baiman',
+    },
+    '三倍滿': {
+        'DEFAULT': 'sanbaiman',
+    },
+    '役滿': {
+        'DEFAULT': 'yakuman',
+    },
+    '点∀': {
+        'DEFAULT': 'from each',
+    },
+
     // Main
+
+    '四家立直': {
+        'DEFAULT': 'Draw - Suuchariiichi ryuukyoku',
+        'EMA_ENG': 'Draw - quadruple riichi',
+    },
+    '三家和了': {
+        'DEFAULT': 'Draw - Sancha ho',
+        'EMA_ENG': 'Draw - triple ron',
+    },
 
     'オンライン対戦麻雀 天鳳 / ランキング': {
         'DEFAULT': 'Tenhou / Rankings',
@@ -370,6 +401,9 @@ const exactTranslation = {
     'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
         'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
     },
+    '大会ロビーが見つかりませんでした。(ERR1019)': {
+        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
+    },
     'IDが正しくありません': {
         'DEFAULT': 'Incorrect ID',
     },
@@ -445,54 +479,73 @@ const exactTranslation = {
     '牌背色:': {
         'DEFAULT': 'Tile Colour',
     },
+    'あり': {
+        'DEFAULT': 'On',
+    },
+    'なし': {
+        'DEFAULT': 'Off',
+    },
+    '※「鳴きなし」他が常時手牌下に表示されます': {
+        'DEFAULT': 'On: on-screen beneath your tiles; Off: appear on button press',
+    },
+    'Desktop入力:あり': {
+        'DEFAULT': 'In-game options: on-screen',
+    },
+    'Desktop入力:なし': {
+        'DEFAULT': 'In-game options: from button',
+    },
 
     // Practice play game modes
 
     '四般東喰赤速': {
-        'DEFAULT': '4p tonpuusen fast',
+        'DEFAULT': '4p tonpusen fast',
         'EMA_ENG': '4p E-only fast',
     },
     '(４人打 東風 喰断アリ 赤アリ 速)': {
-        'DEFAULT': '4p tonpuusen, fast, play against 3 tsumobots',
+        'DEFAULT': '4p tonpusen, fast, play against 3 tsumobots',
         'EMA_ENG': '4p East only, fast, play against 3 bots (bots don\'t try to win)',
     },
     '四般東喰赤': {
-        'DEFAULT': '4p tonpuusen',
+        'DEFAULT': '4p tonpusen',
         'EMA_ENG': '4p E-only',
     },
     '(４人打 東風 喰断アリ 赤アリ)': {
-        'DEFAULT': '4p tonpuusen, play against 3 tsumobots',
+        'DEFAULT': '4p tonpusen, play against 3 tsumobots',
         'EMA_ENG': '4p East only, play against 3 bots',
     },
     '三般東喰赤': {
-        'DEFAULT': 'Sanma tonpuusen',
+        'DEFAULT': '3p tonpusen',
         'EMA_ENG': '3p E-only',
     },
     '(３人打 東風 喰断アリ 赤アリ)': {
-        'DEFAULT': 'Sanma tonpuusen, play against 2 tsumobots',
+        'DEFAULT': '3p tonpusen, play against 2 tsumobots',
         'EMA_ENG': '3p East only, play against 2 bots',
     },
     '四若東速祝５': {
-        'DEFAULT': '4p tonpuusen fast + shuugi',
+        'DEFAULT': '4p tonpusen fast + shuugi',
         'EMA_ENG': '4p E-only fast + shuugi',
     },
     '(４人打 東風 喰断アリ 赤アリ 祝儀)': {
-        'DEFAULT': '4p tonpuusen, fast, play against 3 tsumobots, shuugi',
+        'DEFAULT': '4p tonpusen, fast, play against 3 tsumobots, shuugi',
         'EMA_ENG': '4p East only, fast, 3 bots, with parlor bonuses (shuugi)',
     },
     '三若東速祝５': {
-        'DEFAULT': 'Sanma tonpuusen fast + shuugi ',
+        'DEFAULT': '3p tonpusen fast + shuugi ',
         'EMA_ENG': '3p E-only fast + shuugi ',
     },
     '(３人打 東風 喰断アリ 赤アリ 祝儀)': {
-        'DEFAULT': 'Sanma tonpuusen, fast play against 2 tsumobots, shuugi',
+        'DEFAULT': '3p tonpusen, fast play against 2 tsumobots, shuugi',
         'EMA_ENG': '3p East only, fast play against 2 bots, shuugi',
+    },
+    '※喰断ナシON/OFF': {
+        'DEFAULT': '※Show / hide kuitan games',
+        'ENG': '※Show / hide additional modes',
     },
 
     // Game rules
 
     '東風+4局サドンデス': {
-        'DEFAULT': 'Tonpuusen + 4 rounds of sudden death',
+        'DEFAULT': 'Tonpusen + 4 rounds of sudden death',
         'EMA_ENG': 'East-only + 4 rounds of sudden death',
         'ENG': 'East',
     },
@@ -803,20 +856,8 @@ const exactTranslation = {
     '對局': {
         'DEFAULT': 'Start',
     },
-    '鳴きなし': {
-        'DEFAULT': 'No call',
-    },
-    '自動理牌': {
-        'DEFAULT': 'Sort',
-    },
     '不聴宣言': {
         'DEFAULT': 'Noten',
-    },
-    '自動和了': {
-        'DEFAULT': 'Auto ron',
-    },
-    'ツモ切り': {
-        'DEFAULT': 'Auto discard',
     },
     ' 鳴き': {
         'DEFAULT': 'Call',
@@ -915,165 +956,337 @@ const exactTranslation = {
 };
 
 const partialTranslation = {
+    '鳴きなし': {
+        'DEFAULT': 'No call',
+    },
+    '自動理牌': {
+        'DEFAULT': 'Sort',
+    },
+    '自動和了': {
+        'DEFAULT': 'Auto ron',
+    },
+    'ツモ切り': {
+        'DEFAULT': 'Auto discard',
+    },
     '四般東喰赤速': {
-        'DEFAULT': '4, Ippan, Tonpu, Fast',
+        'DEFAULT': '4 Ippan Tonpu Fast',
         'EMA_ENG': '4p Novice E Fast',
         'ENG': '4p Novice E Fast',
     },
     '四般東喰赤': {
-        'DEFAULT': '4, Ippan, Tonpu',
+        'DEFAULT': '4 Ippan Tonpu',
         'EMA_ENG': '4p Novice E',
         'ENG': '4p Novice E',
     },
+    '四般東喰': {
+        'DEFAULT': '4 Ippan Tonpu Akanashi',
+        'EMA_ENG': '4p Novice E No-red-5',
+        'ENG': '4p Novice E No-red-5',
+    },
+    '四般東': {
+        'DEFAULT': '4 Ippan Tonpu Nashinashi',
+        'EMA_ENG': '4p Novice E No-red-5 No-open-all-simples',
+        'ENG': '4p Novice E No-red-5 No-open-all-simples',
+    },
     '四般南喰赤速': {
-        'DEFAULT': '4, Ippan, Hanchan, Fast',
+        'DEFAULT': '4 Ippan Hanchan Fast',
         'EMA_ENG': '4p Novice E+S Fast',
         'ENG': '4p Novice E+S Fast',
     },
     '四般南喰赤': {
-        'DEFAULT': '4, Ippan, Hanchan',
+        'DEFAULT': '4 Ippan Hanchan',
         'EMA_ENG': '4p Novice E+S',
         'ENG': '4p Novice E+S',
     },
+    '四般南喰': {
+        'DEFAULT': '4 Ippan Hanchan Akanashi',
+        'EMA_ENG': '4p Novice E+S No-red-5',
+        'ENG': '4p Novice E+S No-red-5',
+    },
+    '四般南': {
+        'DEFAULT': '4 Ippan Hanchan Nashinashi',
+        'EMA_ENG': '4p Novice E+S No-red-5 No-open-all-simples',
+        'ENG': '4p Novice E+S No-red-5 No-open-all-simples',
+    },
     '三般東喰赤速': {
-        'DEFAULT': '3, Ippan, Tonpu, Fast',
+        'DEFAULT': '3 Ippan Tonpu Fast',
         'EMA_ENG': '3p Novice E Fast',
         'ENG': '3p Novice E Fast',
     },
     '三般東喰赤': {
-        'DEFAULT': '3, Ippan, Tonpu',
+        'DEFAULT': '3 Ippan Tonpu',
         'EMA_ENG': '3p Novice E',
         'ENG': '3p Novice E',
     },
+    '三般東喰': {
+        'DEFAULT': '3 Ippan Tonpu Akanashi',
+        'EMA_ENG': '3p Novice E No-red-5',
+        'ENG': '3p Novice E No-red-5',
+    },
+    '三般東': {
+        'DEFAULT': '3 Ippan Tonpu Nashinashi',
+        'EMA_ENG': '3p Novice E No-red-5 No-open-all-simples',
+        'ENG': '3p Novice E No-red-5 No-open-all-simples',
+    },
     '三般南喰赤速': {
-        'DEFAULT': '3, Ippan, Hanchan, Fast',
+        'DEFAULT': '3 Ippan Hanchan Fast',
         'EMA_ENG': '3p Novice E+S Fast',
         'ENG': '3p Novice E+S Fast',
     },
     '三般南喰赤': {
-        'DEFAULT': '3, Ippan, Hanchan',
+        'DEFAULT': '3 Ippan Hanchan',
         'EMA_ENG': '3p Novice E+S',
         'ENG': '3p Novice E+S',
     },
+    '三般南喰': {
+        'DEFAULT': '3 Ippan Hanchan Akanashi',
+        'EMA_ENG': '3p Novice E No-red-5',
+        'ENG': '3p Novice E No-red-5',
+    },
+    '三般南': {
+        'DEFAULT': '3 Ippan Hanchan Nashinashi',
+        'EMA_ENG': '3p Novice E+S No-red-5 No-open-all-simples',
+        'ENG': '3p Novice E+S No-red-5 No-open-all-simples',
+    },
     '四上東喰赤速': {
-        'DEFAULT': '4, Joukyuu, Tonpu, Fast',
-        'EMA_ENG': '4p Lower dan E Fast',
+        'DEFAULT': '4 Joukyuu Tonpu Fast',
+        'EMA_ENG': '4p Lower-dan E Fast',
         'ENG': '4p 1k+ E Fast',
     },
     '四上東喰赤': {
-        'DEFAULT': '4, Joukyuu, Tonpu',
-        'EMA_ENG': '4p Lower dan E',
+        'DEFAULT': '4 Joukyuu Tonpu',
+        'EMA_ENG': '4p Lower-dan E',
         'ENG': '4p 1k+ E',
     },
+    '四上東喰': {
+        'DEFAULT': '4 Joukyuu Tonpu Akanashi',
+        'EMA_ENG': '4p Lower-dan E No-red-5',
+        'ENG': '4p 1k+ E No-red-5',
+    },
+    '四上東': {
+        'DEFAULT': '4 Joukyuu Tonpu Nashinashi',
+        'EMA_ENG': '4p Lower-dan E No-red-5 No-open-all-simples',
+        'ENG': '4p 1k+ E No-red-5 No-open-all-simples',
+    },
     '四上南喰赤速': {
-        'DEFAULT': '4, Joukyuu, Hanchan, Fast',
-        'EMA_ENG': '4p Lower dan E+S Fast',
+        'DEFAULT': '4 Joukyuu Hanchan Fast',
+        'EMA_ENG': '4p Lower-dan E+S Fast',
         'ENG': '4p 1k+ E+S Fast',
     },
     '四上南喰赤': {
-        'DEFAULT': '4, Joukyuu, Hanchan',
-        'EMA_ENG': '4p Lower dan E+S',
+        'DEFAULT': '4 Joukyuu Hanchan',
+        'EMA_ENG': '4p Lower-dan E+S',
         'ENG': '4p 1k+ E+S',
     },
+    '四上南喰': {
+        'DEFAULT': '4 Joukyuu Hanchan Akanashi',
+        'EMA_ENG': '4p Lower-dan E+S No-red-5',
+        'ENG': '4p 1k+ E+S No-red-5',
+    },
+    '四上南': {
+        'DEFAULT': '4 Joukyuu Hanchan Nashinashi',
+        'EMA_ENG': '4p Lower-dan E+S No-red-5 No-open-all-simples',
+        'ENG': '4p 1k+ E+S No-red-5 No-open-all-simples',
+    },
     '三上東喰赤速': {
-        'DEFAULT': '3, Joukyuu, Tonpu, Fast',
-        'EMA_ENG': '3p Lower dan E Fast',
+        'DEFAULT': '3 Joukyuu Tonpu Fast',
+        'EMA_ENG': '3p Lower-dan E Fast',
         'ENG': '3p 1k+ E Fast',
     },
     '三上東喰赤': {
-        'DEFAULT': '3, Joukyuu, Tonpu',
-        'EMA_ENG': '3p Lower dan E',
+        'DEFAULT': '3 Joukyuu Tonpu',
+        'EMA_ENG': '3p Lower-dan E',
         'ENG': '3p 1k+ E',
     },
+    '三上東喰': {
+        'DEFAULT': '3 Joukyuu Tonpu Akanashi',
+        'EMA_ENG': '3p Lower-dan E No-red-5',
+        'ENG': '3p 1k+ E No-red-5',
+    },
+    '三上東': {
+        'DEFAULT': '3 Joukyuu Tonpu Nashinashi',
+        'EMA_ENG': '3p Lower-dan E No-red-5 No-open-all-simples',
+        'ENG': '3p 1k+ E No-red-5 No-open-all-simples',
+    },
     '三上南喰赤速': {
-        'DEFAULT': '3, Joukyuu, Hanchan, Fast',
-        'EMA_ENG': '3p Lower dan E+S Fast',
+        'DEFAULT': '3 Joukyuu Hanchan Fast',
+        'EMA_ENG': '3p Lower-dan E+S Fast',
         'ENG': '3p 1k+ E+S Fast',
     },
     '三上南喰赤': {
-        'DEFAULT': '3, Joukyuu, Hanchan',
-        'EMA_ENG': '3p Lower dan E+S',
+        'DEFAULT': '3 Joukyuu Hanchan',
+        'EMA_ENG': '3p Lower-dan E+S',
         'ENG': '3p 1k+ E+S',
     },
+    '三上南喰': {
+        'DEFAULT': '3 Joukyuu Hanchan Akanashi',
+        'EMA_ENG': '3p Lower-dan E+S No-red-5',
+        'ENG': '3p 1k+ E+S No-red-5',
+    },
+    '三上南': {
+        'DEFAULT': '3 Joukyuu Hanchan Nashinashi',
+        'EMA_ENG': '3p Lower-dan E+S No-red-5 No-open-all-simples',
+        'ENG': '3p 1k+ E+S No-red-5 No-open-all-simples',
+    },
     '四特東喰赤速': {
-        'DEFAULT': '4, Tokujou, Tonpu, Fast',
-        'EMA_ENG': '4p Upper dan E Fast',
-        'ENG': '4p 4d+ R1800+ E Fast',
+        'DEFAULT': '4 Tokujou Tonpu Fast',
+        'EMA_ENG': '4p Upper-dan E Fast',
+        'ENG': '4p 4d+R1800+ E Fast',
     },
     '四特東喰赤': {
-        'DEFAULT': '4, Tokujou, Tonpu',
-        'EMA_ENG': '4p Upper dan E',
-        'ENG': '4p 4d+ R1800+ E',
+        'DEFAULT': '4 Tokujou Tonpu',
+        'EMA_ENG': '4p Upper-dan E',
+        'ENG': '4p 4d+R1800+ E',
+    },
+    '四特東喰': {
+        'DEFAULT': '4 Tokujou Tonpu Akanashi',
+        'EMA_ENG': '4p Upper-dan E No-red-5',
+        'ENG': '4p 4d+R1800+ E No-red-5',
+    },
+    '四特東': {
+        'DEFAULT': '4 Tokujou Tonpu Nashinashi',
+        'EMA_ENG': '4p Upper-dan E No-red-5 No-open-all-simples',
+        'ENG': '4p 4d+R1800+ E No-red-5 No-open-all-simples',
     },
     '四特南喰赤速': {
-        'DEFAULT': '4, Tokujou, Hanchan, Fast',
-        'EMA_ENG': '4p Upper dan E+S Fast',
-        'ENG': '4p 4d+ R1800+ E+S Fast',
+        'DEFAULT': '4 Tokujou Hanchan Fast',
+        'EMA_ENG': '4p Upper-dan E+S Fast',
+        'ENG': '4p 4d+R1800+ E+S Fast',
     },
     '四特南喰赤': {
-        'DEFAULT': '4, Tokujou, Hanchan',
-        'EMA_ENG': '4p Upper dan E+S',
-        'ENG': '4p 4d+ R1800+ E+S',
+        'DEFAULT': '4 Tokujou Hanchan',
+        'EMA_ENG': '4p Upper-dan E+S',
+        'ENG': '4p 4d+R1800+ E+S',
+    },
+    '四特南喰': {
+        'DEFAULT': '4 Tokujou Hanchan Akanashi',
+        'EMA_ENG': '4p Upper-dan E+S No-red-5',
+        'ENG': '4p 4d+R1800+ E+S No-red-5',
+    },
+    '四特南': {
+        'DEFAULT': '4 Tokujou Hanchan Nashinashi',
+        'EMA_ENG': '4p Upper-dan E+S No-red-5 No-open-all-simples',
+        'ENG': '4p 4d+R1800+ E+S No-red-5 No-open-all-simples',
     },
     '三特東喰赤速': {
-        'DEFAULT': '3, Tokujou, Tonpu, Fast',
-        'EMA_ENG': '3p Upper dan E Fast',
-        'ENG': '3p 4d+ R1800+ E Fast',
+        'DEFAULT': '3 Tokujou Tonpu Fast',
+        'EMA_ENG': '3p Upper-dan E Fast',
+        'ENG': '3p 4d+R1800+ E Fast',
     },
     '三特東喰赤': {
-        'DEFAULT': '3, Tokujou, Tonpu',
-        'EMA_ENG': '3p Upper dan E',
-        'ENG': '3p 4d+ R1800+ E',
+        'DEFAULT': '3 Tokujou Tonpu',
+        'EMA_ENG': '3p Upper-dan E',
+        'ENG': '3p 4d+R1800+ E',
+    },
+    '三特東喰': {
+        'DEFAULT': '3 Tokujou Tonpu Akanashi',
+        'EMA_ENG': '3p Upper-dan E No-red-5',
+        'ENG': '3p 4d+R1800+ E No-red-5',
+    },
+    '三特東': {
+        'DEFAULT': '3 Tokujou Tonpu Nashinashi',
+        'EMA_ENG': '3p Upper-dan E No-red-5 No-open-all-simples',
+        'ENG': '3p 4d+R1800+ E No-red-5 No-open-all-simples',
     },
     '三特南喰赤速': {
-        'DEFAULT': '3, Tokujou, Hanchan, Fast',
-        'EMA_ENG': '3p Upper dan E+S Fast',
-        'ENG': '3p 4d+ R1800+ E+S Fast',
+        'DEFAULT': '3 Tokujou Hanchan Fast',
+        'EMA_ENG': '3p Upper-dan E+S Fast',
+        'ENG': '3p 4d+R1800+ E+S Fast',
     },
     '三特南喰赤': {
-        'DEFAULT': '3, Tokujou, Hanchan',
-        'EMA_ENG': '3p Upper dan E+S',
-        'ENG': '3p 4d+ R1800+ E+S',
+        'DEFAULT': '3 Tokujou Hanchan',
+        'EMA_ENG': '3p Upper-dan E+S',
+        'ENG': '3p 4d+R1800+ E+S',
+    },
+    '三特南喰': {
+        'DEFAULT': '3 Tokujou Hanchan Akanashi',
+        'EMA_ENG': '3p Upper-dan E+S No-red-5',
+        'ENG': '3p 4d+R1800+ E+S No-red-5',
+    },
+    '三特南': {
+        'DEFAULT': '3 Tokujou Hanchan Nashinashi',
+        'EMA_ENG': '3p Upper-dan E+S No-red-5 No-open-all-simples',
+        'ENG': '3p 4d+R1800+ E+S No-red-5 No-open-all-simples',
     },
     '四鳳東喰赤速': {
-        'DEFAULT': '4, Houou, Tonpu, Fast',
+        'DEFAULT': '4 Houou Tonpu Fast',
         'EMA_ENG': '4p Phoenix E Fast',
-        'ENG': '4p 7d+ R2000+ E Fast',
+        'ENG': '4p 7d+R2000+ E Fast',
     },
     '四鳳東喰赤': {
-        'DEFAULT': '4, Houou, Tonpu',
+        'DEFAULT': '4 Houou Tonpu',
         'EMA_ENG': '4p Phoenix E',
-        'ENG': '4p 7d+ R2000+ E',
+        'ENG': '4p 7d+R2000+ E',
+    },
+    '四鳳東喰': {
+        'DEFAULT': '4 Houou Tonpu Akanashi',
+        'EMA_ENG': '4p Phoenix E No-red-5',
+        'ENG': '4p 7d+R2000+ E No-red-5',
+    },
+    '四鳳東': {
+        'DEFAULT': '4 Houou Tonpu Nashinashi',
+        'EMA_ENG': '4p Phoenix E No-red-5 No-open-all-simples',
+        'ENG': '4p 7d+R2000+ E No-red-5 No-open-all-simples',
     },
     '四鳳南喰赤速': {
-        'DEFAULT': '4, Houou, Hanchan, Fast',
+        'DEFAULT': '4 Houou Hanchan Fast',
         'EMA_ENG': '4p 7Phoenix E+S Fast',
-        'ENG': '4p 7d+ R2000+ E+S Fast',
+        'ENG': '4p 7d+R2000+ E+S Fast',
     },
     '四鳳南喰赤': {
-        'DEFAULT': '4, Houou, Hanchan',
+        'DEFAULT': '4 Houou Hanchan',
         'EMA_ENG': '4p Phoenix E+S',
-        'ENG': '4p 7d+ R2000+ E+S',
+        'ENG': '4p 7d+R2000+ E+S',
+    },
+    '四鳳南喰': {
+        'DEFAULT': '4 Houou Hanchan Akanashi',
+        'EMA_ENG': '4p Phoenix E+S No-red-5',
+        'ENG': '4p 7d+R2000+ E+S No-red-5',
+    },
+    '四鳳南': {
+        'DEFAULT': '4 Houou Hanchan Nashinashi',
+        'EMA_ENG': '4p Phoenix E+S No-red-5 No-open-all-simples',
+        'ENG': '4p 7d+R2000+ E+S No-red-5 No-open-all-simples',
     },
     '三鳳東喰赤速': {
-        'DEFAULT': '3, Houou, Tonpu, Fast',
+        'DEFAULT': '3 Houou Tonpu Fast',
         'EMA_ENG': '3p Phoenix E Fast',
-        'ENG': '3p 7d+ R2000+ E Fast',
+        'ENG': '3p 7d+R2000+ E Fast',
     },
     '三鳳東喰赤': {
-        'DEFAULT': '3, Houou, Tonpu',
+        'DEFAULT': '3 Houou Tonpu',
         'EMA_ENG': '3p Phoenix E',
-        'ENG': '3p 7d+ R2000+ E',
+        'ENG': '3p 7d+R2000+ E',
+    },
+    '三鳳東喰': {
+        'DEFAULT': '3 Houou Tonpu Akanashi',
+        'EMA_ENG': '3p Phoenix E No-red-5',
+        'ENG': '3p 7d+R2000+ E No-red-5',
+    },
+    '三鳳東': {
+        'DEFAULT': '3 Houou Tonpu Nashinashi',
+        'EMA_ENG': '3p Phoenix E No-red-5 No-open-all-simples',
+        'ENG': '3p 7d+R2000+ E No-red-5 No-open-all-simples',
     },
     '三鳳南喰赤速': {
-        'DEFAULT': '3, Houou, Hanchan, Fast',
+        'DEFAULT': '3 Houou Hanchan Fast',
         'EMA_ENG': '3p Phoenix E+S Fast',
-        'ENG': '3p 7d+ R2000+ E+S Fast',
+        'ENG': '3p 7d+R2000+ E+S Fast',
     },
     '三鳳南喰赤': {
-        'DEFAULT': '3, Houou, Hanchan',
+        'DEFAULT': '3 Houou Hanchan',
         'EMA_ENG': '3p Phoenix E+S',
-        'ENG': '3p 7d+ R2000+ E+S',
+        'ENG': '3p 7d+R2000+ E+S',
+    },
+    '三鳳南喰': {
+        'DEFAULT': '3 Houou Hanchan Akanashi',
+        'EMA_ENG': '3p Phoenix E+S No-red-5',
+        'ENG': '3p 7d+R2000+ E+S No-red-5',
+    },
+    '三鳳南': {
+        'DEFAULT': '3 Houou Hanchan Nashinashi',
+        'EMA_ENG': '3p Phoenix E+S No-red-5 No-open-all-simples',
+        'ENG': '3p 7d+R2000+ E+S No-red-5 No-open-all-simples',
     },
     '四麻上級卓': {
         'DEFAULT': '4 players, Joukyuu',
@@ -1088,12 +1301,12 @@ const partialTranslation = {
     '四麻特上卓': {
         'DEFAULT': '4 players, Tokujou',
         'EMA_ENG': '4p, Upper dan',
-        'ENG': '4p, 4d+ R1800+',
+        'ENG': '4p, 4d+R1800+',
     },
     '三麻特上卓': {
         'DEFAULT': '3 players, Tokujou',
         'EMA_ENG': '3p, Upper dan',
-        'ENG': '3p, 4d+ R1800+',
+        'ENG': '3p, 4d+R1800+',
     },
     '四麻雀荘戦': {
         'DEFAULT': '4 players, Jansou',
@@ -1108,12 +1321,12 @@ const partialTranslation = {
     '四麻鳳凰卓': {
         'DEFAULT': '4 players, Houou',
         'EMA_ENG': '4p, Phoenix',
-        'ENG': '4p, 7d+ R2000+',
+        'ENG': '4p, 7d+R2000+',
     },
     '三麻鳳凰卓': {
         'DEFAULT': '3 players, Houou',
         'EMA_ENG': '3p, Phoenix',
-        'ENG': '3p, 7d+ R2000+',
+        'ENG': '3p, 7d+R2000+',
     },
     '新人': {
         'DEFAULT': '新人',
@@ -1223,39 +1436,39 @@ const partialTranslationForStats = {
         'ENG': '4p, Novice, E+S',
     },
     '般東喰赤': {
-        'DEFAULT': 'Ippan, Tonpuu',
+        'DEFAULT': 'Ippan, Tonpu',
         'EMA_ENG': '4p, Novice, E',
         'ENG': '4p, Novice, E',
     },
     '上南喰赤': {
         'DEFAULT': 'Joukyuu, Hanchan',
-        'EMA_ENG': '4p, Lower dan, E+S',
+        'EMA_ENG': '4p, Lower-dan, E+S',
         'ENG': '4p, 1k+, E+S',
     },
     '上東喰赤': {
-        'DEFAULT': 'Joukyuu, Tonpuu',
-        'EMA_ENG': '4p, Lower dan, E',
+        'DEFAULT': 'Joukyuu, Tonpu',
+        'EMA_ENG': '4p, Lower-dan, E',
         'ENG': '4p, 1k+, E',
     },
     '特南喰赤': {
         'DEFAULT': 'Tokujou, Hanchan',
         'EMA_ENG': '4p, Upper dan, E+S',
-        'ENG': '4p, 4d+ R1800+, E+S',
+        'ENG': '4p, 4d+R1800+, E+S',
     },
     '特東喰赤': {
-        'DEFAULT': 'Tokujou, Tonpuu',
+        'DEFAULT': 'Tokujou, Tonpu',
         'EMA_ENG': '4p, Upper dan, E',
-        'ENG': '4p, 4d+ R1800+, E',
+        'ENG': '4p, 4d+R1800+, E',
     },
     '鳳南喰赤': {
         'DEFAULT': 'Houou, Hanchan',
         'EMA_ENG': '4p, Phoenix, E+S',
-        'ENG': '4p, 7d+ R2000+, E+S',
+        'ENG': '4p, 7d+R2000+, E+S',
     },
     '鳳東喰赤': {
-        'DEFAULT': 'Houou, Tonpuu',
+        'DEFAULT': 'Houou, Tonpu',
         'EMA_ENG': '4p, Phoenix, E',
-        'ENG': '4p, 7d+ R2000+, E',
+        'ENG': '4p, 7d+R2000+, E',
     },
     '一般': {
         'DEFAULT': 'Ippan',
@@ -1270,27 +1483,27 @@ const partialTranslationForStats = {
     '特上': {
         'DEFAULT': 'Joukyuu',
         'EMA_ENG': 'Upper dan',
-        'ENG': '4d+ R1800+',
+        'ENG': '4d+R1800+',
     },
     '鳳凰': {
         'DEFAULT': 'Houou',
         'EMA_ENG': 'Phoenix',
-        'ENG': '7d+ R2000+',
+        'ENG': '7d+R2000+',
     },
     '三東喰赤': {
-        'DEFAULT': 'Sanma, Tonpuu',
+        'DEFAULT': '3p, Tonpu',
         'EMA_ENG': '3p E',
     },
     '三南喰赤': {
-        'DEFAULT': 'Sanma, Hanchan',
+        'DEFAULT': '3p, Hanchan',
         'EMA_ENG': '3p E+S',
     },
     '東喰－': {
-        'DEFAULT': 'Tonpuu, open tanyao, akanashi',
+        'DEFAULT': 'Tonpu, open tanyao, akanashi',
         'EMA_ENG': 'E, open all-simples, no red 5s',
     },
     '東－－': {
-        'DEFAULT': 'Tonpuu, no open tanyao, akanashi',
+        'DEFAULT': 'Tonpu, no open tanyao, akanashi',
         'EMA_ENG': 'E, no open all-simples, no red 5s',
     },
     '南喰－': {
@@ -1302,7 +1515,7 @@ const partialTranslationForStats = {
         'EMA_ENG': 'E+S, no open all-simples, no red 5s',
     },
     '三上東喰赤': {
-        'DEFAULT': '3, joukyuu, tonpuu, open tanyao, akanashi',
+        'DEFAULT': '3, joukyuu, tonpu, open tanyao, akanashi',
         'EMA_ENG': '3p, E, open all-simples, red 5s',
     },
     '三上南喰赤': {
@@ -1342,7 +1555,7 @@ const partialTranslationForStats = {
         'DEFAULT': 'Statistics are reset monthly',
     },
     '役満': {
-        'DEFAULT': 'Recent yakuman hands',
+        'DEFAULT': 'yakuman',
     },
     '対戦数': {
         'DEFAULT': '# of games',
@@ -1383,163 +1596,358 @@ const partialTranslationForStats = {
     '件を表示': {
         'DEFAULT': ' - show',
     },
+    '満貫未満': {
+        'DEFAULT': 'less than mangan',
+    },
+    '満貫': {
+        'DEFAULT': 'mangan',
+    },
+    '跳満': {
+        'DEFAULT': 'haneman',
+    },
+    '倍満': {
+        'DEFAULT': 'baiman',
+    },
+    '三倍満': {
+        'DEFAULT': 'sanbaiman',
+    },
+    '満貫統計': {
+        'DEFAULT': 'mangan-yakuman frequencies',
+    },
+    '統計': {
+        'DEFAULT': 'frequencies',
+    },
+    '上＝出現率％ (和了数/全和了数*100)': {
+        'DEFAULT': 'Upper number: the percentage of winning hands that got this score',
+    },
+    '下＝１位達成者の割合％ (１位の和了数/１～４位の和了数*100)': {
+        'DEFAULT': 'Lower number: Of all the players that won a hand with this score, this is the percentage that went on to get 1st place in that game',
+    },
+    '統計情報は毎月リセットされます': {
+        'DEFAULT': 'Statistics are reset at midnight (JST) on the first day of each calendar month',
+    },
 };
 
 const tooltips = {
     '四般東喰赤速': {
-        'DEFAULT': '4 players, Ippan, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Novice, East, Open all-simples, Red dora, Fast',
-        'ENG': '4p, Novice, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Ippan, Tonpuusen, Fast',
+        'EMA_ENG': '4 players, Novice, East, Fast',
+        'ENG': '4 players, Novice, East, Red-5, Fast',
     },
-    '四般南喰赤': {
-        'DEFAULT': '4 players, Ippan, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Novice, East + South, Open all-simples, Red dora',
-        'ENG': '4p, Novice, East + South, Open all simples, Red dora',
+    '四般東喰赤': {
+        'DEFAULT': '4 players, Ippan, Tonpuusen',
+        'EMA_ENG': '4 players, Novice, East',
+        'ENG': '4 players, Novice, East',
+    },
+    '四般東喰': {
+        'DEFAULT': '4 players, Ippan, Tonpuusen, No akadora',
+        'EMA_ENG': '4 players, Novice, East, No red dora',
+        'ENG': '4 players, Novice, East, No red dora',
+    },
+    '四般東': {
+        'DEFAULT': '4 players, Ippan, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Novice, East, No red dora, No open all-simples',
+        'ENG': '4 players, Novice, East, No red dora, No open all-simples',
     },
     '四般南喰赤速': {
-        'DEFAULT': '4 players, Ippan, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Novice, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '4p, Novice, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players Ippan, Hanchan, Fast',
+        'EMA_ENG': '4 players, Novice, East + South, Fast',
+        'ENG': '4 players, Novice, East + South, Fast',
     },
-    '三般東喰赤': {
-        'DEFAULT': '3 players, Ippan, East round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Novice, East, Open all-simples, Red dora',
-        'ENG': '3p, Novice, East, Open all simples, Red dora',
+    '四般南喰赤': {
+        'DEFAULT': '4 players, Ippan, Hanchan',
+        'EMA_ENG': '4 players, Novice, East + South',
+        'ENG': '4 players, Novice, East + South',
+    },
+    '四般南喰': {
+        'DEFAULT': '4 players, Ippan, Hanchan, No akadora',
+        'EMA_ENG': '4 players, Novice, East + South, No red dora',
+        'ENG': '4 players, Novice, East + South, No red dora',
+    },
+    '四般南': {
+        'DEFAULT': '4 players, Ippan, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Novice, East + South, No red dora, No open all-simples',
+        'ENG': '4 players, Novice, East + South, No red dora, No open all-simples',
     },
     '三般東喰赤速': {
-        'DEFAULT': '3 players, Ippan, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Novice, East, Open all-simples, Red dora, Fast',
-        'ENG': '3p, Novice, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Ippan, Tonpuusen, Fast',
+        'EMA_ENG': '3 players, Novice, East, Fast',
+        'ENG': '3 players, Novice, East, Fast',
     },
-    '三般南喰赤': {
-        'DEFAULT': '3 players, Ippan, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Novice, East + South, Open all-simples, Red dora',
-        'ENG': '3p, Novice, East + South, Open all simples, Red dora',
+    '三般東喰赤': {
+        'DEFAULT': '3 players, Ippan, Tonpuusen',
+        'EMA_ENG': '3 players, Novice, East',
+        'ENG': '3 players, Novice, East',
+    },
+    '三般東喰': {
+        'DEFAULT': '3 players, Ippan, Tonpuusen, No akadora',
+        'EMA_ENG': '3 players, Novice, East, No red dora',
+        'ENG': '3 players, Novice, East, No red dora',
+    },
+    '三般東': {
+        'DEFAULT': '3 players, Ippan, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Novice, East, No red dora, No open all-simples',
+        'ENG': '3 players, Novice, East, No red dora, No open all-simples',
     },
     '三般南喰赤速': {
-        'DEFAULT': '3 players, Ippan, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Novice, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '3p, Novice, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Ippan, Hanchan, Fast',
+        'EMA_ENG': '3 players, Novice, East + South, Fast',
+        'ENG': '3 players, Novice, East + South, Fast',
     },
-    '四上東喰赤': {
-        'DEFAULT': '4 players, Joukyuu, East round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Lower dan, East, Open all-simples, Red dora',
-        'ENG': '4p, 1k+, East, Open all simples, Red dora',
+    '三般南喰赤': {
+        'DEFAULT': '3 players, Ippan, Hanchan',
+        'EMA_ENG': '3 players, Novice, East + South',
+        'ENG': '3 players, Novice, East + South',
+    },
+    '三般南喰': {
+        'DEFAULT': '3 players, Ippan, Hanchan, No akadora',
+        'EMA_ENG': '3 players, Novice, East, No red dora',
+        'ENG': '3 players, Novice, East, No red dora',
+    },
+    '三般南': {
+        'DEFAULT': '3 players, Ippan, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Novice, East + South, No red dora, No open all-simples',
+        'ENG': '3 players, Novice, East + South, No red dora, No open all-simples',
     },
     '四上東喰赤速': {
-        'DEFAULT': '4 players, Joukyuu, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Lower dan, East, Open all-simples, Red dora, Fast',
-        'ENG': '4p, 1k+, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Joukyuu, Tonpuusen, Fast',
+        'EMA_ENG': '4 players, Lower-dan, East, Fast',
+        'ENG': '4 players, 1k+, East, Fast',
     },
-    '四上南喰赤': {
-        'DEFAULT': '4 players, Joukyuu, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Lower dan, East + South, Open all-simples, Red dora',
-        'ENG': '4p, 1k+, East + South, Open all simples, Red dora',
+    '四上東喰赤': {
+        'DEFAULT': '4 players, Joukyuu, Tonpuusen',
+        'EMA_ENG': '4 players, Lower-dan, East',
+        'ENG': '4 players, 1k+, East',
+    },
+    '四上東喰': {
+        'DEFAULT': '4 players, Joukyuu, Tonpuusen, No akadora',
+        'EMA_ENG': '4 players, Lower-dan, East, No red dora',
+        'ENG': '4 players, 1k+, East, No red dora',
+    },
+    '四上東': {
+        'DEFAULT': '4 players, Joukyuu, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Lower-dan, East, No red dora, No open all-simples',
+        'ENG': '4 players, 1k+, East, No red dora, No open all-simples',
     },
     '四上南喰赤速': {
-        'DEFAULT': '4 players, Joukyuu, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Lower dan, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '4p, 1k+, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Joukyuu, Hanchan, Fast',
+        'EMA_ENG': '4 players, Lower-dan, East + South, Fast',
+        'ENG': '4 players, 1k+, East + South, Fast',
     },
-    '三上東喰赤': {
-        'DEFAULT': '3 players, Joukyuu, East round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Lower dan, East, Open all-simples, Red dora',
-        'ENG': '3p, 1k+, East, Open all simples, Red dora',
+    '四上南喰赤': {
+        'DEFAULT': '4 players, Joukyuu, Hanchan',
+        'EMA_ENG': '4 players, Lower-dan, East + South',
+        'ENG': '4 players, 1k+, East + South',
+    },
+    '四上南喰': {
+        'DEFAULT': '4 players, Joukyuu, Hanchan, No akadora',
+        'EMA_ENG': '4 players, Lower-dan, East + South, No red dora',
+        'ENG': '4 players, 1k+, East + South, No red dora',
+    },
+    '四上南': {
+        'DEFAULT': '4 players, Joukyuu, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Lower-dan, East + South, No red dora, No open all-simples',
+        'ENG': '4 players, 1k+, East + South, No red dora, No open all-simples',
     },
     '三上東喰赤速': {
-        'DEFAULT': '3 players, Joukyuu, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Lower dan, East, Open all-simples, Red dora, Fast',
-        'ENG': '3p, 1k+, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Joukyuu, Tonpuusen, Fast',
+        'EMA_ENG': '3 players, Lower-dan, East, Fast',
+        'ENG': '3 players, 1k+, East, Fast',
     },
-    '三上南喰赤': {
-        'DEFAULT': '3 players, Joukyuu, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Lower dan, East + South, Open all-simples, Red dora',
-        'ENG': '3p, 1k+, East + South, Open all simples, Red dora',
+    '三上東喰赤': {
+        'DEFAULT': '3 players, Joukyuu, Tonpuusen',
+        'EMA_ENG': '3 players, Lower-dan, East',
+        'ENG': '3 players, 1k+, East',
+    },
+    '三上東喰': {
+        'DEFAULT': '3 players, Joukyuu, Tonpuusen, No akadora',
+        'EMA_ENG': '3 players, Lower-dan, East, No red dora',
+        'ENG': '3 players, 1k+, East, No red dora',
+    },
+    '三上東': {
+        'DEFAULT': '3 players, Joukyuu, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Lower-dan, East, No red dora, No open all-simples',
+        'ENG': '3 players, 1k+, East, No red dora, No open all-simples',
     },
     '三上南喰赤速': {
-        'DEFAULT': '3 players, Joukyuu, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Lower dan, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '3p, 1k+, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Joukyuu, Hanchan, Fast',
+        'EMA_ENG': '3 players, Lower-dan, East + South, Fast',
+        'ENG': '3 players, 1k+, East + South, Fast',
     },
-    '四特東喰赤': {
-        'DEFAULT': '4 players, Tokujou, East round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Upper dan, East, Open all-simples, Red dora',
-        'ENG': '4p, 4d+ R1800+, East, Open all simples, Red dora',
+    '三上南喰赤': {
+        'DEFAULT': '3 players, Joukyuu, Hanchan',
+        'EMA_ENG': '3 players, Lower-dan, East + South',
+        'ENG': '3 players, 1k+, East + South',
+    },
+    '三上南喰': {
+        'DEFAULT': '3 players, Joukyuu, Hanchan, No akadora',
+        'EMA_ENG': '3 players, Lower-dan, East + South, No red dora',
+        'ENG': '3 players, 1k+, East + South, No red dora',
+    },
+    '三上南': {
+        'DEFAULT': '3 players, Joukyuu, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Lower-dan, East + South, No red dora, No open all-simples',
+        'ENG': '3 players, 1k+, East + South, No red dora, No open all-simples',
     },
     '四特東喰赤速': {
-        'DEFAULT': '4 players, Tokujou, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Upper dan, East, Open all-simples, Red dora, Fast',
-        'ENG': '4p, 4d+ R1800+, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Tokujou, Tonpuusen, Fast',
+        'EMA_ENG': '4 players, Upper-dan, East, Fast',
+        'ENG': '4 players, 4d+R1800+, East, Fast',
     },
-    '四特南喰赤': {
-        'DEFAULT': '4 players, Tokujou, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Upper dan, East + South, Open all-simples, Red dora',
-        'ENG': '4p, 4d+ R1800+, East + South, Open all simples, Red dora',
+    '四特東喰赤': {
+        'DEFAULT': '4 players, Tokujou, Tonpuusen',
+        'EMA_ENG': '4 players, Upper-dan, East',
+        'ENG': '4 players, 4d+R1800+, East',
+    },
+    '四特東喰': {
+        'DEFAULT': '4 players, Tokujou, Tonpuusen, No akadora',
+        'EMA_ENG': '4 players, Upper-dan, East, No red dora',
+        'ENG': '4 players, 4d+R1800+, East, No red dora',
+    },
+    '四特東': {
+        'DEFAULT': '4 players, Tokujou, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Upper-dan, East, No red dora, No open all-simples',
+        'ENG': '4 players, 4d+R1800+, East, No red dora, No open all-simples',
     },
     '四特南喰赤速': {
-        'DEFAULT': '4 players, Tokujou, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Upper dan, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '4p, 4d+ R1800+, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Tokujou, Hanchan, Fast',
+        'EMA_ENG': '4 players, Upper-dan, East + South, Fast',
+        'ENG': '4 players, 4d+R1800+, East + South, Fast',
     },
-    '三特東喰赤': {
-        'DEFAULT': '3 players, Tokujou, East round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Upper dan, East, Open all-simples, Red dora',
-        'ENG': '3p, 4d+ R1800+, East, Open all simples, Red dora',
+    '四特南喰赤': {
+        'DEFAULT': '4 players, Tokujou, Hanchan',
+        'EMA_ENG': '4 players, Upper-dan, East + South',
+        'ENG': '4 players, 4d+R1800+, East + South',
+    },
+    '四特南喰': {
+        'DEFAULT': '4 players, Tokujou, Hanchan, No akadora',
+        'EMA_ENG': '4 players, Upper-dan, East + South, No red dora',
+        'ENG': '4 players, 4d+R1800+, East + South, No red dora',
+    },
+    '四特南': {
+        'DEFAULT': '4 players, Tokujou, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Upper-dan, East + South, No red dora, No open all-simples',
+        'ENG': '4 players, 4d+R1800+, East + South, No red dora, No open all-simples',
     },
     '三特東喰赤速': {
-        'DEFAULT': '3 players, Tokujou, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Upper dan, East, Open all-simples, Red dora, Fast',
-        'ENG': '3p, 4d+ R1800+, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Tokujou, Tonpuusen, Fast',
+        'EMA_ENG': '3 players, Upper-dan, East, Fast',
+        'ENG': '3 players, 4d+R1800+, East, Fast',
     },
-    '三特南喰赤': {
-        'DEFAULT': '3 players, Tokujou, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Upper dan, East + South, Open all-simples, Red dora',
-        'ENG': '3p, 4d+ R1800+, East + South, Open all simples, Red dora',
+    '三特東喰赤': {
+        'DEFAULT': '3 players, Tokujou, Tonpuusen',
+        'EMA_ENG': '3 players, Upper-dan, East',
+        'ENG': '3 players, 4d+R1800+, East',
+    },
+    '三特東喰': {
+        'DEFAULT': '3 players, Tokujou, Tonpuusen, No akadora',
+        'EMA_ENG': '3 players, Upper-dan, East, No red dora',
+        'ENG': '3 players, 4d+R1800+, East, No red dora',
+    },
+    '三特東': {
+        'DEFAULT': '3 players, Tokujou, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Upper-dan, East, No red dora, No open all-simples',
+        'ENG': '3 players, 4d+R1800+, East, No red dora, No open all-simples',
     },
     '三特南喰赤速': {
-        'DEFAULT': '3 players, Tokujou, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Upper dan, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '3p, 4d+ R1800+, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Tokujou, Hanchan, Fast',
+        'EMA_ENG': '3 players, Upper-dan, East + South, Fast',
+        'ENG': '3 players, 4d+R1800+, East + South, Fast',
     },
-    '四鳳東喰赤': {
-        'DEFAULT': '4 players, Houou, East round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Phoenix, East, Open all-simples, Red dora',
-        'ENG': '4p, 7d+ R2000+, East, Open all simples, Red dora',
+    '三特南喰赤': {
+        'DEFAULT': '3 players, Tokujou, Hanchan',
+        'EMA_ENG': '3 players, Upper-dan, East + South',
+        'ENG': '3 players, 4d+R1800+, East + South',
+    },
+    '三特南喰': {
+        'DEFAULT': '3 players, Tokujou, Hanchan, No akadora',
+        'EMA_ENG': '3 players, Upper-dan, East + South, No red dora',
+        'ENG': '3 players, 4d+R1800+, East + South, No red dora',
+    },
+    '三特南': {
+        'DEFAULT': '3 players, Tokujou, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Upper-dan, East + South, No red dora, No open all-simples',
+        'ENG': '3 players, 4d+R1800+, East + South, No red dora, No open all-simples',
     },
     '四鳳東喰赤速': {
-        'DEFAULT': '4 players, Houou, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Phoenix, East, Open all-simples, Red dora, Fast',
-        'ENG': '4p, 7d+ R2000+, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Houou, Tonpuusen, Fast',
+        'EMA_ENG': '4 players, Phoenix, East, Fast',
+        'ENG': '4 players, 7d+R2000+, East, Fast',
     },
-    '四鳳南喰赤': {
-        'DEFAULT': '4 players, Houou, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '4p, Phoenix, East + South, Open all-simples, Red dora',
-        'ENG': '4p, 7d+ R2000+, East + South, Open all simples, Red dora',
+    '四鳳東喰赤': {
+        'DEFAULT': '4 players, Houou, Tonpuusen',
+        'EMA_ENG': '4 players, Phoenix, East',
+        'ENG': '4 players, 7d+R2000+, East',
+    },
+    '四鳳東喰': {
+        'DEFAULT': '4 players, Houou, Tonpuusen, No akadora',
+        'EMA_ENG': '4 players, Phoenix, East, No red dora',
+        'ENG': '4 players, 7d+R2000+, East, No red dora',
+    },
+    '四鳳東': {
+        'DEFAULT': '4 players, Houou, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Phoenix, East, No red dora, No open all-simples',
+        'ENG': '4 players, 7d+R2000+, East, No red dora, No open all-simples',
     },
     '四鳳南喰赤速': {
-        'DEFAULT': '4 players, Houou, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '4p, Phoenix, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '4p, 7d+ R2000+, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '4 players, Houou, Hanchan, Fast',
+        'EMA_ENG': '4 players, 7Phoenix, East + South, Fast',
+        'ENG': '4 players, 7d+R2000+, East + South, Fast',
     },
-    '三鳳東喰赤': {
-        'DEFAULT': '3 players, Houou, East round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Phoenix, East, Open all-simples, Red dora',
-        'ENG': '3p, 7d+ R2000+, East, Open all simples, Red dora',
+    '四鳳南喰赤': {
+        'DEFAULT': '4 players, Houou, Hanchan',
+        'EMA_ENG': '4 players, Phoenix, East + South',
+        'ENG': '4 players, 7d+R2000+, East + South',
+    },
+    '四鳳南喰': {
+        'DEFAULT': '4 players, Houou, Hanchan, No akadora',
+        'EMA_ENG': '4 players, Phoenix, East + South, No red dora',
+        'ENG': '4 players, 7d+R2000+, East + South, No red dora',
+    },
+    '四鳳南': {
+        'DEFAULT': '4 players, Houou, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '4 players, Phoenix, East + South, No red dora, No open all-simples',
+        'ENG': '4 players, 7d+R2000+, East + South, No red dora, No open all-simples',
     },
     '三鳳東喰赤速': {
-        'DEFAULT': '3 players, Houou, East round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Phoenix, East, Open all-simples, Red dora, Fast',
-        'ENG': '3p, 7d+ R2000+, East, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Houou, Tonpuusen, Fast',
+        'EMA_ENG': '3 players, Phoenix, East, Fast',
+        'ENG': '3 players, 7d+R2000+, East, Fast',
     },
-    '三鳳南喰赤': {
-        'DEFAULT': '3 players, Houou, East + South round, Open tanyao, Red dora',
-        'EMA_ENG': '3p, Phoenix, East + South, Open all-simples, Red dora',
-        'ENG': '3p, 7d+ R2000+, East + South, Open all simples, Red dora',
+    '三鳳東喰赤': {
+        'DEFAULT': '3 players, Houou, Tonpuusen',
+        'EMA_ENG': '3 players, Phoenix, East',
+        'ENG': '3 players, 7d+R2000+, East',
+    },
+    '三鳳東喰': {
+        'DEFAULT': '3 players, Houou, Tonpuusen, No akadora',
+        'EMA_ENG': '3 players, Phoenix, East, No red dora',
+        'ENG': '3 players, 7d+R2000+, East, No red dora',
+    },
+    '三鳳東': {
+        'DEFAULT': '3 players, Houou, Tonpuusen, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Phoenix, East, No red dora, No open all-simples',
+        'ENG': '3 players, 7d+R2000+, East, No red dora, No open all-simples',
     },
     '三鳳南喰赤速': {
-        'DEFAULT': '3 players, Houou, East + South round, Open tanyao, Red dora, Fast',
-        'EMA_ENG': '3p, Phoenix, East + South, Open all-simples, Red dora, Fast',
-        'ENG': '3p, 7d+ R2000+, East + South, Open all simples, Red dora, Fast',
+        'DEFAULT': '3 players, Houou, Hanchan, Fast',
+        'EMA_ENG': '3 players, Phoenix, East + South, Fast',
+        'ENG': '3 players, 7d+R2000+, East + South, Fast',
+    },
+    '三鳳南喰赤': {
+        'DEFAULT': '3 players, Houou, Hanchan',
+        'EMA_ENG': '3 players, Phoenix, East + South',
+        'ENG': '3 players, 7d+R2000+, East + South',
+    },
+    '三鳳南喰': {
+        'DEFAULT': '3 players, Houou, Hanchan, No akadora',
+        'EMA_ENG': '3 players, Phoenix, East + South, No red dora',
+        'ENG': '3 players, 7d+R2000+, East + South, No red dora',
+    },
+    '三鳳南': {
+        'DEFAULT': '3 players, Houou, Hanchan, No akadora, No kuitan',
+        'EMA_ENG': '3 players, Phoenix, East + South, No red dora, No open all-simples',
+        'ENG': '3 players, 7d+R2000+, East + South, No red dora, No open all-simples',
     },
     '新人': {
         'DEFAULT': 'rookie',
