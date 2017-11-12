@@ -283,36 +283,27 @@ const exactTranslation = {
         'DEFAULT': 'Kazoe-yakuman',
         'EMA_ENG': 'Counted yakuman',
     },
-
     '滿貫': {
-        'DEFAULT': 'mangan',
+        'DEFAULT': 'Mangan',
     },
     '跳滿': {
-        'DEFAULT': 'haneman',
+        'DEFAULT': 'Haneman',
     },
     '倍滿': {
-        'DEFAULT': 'baiman',
+        'DEFAULT': 'Baiman',
     },
     '三倍滿': {
-        'DEFAULT': 'sanbaiman',
+        'DEFAULT': 'Sanbaiman',
     },
     '役滿': {
-        'DEFAULT': 'yakuman',
+        'DEFAULT': 'Yakuman',
     },
     '点∀': {
-        'DEFAULT': 'from each',
+        'DEFAULT': 'Points ∀',
+        'EMA_ENG': 'Points each',
     },
 
     // Main
-
-    '四家立直': {
-        'DEFAULT': 'Draw - Suuchariiichi ryuukyoku',
-        'EMA_ENG': 'Draw - quadruple riichi',
-    },
-    '三家和了': {
-        'DEFAULT': 'Draw - Sancha ho',
-        'EMA_ENG': 'Draw - triple ron',
-    },
 
     'オンライン対戦麻雀 天鳳 / ランキング': {
         'DEFAULT': 'Tenhou / Rankings',
@@ -422,8 +413,8 @@ const exactTranslation = {
     '環境': {
         'DEFAULT': 'Environment',
     },
-    ' / 設定': {
-        'DEFAULT': ' / Settings',
+    '/ 設定': {
+        'DEFAULT': '/ Settings',
     },
     '画面方向:回転': {
         'DEFAULT': 'Screen orientation:Rotate',
@@ -609,14 +600,14 @@ const exactTranslation = {
         'DEFAULT': 'Avg shuugi',
         'ENG': 'Avg parlor bonuses',
     },
-    '視 ': {
-        'DEFAULT': 'View pt. ',
+    '視': {
+        'DEFAULT': 'View pt.',
     },
-    '局 ': {
-        'DEFAULT': 'Round ',
+    '局': {
+        'DEFAULT': 'Round',
     },
-    '巡 ': {
-        'DEFAULT': 'Turn ',
+    '巡': {
+        'DEFAULT': 'Turn',
     },
     'ランキング戦': {
         'DEFAULT': 'Ranked Play',
@@ -769,14 +760,14 @@ const exactTranslation = {
     '牌譜': {
         'DEFAULT': 'Replay',
     },
-    '牌譜 | ': {
-        'DEFAULT': 'Replay | ',
+    '牌譜 |': {
+        'DEFAULT': 'Replay |',
     },
     '観戦': {
         'DEFAULT': 'Spectate',
     },
-    '観戦 | ': {
-        'DEFAULT': 'Watch | ',
+    '観戦 |': {
+        'DEFAULT': 'Watch |',
     },
     'ヘルプ': {
         'DEFAULT': 'Help',
@@ -845,7 +836,16 @@ const exactTranslation = {
         'DEFAULT': 'Riichi',
     },
     '流局': {
-        'DEFAULT': 'Redeal',
+        'DEFAULT': 'Ryuukyoku',
+        'EMA_ENG': 'Redeal',
+    },
+    '四家立直': {
+        'DEFAULT': 'Suuchariichi',
+        'EMA_ENG': 'Quadruple riichi',
+    },
+    '三家和了': {
+        'DEFAULT': 'Sancha hou',
+        'EMA_ENG': 'Triple ron',
     },
     'カン': {
         'DEFAULT': 'Kan',
@@ -910,11 +910,8 @@ const exactTranslation = {
     'ランキング': {
         'DEFAULT': 'Summary stats',
     },
-    ' 接続人数': {
-        'DEFAULT': 'Players by hour (JST: UTC+9)',
-    },
     '接続人数': {
-        'DEFAULT': 'Players by hour',
+        'DEFAULT': 'Players by hour (JST: UTC+9)',
     },
     '※最大同時接続人数': {
         'DEFAULT': 'Maximum number of simultaneous users',
