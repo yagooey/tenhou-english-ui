@@ -1,8 +1,4 @@
 chrome.runtime.onInstalled.addListener(function(object) {
-
-    // clear the translation cache, on install or upgrade, to force it to regenerate
-    chrome.storage.local.set({ tables: null });
-
     // show options screen on install
     if (chrome.runtime.OnInstalledReason.INSTALL === object.reason) {
         chrome.runtime.openOptionsPage();

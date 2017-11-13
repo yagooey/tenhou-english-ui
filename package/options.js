@@ -1,7 +1,10 @@
+let thisForm = document.forms.optionform;
+
 function saveOptions() {
     chrome.storage.local.set({
-        tables: null,
-        translation: document.forms.optionform.translation.value,
+        translation: thisForm.translation.value,
+        toggle: thisForm.useToggler.checked,
+        altTranslation: thisForm.toggleTo.value,
     });
 
     // Emit an event to translate the entire app
@@ -15,8 +18,13 @@ function saveOptions() {
 function restoreOptions() {
     chrome.storage.local.get({
         translation: 'DEFAULT',
+        altTranslation: 'off',
+        toggle: false,
     }, function(items) {
-        document.forms.optionform.translation.value = items.translation;
+        thisForm.translation.value = items.translation;
+        thisForm.useToggler.checked = items.toggle,
+        thisForm.toggleTo.value = items.altTranslation;
+        thisForm.toggleToSet.style.display = items.toggle ? 'block' : 'none';
     });
 }
 
@@ -26,3 +34,14 @@ let radios = document.getElementsByName('translation');
 for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('change', saveOptions);
 }
+
+radios = document.getElementsByName('toggleTo');
+for (i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', saveOptions);
+}
+
+thisForm.useToggler.addEventListener('change', function(e) {
+    thisForm.toggleToSet.style.display = e.target.checked ? 'block' : 'none';
+    saveOptions();
+});
+
