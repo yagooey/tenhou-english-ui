@@ -2,7 +2,6 @@ let thisForm = document.forms.optionform;
 
 function saveOptions() {
     chrome.storage.local.set({
-        tables: null,
         translation: thisForm.translation.value,
         toggle: thisForm.useToggler.checked,
         altTranslation: thisForm.toggleTo.value,
