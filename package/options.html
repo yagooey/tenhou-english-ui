@@ -7,16 +7,18 @@
 </head>
 <body>
 <form name='optionform' id='optionform'>
+<fieldset>
+<legend>
 Which translation set would you like?<br>
 These options are in increasing order of degree of translations.
-<fieldset>
+</legend>
 <!--
 The values for each option are used for cascading the translations.
 Translations should be comma-separated, in ascending order of priority.
 "off" is a special value, meaning no translation is done.
 -->
 <label>
-    <input type="radio" name="translation" value="off"><strong>None</strong>: Do not translate <i>(字一色, ウマ, 祝儀, 鳳)</i>
+    <input type="radio" name="translation" value="off"><strong>Untranslated</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
 </label>
 <label>
     <input type="radio" name="translation" value="DEFAULT" checked="checked"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsuuiisou, Uma, Shuugi, Houou)</i>
@@ -32,11 +34,11 @@ Translations should be comma-separated, in ascending order of priority.
 <hr>
 
 <label>
-    <input type="checkbox" name="useToggler" id="useToggler" value="on">Toggle the translation set by holding down the <kbd>&lt;Ctrl&gt;</kbd> key when on the Tenhou site.
+    <input type="checkbox" name="useToggler" id="useToggler" value="on">Display secondary translation when holding down the <kbd>&lt;Ctrl&gt;</kbd> key.
 </label>
 
 <fieldset id='toggleToSet'>
-Translation set to use while the <kbd>&lt;Ctrl&gt;</kbd> key is held down:
+<legend>Secondary translation set:</legend>
 <label>
     <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated</strong>
 </label>
