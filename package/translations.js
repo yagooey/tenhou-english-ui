@@ -479,11 +479,14 @@ const exactTranslation = {
     '※「鳴きなし」他が常時手牌下に表示されます': {
         'DEFAULT': 'On: on-screen beneath your tiles; Off: appear on button press',
     },
+    'Desktop入力:Default': {
+        'DEFAULT': 'In-game options: Default',
+    },
     'Desktop入力:あり': {
-        'DEFAULT': 'In-game options: on-screen',
+        'DEFAULT': 'In-game options: On-screen',
     },
     'Desktop入力:なし': {
-        'DEFAULT': 'In-game options: from button',
+        'DEFAULT': 'In-game options: From button',
     },
 
     // Practice play game modes
@@ -785,10 +788,10 @@ const exactTranslation = {
         'DEFAULT': 'Please first register an ID from the login page',
     },
     '●「長押し」または「右クリック」から別タブで開く/URLのコピーなどが行えます': {
-        'DEFAULT': 'Long press or right click to bring up the context menu.',
+        'DEFAULT': '● Long press or right click to bring up the context menu.',
     },
-    '●「長押し」または「右クリック」から別タブで開く/URLのコピーなどが行えます●観戦は５分遅れ': {
-        'DEFAULT': 'Long press or right click to bring up the context menu. Games are delayed five minutes in spectating mode.',
+    '●観戦は５分遅れ': {
+        'DEFAULT': '● Games are delayed by five minutes in spectating mode.',
     },
     'すべての牌譜一覧を表示': {
         'DEFAULT': 'List all replays',
@@ -1626,6 +1629,12 @@ const partialTranslationForStats = {
 };
 
 const tooltips = {
+    '位': {
+        'DEFAULT': 'Placing',
+    },
+    '戦': {
+        'DEFAULT': 'Games',
+    },
     '四般東喰赤速': {
         'DEFAULT': '4 players, Ippan, Tonpuusen, Fast',
         'EMA_ENG': '4 players, Novice, East, Fast',
@@ -1951,79 +1960,79 @@ const tooltips = {
         'ENG': null,
     },
     '９級': {
-        'DEFAULT': '9kyuu',
+        'DEFAULT': '9 kyuu',
         'ENG': null,
     },
     '８級': {
-        'DEFAULT': '8kyuu',
+        'DEFAULT': '8 kyuu',
         'ENG': null,
     },
     '７級': {
-        'DEFAULT': '7kyuu',
+        'DEFAULT': '7 kyuu',
         'ENG': null,
     },
     '６級': {
-        'DEFAULT': '6kyuu',
+        'DEFAULT': '6 kyuu',
         'ENG': null,
     },
     '５級': {
-        'DEFAULT': '5kyuu',
+        'DEFAULT': '5 kyuu',
         'ENG': null,
     },
     '４級': {
-        'DEFAULT': '4kyuu',
+        'DEFAULT': '4 kyuu',
         'ENG': null,
     },
     '３級': {
-        'DEFAULT': '3kyuu',
+        'DEFAULT': '3 kyuu',
         'ENG': null,
     },
     '２級': {
-        'DEFAULT': '2kyuu',
+        'DEFAULT': '2 kyuu',
         'ENG': null,
     },
     '１級': {
-        'DEFAULT': '1kyuu',
+        'DEFAULT': '1 kyuu',
         'ENG': null,
     },
     '初段': {
-        'DEFAULT': '1dan',
+        'DEFAULT': '1 dan',
         'ENG': null,
     },
     '二段': {
-        'DEFAULT': '2dan',
+        'DEFAULT': '2 dan',
         'ENG': null,
     },
     '三段': {
-        'DEFAULT': '3dan',
+        'DEFAULT': '3 dan',
         'ENG': null,
     },
     '四段': {
-        'DEFAULT': '4dan',
+        'DEFAULT': '4 dan',
         'ENG': null,
     },
     '五段': {
-        'DEFAULT': '5dan',
+        'DEFAULT': '5 dan',
         'ENG': null,
     },
     '六段': {
-        'DEFAULT': '6dan',
+        'DEFAULT': '6 dan',
         'ENG': null,
     },
     '七段': {
-        'DEFAULT': '7dan',
+        'DEFAULT': '7 dan',
         'ENG': null,
     },
     '八段': {
-        'DEFAULT': '8dan',
+        'DEFAULT': '8 dan',
         'ENG': null,
     },
     '九段': {
-        'DEFAULT': '9dan',
+        'DEFAULT': '9 dan',
         'ENG': null,
     },
     '十段': {
-        'DEFAULT': '10dan',
+        'DEFAULT': '10 dan',
         'ENG': null,
     },
     '天鳳位': {

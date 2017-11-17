@@ -143,7 +143,7 @@ function translateOneNode(node, restore = false, replace = true) {
         thisParent.style.overflow = 'hidden';
     }
 
-    let originalText = node.nodeValue;
+    const originalText = node.nodeValue;
     if (!originalText) {
         return;
     }
@@ -169,8 +169,12 @@ function translateOneNode(node, restore = false, replace = true) {
                 if (thisTooltipTable[needle]) {
                     thisParent.setAttribute('title', thisTooltipTable[needle]);
                 }
-                break;
             }
+        }
+
+        // Exact tooltip matching
+        if (thisTooltipTable[originalText.trim()]) {
+            thisParent.setAttribute('title', thisTooltipTable[originalText.trim()]);
         }
 
         if (newText !== originalText) {
