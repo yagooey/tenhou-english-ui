@@ -8,6 +8,7 @@ let lastTranslationSeen = '';
 let thisPartialTable = {};
 let thisExactTable = {};
 let thisTooltipTable = {};
+let tableStore = {};
 
 const observerSettings = {
     characterData: true,
@@ -19,12 +20,49 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     // Listen for option changed
     if (request.translate === 'all') {
         getTranslationSets((shouldTranslate) => {
-            // First restore all nodes to their original value, then translate them afterwards
-            translateTextBeneathANode(document.body, true);
-            if (shouldTranslate) {
-                // TODO: Modify logic to only traverse the tree once
-                translateTextBeneathANode(document.body);
+            // restore all nodes to their original value, then translate them
+            translateTextBeneathANode(document.body, true, shouldTranslate);
+        });
+    }
+});
+
+let holdingKeyDown = false;
+let toggleTranslationOff;
+let originalStore;
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Control' && holdingKeyDown === false) {
+        chrome.storage.local.get({ translation: lastTranslationSeen, toggle: false, altTranslation: 'off' }, function(storedval) {
+            if (!storedval.toggle) return;
+            originalStore = storedval;
+            holdingKeyDown = true;
+            toggleTranslationOff = storedval.altTranslation === 'off';
+            if (toggleTranslationOff) {
+                mutationObserver.disconnect();
             }
+            chrome.storage.local.set({
+                translation: storedval.altTranslation,
+                altTranslation: storedval.translation,
+            }, function() {
+                getTranslationSets(function(canTranslate) {
+                    translateTextBeneathANode(document.body, true, canTranslate);
+                });
+            });
+        });
+    }
+});
+
+document.addEventListener('keyup', function (event) {
+    if (event.key === 'Control' && holdingKeyDown) {
+        chrome.storage.local.get({ toggle: false }, function(storedval) {
+            if (!storedval.toggle) return;
+            chrome.storage.local.set(originalStore, function() {
+                if (toggleTranslationOff) {
+                    setToObserve();
+                }
+                translateTextBeneathANode(document.body, !toggleTranslationOff, originalStore.translation !== 'off');
+                holdingKeyDown = false;
+            });
         });
     }
 });
@@ -36,85 +74,76 @@ function getTranslationSets(callback) {
 
         if (storedval.translation === 'off') return callback(false);
 
-        if (storedval.translation === lastTranslationSeen && thisExactTable) {
+        if (storedval.translation === lastTranslationSeen && Object.keys(thisExactTable).length) {
             // We've already got the right translation, so can go translate immediately
 
             return callback(true);
         }
 
         lastTranslationSeen = storedval.translation;
-        let translation = storedval.translation.split(',');
-        chrome.storage.local.get({ tables: null }, function(storedval) {
 
-            let thisStatsTable;
+        let thisStatsTable;
 
-            if (storedval.tables) {
-                thisExactTable = storedval.tables.exact;
-                thisPartialTable = storedval.tables.partial;
-                thisStatsTable = storedval.tables.stats;
-                thisTooltipTable = storedval.tables.tooltip;
-
-            } else {
-                const overlay = function(tableIn) {
-                    let tableOut = {};
-                    for (let toTranslate of Object.keys(tableIn)) {
-                        for (let thisTranslation of translation) {
-                            if (tableIn[toTranslate][thisTranslation]) {
-                                tableOut[toTranslate] = tableIn[toTranslate][thisTranslation];
-                            } else if (tableIn[toTranslate][thisTranslation] === null) {
-                                delete tableOut[toTranslate];
-                            }
+        if (tableStore.hasOwnProperty(lastTranslationSeen) && Object.keys(tableStore[lastTranslationSeen]).length) {
+            thisExactTable = tableStore[lastTranslationSeen].exact;
+            thisPartialTable = tableStore[lastTranslationSeen].partial;
+            thisStatsTable = tableStore[lastTranslationSeen].stats;
+            thisTooltipTable = tableStore[lastTranslationSeen].tooltip;
+        } else {
+            let translation = storedval.translation.split(',');
+            const overlay = function(tableIn) {
+                let tableOut = {};
+                for (let toTranslate of Object.keys(tableIn)) {
+                    for (let thisTranslation of translation) {
+                        if (tableIn[toTranslate][thisTranslation]) {
+                            tableOut[toTranslate] = tableIn[toTranslate][thisTranslation];
+                        } else if (tableIn[toTranslate][thisTranslation] === null) {
+                            delete tableOut[toTranslate];
                         }
                     }
-                    return tableOut;
+                }
+                return tableOut;
 
-                };
+            };
 
-                thisExactTable = overlay(exactTranslation);
-                thisPartialTable = overlay(partialTranslation);
-                thisStatsTable = overlay(partialTranslationForStats);
-                thisTooltipTable = overlay(tooltips);
+            thisExactTable = overlay(exactTranslation);
+            thisPartialTable = overlay(partialTranslation);
+            thisStatsTable = overlay(partialTranslationForStats);
+            thisTooltipTable = overlay(tooltips);
 
-                // The cascaded translations are stored in local storage
-                // (not sync, as the translations are too large for sync)
-                // so that the cascading is only done
-                // when the translation type is changed by the user on the options screen,
-                // or when the extension is updated
+            tableStore[lastTranslationSeen] = {
+                exact: thisExactTable,
+                partial: thisPartialTable,
+                stats: thisStatsTable,
+                tooltip: thisTooltipTable,
+            };
+        }
 
-                chrome.storage.local.set({ tables: {
-                    exact: thisExactTable,
-                    partial: thisPartialTable,
-                    stats: thisStatsTable,
-                    tooltip: thisTooltipTable,
-                } });
-            }
+        if (window.location.href.indexOf('/3') === -1) {
+            Object.assign(thisPartialTable, thisStatsTable);
+        }
 
-            if (window.location.href.indexOf('/3') === -1) {
-                Object.assign(thisPartialTable, thisStatsTable);
-            }
-
-            // Sort by key length, so that when performing partial matching,
-            // the entry with more matching characters will have priority
-            partialPhrases = Object.keys(thisPartialTable).sort((a, b) => {
-                return b.length - a.length;
-            });
-
-            return callback(true);
+        // Sort by key length, so that when performing partial matching,
+        // the entry with more matching characters will have priority
+        partialPhrases = Object.keys(thisPartialTable).sort((a, b) => {
+            return b.length - a.length;
         });
+
+        return callback(true);
     });
 }
 
 /**
- * Translate a node
- * If restore is set to true, revert the node to original text instead
+ * If restore is set to true, revert the node to original text.
+ * If replace is set to true, translate the node
  */
-function translateOneNode(node, restore = false) {
+function translateOneNode(node, restore = false, replace = true) {
     let thisParent = node.parentElement;
     if (thisParent && thisParent.tagName !== undefined && thisParent.tagName.toLowerCase() === 'button') {
         thisParent.style.overflow = 'hidden';
     }
 
-    let originalText = node.nodeValue;
+    const originalText = node.nodeValue;
     if (!originalText) {
         return;
     }
@@ -122,8 +151,9 @@ function translateOneNode(node, restore = false) {
     if (restore && node.originalValue) {
         // Restore the node back to its original value
         thisParent.replaceChild(document.createTextNode(node.originalValue), node);
-        return;
     }
+
+    if (!replace) return;
 
     let newText = thisExactTable[originalText.trim()];
     if (newText) {
@@ -139,8 +169,12 @@ function translateOneNode(node, restore = false) {
                 if (thisTooltipTable[needle]) {
                     thisParent.setAttribute('title', thisTooltipTable[needle]);
                 }
-                break;
             }
+        }
+
+        // Exact tooltip matching
+        if (thisTooltipTable[originalText.trim()]) {
+            thisParent.setAttribute('title', thisTooltipTable[originalText.trim()]);
         }
 
         if (newText !== originalText) {
@@ -157,7 +191,7 @@ function translateOneNode(node, restore = false) {
     }
 }
 
-const translateTextBeneathANode = function(topNode, restore = false) {
+const translateTextBeneathANode = function(topNode, restore = false, replace = true) {
     const textNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
 
     // We are messing with the Dom tree while we iterate over it, so first save in an array
@@ -167,7 +201,7 @@ const translateTextBeneathANode = function(topNode, restore = false) {
     }
     let node;
     for (node of textNodeList) {
-        translateOneNode(node, restore);
+        translateOneNode(node, restore, replace);
     }
 };
 
@@ -180,7 +214,7 @@ function onMutate(mutations) {
     getTranslationSets(function(canTranslate) {
         if (canTranslate) {
             mutations.forEach(function(oneMutation) {
-                translateTextBeneathANode(oneMutation.target);
+                translateTextBeneathANode(oneMutation.target, false, true);
             });
         }
         setToObserve();
@@ -190,9 +224,9 @@ function onMutate(mutations) {
 // This is what happens when the page is first loaded
 getTranslationSets(function(canTranslate) {
     if (canTranslate) {
-        translateTextBeneathANode(document.body);
-        if (thisExactTable[document.title]) {
-            document.title = thisExactTable[document.title];
+        translateTextBeneathANode(document.body, false, true);
+        if (thisExactTable[document.title.trim()]) {
+            document.title = thisExactTable[document.title.trim()];
         }
     }
     mutationObserver = new MutationObserver(onMutate);

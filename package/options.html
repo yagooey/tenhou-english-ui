@@ -3,21 +3,22 @@
 <head>
 <meta charset="utf-8" />
     <title>Tenhou translation options</title>
-    <style>body{min-width: 300px;}</style>
-    <style>label{display:block; padding-bottom:0.3em;}</style>
+    <link rel="stylesheet" type="text/css" href="options.css">
 </head>
 <body>
 <form name='optionform' id='optionform'>
+<fieldset>
+<legend>
 Which translation set would you like?<br>
 These options are in increasing order of degree of translations.
-<fieldset>
+</legend>
 <!--
 The values for each option are used for cascading the translations.
 Translations should be comma-separated, in ascending order of priority.
 "off" is a special value, meaning no translation is done.
 -->
 <label>
-    <input type="radio" name="translation" value="off"><strong>None</strong>: Do not translate <i>(字一色, ウマ, 祝儀, 鳳)</i>
+    <input type="radio" name="translation" value="off"><strong>Untranslated</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
 </label>
 <label>
     <input type="radio" name="translation" value="DEFAULT" checked="checked"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsuuiisou, Uma, Shuugi, Houou)</i>
@@ -29,6 +30,29 @@ Translations should be comma-separated, in ascending order of priority.
     <input type="radio" name="translation" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>: All the EMA terms and more <i>(All honours, placement bonus, parlor bonuses, 7dan+&nbsp;R2000+)</i>
 </label>
 </fieldset>
+
+<hr>
+
+<label>
+    <input type="checkbox" name="useToggler" id="useToggler" value="on">Display secondary translation when holding down the <kbd>&lt;Ctrl&gt;</kbd> key.
+</label>
+
+<fieldset id='toggleToSet'>
+<legend>Secondary translation set:</legend>
+<label>
+    <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT"><strong>Romaji</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>
+</label>
+</fieldset>
+
 </form>
 <script src="options.js"></script>
 </body>
