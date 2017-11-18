@@ -26,9 +26,9 @@ chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
 
 chrome.webRequest.onBeforeRequest.addListener(
     function (details) {
-        if (details.url.length < 50 || '01234'.indexOf(details.url[29]) === -1) return;
-        console.log(details.url); // 'http://model.webfactional.com/' & 
-        return {redirectUrl: 'http://model.webfactional.com/' + details.url.substr(7,99)};
+        if (details.url.length > 50 && '01234'.indexOf(details.url[29]) > -1) {
+            return {redirectUrl: 'http://model.webfactional.com/' + details.url.substr(7,99)};
+        }
     },
     {urls: ['http://p.mjv.jp/5/img/view*.png'], types: ['image']}, 
     ['blocking'] // handle synchronously
