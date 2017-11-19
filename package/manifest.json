@@ -23,7 +23,7 @@
       "default_popup": "options.html",
       "default_title": "Tenhou English UI - change translation"
    },
-   "permissions": [ "storage", "tabs", "activeTab", "webRequest", "webRequestBlocking", "http://p.mjv.jp/5/img/" ],
+   "permissions": [ "storage", "tabs", "activeTab", "webRequest", "webRequestBlocking", "http://p.mjv.jp/5/img/view*", "http://tenhou.net/*", "http://model.webfactional.com/*"],
    "background": {
       "scripts": [ "background.js" ]
    },

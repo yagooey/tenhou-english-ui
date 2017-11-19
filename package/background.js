@@ -24,12 +24,14 @@ chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
     showIconForTab(tab);
 });
 
+//       http://p.mjv.jp/5/img/view053000000000ffffff000000.png
 chrome.webRequest.onBeforeRequest.addListener(
     function (details) {
         if (details.url.length > 50 && '01234'.indexOf(details.url[29]) > -1) {
-            return {redirectUrl: 'http://model.webfactional.com/' + details.url.substr(7,99)};
+            return { redirectUrl: 'http://model.webfactional.com/' 
+                    + details.url.substr(22,99) + '?' + details.url.substr(7,15) };
         }
     },
-    {urls: ['http://p.mjv.jp/5/img/view*.png'], types: ['image']}, 
-    ['blocking'] // handle synchronously
+    { urls: [ 'http://p.mjv.jp/5/img/view*' ], types: [ 'image' ] },
+    [ 'blocking' ] // handle synchronously
 );
