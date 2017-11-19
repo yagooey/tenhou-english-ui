@@ -835,6 +835,9 @@ const exactTranslation = {
     'ロン': {
         'DEFAULT': 'Ron',
     },
+    'パオ': {
+        'DEFAULT': 'Pao',
+    },
     'リーチ': {
         'DEFAULT': 'Riichi',
     },
