@@ -704,7 +704,7 @@ const exactTranslation = {
         'EMA_ENG': '1st + 2nd rate',
     },
     'トップ': {
-        'DEFAULT': 'Top rate',
+        'DEFAULT': 'Win rate',
     },
     'ラス率': {
         'DEFAULT': 'Last rate',
@@ -955,6 +955,39 @@ const exactTranslation = {
     '四暗刻単騎 清老頭': {
         'DEFAULT': 'Suuankou tanki + Chinroutou',
         'EMA_ENG': '4 concealed pungs (single wait) + All terminals',
+    },
+    
+    // replays
+
+    '天鳳牌譜再生': {
+        'DEFAULT': 'Game replay',
+    },
+    '牌 譜 を 再 生': {
+        'DEFAULT': 'Start the replay',
+    },
+    '前局': {
+        'DEFAULT': 'Prev. hand',
+    },
+    '次局': {
+        'DEFAULT': 'Next hand',
+    },
+    '上家': {
+        'DEFAULT': '↺',
+    },
+    '下家': {
+        'DEFAULT': '↻',
+    },
+    '手牌 OFF': {
+        'DEFAULT': 'Show only front hand.',
+    },
+    '手牌 ON': {
+        'DEFAULT': 'Show all hands.',
+    },
+    '暗転 OFF': {
+        'DEFAULT': 'Don\'t shade discarded drawn tiles.',
+    },
+    '暗転 ON': {
+        'DEFAULT': 'Shade discarded drawn tiles.',
     },
 };
 

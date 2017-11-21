@@ -18,7 +18,7 @@ function iconsAcrossTabs(tabs) {
     }
 }
 
-chrome.tabs.query({ url: '*://tenhou/net/*' }, iconsAcrossTabs)
+chrome.tabs.query({ url: '*://tenhou.net/*' }, iconsAcrossTabs)
 
 chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
     showIconForTab(tab);
