@@ -701,13 +701,15 @@ const exactTranslation = {
     },
     '連対率': {
         'DEFAULT': 'Rentai',
-        'EMA_ENG': '1st + 2nd rate',
+        'EMA_ENG': '1st & 2nd',
     },
     'トップ': {
-        'DEFAULT': 'Win rate',
+        'DEFAULT': 'Top rate',
+        'EMA_ENG': '1st rate',
     },
     'ラス率': {
         'DEFAULT': 'Last rate',
+        'EMA_ENG': '4th rate',
     },
     '総合': {
         'DEFAULT': 'Total',
@@ -725,19 +727,20 @@ const exactTranslation = {
         'DEFAULT': 'Raw Stats',
     },
     '１位率': {
-        'DEFAULT': '1st rate',
+        'DEFAULT': '1st',
     },
     '２位率': {
-        'DEFAULT': '2nd rate',
+        'DEFAULT': '2nd',
     },
     '３位率': {
-        'DEFAULT': '3rd rate',
+        'DEFAULT': '3rd',
     },
     '４位率': {
-        'DEFAULT': '4th rate',
+        'DEFAULT': '4th',
     },
     '飛び率': {
-        'DEFAULT': 'Bust rate',
+        'DEFAULT': 'Tobi',
+        'EMA_ENG': 'Busted',
     },
     '対戦数': {
         'DEFAULT': '# of games',
