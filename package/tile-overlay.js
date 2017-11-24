@@ -9,8 +9,6 @@ function getImageDataURL(imageURL) {
         .then((blob) => {
             return new Promise((resolve, reject) => {
                 reader.addEventListener('load', () => {
-                    console.log(reader.result);
-
                     resolve(reader.result);
                 });
 
@@ -21,4 +19,43 @@ function getImageDataURL(imageURL) {
                 reader.readAsDataURL(blob);
             });
         });
+}
+
+function resizeImage(dataURL, width, height) {
+    const img = new Image();
+    const resizer = pica();
+    const canvas = document.createElement('canvas');
+    const reader = new FileReader();
+
+    img.src = dataURL;
+    canvas.width = width;
+    canvas.height = height;
+
+    return new Promise((resolve, reject) => {
+        img.onload = () => {
+            resolve();
+        }
+    })
+        .then(() => {
+            return resizer.resize(img, canvas, {
+                quality: 2,
+                alpha: true,
+            });
+        })
+        .then((result) => {
+            return resizer.toBlob(result, 'image/png');
+        })
+        .then((blob) => {
+            return new Promise((resolve, reject) => {
+                reader.addEventListener('load', () => {
+                    resolve(reader.result);
+                });
+
+                reader.addEventListener('error', (err) => {
+                    reject(err);
+                });
+
+                reader.readAsDataURL(blob);
+            });
+        })
 }

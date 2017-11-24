@@ -24,11 +24,46 @@ chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
     showIconForTab(tab);
 });
 
-let sprite;
+let sprites = new Array(5);
 
 getImageDataURL(chrome.runtime.getURL('sprites/0.png'))
     .then((dataURL) => {
-        sprite = dataURL;
+        return resizeImage(dataURL, 570, 344);
+    })
+    .then((newSprite) => {
+        sprites[0] = newSprite;
+    });
+
+getImageDataURL(chrome.runtime.getURL('sprites/1.png'))
+    .then((dataURL) => {
+        return resizeImage(dataURL, 770, 284);
+    })
+    .then((newSprite) => {
+        sprites[1] = newSprite;
+    });
+
+getImageDataURL(chrome.runtime.getURL('sprites/2.png'))
+    .then((dataURL) => {
+        return resizeImage(dataURL, 570, 344);
+    })
+    .then((newSprite) => {
+        sprites[2] = newSprite;
+    });
+
+getImageDataURL(chrome.runtime.getURL('sprites/3.png'))
+    .then((dataURL) => {
+        return resizeImage(dataURL, 770, 284);
+    })
+    .then((newSprite) => {
+        sprites[3] = newSprite;
+    });
+
+getImageDataURL(chrome.runtime.getURL('sprites/4.png'))
+    .then((dataURL) => {
+        return resizeImage(dataURL, 960, 580);
+    })
+    .then((newSprite) => {
+        sprites[4] = newSprite;
     });
 
 chrome.webRequest.onBeforeRequest.addListener((details) => {
@@ -40,10 +75,9 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     const spriteUrlRegex = /view([0-9]{3})([0-9])([0-9a-f]{20})\.png$/;
     const matches = spriteUrlRegex.exec(details.url);
     if (matches) {
-        if (matches[2] === '0') {
-            if (sprite) {
-                // return { redirectUrl: sprite };
-            }
+        const id = parseInt(matches[2]);
+        if (!isNaN(id) && sprites[id]) {
+            return { redirectUrl: sprites[id] };
         }
     }
 }, {
