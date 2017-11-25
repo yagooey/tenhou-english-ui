@@ -45,8 +45,8 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
             const canvas = document.createElement('canvas');
             canvas.width = width;
             canvas.height = 4 * Math.round(sprites[id].height * width / sprites[id].width / 4);
-            const canvas2d = canvas.getContext("2d");        
-            canvas2d.clearRect(0, 0, width, canvas.height);
+            const canvas2d = canvas.getContext("2d");
+            canvas2d.clearRect(0, 0, width + 1, canvas.height + 1);
             canvas2d.drawImage(sprites[id], 0, 0, width, canvas.height);
             return { redirectUrl: canvas.toDataURL() };
         }
