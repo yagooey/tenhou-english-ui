@@ -30,6 +30,7 @@
    "content_scripts": [ {
       "matches": [
           "*://tenhou.net/3*",
+          "*://tenhou.net/5*",
           "*://tenhou.net/sc/*",
           "*://tenhou.net/ranking.html",
           "*://tenhou.net/stat/*"
