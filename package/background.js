@@ -41,8 +41,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     if (matches) {
         const id = parseInt(matches[2]);
         if (!isNaN(id) && sprites[id]) {
-            const width = parseInt(matches[1]);
-            return {redirectUrl: sprites[id]};
+            const width = 10 * parseInt(matches[1]);
             return resizeImage(sprites[id], width);
         }
     }

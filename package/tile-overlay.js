@@ -21,9 +21,11 @@ function getImageDataURL(imageURL) {
         });
 }
 
+// disable webworkers (ww), as Firefox 57 thinks a cross-origin request is taking place
+const resizer = pica({ features: ['js', 'wasm',] });
+
 function resizeImage(dataURL, width) {
     const img = new Image();
-    const resizer = pica();
     const canvas = document.createElement('canvas');
     const reader = new FileReader();
 
@@ -36,7 +38,7 @@ function resizeImage(dataURL, width) {
     })
         .then(() => {
             canvas.width = width;
-            canvas.height = 4 * Math.round(0.5 + img.height * width / img.width / 4);
+            canvas.height = 4 * Math.round(img.height * width / img.width / 4);
             return resizer.resize(img, canvas, {
                 quality: 2,
                 alpha: true,
