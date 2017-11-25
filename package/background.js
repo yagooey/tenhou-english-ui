@@ -26,8 +26,8 @@ chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
 
 let sprites = new Array(5);
 for (let i = 0; i < 5; i += 1) {
-    getImageDataURL(chrome.runtime.getURL('sprites/' + i + '.png'))
-        .then(newSprite => sprites[i] = newSprite);
+    sprites[i] = new Image();
+    sprites[i].src = chrome.runtime.getURL('sprites/' + i + '.png');
 }
 
 chrome.webRequest.onBeforeRequest.addListener((details) => {
@@ -42,7 +42,13 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
         const id = parseInt(matches[2]);
         if (!isNaN(id) && sprites[id]) {
             const width = 10 * parseInt(matches[1]);
-            return resizeImage(sprites[id], width);
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = 4 * Math.round(sprites[id].height * width / sprites[id].width / 4);
+            const canvas2d = canvas.getContext("2d");        
+            canvas2d.clearRect(0, 0, width, canvas.height);
+            canvas2d.drawImage(sprites[id], 0, 0, width, canvas.height);
+            return { redirectUrl: canvas.toDataURL() };
         }
     }
 }, {

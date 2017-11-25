@@ -34,8 +34,6 @@
     ],
     "background": {
         "scripts": [
-            "lib/pica.min.js",
-            "tile-overlay.js",
             "background.js"
         ]
     },
