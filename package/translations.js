@@ -407,6 +407,9 @@ const exactTranslation = {
     '(※180日以上対戦を行っていないIDは削除されますのでご注意ください)': {
         'DEFAULT': '(Please be aware that IDs not playing for 180 days or more will be deleted)',
     },
+    '必要な画像リソースの読み込みが完了していません': {
+        'DEFAULT': 'Tile images have not loaded (yet)',
+    },
 
     // Settings
 
