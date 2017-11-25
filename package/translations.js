@@ -701,13 +701,15 @@ const exactTranslation = {
     },
     '連対率': {
         'DEFAULT': 'Rentai',
-        'EMA_ENG': '1st + 2nd rate',
+        'EMA_ENG': '1st & 2nd',
     },
     'トップ': {
         'DEFAULT': 'Top rate',
+        'EMA_ENG': '1st rate',
     },
     'ラス率': {
         'DEFAULT': 'Last rate',
+        'EMA_ENG': '4th rate',
     },
     '総合': {
         'DEFAULT': 'Total',
@@ -725,19 +727,20 @@ const exactTranslation = {
         'DEFAULT': 'Raw Stats',
     },
     '１位率': {
-        'DEFAULT': '1st rate',
+        'DEFAULT': '1st',
     },
     '２位率': {
-        'DEFAULT': '2nd rate',
+        'DEFAULT': '2nd',
     },
     '３位率': {
-        'DEFAULT': '3rd rate',
+        'DEFAULT': '3rd',
     },
     '４位率': {
-        'DEFAULT': '4th rate',
+        'DEFAULT': '4th',
     },
     '飛び率': {
-        'DEFAULT': 'Bust rate',
+        'DEFAULT': 'Tobi',
+        'EMA_ENG': 'Busted',
     },
     '対戦数': {
         'DEFAULT': '# of games',
@@ -834,6 +837,9 @@ const exactTranslation = {
     },
     'ロン': {
         'DEFAULT': 'Ron',
+    },
+    'パオ': {
+        'DEFAULT': 'Pao',
     },
     'リーチ': {
         'DEFAULT': 'Riichi',
@@ -952,6 +958,39 @@ const exactTranslation = {
     '四暗刻単騎 清老頭': {
         'DEFAULT': 'Suuankou tanki + Chinroutou',
         'EMA_ENG': '4 concealed pungs (single wait) + All terminals',
+    },
+    
+    // replays
+
+    '天鳳牌譜再生': {
+        'DEFAULT': 'Game replay',
+    },
+    '牌 譜 を 再 生': {
+        'DEFAULT': 'Start the replay',
+    },
+    '前局': {
+        'DEFAULT': 'Prev. hand',
+    },
+    '次局': {
+        'DEFAULT': 'Next hand',
+    },
+    '上家': {
+        'DEFAULT': '↺',
+    },
+    '下家': {
+        'DEFAULT': '↻',
+    },
+    '手牌 OFF': {
+        'DEFAULT': 'Show only front hand.',
+    },
+    '手牌 ON': {
+        'DEFAULT': 'Show all hands.',
+    },
+    '暗転 OFF': {
+        'DEFAULT': 'Don\'t shade discarded drawn tiles.',
+    },
+    '暗転 ON': {
+        'DEFAULT': 'Shade discarded drawn tiles.',
     },
 };
 
