@@ -24,12 +24,14 @@ chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
     showIconForTab(tab);
 });
 
+// Parepare custom tile sprites
 let sprites = new Array(5);
-for (let i = 0; i < 5; i += 1) {
+for (let i = 0; i < 5; i++) {
     sprites[i] = new Image();
     sprites[i].src = chrome.runtime.getURL('sprites/' + i + '.png');
 }
 
+// Replace tile sprite sheets with custom sprite sheets
 chrome.webRequest.onBeforeRequest.addListener((details) => {
     /**
      * Group 1: Width of image
@@ -40,11 +42,11 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     const matches = spriteUrlRegex.exec(details.url);
     if (matches) {
         const id = parseInt(matches[2]);
-        if (!isNaN(id) && sprites[id]) {
+        if (sprites[id]) {
             const width = 10 * parseInt(matches[1]);
             const canvas = document.createElement('canvas');
             canvas.width = width;
-            canvas.height = 4 * Math.round(sprites[id].height * width / sprites[id].width / 4);
+            canvas.height = tileSheetHeightLookup[id][width];
             const canvas2d = canvas.getContext("2d");
             canvas2d.clearRect(0, 0, width + 1, canvas.height + 1);
             canvas2d.drawImage(sprites[id], 0, 0, width, canvas.height);
