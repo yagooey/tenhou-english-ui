@@ -380,9 +380,21 @@ const exactTranslation = {
     'プレーヤ名を8文字以内で入力してください': {
         'DEFAULT': 'Please enter player name up to 8 characters',
     },
+    'IDが正しくありません': {
+        'DEFAULT': 'Incorrect ID',
+    },
+    'プレーヤID(半角19文字)を入力してください': {
+        'DEFAULT': 'Please enter Player ID (19 half-width characters)',
+    },
+    '登録が完了しました。IDを紛失しないようにコピーしてください。': {
+        'DEFAULT': 'Registration has been completed. Please copy the ID so that it will not be lost.',
+    },
+    '(※180日以上対戦を行っていないIDは削除されますのでご注意ください)': {
+        'DEFAULT': '(Please be aware that IDs not playing for 180 days or more will be deleted)',
+    },
 
-    // Error messages
-    // 1001 ~ 1006, 1019, 1021
+    // Error messages 1001 ~ 1006, 1019, 1021
+
     'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
         'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
     },
@@ -391,6 +403,9 @@ const exactTranslation = {
     },
     '■IDの再発行方法は以下を参照してください': {
         'DEFAULT': 'Visit the link below for information on how to reissue an ID',
+    },
+    '180日以上対戦を行っていないIDは停止または削除されている場合があります。七段以上で有料版の決済情報が確認できる場合にはIDの復元が可能です。お早めにお問い合わせください。(ERR1003)': {
+        'DEFAULT': 'IDs not playing for 180 days or more might be deleted. ID can be recovered for paid accounts holding a rank of 7 dan or above after verification of payment details. Please contact us as soon as possible. (ERR1003)',
     },
     'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
         'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
@@ -406,18 +421,6 @@ const exactTranslation = {
     },
     '外部ログインサーバからの応答がありません(ERR1021)': {
         'DEFAULT': 'There is no response from the login server (ERR 1021)',
-    },
-    'IDが正しくありません': {
-        'DEFAULT': 'Incorrect ID',
-    },
-    'プレーヤID(半角19文字)を入力してください': {
-        'DEFAULT': 'Please enter Player ID (19 half-width characters)',
-    },
-    '登録が完了しました。IDを紛失しないようにコピーしてください。': {
-        'DEFAULT': 'Registration has been completed. Please copy the ID so that it will not be lost.',
-    },
-    '(※180日以上対戦を行っていないIDは削除されますのでご注意ください)': {
-        'DEFAULT': '(Please be aware that IDs not playing for 180 days or more will be deleted)',
     },
 
     // Settings
