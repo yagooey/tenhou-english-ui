@@ -9,6 +9,7 @@ let thisPartialTable = {};
 let thisExactTable = {};
 let thisTooltipTable = {};
 let tableStore = {};
+let options = {};
 
 const observerSettings = {
     characterData: true,
@@ -70,8 +71,8 @@ document.addEventListener('keyup', function (event) {
 function getTranslationSets(callback) {
     // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
     // Need a callback argument, because chrome.storage.local is only available asynchronously
-    chrome.storage.local.get({ translation: 'DEFAULT' }, function(storedval) {
-
+    chrome.storage.local.get({ translation: 'DEFAULT', tileset: 'DEFAULT' }, function(storedval) {
+        options = storedval;
         if (storedval.translation === 'off') return callback(false);
 
         if (storedval.translation === lastTranslationSeen && Object.keys(thisExactTable).length) {
@@ -223,6 +224,9 @@ function onMutate(mutations) {
 
 // This is what happens when the page is first loaded
 getTranslationSets(function(canTranslate) {
+    if (options.tileset) {
+        chrome.runtime.sendMessage({ greeting: 'tileset', tileset: options.tileset });
+    }
     if (canTranslate) {
         translateTextBeneathANode(document.body, false, true);
         if (thisExactTable[document.title.trim()]) {

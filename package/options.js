@@ -5,6 +5,10 @@ let sprites = {
     'english': 'English labels to help identify tiles',
 };
 
+function notifyTileset(tileset) {
+  chrome.runtime.sendMessage({ greeting: 'tileset', tileset: tileset });
+}
+
 function saveOptions() {
     chrome.storage.local.set({
         tileset: thisForm.tileset.value,
@@ -12,6 +16,8 @@ function saveOptions() {
         toggle: thisForm.useToggler.checked,
         altTranslation: thisForm.toggleTo.value,
     });
+
+    notifyTileset(items.tileset);
 
     // Emit an event to translate the entire app
     chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
@@ -33,6 +39,7 @@ function restoreOptions() {
         thisForm.useToggler.checked = items.toggle,
         thisForm.toggleTo.value = items.altTranslation;
         thisForm.toggleToSet.style.display = items.toggle ? 'block' : 'none';
+        notifyTileset(items.tileset);
     });
 }
 
