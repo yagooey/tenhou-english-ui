@@ -365,9 +365,6 @@ const exactTranslation = {
     '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': {
         'DEFAULT': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
     },
-    'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
-        'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
-    },
     '再接続しますか？': {
         'DEFAULT': 'Reconnect?',
     },
@@ -383,17 +380,32 @@ const exactTranslation = {
     'プレーヤ名を8文字以内で入力してください': {
         'DEFAULT': 'Please enter player name up to 8 characters',
     },
-    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': {
-        'DEFAULT': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
-    },
+
+    // Error messages
+    // 1001 ~ 1006, 1019, 1021
     'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
         'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
+    },
+    'このプレーヤ名を使用するにはIDで入場する必要があります':{
+        'DEFAULT': 'This name is registered. Please use the correct ID to login',
+    },
+    '■IDの再発行方法は以下を参照してください': {
+        'DEFAULT': 'Visit the link below for information on how to reissue an ID',
+    },
+    'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
+        'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
+    },
+    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': {
+        'DEFAULT': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
     },
     'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
         'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
     },
     '大会ロビーが見つかりませんでした。(ERR1019)': {
         'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
+    },
+    '外部ログインサーバからの応答がありません(ERR1021)': {
+        'DEFAULT': 'There is no response from the login server (ERR 1021)',
     },
     'IDが正しくありません': {
         'DEFAULT': 'Incorrect ID',
@@ -806,7 +818,7 @@ const exactTranslation = {
         'DEFAULT': '※Subscribed users can access all replays from any device',
     },
     '※１０日前までの牌譜が検索可能です': {
-        'DEFAULT': '※Replays will be kept for a period of 10 days'
+        'DEFAULT': '※Replays will be kept for a period of 10 days',
     },
     '牌譜の検索やダウンロードはこちらから行えます': {
         'DEFAULT': 'Find and download game replays here',
@@ -959,7 +971,7 @@ const exactTranslation = {
         'DEFAULT': 'Suuankou tanki + Chinroutou',
         'EMA_ENG': '4 concealed pungs (single wait) + All terminals',
     },
-    
+
     // replays
 
     '天鳳牌譜再生': {
