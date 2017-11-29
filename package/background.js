@@ -24,7 +24,7 @@ chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => showIconForTab(tab));
 let tileset = 'DEFAULT';
 let sprites = {};
 let sizes = [];
-const tileSizePrefixes = { 0: '', 1: 's' }; // descending size order
+const tileSizePrefixes = { 0: '', 1: 'm', 2: 's' }; // descending size order
 
 // retrieve the right spritesheets from those that are packed with the extension
 function updateTileset(options, sender = null, sendResponse = null) {
@@ -58,7 +58,6 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     if (tileset === 'DEFAULT' || !matches || !sprites) return;
 
     const id = parseInt(matches[2]);
-    //console.log('requested ' + matches[1] + '-' + matches[2]);
     if (sizes[id][0]) {
         const width = 10 * parseInt(matches[1]);
         let size = 0;
@@ -67,7 +66,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
                 size = i;
             } else break;
         }
-        //console.log('using ' + sizes[id][size]);
+        console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
         
         const canvas = document.createElement('canvas');
         canvas.width = width;
