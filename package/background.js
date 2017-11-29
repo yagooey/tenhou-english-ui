@@ -22,20 +22,25 @@ chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
 chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => showIconForTab(tab));
 
 let tileset = 'DEFAULT';
-let sprites;
-// file suffixes for the different tileset sizes
-const tileWidthThresholds = { 500: 'small', 9999: 'large' };
+let sprites = {};
+let sizes = [];
+const tileSizePrefixes = { 0: '', 1: 's' }; // descending size order
 
 // retrieve the right spritesheets from those that are packed with the extension
 function updateTileset(options, sender = null, sendResponse = null) {
     tileset = options.tileset;
     if (tileset === 'DEFAULT') return;
-    // Prepare custom tile sprites
-    sprites = new Array(5);
     for (let i = 0; i < 5; i++) {
-        sprites[i] = new Image();
-        sprites[i].src = chrome.runtime.getURL('sprites.' + tileset + '/' + i + '.png');
-    }    
+        sprites[i] = {};
+        sizes[i] = [];
+        for (let size in tileSizePrefixes) {
+            sprites[i][size] = new Image();
+            sprites[i][size].src = chrome.runtime.getURL('sprites.' + tileset + '/' + i + tileSizePrefixes[size] + '.png');
+            sprites[i][size].onload = (e) => {
+                sizes[i][size] = e.originalTarget.width;
+            };
+        }
+    }
 }
 
 // listen for messages about the user changing their options
@@ -48,19 +53,28 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
      * Group 2: Sprite ID
      * Group 3: Colour code
      */
-    const spriteUrlRegex = /view([0-9]{3})([0-9])([0-9a-f]{20})\.png$/;
+    const spriteUrlRegex = /view([0-9]{3})([0-4])([0-9a-f]{20})\.png$/;
     const matches = spriteUrlRegex.exec(details.url);
     if (tileset === 'DEFAULT' || !matches || !sprites) return;
-    
+
     const id = parseInt(matches[2]);
-    if (sprites[id]) {
+    //console.log('requested ' + matches[1] + '-' + matches[2]);
+    if (sizes[id][0]) {
         const width = 10 * parseInt(matches[1]);
+        let size = 0;
+        for (let i = 1; i < sizes[id].length; i++) {
+            if (width <= sizes[id][i]) {
+                size = i;
+            } else break;
+        }
+        //console.log('using ' + sizes[id][size]);
+        
         const canvas = document.createElement('canvas');
         canvas.width = width;
         canvas.height = tileSheetHeightLookup[id][width];
         const canvas2d = canvas.getContext('2d');
         canvas2d.clearRect(0, 0, width + 1, canvas.height + 1);
-        canvas2d.drawImage(sprites[id], 0, 0, width, canvas.height);
+        canvas2d.drawImage(sprites[id][size], 0, 0, width, canvas.height);
         return { redirectUrl: canvas.toDataURL() };
     }
 }, {

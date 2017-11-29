@@ -28,7 +28,6 @@ function retranslateAll() {
 }
 
 function setOptions(options, ignored = null, ignored2 = null) {
-    console.log('In context listener');
     mainTranslation = options.translation;
     altTranslation = options.toggle ? options.altTranslation : null;
     retranslateAll();
