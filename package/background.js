@@ -36,8 +36,8 @@ function updateTileset(options, sender = null, sendResponse = null) {
         for (let size in tileSizePrefixes) {
             sprites[i][size] = new Image();
             sprites[i][size].src = chrome.runtime.getURL('sprites.' + tileset + '/' + i + tileSizePrefixes[size] + '.png');
-            sprites[i][size].onload = (e) => {
-                sizes[i][size] = e.originalTarget.width;
+            sprites[i][size].onload = () => {
+                sizes[i][size] = sprites[i][size].width;
             };
         }
     }
