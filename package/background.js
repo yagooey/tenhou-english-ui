@@ -27,20 +27,19 @@ let sprites;
 const tileWidthThresholds = { 500: 'small', 9999: 'large' };
 
 // retrieve the right spritesheets from those that are packed with the extension
-function getTileset() {
+function updateTileset(options, sender = null, sendResponse = null) {
+    tileset = options.tileset;
     if (tileset === 'DEFAULT') return;
     // Prepare custom tile sprites
     sprites = new Array(5);
     for (let i = 0; i < 5; i++) {
         sprites[i] = new Image();
         sprites[i].src = chrome.runtime.getURL('sprites.' + tileset + '/' + i + '.png');
-    }
+    }    
 }
 
 // listen for messages about the user changing their options
-chrome.runtime.onMessage.addListener( (options, sender = null, sendResponse = null) => {
-    getTileset(options.tileset);
-});
+chrome.runtime.onMessage.addListener(updateTileset);
 
 // Replace tile sprite sheets with custom sprite sheets
 chrome.webRequest.onBeforeRequest.addListener((details) => {
@@ -68,3 +67,6 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     urls: ['*://p.mjv.jp/5/img/view*'],
     types: ['image'],
 }, ["blocking"]);
+
+// on load of extension
+chrome.storage.local.get({ tileset: 'DEFAULT' }, (items) => updateTileset(items));

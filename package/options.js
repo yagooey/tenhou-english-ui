@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     };
 
     function updateWithNewOptions(options) {
-        console.log('updating now');
         //update the tileset
         chrome.runtime.sendMessage(options);
 
