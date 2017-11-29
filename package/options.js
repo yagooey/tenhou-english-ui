@@ -1,81 +1,74 @@
-let thisForm = document.forms.optionform;
-let sprites = {
-    'DEFAULT': 'The standard tileset',
-    'inverted': 'Black background. Smooth.',
-    'english': 'English labels to help identify tiles',
-};
+document.addEventListener('DOMContentLoaded', (ignored) => {
 
-function notifyTileset(tileset) {
-  chrome.runtime.sendMessage({ greeting: 'tileset', tileset: tileset });
-}
+    let thisForm = document.forms.optionform;
+    let sprites = {
+        'DEFAULT': 'The standard tileset',
+        'inverted': 'Black background. Smooth.',
+        'english': 'English labels to help identify tiles',
+    };
 
-function saveOptions() {
-    chrome.storage.local.set({
-        tileset: thisForm.tileset.value,
-        translation: thisForm.translation.value,
-        toggle: thisForm.useToggler.checked,
-        altTranslation: thisForm.toggleTo.value,
-    });
+    function updateWithNewOptions(options) {
+        console.log('updating now');
+        //update the tileset
+        chrome.runtime.sendMessage(options);
 
-    notifyTileset(items.tileset);
+        //update the translations
+        chrome.tabs.query({ url: '*://tenhou.net/*' },
+            (tabs) => tabs.forEach((tab) => chrome.tabs.sendMessage(tab.id, options))
+        );
+    }
 
-    // Emit an event to translate the entire app
-    chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
-        tabs.forEach((tab) => {
-            chrome.tabs.sendMessage(tab.id, { translate: 'all' });
-        });
-    });
-}
+    function toggleAltDisplay() {
+        thisForm.toggleToSet.style.display = thisForm.useToggler.checked ? 'block' : 'none';
+    }
+    
+    function saveOptions() {
+        toggleAltDisplay();
+        options = {
+            tileset: thisForm.tileset.value,
+            translation: thisForm.translation.value,
+            toggle: thisForm.useToggler.checked,
+            altTranslation: thisForm.toggleTo.value
+        };
+        chrome.storage.local.set(options, () => updateWithNewOptions(options));
+    }
 
-function restoreOptions() {
+    let fieldset = document.getElementById('tileset');
+    for (tileset in sprites) {
+        let label = document.createElement('label');
+
+        let radioButton = document.createElement('input');
+        radioButton.type = 'radio';
+        radioButton.name = 'tileset';
+        radioButton.value = tileset;
+
+        let sample = new Image();
+        sample.src = 'sprites.' + tileset + '/sample.png';
+        sample.alt = sprites[tileset];
+        sample.title = sprites[tileset];
+
+        label.appendChild(radioButton);
+        label.appendChild(sample);
+        fieldset.appendChild(label);
+    }
+
+    let inputs = document.getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('change', saveOptions);
+    }
+
     chrome.storage.local.get({
         tileset: 'DEFAULT',
         translation: 'DEFAULT',
         altTranslation: 'off',
-        toggle: false,
+        toggle: false
     }, function(items) {
-        thisForm.tileset.value = items.tileset,
+        thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;
-        thisForm.useToggler.checked = items.toggle,
+        thisForm.useToggler.checked = items.toggle;
         thisForm.toggleTo.value = items.altTranslation;
-        thisForm.toggleToSet.style.display = items.toggle ? 'block' : 'none';
-        notifyTileset(items.tileset);
+        toggleAltDisplay();
+        updateWithNewOptions(items);
     });
-}
 
-let radios = document.getElementsByName('translation');
-for (let i = 0; i < radios.length; i++) {
-    radios[i].addEventListener('change', saveOptions);
-}
-
-let fieldset = document.getElementById('tileset');
-for (tileset in sprites) {
-    let label = document.createElement('label');
-
-    let radio = document.createElement('input');
-    radio.type = 'radio';
-    radio.name = 'tileset';
-    radio.value = tileset;
-    
-    let sample = new Image();
-    sample.src = 'sprites.' + tileset + '/sample.png';
-    sample.alt = sprites[tileset];
-    sample.title = sprites[tileset];
-    
-    label.appendChild(radio);
-    label.appendChild(sample);
-    fieldset.appendChild(label);
-    radio.addEventListener('change', saveOptions);
-}
-
-radios = document.getElementsByName('toggleTo');
-for (i = 0; i < radios.length; i++) {
-    radios[i].addEventListener('change', saveOptions);
-}
-
-thisForm.useToggler.addEventListener('change', function(e) {
-    thisForm.toggleToSet.style.display = e.target.checked ? 'block' : 'none';
-    saveOptions();
 });
-
-document.addEventListener('DOMContentLoaded', restoreOptions);

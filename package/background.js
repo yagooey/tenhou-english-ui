@@ -5,28 +5,28 @@ chrome.runtime.onInstalled.addListener(function(object) {
     }
 });
 
-
+// show the addon button for one tab
 function showIconForTab(tab) {
     if (tab.url.includes("tenhou.net")) {
       chrome.pageAction.show(tab.id);
     }
 }
 
-function iconsAcrossTabs(tabs) {
+// on initialisation, show the addon button for all tenhou tabs
+chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
     for (let tab of tabs) {
       showIconForTab(tab);
-    }
-}
-
-chrome.tabs.query({ url: '*://tenhou/net/*' }, iconsAcrossTabs)
-
-chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
-    showIconForTab(tab);
+    };
 });
+
+chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => showIconForTab(tab));
 
 let tileset = 'DEFAULT';
 let sprites;
+// file suffixes for the different tileset sizes
+const tileWidthThresholds = { 500: 'small', 9999: 'large' };
 
+// retrieve the right spritesheets from those that are packed with the extension
 function getTileset() {
     if (tileset === 'DEFAULT') return;
     // Prepare custom tile sprites
@@ -37,20 +37,13 @@ function getTileset() {
     }
 }
 
-getTileset(tileset);
-
-// listen for messages about the user's preferred tileset, sent from the options form
-chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
-    switch (request.greeting) {
-        case 'tileset':
-            tileset = request.tileset;
-            getTileset(tileset);
-            break;
-    }
+// listen for messages about the user changing their options
+chrome.runtime.onMessage.addListener( (options, sender = null, sendResponse = null) => {
+    getTileset(options.tileset);
 });
 
 // Replace tile sprite sheets with custom sprite sheets
-chrome.webRequest.onBeforeRequest.addListener(details => {
+chrome.webRequest.onBeforeRequest.addListener((details) => {
     /**
      * Group 1: Width of image
      * Group 2: Sprite ID

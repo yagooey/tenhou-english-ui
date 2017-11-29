@@ -10,6 +10,11 @@ let thisExactTable = {};
 let thisTooltipTable = {};
 let tableStore = {};
 let options = {};
+let mainTranslation = 'off';
+let altTranslation = 'off';
+let usingAltTranslation = false;
+let toggleTranslationOff;
+let originalStore;
 
 const observerSettings = {
     characterData: true,
@@ -17,121 +22,99 @@ const observerSettings = {
     subtree: true,
 };
 
-chrome.runtime.onMessage.addListener((request, sender) => {
-    // Listen for option changed
-    if (request.translate === 'all') {
-        getTranslationSets((shouldTranslate) => {
-            // restore all nodes to their original value, then translate them
-            translateTextBeneathANode(document.body, true, shouldTranslate);
-        });
-    }
-});
+function retranslateAll() {
+    // restore all nodes to their original value, then translate them if needed
+    translateTextBeneathANode(document.body, true, getTranslationSets());
+}
 
-let holdingKeyDown = false;
-let toggleTranslationOff;
-let originalStore;
+function setOptions(options, ignored = null) {
+    console.log('In context listener');
+    mainTranslation = options.translation;
+    altTranslation = options.toggle ? options.altTranslation : null;
+    retranslateAll();
+}
+
+chrome.runtime.onMessage.addListener(setOptions);
 
 document.addEventListener('keydown', function (event) {
-    if (event.key === 'Control' && holdingKeyDown === false) {
-        chrome.storage.local.get({ translation: lastTranslationSeen, toggle: false, altTranslation: 'off' }, function(storedval) {
-            if (!storedval.toggle) return;
-            originalStore = storedval;
-            holdingKeyDown = true;
-            toggleTranslationOff = storedval.altTranslation === 'off';
-            if (toggleTranslationOff) {
-                mutationObserver.disconnect();
-            }
-            chrome.storage.local.set({
-                translation: storedval.altTranslation,
-                altTranslation: storedval.translation,
-            }, function() {
-                getTranslationSets(function(canTranslate) {
-                    translateTextBeneathANode(document.body, true, canTranslate);
-                });
-            });
-        });
+    if (event.key !== 'Control' || usingAltTranslation || !altTranslation) return;
+    usingAltTranslation = true;
+    toggleTranslationOff = altTranslation === 'off';
+    if (toggleTranslationOff) {
+        mutationObserver.disconnect();
     }
+    retranslateAll();
 });
 
 document.addEventListener('keyup', function (event) {
-    if (event.key === 'Control' && holdingKeyDown) {
-        chrome.storage.local.get({ toggle: false }, function(storedval) {
-            if (!storedval.toggle) return;
-            chrome.storage.local.set(originalStore, function() {
-                if (toggleTranslationOff) {
-                    setToObserve();
-                }
-                translateTextBeneathANode(document.body, !toggleTranslationOff, originalStore.translation !== 'off');
-                holdingKeyDown = false;
-            });
-        });
+    if (event.key !== 'Control' || !usingAltTranslation) return;
+    if (toggleTranslationOff) {
+        setToObserve();
     }
+    usingAltTranslation = false;
+    translateTextBeneathANode(document.body, !toggleTranslationOff, getTranslationSets());
 });
 
-function getTranslationSets(callback) {
-    // callback is called with argument: true if a translation is available, otherwise it is called with argument: false
-    // Need a callback argument, because chrome.storage.local is only available asynchronously
-    chrome.storage.local.get({ translation: 'DEFAULT', tileset: 'DEFAULT' }, function(storedval) {
-        options = storedval;
-        if (storedval.translation === 'off') return callback(false);
+function getTranslationSets() {
+    let translation = usingAltTranslation ? altTranslation : mainTranslation;
 
-        if (storedval.translation === lastTranslationSeen && Object.keys(thisExactTable).length) {
-            // We've already got the right translation, so can go translate immediately
+    if (translation === 'off') return false;
 
-            return callback(true);
-        }
+    if (translation === lastTranslationSeen && Object.keys(thisExactTable).length) {
+        // We've already got the right translation, so can go translate immediately
+        return true;
+    }
 
-        lastTranslationSeen = storedval.translation;
+    lastTranslationSeen = translation;
 
-        let thisStatsTable;
+    let thisStatsTable;
 
-        if (tableStore.hasOwnProperty(lastTranslationSeen) && Object.keys(tableStore[lastTranslationSeen]).length) {
-            thisExactTable = tableStore[lastTranslationSeen].exact;
-            thisPartialTable = tableStore[lastTranslationSeen].partial;
-            thisStatsTable = tableStore[lastTranslationSeen].stats;
-            thisTooltipTable = tableStore[lastTranslationSeen].tooltip;
-        } else {
-            let translation = storedval.translation.split(',');
-            const overlay = function(tableIn) {
-                let tableOut = {};
-                for (let toTranslate of Object.keys(tableIn)) {
-                    for (let thisTranslation of translation) {
-                        if (tableIn[toTranslate][thisTranslation]) {
-                            tableOut[toTranslate] = tableIn[toTranslate][thisTranslation];
-                        } else if (tableIn[toTranslate][thisTranslation] === null) {
-                            delete tableOut[toTranslate];
-                        }
+    if (tableStore.hasOwnProperty(lastTranslationSeen) && Object.keys(tableStore[lastTranslationSeen]).length) {
+        thisExactTable = tableStore[lastTranslationSeen].exact;
+        thisPartialTable = tableStore[lastTranslationSeen].partial;
+        thisStatsTable = tableStore[lastTranslationSeen].stats;
+        thisTooltipTable = tableStore[lastTranslationSeen].tooltip;
+    } else {
+        let setsToCombine = translation.split(',');
+        const overlay = function(tableIn) {
+            let tableOut = {};
+            for (let toTranslate of Object.keys(tableIn)) {
+                for (let thisTranslation of setsToCombine) {
+                    if (tableIn[toTranslate][thisTranslation]) {
+                        tableOut[toTranslate] = tableIn[toTranslate][thisTranslation];
+                    } else if (tableIn[toTranslate][thisTranslation] === null) {
+                        delete tableOut[toTranslate];
                     }
                 }
-                return tableOut;
+            }
+            return tableOut;
 
-            };
+        };
 
-            thisExactTable = overlay(exactTranslation);
-            thisPartialTable = overlay(partialTranslation);
-            thisStatsTable = overlay(partialTranslationForStats);
-            thisTooltipTable = overlay(tooltips);
+        thisExactTable = overlay(exactTranslation);
+        thisPartialTable = overlay(partialTranslation);
+        thisStatsTable = overlay(partialTranslationForStats);
+        thisTooltipTable = overlay(tooltips);
 
-            tableStore[lastTranslationSeen] = {
-                exact: thisExactTable,
-                partial: thisPartialTable,
-                stats: thisStatsTable,
-                tooltip: thisTooltipTable,
-            };
-        }
+        tableStore[lastTranslationSeen] = {
+            exact: thisExactTable,
+            partial: thisPartialTable,
+            stats: thisStatsTable,
+            tooltip: thisTooltipTable,
+        };
+    }
 
-        if (window.location.href.indexOf('/3') === -1) {
-            Object.assign(thisPartialTable, thisStatsTable);
-        }
+    if (window.location.href.indexOf('/3') === -1) {
+        Object.assign(thisPartialTable, thisStatsTable);
+    }
 
-        // Sort by key length, so that when performing partial matching,
-        // the entry with more matching characters will have priority
-        partialPhrases = Object.keys(thisPartialTable).sort((a, b) => {
-            return b.length - a.length;
-        });
-
-        return callback(true);
+    // Sort by key length, so that when performing partial matching,
+    // the entry with more matching characters will have priority
+    partialPhrases = Object.keys(thisPartialTable).sort((a, b) => {
+        return b.length - a.length;
     });
+
+    return true;
 }
 
 /**
@@ -212,27 +195,22 @@ function setToObserve() {
 
 function onMutate(mutations) {
     mutationObserver.disconnect();
-    getTranslationSets(function(canTranslate) {
-        if (canTranslate) {
-            mutations.forEach(function(oneMutation) {
-                translateTextBeneathANode(oneMutation.target, false, true);
-            });
-        }
-        setToObserve();
-    });
+    if (getTranslationSets()) {
+        mutations.forEach((oneMutation) => translateTextBeneathANode(oneMutation.target, false, true));
+    }
+    setToObserve();
 }
 
+
 // This is what happens when the page is first loaded
-getTranslationSets(function(canTranslate) {
-    if (options.tileset) {
-        chrome.runtime.sendMessage({ greeting: 'tileset', tileset: options.tileset });
-    }
-    if (canTranslate) {
+chrome.storage.local.get(null, (options) => {
+    setOptions(options);
+    if (getTranslationSets()) {
+        mutationObserver = new MutationObserver(onMutate);
+        setToObserve();
         translateTextBeneathANode(document.body, false, true);
         if (thisExactTable[document.title.trim()]) {
             document.title = thisExactTable[document.title.trim()];
         }
     }
-    mutationObserver = new MutationObserver(onMutate);
-    setToObserve();
 });
