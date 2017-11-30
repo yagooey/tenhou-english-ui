@@ -979,7 +979,7 @@ const exactTranslation = {
         'DEFAULT': 'Shousuushi + Suuankou',
         'EMA_ENG': 'Little 4 winds + 4 concealed pungs',
     },
-    
+
     // replays
 
     '天鳳牌譜再生': {
