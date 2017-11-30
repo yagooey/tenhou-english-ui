@@ -849,12 +849,24 @@ const exactTranslation = {
         'EMA_ENG': 'Redeal',
     },
     '四家立直': {
-        'DEFAULT': 'Suuchariichi',
-        'EMA_ENG': 'Quadruple riichi',
+        'DEFAULT': 'Suucha riichi',
+        'EMA_ENG': 'Redeal: Quadruple riichi',
     },
     '三家和了': {
         'DEFAULT': 'Sancha hou',
-        'EMA_ENG': 'Triple ron',
+        'EMA_ENG': 'Redeal: Triple ron',
+    },
+    '四風連打': {
+        'DEFAULT': 'Suufon renda',
+        'EMA_ENG': 'Redeal: 4 identical winds discarded',
+    },
+    '四槓散了': {
+        'DEFAULT': 'Suukaikan',
+        'EMA_ENG': 'Redeal: Four kongs',
+    },
+    '九種九牌': {
+        'DEFAULT': 'Kyuushuu kyuuhai',
+        'EMA_ENG': 'Redeal: 9 terminals & honours',
     },
     'カン': {
         'DEFAULT': 'Kan',
@@ -959,7 +971,15 @@ const exactTranslation = {
         'DEFAULT': 'Suuankou tanki + Chinroutou',
         'EMA_ENG': '4 concealed pungs (single wait) + All terminals',
     },
-    
+    '四暗刻 緑一色': {
+        'DEFAULT': 'Suuankou tanki + Ryuuiisou',
+        'EMA_ENG': '4 concealed pungs + All green',
+    },
+    '小四喜 四暗刻': {
+        'DEFAULT': 'Shousuushi + Suuankou',
+        'EMA_ENG': 'Little 4 winds + 4 concealed pungs',
+    },
+
     // replays
 
     '天鳳牌譜再生': {
