@@ -971,6 +971,14 @@ const exactTranslation = {
         'DEFAULT': 'Suuankou tanki + Chinroutou',
         'EMA_ENG': '4 concealed pungs (single wait) + All terminals',
     },
+    '四暗刻 緑一色': {
+        'DEFAULT': 'Suuankou tanki + Ryuuiisou',
+        'EMA_ENG': '4 concealed pungs + All green',
+    },
+    '小四喜 四暗刻': {
+        'DEFAULT': 'Shousuushi + Suuankou',
+        'EMA_ENG': 'Little 4 winds + 4 concealed pungs',
+    },
     
     // replays
 
