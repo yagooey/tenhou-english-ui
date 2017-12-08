@@ -362,6 +362,9 @@ const exactTranslation = {
     'ロビーの移動': {
         'DEFAULT': 'Change lobby',
     },
+    'このプレーヤ名で新しいIDを作成しますか？': {
+        'DEFAULT': 'Would you like to create a new ID with this player name?',
+    },
     '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': {
         'DEFAULT': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
     },
@@ -1012,7 +1015,30 @@ const exactTranslation = {
     '暗転 ON': {
         'DEFAULT': 'Shade discarded drawn tiles.',
     },
+    
+    // promotion
+    
+    '認定': {
+        'DEFAULT': 'Congratulations', // Yes, I know that's not actually what it says, but "certification" or "official acknowledgement" would be weird here
+    },
+    '認定段位/級位    :    9級': { // repeat this for every grade?
+        'DEFAULT': 'You have achieved promotion to: 9 kyuu',
+    },
+    '貴殿は天鳳において卓越した技能を遺憾なく発揮され優秀な': {
+        'DEFAULT': 'You have unquestionably demonstrated outstanding skills',
+    },
+    '成績をおさめられました。今後もさらなる雀力向上に精進され': {
+        'DEFAULT': 'and have achieved excellent results.',
+    },
+    'ますようここに段位/級位を認定し栄誉を称えます。': {
+        'DEFAULT': 'With this promotion, we acknowledge your advancement,',
+    },
+    '天鳳段位認定協会': {
+        'DEFAULT': 'And wish you success for future promotions.',
+    },
 };
+
+
 
 const partialTranslation = {
     '鳴きなし': {
