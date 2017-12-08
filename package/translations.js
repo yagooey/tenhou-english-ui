@@ -1019,22 +1019,80 @@ const exactTranslation = {
     // promotion
     
     '認定': {
-        'DEFAULT': 'Congratulations', // Yes, I know that's not actually what it says, but "certification" or "official acknowledgement" would be weird here
+        'DEFAULT': 'Acknowledgement',
     },
-    '認定段位/級位    :    9級': { // repeat this for every grade?
-        'DEFAULT': 'You have achieved promotion to: 9 kyuu',
+    '認定段位/級位    :    9級': {
+        'DEFAULT': 'You have been promoted to: 9 kyuu',
+    },
+    '認定段位/級位    :    8級': {
+        'DEFAULT': 'You have been promoted to: 8 kyuu',
+    },
+    '認定段位/級位    :    7級': {
+        'DEFAULT': 'You have been promoted to: 7 kyuu',
+    },
+    '認定段位/級位    :    6級': {
+        'DEFAULT': 'You have been promoted to: 6 kyuu',
+    },
+    '認定段位/級位    :    5級': {
+        'DEFAULT': 'You have been promoted to: 5 kyuu',
+    },
+    '認定段位/級位    :    4級': {
+        'DEFAULT': 'You have been promoted to: 4 kyuu',
+    },
+    '認定段位/級位    :    3級': {
+        'DEFAULT': 'You have been promoted to: 3 kyuu',
+    },
+    '認定段位/級位    :    2級': {
+        'DEFAULT': 'You have been promoted to: 2 kyuu',
+    },
+    '認定段位/級位    :    1級': {
+        'DEFAULT': 'You have been promoted to: 1 kyuu',
+    },
+    '認定段位/級位    :    初段': {
+        'DEFAULT': 'You have been promoted to: 1st dan',
+    },
+    '認定段位/級位    :    二段': {
+        'DEFAULT': 'You have been promoted to: 2nd dan',
+    },
+    '認定段位/級位    :    三段': {
+        'DEFAULT': 'You have been promoted to: 3rd dan',
+    },
+    '認定段位/級位    :    四段': {
+        'DEFAULT': 'You have been promoted to: 4th dan',
+    },
+    '認定段位/級位    :    五段': {
+        'DEFAULT': 'You have been promoted to: 5th dan',
+    },
+    '認定段位/級位    :    六段': {
+        'DEFAULT': 'You have been promoted to: 6th dan',
+    },
+    '認定段位/級位    :    七段': {
+        'DEFAULT': 'You have been promoted to: 7th dan',
+    },
+    '認定段位/級位    :    八段': {
+        'DEFAULT': 'You have been promoted to: 8th dan',
+    },
+    '認定段位/級位    :    九段': {
+        'DEFAULT': 'You have been promoted to: 9th dan',
+    },
+    '認定段位/級位    :    十段': {
+        'DEFAULT': 'You have been promoted to: 10th dan',
+    },
+    '認定段位/級位    :    天鳳位': {
+        'DEFAULT': 'You have been promoted to: Tenhoui',
+        'EMA_ENG': 'You have been promoted to: Tenhou Immortal',
     },
     '貴殿は天鳳において卓越した技能を遺憾なく発揮され優秀な': {
-        'DEFAULT': 'You have unquestionably demonstrated outstanding skills',
+        'DEFAULT': 'You have unquestionably demonstrated outstanding skills and have achieved excellent results.',
     },
     '成績をおさめられました。今後もさらなる雀力向上に精進され': {
-        'DEFAULT': 'and have achieved excellent results.',
-    },
-    'ますようここに段位/級位を認定し栄誉を称えます。': {
         'DEFAULT': 'With this promotion, we acknowledge your advancement,',
     },
+    'ますようここに段位/級位を認定し栄誉を称えます。': {
+        'DEFAULT': 'and wish you success for future promotions.',
+    },
     '天鳳段位認定協会': {
-        'DEFAULT': 'And wish you success for future promotions.',
+        'DEFAULT': 'Tenhou Rankings Authority',
     },
 };
 
