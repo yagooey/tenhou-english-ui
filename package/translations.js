@@ -368,9 +368,6 @@ const exactTranslation = {
     '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': {
         'DEFAULT': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
     },
-    'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
-        'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
-    },
     '再接続しますか？': {
         'DEFAULT': 'Reconnect?',
     },
@@ -386,18 +383,6 @@ const exactTranslation = {
     'プレーヤ名を8文字以内で入力してください': {
         'DEFAULT': 'Please enter player name up to 8 characters',
     },
-    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': {
-        'DEFAULT': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
-    },
-    'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
-        'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
-    },
-    'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
-        'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
-    },
-    '大会ロビーが見つかりませんでした。(ERR1019)': {
-        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
-    },
     'IDが正しくありません': {
         'DEFAULT': 'Incorrect ID',
     },
@@ -409,6 +394,132 @@ const exactTranslation = {
     },
     '(※180日以上対戦を行っていないIDは削除されますのでご注意ください)': {
         'DEFAULT': '(Please be aware that IDs not playing for 180 days or more will be deleted)',
+    },
+    '登録に失敗しまし': {
+        'DEFAULT': 'Registration unsuccessful',
+    },
+    'この接続元からは一定期間アクセスできません': {
+        'DEFAULT': 'This connection source is temporarily blocked by our server,',
+    },
+    '多くのプレーヤから不正/迷惑行為の通報が寄せられた可能性があります。': {
+        'DEFAULT': 'possibly due to player violation or reports of causing disturbance.',
+    },
+    'アクセス解除は問い合わせを頂いても行なえない場合があります。': {
+        'DEFAULT': 'Unblocking is not always possible even if you submit a request.',
+    },
+    '健全なコミュニティの運営に何卒ご理解ご協力をいただきますよう': {
+        'DEFAULT': 'We appreciate your understanding and cooperation in the efforts of maintaining a healthy community',
+    },
+    'よろしくお願い申し上げます': {
+        'DEFAULT': 'Thank you for your consideration.',
+    },
+    '通報が完了しました': {
+        'DEFAULT': 'Report submitted',
+    },
+    'この機能は個室では利用できません': {
+        'DEFAULT': 'This feature is unavaliable in private lobbies',
+    },
+    'ランキング戦ロビーに移動してください': {
+        'DEFAULT': 'Please use the public lobby instead',
+    },
+    '通報に失敗しました': {
+        'DEFAULT': 'Report not submitted',
+    },
+    '観戦可能な対戦は現在ありません': {
+        'DEFAULT': 'Spectating is currently not available yet',
+    },
+    '観戦情報が見つかりませんでした': {
+        'DEFAULT': 'Unable to view game info',
+    },
+    'この対戦は既に終了している可能性があります': {
+        'DEFAULT': 'The game might still be in progress',
+    },
+    '大会ロビーの作成が完了しました': {
+        'DEFAULT': 'Tournament lobby created',
+    },
+    '大会ロビーの作成に失敗しました': {
+        'DEFAULT': 'Unable to create tournament lobby',
+    },
+    '予約中は牌譜を閲覧できません': {
+        'DEFAULT': 'Unable to view replays while queuing for a game',
+    },
+    '予約中は観戦できません': {
+        'DEFAULT': 'Unable to spectate while queuing for a game',
+    },
+    '必要な有効期限が不足しています': {
+        'DEFAULT': 'A renewal of subscription is required',
+    },
+    '今すぐ購入しますか？': {
+        'DEFAULT': 'Would you like to make a payment?',
+    },
+    'ID互換のないロビーへは移動できません': {
+        'DEFAULT': 'Incompatible Lobby ID',
+    },
+    '一時的に使用している外部IDの有効期限が切れました': {
+        'DEFAULT': 'This external ID is already expired',
+    },
+    '参加に必要な条件を満たしていません': {
+        'DEFAULT': 'You do not meet the requirements for participation',
+    },
+    '外部IDでは利用できません': {
+        'DEFAULT': 'Usage of external ID is not allowed',
+    },
+    'このロビーでは参加登録は行えません': {
+        'DEFAULT': 'Registration cannot be done in this lobby',
+    },
+    '参加登録が完了しました': {
+        'DEFAULT': 'Registration completed',
+    },
+    'すでに参加登録が完了しています': {
+        'DEFAULT': 'Registered for participation has already been completed',
+    },
+    'このルールへの予約は許可されていません': {
+        'DEFAULT': 'Unable to queue game with the selected rule set',
+    },
+    '段位戦の上級/特上卓では、不正防止のため対戦人数が100人未満のルールを予約するには有料会員の有効期限の残りが91日以上必要です': {
+        'DEFAULT': 'In an effort to prevent cheating in Joukyuu and Tokujou, games with less than 100 active players cannot be queued unless you have an active subscription with atleast 91 days remaining.',
+    },
+    '接続数が8000人以下の場合のみ予約が許可されています': {
+        'DEFAULT': 'You may only queue for a game when the number of connections is 8000 or less',
+    },
+    'トレーニングを使用するにはID登録が必要です。ログイン画面の「新規ID」からIDを取得してください': {
+        'DEFAULT': 'Training mode requires a registered ID. Please register a new ID from the login page',
+    },
+    '牌譜の読み込みに失敗しました。': {
+        'DEFAULT': 'Unable to launch the replay',
+    },
+    'プレイ中の牌譜はゲーム終了後に閲覧可能になります': {
+        'DEFAULT': 'If the game is currently in progress, please wait for it to finish',
+    },
+
+    // Error messages 1001 ~ 1006, 1019, 1021
+
+    'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
+        'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
+    },
+    'このプレーヤ名を使用するにはIDで入場する必要があります':{
+        'DEFAULT': 'This name is registered. Please use the correct ID to login',
+    },
+    '■IDの再発行方法は以下を参照してください': {
+        'DEFAULT': 'Visit the link below for information on how to reissue an ID',
+    },
+    '180日以上対戦を行っていないIDは停止または削除されている場合があります。七段以上で有料版の決済情報が確認できる場合にはIDの復元が可能です。お早めにお問い合わせください。(ERR1003)': {
+        'DEFAULT': 'IDs not playing for 180 days or more might be deleted. ID can be recovered for paid accounts holding a rank of 7 dan or above after verification of payment details. Please contact us as soon as possible. (ERR1003)',
+    },
+    'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
+        'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
+    },
+    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': {
+        'DEFAULT': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
+    },
+    'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
+        'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
+    },
+    '大会ロビーが見つかりませんでした。(ERR1019)': {
+        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
+    },
+    '外部ログインサーバからの応答がありません(ERR1021)': {
+        'DEFAULT': 'There is no response from the login server (ERR 1021)',
     },
 
     // Settings
@@ -983,6 +1094,7 @@ const exactTranslation = {
         'EMA_ENG': 'Little 4 winds + 4 concealed pungs',
     },
 
+
     // replays
 
     '天鳳牌譜再生': {
@@ -1014,6 +1126,18 @@ const exactTranslation = {
     },
     '暗転 ON': {
         'DEFAULT': 'Shade discarded drawn tiles.',
+    },
+    '- 右クリック … 進む': {
+        'DEFAULT': '- Right click: Step forward',
+    },
+    '- 左クリック … 戻る': {
+        'DEFAULT': '- Left click: Step backward',
+    },
+    '- ボタン長押し … オートリピート': {
+        'DEFAULT': '- Long press: Step continuously',
+    },
+    '- センターパネル … 得点差表示': {
+        'DEFAULT': '- Center Panel: Display scores',
     },
 
     // promotion
