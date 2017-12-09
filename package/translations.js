@@ -1103,6 +1103,18 @@ const exactTranslation = {
     '暗転 ON': {
         'DEFAULT': 'Shade discarded drawn tiles.',
     },
+    '- 右クリック … 進む': {
+        'DEFAULT': '- Right click: Step forward',
+    },
+    '- 左クリック … 戻る': {
+        'DEFAULT': '- Left click: Step backward',
+    },
+    '- ボタン長押し … オートリピート': {
+        'DEFAULT': '- Long press: Step continuously',
+    },
+    '- センターパネル … 得点差表示': {
+        'DEFAULT': '- Center Panel: Display scores',
+    },
 };
 
 const partialTranslation = {
