@@ -1145,31 +1145,31 @@ const exactTranslation = {
     '認定': {
         'DEFAULT': 'Acknowledgement',
     },
-    '認定段位/級位    :    9級': {
+    '認定段位/級位    :    ９級': {
         'DEFAULT': 'You have been promoted to: 9 kyuu',
     },
-    '認定段位/級位    :    8級': {
+    '認定段位/級位    :    ８級': {
         'DEFAULT': 'You have been promoted to: 8 kyuu',
     },
-    '認定段位/級位    :    7級': {
+    '認定段位/級位    :    ７級': {
         'DEFAULT': 'You have been promoted to: 7 kyuu',
     },
-    '認定段位/級位    :    6級': {
+    '認定段位/級位    :    ６級': {
         'DEFAULT': 'You have been promoted to: 6 kyuu',
     },
-    '認定段位/級位    :    5級': {
+    '認定段位/級位    :    ５級': {
         'DEFAULT': 'You have been promoted to: 5 kyuu',
     },
-    '認定段位/級位    :    4級': {
+    '認定段位/級位    :    ４級': {
         'DEFAULT': 'You have been promoted to: 4 kyuu',
     },
-    '認定段位/級位    :    3級': {
+    '認定段位/級位    :    ３級': {
         'DEFAULT': 'You have been promoted to: 3 kyuu',
     },
-    '認定段位/級位    :    2級': {
+    '認定段位/級位    :    ２級': {
         'DEFAULT': 'You have been promoted to: 2 kyuu',
     },
-    '認定段位/級位    :    1級': {
+    '認定段位/級位    :    １級': {
         'DEFAULT': 'You have been promoted to: 1 kyuu',
     },
     '認定段位/級位    :    初段': {
@@ -1208,31 +1208,31 @@ const exactTranslation = {
     },
 
     // 3 player mahjong
-    '認定段位/級位    :    サンマ 9級': {
+    '認定段位/級位    :    サンマ ９級': {
         'DEFAULT': 'You have been promoted to: 9 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 8級': {
+    '認定段位/級位    :    サンマ ８級': {
         'DEFAULT': 'You have been promoted to: 8 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 7級': {
+    '認定段位/級位    :    サンマ ７級': {
         'DEFAULT': 'You have been promoted to: 7 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 6級': {
+    '認定段位/級位    :    サンマ ６級': {
         'DEFAULT': 'You have been promoted to: 6 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 5級': {
+    '認定段位/級位    :    サンマ ５級': {
         'DEFAULT': 'You have been promoted to: 5 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 4級': {
+    '認定段位/級位    :    サンマ ４級': {
         'DEFAULT': 'You have been promoted to: 4 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 3級': {
+    '認定段位/級位    :    サンマ ３級': {
         'DEFAULT': 'You have been promoted to: 3 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 2級': {
+    '認定段位/級位    :    サンマ ２級': {
         'DEFAULT': 'You have been promoted to: 2 kyuu (3p)',
     },
-    '認定段位/級位    :    サンマ 1級': {
+    '認定段位/級位    :    サンマ １級': {
         'DEFAULT': 'You have been promoted to: 1 kyuu (3p)',
     },
     '認定段位/級位    :    サンマ 初段': {
