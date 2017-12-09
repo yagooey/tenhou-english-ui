@@ -809,7 +809,7 @@ const exactTranslation = {
         'DEFAULT': '※Subscribed users can access all replays from any device',
     },
     '※１０日前までの牌譜が検索可能です': {
-        'DEFAULT': '※Replays will be kept for a period of 10 days'
+        'DEFAULT': '※Replays will be kept for a period of 10 days',
     },
     '牌譜の検索やダウンロードはこちらから行えます': {
         'DEFAULT': 'Find and download game replays here',
@@ -1082,6 +1082,7 @@ const exactTranslation = {
         'DEFAULT': 'You have been promoted to: Tenhoui',
         'EMA_ENG': 'You have been promoted to: Tenhou Immortal',
     },
+
     // 3 player mahjong
     '認定段位/級位    :    サンマ 9級': {
         'DEFAULT': 'You have been promoted to: 9 kyuu (3p)',
@@ -1160,7 +1161,6 @@ const exactTranslation = {
         'DEFAULT': 'Tenhou Sanma Fishery Association',
     },
 };
-
 
 
 const partialTranslation = {
