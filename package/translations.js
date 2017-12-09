@@ -362,6 +362,9 @@ const exactTranslation = {
     'ロビーの移動': {
         'DEFAULT': 'Change lobby',
     },
+    'このプレーヤ名で新しいIDを作成しますか？': {
+        'DEFAULT': 'Would you like to create a new ID with this player name?',
+    },
     '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': {
         'DEFAULT': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
     },
@@ -960,12 +963,24 @@ const exactTranslation = {
         'EMA_ENG': 'Redeal',
     },
     '四家立直': {
-        'DEFAULT': 'Suuchariichi',
-        'EMA_ENG': 'Quadruple riichi',
+        'DEFAULT': 'Suucha riichi',
+        'EMA_ENG': 'Redeal: Quadruple riichi',
     },
     '三家和了': {
         'DEFAULT': 'Sancha hou',
-        'EMA_ENG': 'Triple ron',
+        'EMA_ENG': 'Redeal: Triple ron',
+    },
+    '四風連打': {
+        'DEFAULT': 'Suufon renda',
+        'EMA_ENG': 'Redeal: 4 identical winds discarded',
+    },
+    '四槓散了': {
+        'DEFAULT': 'Suukaikan',
+        'EMA_ENG': 'Redeal: Four kongs',
+    },
+    '九種九牌': {
+        'DEFAULT': 'Kyuushuu kyuuhai',
+        'EMA_ENG': 'Redeal: 9 terminals & honours',
     },
     'カン': {
         'DEFAULT': 'Kan',
@@ -1070,6 +1085,15 @@ const exactTranslation = {
         'DEFAULT': 'Suuankou tanki + Chinroutou',
         'EMA_ENG': '4 concealed pungs (single wait) + All terminals',
     },
+    '四暗刻 緑一色': {
+        'DEFAULT': 'Suuankou tanki + Ryuuiisou',
+        'EMA_ENG': '4 concealed pungs + All green',
+    },
+    '小四喜 四暗刻': {
+        'DEFAULT': 'Shousuushi + Suuankou',
+        'EMA_ENG': 'Little 4 winds + 4 concealed pungs',
+    },
+
 
     // replays
 
@@ -1115,7 +1139,153 @@ const exactTranslation = {
     '- センターパネル … 得点差表示': {
         'DEFAULT': '- Center Panel: Display scores',
     },
+
+    // promotion
+
+    '認定': {
+        'DEFAULT': 'Acknowledgement',
+    },
+    '認定段位/級位    :    9級': {
+        'DEFAULT': 'You have been promoted to: 9 kyuu',
+    },
+    '認定段位/級位    :    8級': {
+        'DEFAULT': 'You have been promoted to: 8 kyuu',
+    },
+    '認定段位/級位    :    7級': {
+        'DEFAULT': 'You have been promoted to: 7 kyuu',
+    },
+    '認定段位/級位    :    6級': {
+        'DEFAULT': 'You have been promoted to: 6 kyuu',
+    },
+    '認定段位/級位    :    5級': {
+        'DEFAULT': 'You have been promoted to: 5 kyuu',
+    },
+    '認定段位/級位    :    4級': {
+        'DEFAULT': 'You have been promoted to: 4 kyuu',
+    },
+    '認定段位/級位    :    3級': {
+        'DEFAULT': 'You have been promoted to: 3 kyuu',
+    },
+    '認定段位/級位    :    2級': {
+        'DEFAULT': 'You have been promoted to: 2 kyuu',
+    },
+    '認定段位/級位    :    1級': {
+        'DEFAULT': 'You have been promoted to: 1 kyuu',
+    },
+    '認定段位/級位    :    初段': {
+        'DEFAULT': 'You have been promoted to: 1st dan',
+    },
+    '認定段位/級位    :    二段': {
+        'DEFAULT': 'You have been promoted to: 2nd dan',
+    },
+    '認定段位/級位    :    三段': {
+        'DEFAULT': 'You have been promoted to: 3rd dan',
+    },
+    '認定段位/級位    :    四段': {
+        'DEFAULT': 'You have been promoted to: 4th dan',
+    },
+    '認定段位/級位    :    五段': {
+        'DEFAULT': 'You have been promoted to: 5th dan',
+    },
+    '認定段位/級位    :    六段': {
+        'DEFAULT': 'You have been promoted to: 6th dan',
+    },
+    '認定段位/級位    :    七段': {
+        'DEFAULT': 'You have been promoted to: 7th dan',
+    },
+    '認定段位/級位    :    八段': {
+        'DEFAULT': 'You have been promoted to: 8th dan',
+    },
+    '認定段位/級位    :    九段': {
+        'DEFAULT': 'You have been promoted to: 9th dan',
+    },
+    '認定段位/級位    :    十段': {
+        'DEFAULT': 'You have been promoted to: 10th dan',
+    },
+    '認定段位/級位    :    天鳳位': {
+        'DEFAULT': 'You have been promoted to: Tenhoui',
+        'EMA_ENG': 'You have been promoted to: Tenhou Immortal',
+    },
+
+    // 3 player mahjong
+    '認定段位/級位    :    サンマ 9級': {
+        'DEFAULT': 'You have been promoted to: 9 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 8級': {
+        'DEFAULT': 'You have been promoted to: 8 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 7級': {
+        'DEFAULT': 'You have been promoted to: 7 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 6級': {
+        'DEFAULT': 'You have been promoted to: 6 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 5級': {
+        'DEFAULT': 'You have been promoted to: 5 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 4級': {
+        'DEFAULT': 'You have been promoted to: 4 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 3級': {
+        'DEFAULT': 'You have been promoted to: 3 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 2級': {
+        'DEFAULT': 'You have been promoted to: 2 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 1級': {
+        'DEFAULT': 'You have been promoted to: 1 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 初段': {
+        'DEFAULT': 'You have been promoted to: 1st dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 二段': {
+        'DEFAULT': 'You have been promoted to: 2nd dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 三段': {
+        'DEFAULT': 'You have been promoted to: 3rd dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 四段': {
+        'DEFAULT': 'You have been promoted to: 4th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 五段': {
+        'DEFAULT': 'You have been promoted to: 5th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 六段': {
+        'DEFAULT': 'You have been promoted to: 6th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 七段': {
+        'DEFAULT': 'You have been promoted to: 7th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 八段': {
+        'DEFAULT': 'You have been promoted to: 8th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 九段': {
+        'DEFAULT': 'You have been promoted to: 9th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 十段': {
+        'DEFAULT': 'You have been promoted to: 10th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 天鳳位': {
+        'DEFAULT': 'You have been promoted to: Tenhoui (3p)',
+        'EMA_ENG': 'You have been promoted to: Tenhou Immortal (3p)',
+    },
+    '貴殿は天鳳において卓越した技能を遺憾なく発揮され優秀な': {
+        'DEFAULT': 'You have unquestionably demonstrated outstanding skills and have achieved excellent results.',
+    },
+    '成績をおさめられました。今後もさらなる雀力向上に精進され': {
+        'DEFAULT': 'With this promotion, we acknowledge your advancement,',
+    },
+    'ますようここに段位/級位を認定し栄誉を称えます。': {
+        'DEFAULT': 'and wish you success for future promotions.',
+    },
+    '天鳳段位認定協会': {
+        'DEFAULT': 'Tenhou Rankings Authority',
+    },
+    '天鳳サンマ漁業協会': {
+        'DEFAULT': 'Tenhou Sanma Fishery Association',
+    },
 };
+
 
 const partialTranslation = {
     '鳴きなし': {
