@@ -1015,9 +1015,9 @@ const exactTranslation = {
     '暗転 ON': {
         'DEFAULT': 'Shade discarded drawn tiles.',
     },
-    
+
     // promotion
-    
+
     '認定': {
         'DEFAULT': 'Acknowledgement',
     },
@@ -1082,6 +1082,68 @@ const exactTranslation = {
         'DEFAULT': 'You have been promoted to: Tenhoui',
         'EMA_ENG': 'You have been promoted to: Tenhou Immortal',
     },
+    // 3 player mahjong
+    '認定段位/級位    :    サンマ 9級': {
+        'DEFAULT': 'You have been promoted to: 9 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 8級': {
+        'DEFAULT': 'You have been promoted to: 8 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 7級': {
+        'DEFAULT': 'You have been promoted to: 7 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 6級': {
+        'DEFAULT': 'You have been promoted to: 6 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 5級': {
+        'DEFAULT': 'You have been promoted to: 5 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 4級': {
+        'DEFAULT': 'You have been promoted to: 4 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 3級': {
+        'DEFAULT': 'You have been promoted to: 3 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 2級': {
+        'DEFAULT': 'You have been promoted to: 2 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 1級': {
+        'DEFAULT': 'You have been promoted to: 1 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 初段': {
+        'DEFAULT': 'You have been promoted to: 1st dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 二段': {
+        'DEFAULT': 'You have been promoted to: 2nd dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 三段': {
+        'DEFAULT': 'You have been promoted to: 3rd dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 四段': {
+        'DEFAULT': 'You have been promoted to: 4th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 五段': {
+        'DEFAULT': 'You have been promoted to: 5th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 六段': {
+        'DEFAULT': 'You have been promoted to: 6th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 七段': {
+        'DEFAULT': 'You have been promoted to: 7th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 八段': {
+        'DEFAULT': 'You have been promoted to: 8th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 九段': {
+        'DEFAULT': 'You have been promoted to: 9th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 十段': {
+        'DEFAULT': 'You have been promoted to: 10th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 天鳳位': {
+        'DEFAULT': 'You have been promoted to: Tenhoui (3p)',
+        'EMA_ENG': 'You have been promoted to: Tenhou Immortal (3p)',
+    },
     '貴殿は天鳳において卓越した技能を遺憾なく発揮され優秀な': {
         'DEFAULT': 'You have unquestionably demonstrated outstanding skills and have achieved excellent results.',
     },
@@ -1093,6 +1155,9 @@ const exactTranslation = {
     },
     '天鳳段位認定協会': {
         'DEFAULT': 'Tenhou Rankings Authority',
+    },
+    '天鳳サンマ漁業協会': {
+        'DEFAULT': 'Tenhou Sanma Fishery Association',
     },
 };
 
