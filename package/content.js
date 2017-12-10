@@ -30,10 +30,12 @@ let holdingKeyDown = false;
 let toggleTranslationOff;
 let originalStore;
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', function(event) {
     if (event.key === 'Control' && holdingKeyDown === false) {
         chrome.storage.local.get({ translation: lastTranslationSeen, toggle: false, altTranslation: 'off' }, function(storedval) {
-            if (!storedval.toggle) return;
+            if (!storedval.toggle) {
+                return;
+            }
             originalStore = storedval;
             holdingKeyDown = true;
             toggleTranslationOff = storedval.altTranslation === 'off';
@@ -52,10 +54,12 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-document.addEventListener('keyup', function (event) {
+document.addEventListener('keyup', function(event) {
     if (event.key === 'Control' && holdingKeyDown) {
         chrome.storage.local.get({ toggle: false }, function(storedval) {
-            if (!storedval.toggle) return;
+            if (!storedval.toggle) {
+                return;
+            }
             chrome.storage.local.set(originalStore, function() {
                 if (toggleTranslationOff) {
                     setToObserve();
@@ -72,7 +76,9 @@ function getTranslationSets(callback) {
     // Need a callback argument, because chrome.storage.local is only available asynchronously
     chrome.storage.local.get({ translation: 'DEFAULT' }, function(storedval) {
 
-        if (storedval.translation === 'off') return callback(false);
+        if (storedval.translation === 'off') {
+            return callback(false);
+        }
 
         if (storedval.translation === lastTranslationSeen && Object.keys(thisExactTable).length) {
             // We've already got the right translation, so can go translate immediately
@@ -93,6 +99,7 @@ function getTranslationSets(callback) {
             let translation = storedval.translation.split(',');
             const overlay = function(tableIn) {
                 let tableOut = {};
+
                 for (let toTranslate of Object.keys(tableIn)) {
                     for (let thisTranslation of translation) {
                         if (tableIn[toTranslate][thisTranslation]) {
@@ -102,6 +109,7 @@ function getTranslationSets(callback) {
                         }
                     }
                 }
+
                 return tableOut;
 
             };
@@ -139,11 +147,13 @@ function getTranslationSets(callback) {
  */
 function translateOneNode(node, restore = false, replace = true) {
     let thisParent = node.parentElement;
+
     if (thisParent && thisParent.tagName !== undefined && thisParent.tagName.toLowerCase() === 'button') {
         thisParent.style.overflow = 'hidden';
     }
 
     const originalText = node.nodeValue;
+
     if (!originalText) {
         return;
     }
@@ -153,11 +163,15 @@ function translateOneNode(node, restore = false, replace = true) {
         thisParent.replaceChild(document.createTextNode(node.originalValue), node);
     }
 
-    if (!replace) return;
+    if (!replace) {
+        return;
+    }
 
     let newText = thisExactTable[originalText.trim()];
+
     if (newText) {
         const newNode = document.createTextNode(newText);
+
         newNode.originalValue = originalText;
         thisParent.replaceChild(newNode, node);
     } else {
@@ -185,6 +199,7 @@ function translateOneNode(node, restore = false, replace = true) {
             }
 
             const newNode = document.createTextNode(newText);
+
             newNode.originalValue = originalText;
             thisParent.replaceChild(newNode, node);
         }
@@ -196,10 +211,12 @@ const translateTextBeneathANode = function(topNode, restore = false, replace = t
 
     // We are messing with the Dom tree while we iterate over it, so first save in an array
     let textNodeList = [];
-    while(textNodeIterator.nextNode()) {
+
+    while (textNodeIterator.nextNode()) {
         textNodeList.push(textNodeIterator.currentNode);
     }
     let node;
+
     for (node of textNodeList) {
         translateOneNode(node, restore, replace);
     }

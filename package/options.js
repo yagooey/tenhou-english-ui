@@ -31,6 +31,7 @@ function restoreOptions() {
 document.addEventListener('DOMContentLoaded', restoreOptions);
 
 let radios = document.getElementsByName('translation');
+
 for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener('change', saveOptions);
 }
