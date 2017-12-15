@@ -7,18 +7,18 @@ chrome.runtime.onInstalled.addListener(function(object) {
 
 
 function showIconForTab(tab) {
-    if (tab.url.includes("tenhou.net")) {
-      chrome.pageAction.show(tab.id);
+    if (tab.url.includes('tenhou.net')) {
+        chrome.pageAction.show(tab.id);
     }
 }
 
 function iconsAcrossTabs(tabs) {
     for (let tab of tabs) {
-      showIconForTab(tab);
+        showIconForTab(tab);
     }
 }
 
-chrome.tabs.query({ url: '*://tenhou.net/*' }, iconsAcrossTabs)
+chrome.tabs.query({ url: '*://tenhou.net/*' }, iconsAcrossTabs);
 
 chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => {
     showIconForTab(tab);

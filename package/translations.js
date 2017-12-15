@@ -362,11 +362,11 @@ const exactTranslation = {
     'ロビーの移動': {
         'DEFAULT': 'Change lobby',
     },
+    'このプレーヤ名で新しいIDを作成しますか？': {
+        'DEFAULT': 'Would you like to create a new ID with this player name?',
+    },
     '●アドレスバーを小さくするには下にスクロールしてからゆっくり上にスクロールします(機種依存あり)●OK/パス/ツモ切りは右クリックまたは余白をダブルタップ': {
         'DEFAULT': 'To make the address bar smaller, scroll down, then slowly scroll up (depends on the device). Right click or double tap to trigger Confirm / Pass / Auto Discard.',
-    },
-    'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
-        'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
     },
     '再接続しますか？': {
         'DEFAULT': 'Reconnect?',
@@ -383,18 +383,6 @@ const exactTranslation = {
     'プレーヤ名を8文字以内で入力してください': {
         'DEFAULT': 'Please enter player name up to 8 characters',
     },
-    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': {
-        'DEFAULT': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
-    },
-    'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
-        'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
-    },
-    'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
-        'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
-    },
-    '大会ロビーが見つかりませんでした。(ERR1019)': {
-        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
-    },
     'IDが正しくありません': {
         'DEFAULT': 'Incorrect ID',
     },
@@ -409,6 +397,132 @@ const exactTranslation = {
     },
     '必要な画像リソースの読み込みが完了していません': {
         'DEFAULT': 'Loading of required images has not been completed',
+    },
+    '登録に失敗しまし': {
+        'DEFAULT': 'Registration unsuccessful',
+    },
+    'この接続元からは一定期間アクセスできません': {
+        'DEFAULT': 'This connection source is temporarily blocked by our server,',
+    },
+    '多くのプレーヤから不正/迷惑行為の通報が寄せられた可能性があります。': {
+        'DEFAULT': 'possibly due to player violation or reports of causing disturbance.',
+    },
+    'アクセス解除は問い合わせを頂いても行なえない場合があります。': {
+        'DEFAULT': 'Unblocking is not always possible even if you submit a request.',
+    },
+    '健全なコミュニティの運営に何卒ご理解ご協力をいただきますよう': {
+        'DEFAULT': 'We appreciate your understanding and cooperation in the efforts of maintaining a healthy community',
+    },
+    'よろしくお願い申し上げます': {
+        'DEFAULT': 'Thank you for your consideration.',
+    },
+    '通報が完了しました': {
+        'DEFAULT': 'Report submitted',
+    },
+    'この機能は個室では利用できません': {
+        'DEFAULT': 'This feature is unavaliable in private lobbies',
+    },
+    'ランキング戦ロビーに移動してください': {
+        'DEFAULT': 'Please use the public lobby instead',
+    },
+    '通報に失敗しました': {
+        'DEFAULT': 'Report not submitted',
+    },
+    '観戦可能な対戦は現在ありません': {
+        'DEFAULT': 'Spectating is currently not available yet',
+    },
+    '観戦情報が見つかりませんでした': {
+        'DEFAULT': 'Unable to view game info',
+    },
+    'この対戦は既に終了している可能性があります': {
+        'DEFAULT': 'The game might still be in progress',
+    },
+    '大会ロビーの作成が完了しました': {
+        'DEFAULT': 'Tournament lobby created',
+    },
+    '大会ロビーの作成に失敗しました': {
+        'DEFAULT': 'Unable to create tournament lobby',
+    },
+    '予約中は牌譜を閲覧できません': {
+        'DEFAULT': 'Unable to view replays while queuing for a game',
+    },
+    '予約中は観戦できません': {
+        'DEFAULT': 'Unable to spectate while queuing for a game',
+    },
+    '必要な有効期限が不足しています': {
+        'DEFAULT': 'A renewal of subscription is required',
+    },
+    '今すぐ購入しますか？': {
+        'DEFAULT': 'Would you like to make a payment?',
+    },
+    'ID互換のないロビーへは移動できません': {
+        'DEFAULT': 'Incompatible Lobby ID',
+    },
+    '一時的に使用している外部IDの有効期限が切れました': {
+        'DEFAULT': 'This external ID is already expired',
+    },
+    '参加に必要な条件を満たしていません': {
+        'DEFAULT': 'You do not meet the requirements for participation',
+    },
+    '外部IDでは利用できません': {
+        'DEFAULT': 'Usage of external ID is not allowed',
+    },
+    'このロビーでは参加登録は行えません': {
+        'DEFAULT': 'Registration cannot be done in this lobby',
+    },
+    '参加登録が完了しました': {
+        'DEFAULT': 'Registration completed',
+    },
+    'すでに参加登録が完了しています': {
+        'DEFAULT': 'Registered for participation has already been completed',
+    },
+    'このルールへの予約は許可されていません': {
+        'DEFAULT': 'Unable to queue game with the selected rule set',
+    },
+    '段位戦の上級/特上卓では、不正防止のため対戦人数が100人未満のルールを予約するには有料会員の有効期限の残りが91日以上必要です': {
+        'DEFAULT': 'In an effort to prevent cheating in Joukyuu and Tokujou, games with less than 100 active players cannot be queued unless you have an active subscription with atleast 91 days remaining.',
+    },
+    '接続数が8000人以下の場合のみ予約が許可されています': {
+        'DEFAULT': 'You may only queue for a game when the number of connections is 8000 or less',
+    },
+    'トレーニングを使用するにはID登録が必要です。ログイン画面の「新規ID」からIDを取得してください': {
+        'DEFAULT': 'Training mode requires a registered ID. Please register a new ID from the login page',
+    },
+    '牌譜の読み込みに失敗しました。': {
+        'DEFAULT': 'Unable to launch the replay',
+    },
+    'プレイ中の牌譜はゲーム終了後に閲覧可能になります': {
+        'DEFAULT': 'If the game is currently in progress, please wait for it to finish',
+    },
+
+    // Error messages 1001 ~ 1006, 1019, 1021
+
+    'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
+        'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
+    },
+    'このプレーヤ名を使用するにはIDで入場する必要があります':{
+        'DEFAULT': 'This name is registered. Please use the correct ID to login',
+    },
+    '■IDの再発行方法は以下を参照してください': {
+        'DEFAULT': 'Visit the link below for information on how to reissue an ID',
+    },
+    '180日以上対戦を行っていないIDは停止または削除されている場合があります。七段以上で有料版の決済情報が確認できる場合にはIDの復元が可能です。お早めにお問い合わせください。(ERR1003)': {
+        'DEFAULT': 'IDs not playing for 180 days or more might be deleted. ID can be recovered for paid accounts holding a rank of 7 dan or above after verification of payment details. Please contact us as soon as possible. (ERR1003)',
+    },
+    'このプレーヤは既に接続済みです。しばらく経ってから接続してください。(ERR1004)': {
+        'DEFAULT': 'This account is already logged in. Please try again later. (ERR1004)',
+    },
+    'このプレーヤは既に登録済みです。同じプレーヤ名は使用できません。(ERR1005)': {
+        'DEFAULT': 'This player has already been registered. The same player name can not be used. (ERR 1005)',
+    },
+    'この接続元からの新規登録は約７日間行なえません(ERR1006)': {
+        'DEFAULT': 'New registration from this connection source can not be done for about 7 days (ERR 1006)',
+    },
+    '大会ロビーが見つかりませんでした。(ERR1019)': {
+        'DEFAULT': 'The tournament lobby could not be found (ERR 1019)',
+    },
+    '外部ログインサーバからの応答がありません(ERR1021)': {
+        'DEFAULT': 'There is no response from the login server (ERR 1021)',
     },
 
     // Settings
@@ -809,7 +923,7 @@ const exactTranslation = {
         'DEFAULT': '※Subscribed users can access all replays from any device',
     },
     '※１０日前までの牌譜が検索可能です': {
-        'DEFAULT': '※Replays will be kept for a period of 10 days'
+        'DEFAULT': '※Replays will be kept for a period of 10 days',
     },
     '牌譜の検索やダウンロードはこちらから行えます': {
         'DEFAULT': 'Find and download game replays here',
@@ -983,6 +1097,7 @@ const exactTranslation = {
         'EMA_ENG': 'Little 4 winds + 4 concealed pungs',
     },
 
+
     // replays
 
     '天鳳牌譜再生': {
@@ -1015,7 +1130,165 @@ const exactTranslation = {
     '暗転 ON': {
         'DEFAULT': 'Shade discarded drawn tiles.',
     },
+    '- 右クリック … 進む': {
+        'DEFAULT': '- Right click: Step forward',
+    },
+    '- 左クリック … 戻る': {
+        'DEFAULT': '- Left click: Step backward',
+    },
+    '- ボタン長押し … オートリピート': {
+        'DEFAULT': '- Long press: Step continuously',
+    },
+    '- センターパネル … 得点差表示': {
+        'DEFAULT': '- Center Panel: Display scores',
+    },
+
+    // promotion
+
+    '認定': {
+        'DEFAULT': 'Acknowledgement',
+    },
+    '認定段位/級位    :    ９級': {
+        'DEFAULT': 'You have been promoted to: 9 kyuu',
+    },
+    '認定段位/級位    :    ８級': {
+        'DEFAULT': 'You have been promoted to: 8 kyuu',
+    },
+    '認定段位/級位    :    ７級': {
+        'DEFAULT': 'You have been promoted to: 7 kyuu',
+    },
+    '認定段位/級位    :    ６級': {
+        'DEFAULT': 'You have been promoted to: 6 kyuu',
+    },
+    '認定段位/級位    :    ５級': {
+        'DEFAULT': 'You have been promoted to: 5 kyuu',
+    },
+    '認定段位/級位    :    ４級': {
+        'DEFAULT': 'You have been promoted to: 4 kyuu',
+    },
+    '認定段位/級位    :    ３級': {
+        'DEFAULT': 'You have been promoted to: 3 kyuu',
+    },
+    '認定段位/級位    :    ２級': {
+        'DEFAULT': 'You have been promoted to: 2 kyuu',
+    },
+    '認定段位/級位    :    １級': {
+        'DEFAULT': 'You have been promoted to: 1 kyuu',
+    },
+    '認定段位/級位    :    初段': {
+        'DEFAULT': 'You have been promoted to: 1st dan',
+    },
+    '認定段位/級位    :    二段': {
+        'DEFAULT': 'You have been promoted to: 2nd dan',
+    },
+    '認定段位/級位    :    三段': {
+        'DEFAULT': 'You have been promoted to: 3rd dan',
+    },
+    '認定段位/級位    :    四段': {
+        'DEFAULT': 'You have been promoted to: 4th dan',
+    },
+    '認定段位/級位    :    五段': {
+        'DEFAULT': 'You have been promoted to: 5th dan',
+    },
+    '認定段位/級位    :    六段': {
+        'DEFAULT': 'You have been promoted to: 6th dan',
+    },
+    '認定段位/級位    :    七段': {
+        'DEFAULT': 'You have been promoted to: 7th dan',
+    },
+    '認定段位/級位    :    八段': {
+        'DEFAULT': 'You have been promoted to: 8th dan',
+    },
+    '認定段位/級位    :    九段': {
+        'DEFAULT': 'You have been promoted to: 9th dan',
+    },
+    '認定段位/級位    :    十段': {
+        'DEFAULT': 'You have been promoted to: 10th dan',
+    },
+    '認定段位/級位    :    天鳳位': {
+        'DEFAULT': 'You have been promoted to: Tenhoui',
+        'EMA_ENG': 'You have been promoted to: Tenhou Immortal',
+    },
+
+    // 3 player mahjong
+    '認定段位/級位    :    サンマ ９級': {
+        'DEFAULT': 'You have been promoted to: 9 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ８級': {
+        'DEFAULT': 'You have been promoted to: 8 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ７級': {
+        'DEFAULT': 'You have been promoted to: 7 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ６級': {
+        'DEFAULT': 'You have been promoted to: 6 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ５級': {
+        'DEFAULT': 'You have been promoted to: 5 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ４級': {
+        'DEFAULT': 'You have been promoted to: 4 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ３級': {
+        'DEFAULT': 'You have been promoted to: 3 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ ２級': {
+        'DEFAULT': 'You have been promoted to: 2 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ １級': {
+        'DEFAULT': 'You have been promoted to: 1 kyuu (3p)',
+    },
+    '認定段位/級位    :    サンマ 初段': {
+        'DEFAULT': 'You have been promoted to: 1st dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 二段': {
+        'DEFAULT': 'You have been promoted to: 2nd dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 三段': {
+        'DEFAULT': 'You have been promoted to: 3rd dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 四段': {
+        'DEFAULT': 'You have been promoted to: 4th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 五段': {
+        'DEFAULT': 'You have been promoted to: 5th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 六段': {
+        'DEFAULT': 'You have been promoted to: 6th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 七段': {
+        'DEFAULT': 'You have been promoted to: 7th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 八段': {
+        'DEFAULT': 'You have been promoted to: 8th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 九段': {
+        'DEFAULT': 'You have been promoted to: 9th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 十段': {
+        'DEFAULT': 'You have been promoted to: 10th dan (3p)',
+    },
+    '認定段位/級位    :    サンマ 天鳳位': {
+        'DEFAULT': 'You have been promoted to: Tenhoui (3p)',
+        'EMA_ENG': 'You have been promoted to: Tenhou Immortal (3p)',
+    },
+    '貴殿は天鳳において卓越した技能を遺憾なく発揮され優秀な': {
+        'DEFAULT': 'You have unquestionably demonstrated outstanding skills and have achieved excellent results.',
+    },
+    '成績をおさめられました。今後もさらなる雀力向上に精進され': {
+        'DEFAULT': 'With this promotion, we acknowledge your advancement,',
+    },
+    'ますようここに段位/級位を認定し栄誉を称えます。': {
+        'DEFAULT': 'and wish you success for future promotions.',
+    },
+    '天鳳段位認定協会': {
+        'DEFAULT': 'Tenhou Rankings Authority',
+    },
+    '天鳳サンマ漁業協会': {
+        'DEFAULT': 'Tenhou Sanma Fishery Association',
+    },
 };
+
 
 const partialTranslation = {
     '鳴きなし': {
