@@ -396,7 +396,7 @@ const exactTranslation = {
         'DEFAULT': '(Please be aware that IDs not playing for 180 days or more will be deleted)',
     },
     '必要な画像リソースの読み込みが完了していません': {
-        'DEFAULT': 'Loading of required images has not been completed',
+        'DEFAULT': 'Tile images have not loaded (yet)',
     },
     '登録に失敗しまし': {
         'DEFAULT': 'Registration unsuccessful',
