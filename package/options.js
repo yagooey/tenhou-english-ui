@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     let thisForm = document.forms.optionform;
     let sprites = {
         'DEFAULT': 'The standard tileset',
-        'inverted': 'Black background. Smooth.',
-        'english': 'English labels to help identify tiles',
+        //'black': 'Black background. Smooth.',
+        'bright': 'Brighter colours',
     };
 
     function updateWithNewOptions(options) {
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         sample.src = 'sprites.' + tileset + '/sample.png';
         sample.alt = sprites[tileset];
         sample.title = sprites[tileset];
+        sample.height = '100';
 
         label.appendChild(radioButton);
         label.appendChild(sample);

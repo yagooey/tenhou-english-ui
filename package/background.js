@@ -22,13 +22,15 @@ chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
 chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => showIconForTab(tab));
 
 let tileset = 'DEFAULT';
-let sprites = {};
-let sizes = [];
+let sprites;
+let sizes;
 const tileSizePrefixes = { 0: '', 1: 'm', 2: 's' }; // descending size order
 
 // retrieve the right spritesheets from those that are packed with the extension
 function updateTileset(options, sender = null, sendResponse = null) {
     tileset = options.tileset;
+    sprites = {};
+    sizes = [];
     if (tileset === 'DEFAULT') return;
     for (let i = 0; i < 5; i++) {
         sprites[i] = {};

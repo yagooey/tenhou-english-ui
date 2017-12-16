@@ -47,8 +47,7 @@ document.addEventListener('keydown', function(event) {
 
 document.addEventListener('keyup', function(event) {
     if (event.key !== 'Control' || !usingAltTranslation) return;
-                return;
-            }
+
     if (toggleTranslationOff) {
         setToObserve();
     }
