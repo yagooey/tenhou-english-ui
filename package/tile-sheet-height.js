@@ -1,6 +1,6 @@
 const tileSheetHeightLookup = {
     0: {
-        0: 4,
+        10: 4,
         20: 12,
         30: 16,
         40: 24,
