@@ -18,12 +18,13 @@ label {
   position: absolute;
 }
 
-#tileset label input + img {
+#tileset label input + div {
   cursor: pointer;
   border: 6px solid transparent;
+  text-align: center;
 }
 
-#tileset label input:checked + img {
+#tileset label input:checked + div {
   border: #080 solid 6px;
 }
 

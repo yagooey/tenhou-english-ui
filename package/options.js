@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', (ignored) => {
 
     let thisForm = document.forms.optionform;
-    let sprites = {
-        'DEFAULT': 'The standard tileset',
-        //'black': 'Black background. Smooth.',
-        'bright': 'Brighter colours',
+    const sprites = {
+        'DEFAULT': { 'short': 'Standard', 'long': 'The standard tileset' },
+        'english': { 'short': 'Labelled', 'long': 'Labelled with numbers, winds and dragons' },
+        'bright':  { 'short': 'Brighter', 'long': 'Brighter colours' },
     };
 
     function updateWithNewOptions(options) {
@@ -43,12 +43,16 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
 
         let sample = new Image();
         sample.src = 'sprites.' + tileset + '/sample.png';
-        sample.alt = sprites[tileset];
-        sample.title = sprites[tileset];
+        sample.alt = sprites[tileset]['long'];
         sample.height = '100';
 
         label.appendChild(radioButton);
-        label.appendChild(sample);
+        let holder = document.createElement('div');
+        holder.appendChild(sample);
+        holder.appendChild(document.createElement('br'));
+        holder.appendChild(document.createTextNode(sprites[tileset]['short']));
+        holder.title = sprites[tileset]['long'];
+        label.appendChild(holder);
         fieldset.appendChild(label);
     }
 
