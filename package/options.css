@@ -22,6 +22,7 @@ label {
   cursor: pointer;
   border: 6px solid transparent;
   text-align: center;
+  font-weight: bold;
 }
 
 #tileset label input:checked + div {
