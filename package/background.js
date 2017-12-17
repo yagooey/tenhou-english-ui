@@ -69,7 +69,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
             } else break;
         }
         console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
-        
+
         const canvas = document.createElement('canvas');
         canvas.width = width;
         canvas.height = tileSheetHeightLookup[id][width];
@@ -81,7 +81,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
 }, {
     urls: ['*://p.mjv.jp/5/img/view*'],
     types: ['image'],
-}, ["blocking"]);
+}, ['blocking']);
 
 // on load of extension
 chrome.storage.local.get({ tileset: 'DEFAULT' }, (items) => updateTileset(items));

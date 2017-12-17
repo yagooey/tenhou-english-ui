@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     };
 
     function updateWithNewOptions(options) {
-        //update the tileset
+        // Update the tileset
         chrome.runtime.sendMessage(options);
 
-        //update the translations
+        // Update the translations
         chrome.tabs.query({ url: '*://tenhou.net/*' },
             (tabs) => tabs.forEach((tab) => chrome.tabs.sendMessage(tab.id, options))
         );
@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     function toggleAltDisplay() {
         thisForm.toggleToSet.style.display = thisForm.useToggler.checked ? 'block' : 'none';
     }
-    
+
     function saveOptions() {
         toggleAltDisplay();
-        options = {
+        const options = {
             tileset: thisForm.tileset.value,
             translation: thisForm.translation.value,
             toggle: thisForm.useToggler.checked,
-            altTranslation: thisForm.toggleTo.value
+            altTranslation: thisForm.toggleTo.value,
         };
         chrome.storage.local.set(options, () => updateWithNewOptions(options));
     }
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         tileset: 'DEFAULT',
         translation: 'DEFAULT',
         altTranslation: 'off',
-        toggle: false
+        toggle: false,
     }, function(items) {
         thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;

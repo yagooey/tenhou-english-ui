@@ -9,12 +9,10 @@ let thisPartialTable = {};
 let thisExactTable = {};
 let thisTooltipTable = {};
 let tableStore = {};
-let options = {};
 let mainTranslation = 'off';
 let altTranslation = 'off';
 let usingAltTranslation = false;
 let toggleTranslationOff;
-let originalStore;
 
 const observerSettings = {
     characterData: true,
@@ -31,6 +29,7 @@ function setOptions(options, ignored = null, ignored2 = null) {
     mainTranslation = options.translation;
     altTranslation = options.toggle ? options.altTranslation : null;
     retranslateAll();
+    setToObserve();
 }
 
 chrome.runtime.onMessage.addListener(setOptions);
@@ -212,13 +211,11 @@ function onMutate(mutations) {
     setToObserve();
 }
 
-
 // This is what happens when the page is first loaded
 chrome.storage.local.get(null, (options) => {
+    mutationObserver = new MutationObserver(onMutate);
     setOptions(options);
     if (getTranslationSets()) {
-        mutationObserver = new MutationObserver(onMutate);
-        setToObserve();
         translateTextBeneathANode(document.body, false, true);
         if (thisExactTable[document.title.trim()]) {
             document.title = thisExactTable[document.title.trim()];
