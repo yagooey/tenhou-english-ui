@@ -1130,13 +1130,10 @@ const exactTranslation = {
     '暗転 ON': {
         'DEFAULT': 'Shade discarded drawn tiles.',
     },
-    '- 右クリック … 進む': {
-        'DEFAULT': '- Right click: Step forward',
+    '- 右/左クリック … 進む/戻る': {
+        'DEFAULT': '- Right click: Step forward / backward',
     },
-    '- 左クリック … 戻る': {
-        'DEFAULT': '- Left click: Step backward',
-    },
-    '- ボタン長押し … オートリピート': {
+    '- ボタン/クリック長押し … オートリピート': {
         'DEFAULT': '- Long press: Step continuously',
     },
     '- センターパネル … 得点差表示': {
@@ -1146,7 +1143,7 @@ const exactTranslation = {
     // promotion
 
     '認定': {
-        'DEFAULT': 'Acknowledgement',
+        'DEFAULT': 'Promotion',
     },
     '認定段位/級位    :    ９級': {
         'DEFAULT': 'You have been promoted to: 9 kyuu',
@@ -1288,7 +1285,6 @@ const exactTranslation = {
         'DEFAULT': 'Tenhou Sanma Fishery Association',
     },
 };
-
 
 const partialTranslation = {
     '鳴きなし': {
