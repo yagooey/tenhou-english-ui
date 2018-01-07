@@ -13,6 +13,16 @@
 </fieldset>
 
 <fieldset>
+    <legend>Language</legend>
+    <label>
+        <input type="radio" name="language" value="english" checked="checked"><strong>English</strong>
+    </label>
+    <label>
+        <input type="radio" name="language" value="french"><strong>French</strong>
+    </label>
+</fieldset>
+
+<fieldset id="english">
 <legend>
 Which translation set would you like?<br>
 These options are in increasing order of degree of translations.
@@ -36,6 +46,22 @@ Translations should be comma-separated, in ascending order of priority.
 </label>
 </fieldset>
 
+<fieldset id="french">
+    <legend>
+    Which translation set would you like?<br>
+    These options are in increasing order of degree of translations.
+    </legend>
+    <label>
+        <input type="radio" name="translation" value="off"><strong>Untranslated</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
+    </label>
+    <label>
+        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsūiisō, Uma, Shūgi, Phénix)</i>
+    </label>
+    <label>
+        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>French</strong>: Very French <i>(Tous honneurs, placement bonus, Bonus de placement, phénix)</i>
+    </label>
+</fieldset>
+
 <label>
     <input type="checkbox" name="useToggler" id="useToggler" value="on">Display secondary translation when holding down the <kbd>&lt;Ctrl&gt;</kbd> key.
 </label>
@@ -46,13 +72,19 @@ Translations should be comma-separated, in ascending order of priority.
     <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated</strong>
 </label>
 <label>
-    <input type="radio" name="toggleTo" value="DEFAULT"><strong>Romaji</strong>
+    <input type="radio" name="toggleTo" value="DEFAULT"><strong>(English) Romaji</strong>
 </label>
 <label>
-    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>(Englist) EMA-like</strong>
 </label>
 <label>
-    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>(Englist) Thorough</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT"><strong>(French) Romaji</strong>
+</label>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>(French) Very French</strong>
 </label>
 </fieldset>
 

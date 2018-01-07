@@ -17,11 +17,17 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         );
     }
 
+    function toggleLanguage() {
+        thisForm.english.style.display = thisForm.language.value === 'english' ? 'block' : 'none';
+        thisForm.french.style.display = thisForm.language.value === 'french' ? 'block' : 'none';
+    }
+
     function toggleAltDisplay() {
         thisForm.toggleToSet.style.display = thisForm.useToggler.checked ? 'block' : 'none';
     }
 
     function saveOptions() {
+        toggleLanguage();
         toggleAltDisplay();
         const options = {
             tileset: thisForm.tileset.value,
@@ -71,6 +77,7 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         thisForm.translation.value = items.translation;
         thisForm.useToggler.checked = items.toggle;
         thisForm.toggleTo.value = items.altTranslation;
+        toggleLanguage();
         toggleAltDisplay();
         updateWithNewOptions(items);
     });
