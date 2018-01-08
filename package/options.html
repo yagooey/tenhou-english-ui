@@ -8,18 +8,18 @@
 <body>
 <form name='optionform' id='optionform'>
 
-<fieldset id="tileset">
-<legend>Tileset (takes effect next time a tenhou page is reloaded)</legend>
-</fieldset>
-
 <fieldset>
-    <legend>Language</legend>
-    <label>
+    <legend>Language / Langue</legend>
+    <label style='float:left'>
         <input type="radio" name="language" value="english" checked="checked"><strong>English</strong>
     </label>
     <label>
-        <input type="radio" name="language" value="french"><strong>French</strong>
+        <input type="radio" name="language" value="french"><strong>Français</strong>
     </label>
+</fieldset>
+
+<fieldset id="tileset">
+<legend>Tileset (takes effect next time a tenhou page is reloaded)</legend>
 </fieldset>
 
 <fieldset id="english">
@@ -48,17 +48,17 @@ Translations should be comma-separated, in ascending order of priority.
 
 <fieldset id="french">
     <legend>
-    Which translation set would you like?<br>
-    These options are in increasing order of degree of translations.
+    Quel niveau de traduction désirez-vous?<br>
+    Ces options sont en ordre croissant de traduction.
     </legend>
     <label>
-        <input type="radio" name="translation" value="off"><strong>Untranslated</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
+        <input type="radio" name="translation" value="off"><strong>Pas traduit</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
     </label>
     <label>
-        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsūiisō, Uma, Shūgi, Phénix)</i>
+        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT"><strong>Français minimum</strong>: terminologie transcrite du japonais<i>(Tsūiisō, Uma, Shūgi, Phénix)</i>
     </label>
     <label>
-        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>French</strong>: Very French <i>(Tous honneurs, placement bonus, Bonus de placement, phénix)</i>
+        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>Français maximum</strong>: <i>(Tous honneurs, Bonus de placement, phénix)</i>
     </label>
 </fieldset>
 
@@ -68,24 +68,28 @@ Translations should be comma-separated, in ascending order of priority.
 
 <fieldset id='toggleToSet'>
 <legend>Secondary translation set:</legend>
+<div style='float:left'>
 <label>
-    <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated</strong>
+    <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated / Pas traduit</strong>
 </label>
 <label>
     <input type="radio" name="toggleTo" value="DEFAULT"><strong>(English) Romaji</strong>
 </label>
 <label>
-    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>(Englist) EMA-like</strong>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>(English) EMA-like</strong>
 </label>
 <label>
-    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>(Englist) Thorough</strong>
+    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>(English) Thorough</strong>
+</label>
+</div>
+<div>
+<label>
+    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT"><strong>Français minimum</strong>
 </label>
 <label>
-    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT"><strong>(French) Romaji</strong>
+    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>Français maximum</strong>
 </label>
-<label>
-    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>(French) Very French</strong>
-</label>
+</div>
 </fieldset>
 
 </form>
