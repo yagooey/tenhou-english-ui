@@ -8,13 +8,13 @@
 <body>
 <form name='optionform' id='optionform'>
 
-<fieldset>
+<fieldset id='languageSelecter'>
     <legend>Language / Langue</legend>
-    <label style='float:left'>
-        <input type="radio" name="language" value="english" checked="checked"><strong>English</strong>
+    <label>
+        <input type="radio" name="language" value="en" checked="checked"><strong>English</strong>
     </label>
     <label>
-        <input type="radio" name="language" value="french"><strong>Français</strong>
+        <input type="radio" name="language" value="fr"><strong>Français</strong>
     </label>
 </fieldset>
 
@@ -22,7 +22,7 @@
 <legend>Tileset (takes effect next time a tenhou page is reloaded)</legend>
 </fieldset>
 
-<fieldset id="english">
+<fieldset class="i18n_en">
 <legend>
 Which translation set would you like?<br>
 These options are in increasing order of degree of translations.
@@ -46,7 +46,7 @@ Translations should be comma-separated, in ascending order of priority.
 </label>
 </fieldset>
 
-<fieldset id="french">
+<fieldset class="i18n_fr">
     <legend>
     Quel niveau de traduction désirez-vous?<br>
     Ces options sont en ordre croissant de traduction.
@@ -58,7 +58,7 @@ Translations should be comma-separated, in ascending order of priority.
         <input type="radio" name="translation" value="DEFAULT,FRA_DEFT"><strong>Français minimum</strong>: terminologie transcrite du japonais<i>(Tsūiisō, Uma, Shūgi, Phénix)</i>
     </label>
     <label>
-        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>Français maximum</strong>: <i>(Tous honneurs, Bonus de placement, phénix)</i>
+        <input type="radio" name="translation" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>Français maximum</strong>: <i>(Tous honneurs, Bonus de placement, Bonus en gages, Phénix)</i>
     </label>
 </fieldset>
 
@@ -67,8 +67,8 @@ Translations should be comma-separated, in ascending order of priority.
 </label>
 
 <fieldset id='toggleToSet'>
-<legend>Secondary translation set:</legend>
-<div style='float:left'>
+<legend><span class='i18n_en'>Secondary translation set:</span><span class='i18n_fr'>TODO</span></legend>
+<div class='languageBlock'>
 <label>
     <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated / Pas traduit</strong>
 </label>
@@ -82,7 +82,7 @@ Translations should be comma-separated, in ascending order of priority.
     <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>(English) Thorough</strong>
 </label>
 </div>
-<div>
+<div class='languageBlock'>
 <label>
     <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT"><strong>Français minimum</strong>
 </label>

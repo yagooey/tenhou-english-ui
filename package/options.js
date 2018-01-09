@@ -18,8 +18,13 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     }
 
     function toggleLanguage() {
-        thisForm.english.style.display = thisForm.language.value === 'english' ? 'block' : 'none';
-        thisForm.french.style.display = thisForm.language.value === 'french' ? 'block' : 'none';
+        let languages = ['en', 'fr'];
+        for (thisLanguage of languages) {
+            let elems = document.getElementsByClassName('i18n_' + thisLanguage);
+            for (elem of elems) {
+                elem.style.display = thisForm.language.value === thisLanguage ? 'block' : 'none';
+            }
+        }
     }
 
     function toggleAltDisplay() {
@@ -30,6 +35,7 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         toggleLanguage();
         toggleAltDisplay();
         const options = {
+            language: thisForm.language.value,
             tileset: thisForm.tileset.value,
             translation: thisForm.translation.value,
             toggle: thisForm.useToggler.checked,
@@ -68,11 +74,13 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     }
 
     chrome.storage.local.get({
+        language: chrome.i18n.getUILanguage(),
         tileset: 'DEFAULT',
         translation: 'DEFAULT',
         altTranslation: 'off',
         toggle: false,
     }, function(items) {
+        thisForm.language.value = (items.language.substr(0,2) === 'fr') ? 'fr' : 'en';
         thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;
         thisForm.useToggler.checked = items.toggle;

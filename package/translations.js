@@ -894,7 +894,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Honba',
         'FRA_TRAD': 'Compteur',
     },
-    '後': {
+    '後': { // status of minkan dora 
         'DEFAULT': 'after',
         'ENG': 'after discard',
         'FRA_DEFT': 'après',
@@ -3105,6 +3105,7 @@ const tooltips = {
         'FRA_DEFT': '3P, phénix, hanchan, restreint',
         'FRA_TRAD': '3P, phénix, hanchan, restreint',
     },
+    // nulls are there to prevent tooltips being shown on those elements
     '新人': {
         'DEFAULT': 'rookie',
         'ENG': null,
