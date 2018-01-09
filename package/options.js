@@ -2,9 +2,21 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
 
     let thisForm = document.forms.optionform;
     const sprites = {
-        'DEFAULT': { 'short': 'Standard', 'long': 'The standard tileset' },
-        'english': { 'short': 'Labelled', 'long': 'Labelled with numbers, winds and dragons' },
-        'bright':  { 'short': 'Brighter', 'long': 'Brighter colours' },
+        'DEFAULT': {
+            'short_en': 'Standard',
+            'short_fr': 'Standard',
+            'long': 'The standard tileset',
+        },
+        'english': {
+            'short_en': 'Labelled',
+            'short_fr': 'indices',
+            'long': 'Labelled with numbers, winds and dragons',
+        },
+        'bright':  {
+            'short_en': 'Brighter',
+            'short_fr': 'Plus clairs',
+            'long': 'Brighter colours',
+        },
     };
 
     function updateWithNewOptions(options) {
@@ -20,9 +32,10 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     function toggleLanguage() {
         let languages = ['en', 'fr'];
         for (thisLanguage of languages) {
+            let newDisplayValue = thisForm.language.value === thisLanguage ? 'block' : 'none';
             let elems = document.getElementsByClassName('i18n_' + thisLanguage);
             for (elem of elems) {
-                elem.style.display = thisForm.language.value === thisLanguage ? 'block' : 'none';
+                elem.style.display = newDisplayValue;
             }
         }
     }

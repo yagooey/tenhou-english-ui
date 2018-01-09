@@ -22,7 +22,7 @@
             "128": "icons/tenhou-128.png"
         },
         "default_popup": "options.html",
-        "default_title": "__MSG_extensionName__"
+        "default_title": "__MSG_popupTitle__"
     },
     "permissions": [
         "storage",

@@ -1,11 +1,16 @@
 {
     "extensionName": {
-        "message": "TODO Tenhou English UI",
+        "message": "Interface française de Tenhou - changer la traduction",
         "description": "name auto-inserted into manifest.json"
     },
     
     "extensionDescription": {
-        "message": "TODO Change the UI text on the Tenhou HTML5 Web Client from Japanese to English",
+        "message": "Changer le texte de l'interface Tenhou du japonais au français sur le client HTML5",
         "description": "description auto-inserted into manifest.json"
+    },
+    
+    "popupTitle": {
+        "message": "",
+        "description": ""
     }
 }
