@@ -1,21 +1,19 @@
 document.addEventListener('DOMContentLoaded', (ignored) => {
 
+    const languages = ['en', 'fr'];
     let thisForm = document.forms.optionform;
     const sprites = {
         'DEFAULT': {
             'short_en': 'Standard',
             'short_fr': 'Standard',
-            'long': 'The standard tileset',
         },
         'english': {
             'short_en': 'Labelled',
             'short_fr': 'indices',
-            'long': 'Labelled with numbers, winds and dragons',
         },
         'bright':  {
             'short_en': 'Brighter',
             'short_fr': 'Plus clairs',
-            'long': 'Brighter colours',
         },
     };
 
@@ -30,12 +28,15 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     }
 
     function toggleLanguage() {
-        let languages = ['en', 'fr'];
         for (thisLanguage of languages) {
-            let newDisplayValue = thisForm.language.value === thisLanguage ? 'block' : 'none';
+            const makeVisible = thisForm.language.value === thisLanguage;
             let elems = document.getElementsByClassName('i18n_' + thisLanguage);
             for (elem of elems) {
-                elem.style.display = newDisplayValue;
+                if (makeVisible) {
+                    elem.classList.remove('hidden');
+                } else {
+                    elem.classList.add('hidden');
+                }
             }
         }
     }
@@ -68,15 +69,18 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
 
         let sample = new Image();
         sample.src = 'sprites.' + tileset + '/sample.png';
-        sample.alt = sprites[tileset]['long'];
         sample.height = '100';
 
         label.appendChild(radioButton);
         let holder = document.createElement('div');
         holder.appendChild(sample);
         holder.appendChild(document.createElement('br'));
-        holder.appendChild(document.createTextNode(sprites[tileset]['short']));
-        holder.title = sprites[tileset]['long'];
+        for (language of languages) {
+            let titlespan = document.createElement('span');
+            titlespan.classList.add('i18n_' + language);
+            titlespan.appendChild(document.createTextNode(sprites[tileset]['short_' + language]));
+            holder.appendChild(titlespan);
+        }
         label.appendChild(holder);
         fieldset.appendChild(label);
     }
