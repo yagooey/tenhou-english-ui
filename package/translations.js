@@ -791,7 +791,7 @@ const exactTranslation = {
     'Desktop入力:あり': {
         'DEFAULT': 'In-game options: On-screen',
         'FRA_DEFT': 'Options en jeu: sur écran',
-   },
+    },
     'Desktop入力:なし': {
         'DEFAULT': 'In-game options: From button',
         'FRA_DEFT': 'Options en jeu: du bouton',
@@ -894,11 +894,11 @@ const exactTranslation = {
         'FRA_DEFT': 'Honba',
         'FRA_TRAD': 'Compteur',
     },
-    '後': { // status of minkan dora 
+    '後': { // status of minkan dora
         'DEFAULT': 'after',
         'ENG': 'after discard',
-        'FRA_DEFT': 'après',
-        'FRA_TRAD': '***après***',
+        'FRA_DEFT': 'après écart',
+        'FRA_TRAD': 'après écart',
     },
     '明槓ドラ': {
         'DEFAULT': 'Minkan dora',
@@ -2529,11 +2529,12 @@ const partialTranslationForStats = {
     },
     '東喰赤': {
         'DEFAULT': 'E-only games',
-        'FRA_DEFT': '***',
+        'FRA_DEFT': '1V rouges+',
     },
     '南喰赤': {
         'DEFAULT': 'E+S games',
-        'FRA_DEFT': '***',
+        'FRA_DEFT': 'Hanchan rgs+',
+        'FRA_TRAD': '2V rouges+',
     },
     '複合飜': {
         'DEFAULT': 'Avg.tot.han',
@@ -3105,6 +3106,8 @@ const tooltips = {
         'FRA_DEFT': '3P, phénix, hanchan, restreint',
         'FRA_TRAD': '3P, phénix, hanchan, restreint',
     },
+
+    // ranks
     // nulls are there to prevent tooltips being shown on those elements
     '新人': {
         'DEFAULT': 'rookie',
