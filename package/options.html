@@ -1,62 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <title>Tenhou translation options</title>
     <link rel="stylesheet" type="text/css" href="options.css">
 </head>
 <body>
-<form name='optionform' id='optionform'>
+    <form name='optionform' id='optionform'>
+        <fieldset id="tileset">
+            <legend><span class="i18n_en">Tile Set</span><span class="i18n_fr">Ensemble de tuiles</span></legend>
+            <span class="i18n_en">(Takes effect next time a tenhou page is reloaded)<br></span>
+            <span class="i18n_fr">(Prend effet après l'actualisation d'une page Tenhou)<br></span>
+        </fieldset>
 
-<fieldset id="tileset">
-<legend>Tileset (takes effect next time a tenhou page is reloaded)</legend>
-</fieldset>
+        <fieldset id='languageSelecter'>
+            <legend>Language / Langue</legend>
+            <label>
+                <input type="radio" name="language" value="en" checked="checked"><strong>English</strong>
+            </label>
+            <label>
+                <input type="radio" name="language" value="fr"><strong>Français</strong>
+            </label>
+        </fieldset>
 
-<fieldset>
-<legend>
-Which translation set would you like?<br>
-These options are in increasing order of degree of translations.
-</legend>
-<!--
-The values for each option are used for cascading the translations.
-Translations should be comma-separated, in ascending order of priority.
-"off" is a special value, meaning no translation is done.
--->
-<label>
-    <input type="radio" name="translation" value="off"><strong>Untranslated</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
-</label>
-<label>
-    <input type="radio" name="translation" value="DEFAULT" checked="checked"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsuuiisou, Uma, Shuugi, Houou)</i>
-</label>
-<label>
-    <input type="radio" name="translation" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>: Consistent with terminology from the European MahJong Association (EMA) <i>(All honours, Uma, Shuugi, Phoenix)</i>
-</label>
-<label>
-    <input type="radio" name="translation" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>: All the EMA terms and more <i>(All honours, placement bonus, parlor bonuses, 7dan+&nbsp;R2000+)</i>
-</label>
-</fieldset>
+        <fieldset class="i18n_en">
+            <legend>Which translation set would you like?</legend>
+            (These options are in increasing order of degree of translations)
+            <br>
+            <!--
+    The values for each option are used for cascading the translations.
+    Translations should be comma-separated, in ascending order of priority.
+    "off" is a special value, meaning no translation is done.
+    -->
+            <label>
+                <input type="radio" name="translation" value="off"><strong>Untranslated</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
+            </label>
+            <label>
+                <input type="radio" name="translation" value="DEFAULT" checked="checked"><strong>Romaji</strong>: For people who prefer terminologies in romaji form <i>(Tsuuiisou, Uma, Shuugi, Houou)</i>
+            </label>
+            <label>
+                <input type="radio" name="translation" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>: Consistent with the European Mahjong Association (EMA) <i>(All honours, Uma, Shuugi, Phoenix)</i>
+            </label>
+            <label>
+                <input type="radio" name="translation" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>: All the EMA terms and more <i>(All honours, placement bonus, parlor bonuses, 7dan+&nbsp;R2000+)</i>
+            </label>
+        </fieldset>
 
-<label>
-    <input type="checkbox" name="useToggler" id="useToggler" value="on">Display secondary translation when holding down the <kbd>&lt;Ctrl&gt;</kbd> key.
-</label>
+        <fieldset class="i18n_fr">
+            <legend>Quel niveau de traduction désirez-vous?</legend>
+            (Ces options sont en ordre croissant de traduction)
+            <br>
+            <label>
+                <input type="radio" name="translation" value="off"><strong>Pas traduit</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
+            </label>
+            <label>
+                <input type="radio" name="translation" value="DEFAULT,FRA_DEFT"><strong>Français minimum</strong>: terminologie transcrite du japonais<i>(Tsūiisō, Uma, Shūgi, Phénix)</i>
+            </label>
+            <label>
+                <input type="radio" name="translation" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>Français maximum</strong>: <i>(Tous honneurs, Bonus de placement, Bonus en gages, Phénix)</i>
+            </label>
+        </fieldset>
 
-<fieldset id='toggleToSet'>
-<legend>Secondary translation set:</legend>
-<label>
-    <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated</strong>
-</label>
-<label>
-    <input type="radio" name="toggleTo" value="DEFAULT"><strong>Romaji</strong>
-</label>
-<label>
-    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>EMA-like</strong>
-</label>
-<label>
-    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>Thorough</strong>
-</label>
-</fieldset>
+        <label>
+            <input type="checkbox" name="useToggler" id="useToggler" value="on"> <span class='i18n_en'>Display secondary translation when holding down the <kbd>&lt;Ctrl&gt;</kbd> key.</span> <span class='i18n_fr'>Montrer la traduction secondaire en survolant un terme et appuyant <kbd>&lt;Ctrl&gt;</kbd></span>
+        </label>
 
-</form>
-<script src="options.js"></script>
+        <fieldset id='toggleToSet'>
+            <legend><span class='i18n_en'>Secondary translation set:</span><span class='i18n_fr'>Traduction secondaire</span></legend>
+            <div class='languageBlock'>
+                <label>
+                    <input type="radio" name="toggleTo" value="off" checked="checked"><strong>Untranslated / Pas traduit</strong>
+                </label>
+                <label>
+                    <input type="radio" name="toggleTo" value="DEFAULT"><strong>(English) Romaji</strong>
+                </label>
+                <label>
+                    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG"><strong>(English) EMA-like</strong>
+                </label>
+                <label>
+                    <input type="radio" name="toggleTo" value="DEFAULT,EMA_ENG,ENG"><strong>(English) Thorough</strong>
+                </label>
+            </div>
+            <div class='languageBlock'>
+                <label>
+                    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT"><strong>Français minimum</strong>
+                </label>
+                <label>
+                    <input type="radio" name="toggleTo" value="DEFAULT,FRA_DEFT,FRA_TRAD"><strong>Français maximum</strong>
+                </label>
+            </div>
+        </fieldset>
+    </form>
+    <script src="options.js"></script>
 </body>
 </html>

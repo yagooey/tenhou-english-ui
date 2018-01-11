@@ -1,10 +1,20 @@
 document.addEventListener('DOMContentLoaded', (ignored) => {
 
+    const languages = ['en', 'fr'];
     let thisForm = document.forms.optionform;
     const sprites = {
-        'DEFAULT': { 'short': 'Standard', 'long': 'The standard tileset' },
-        'english': { 'short': 'Labelled', 'long': 'Labelled with numbers, winds and dragons' },
-        'bright':  { 'short': 'Brighter', 'long': 'Brighter colours' },
+        'DEFAULT': {
+            'short_en': 'Standard',
+            'short_fr': 'Standard',
+        },
+        'english': {
+            'short_en': 'Labelled',
+            'short_fr': 'indices',
+        },
+        'bright':  {
+            'short_en': 'Brighter',
+            'short_fr': 'Plus clairs',
+        },
     };
 
     function updateWithNewOptions(options) {
@@ -17,13 +27,29 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         );
     }
 
+    function toggleLanguage() {
+        for (thisLanguage of languages) {
+            const makeVisible = thisForm.language.value === thisLanguage;
+            let elems = document.getElementsByClassName('i18n_' + thisLanguage);
+            for (elem of elems) {
+                if (makeVisible) {
+                    elem.classList.remove('hidden');
+                } else {
+                    elem.classList.add('hidden');
+                }
+            }
+        }
+    }
+
     function toggleAltDisplay() {
         thisForm.toggleToSet.style.display = thisForm.useToggler.checked ? 'block' : 'none';
     }
 
     function saveOptions() {
+        toggleLanguage();
         toggleAltDisplay();
         const options = {
+            language: thisForm.language.value,
             tileset: thisForm.tileset.value,
             translation: thisForm.translation.value,
             toggle: thisForm.useToggler.checked,
@@ -43,15 +69,18 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
 
         let sample = new Image();
         sample.src = 'sprites.' + tileset + '/sample.png';
-        sample.alt = sprites[tileset]['long'];
         sample.height = '100';
 
         label.appendChild(radioButton);
         let holder = document.createElement('div');
         holder.appendChild(sample);
         holder.appendChild(document.createElement('br'));
-        holder.appendChild(document.createTextNode(sprites[tileset]['short']));
-        holder.title = sprites[tileset]['long'];
+        for (language of languages) {
+            let titlespan = document.createElement('span');
+            titlespan.classList.add('i18n_' + language);
+            titlespan.appendChild(document.createTextNode(sprites[tileset]['short_' + language]));
+            holder.appendChild(titlespan);
+        }
         label.appendChild(holder);
         fieldset.appendChild(label);
     }
@@ -62,15 +91,18 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
     }
 
     chrome.storage.local.get({
+        language: chrome.i18n.getUILanguage(),
         tileset: 'DEFAULT',
         translation: 'DEFAULT',
         altTranslation: 'off',
         toggle: false,
     }, function(items) {
+        thisForm.language.value = (items.language.substr(0,2) === 'fr') ? 'fr' : 'en';
         thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;
         thisForm.useToggler.checked = items.toggle;
         thisForm.toggleTo.value = items.altTranslation;
+        toggleLanguage();
         toggleAltDisplay();
         updateWithNewOptions(items);
     });

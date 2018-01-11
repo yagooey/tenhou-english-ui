@@ -1,5 +1,5 @@
 body {
-    min-width: 300px;
+    min-width: 400px;
 }
 
 label {
@@ -7,7 +7,11 @@ label {
     padding-bottom: 0.3em;
 }
 
-#tileset label {
+.hidden {
+    display: none !important;
+}
+
+#tileset label, #languageSelecter label, .languageBlock {
     display: inline-block;
     padding: 0;
     margin: 0;
