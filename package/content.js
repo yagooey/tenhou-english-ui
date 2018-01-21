@@ -151,6 +151,9 @@ function translateOneNode(node, restore = false, replace = true) {
 
         newNode.originalValue = originalText;
         thisParent.replaceChild(newNode, node);
+        if (thisParent.style.fontSize === "400%") {
+            thisParent.style.fontSize = "200%";
+        }
     } else {
         newText = originalText;
 
