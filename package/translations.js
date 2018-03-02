@@ -657,7 +657,7 @@ const exactTranslation = {
         'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
         'FRA_DEFT': 'Le pseudo est invalide. Il y a des caractères refusés qui sont inutilisables pour un pseudo. (ERR 1001)',
     },
-    'このプレーヤ名を使用するにはIDで入場する必要があります':{
+    'このプレーヤ名を使用するにはIDで入場する必要があります': {
         'DEFAULT': 'This name is registered. Please use the correct ID to login',
         'FRA_DEFT': 'Ce pseudo est enregistré. Veuillez utiliser l\'identifiant correct pour vous connecter',
     },
@@ -1747,6 +1747,23 @@ const partialTranslation = {
         'DEFAULT': 'Auto discard',
         'FRA_DEFT': 'Auto-écart',
     },
+    '1位 ': {
+        'DEFAULT': '1st ',
+        'FRA_DEFT': '1er ',
+    },
+    '2位 ': {
+        'DEFAULT': '2nd ',
+        'FRA_DEFT': '2e ',
+    },
+    '3位 ': {
+        'DEFAULT': '3rd ',
+        'FRA_DEFT': '3e ',
+    },
+    '4位 ': {
+        'DEFAULT': '4th ',
+        'FRA_DEFT': '4e ',
+    },
+
     '四般東喰赤速': {
         'DEFAULT': '4 Ippan Tonpu Fast',
         'EMA_ENG': '4P Novice E Fast',
