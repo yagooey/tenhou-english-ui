@@ -882,6 +882,20 @@ const exactTranslation = {
         'FRA_DEFT': 'Hanchan + 4 mains en fusillade',
         'FRA_TRAD': 'Partie normale + 4 mains en fusillade',
     },
+    '東風+3局サドンデス': {
+        'DEFAULT': 'Tonpuusen + 3 rounds of sudden death',
+        'EMA_ENG': 'East-only + 3 rounds of sudden death',
+        'ENG': 'East',
+        'FRA_DEFT': 'Tonpūsen + 3 mains en fusillade',
+        'FRA_TRAD': 'Partie d\'un vent + 3 mains en fusillade',
+    },
+    '東南+3局サドンデス': {
+        'DEFAULT': 'Hanchan + 3 rounds of sudden death',
+        'EMA_ENG': 'East & South + 3 rounds of sudden death',
+        'ENG': 'East & South',
+        'FRA_DEFT': 'Hanchan + 3 mains en fusillade',
+        'FRA_TRAD': 'Partie normale + 3 mains en fusillade',
+    },
     'ウマ': {
         'DEFAULT': 'Uma',
         'ENG': 'Placement bonus',
