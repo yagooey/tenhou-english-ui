@@ -53,7 +53,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     /**
      * Group 1: 1 digit, Sprite ID
      * Group 2: 2 digits, Don't know what these do; for now, they're both zero
-     * Group 3: 4 digits, Width of image divided by 10
+     * Group 3: 3 digits, Width of image divided by 10
      * Group 3: 18 hex digits, Colours of tiles (ignored here)
      */ 
     const spriteUrlRegex = /view{1,2}([0-4])([0-4]){2}([0-9]{3})([0-9a-f]{18})\.png$/;
