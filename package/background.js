@@ -51,25 +51,31 @@ chrome.runtime.onMessage.addListener(updateTileset);
 // Replace tile sprite sheets with custom sprite sheets
 chrome.webRequest.onBeforeRequest.addListener((details) => {
     /**
-     * Group 1: Width of image
-     * Group 2: Sprite ID
-     * Group 3: Colour code
-     */
-    const spriteUrlRegex = /view([0-9]{3})([0-4])([0-9a-f]{20})\.png$/;
+     * Group 1: 1 digit, Sprite ID
+     * Group 2: 2 digits, Don't know what these do; for now, they're both zero
+     * Group 3: 4 digits, Width of image divided by 10
+     * Group 3: 18 hex digits, Colours of tiles (ignored here)
+     */ 
+    const spriteUrlRegex = /view{1,2}([0-4])([0-4]){2}([0-9]{3})([0-9a-f]{18})\.png$/;
     const matches = spriteUrlRegex.exec(details.url);
+    //console.log(details.url); // http://p.mjv.jp/5/img/vieww000053003300ffffff000000.png
     if (tileset === 'DEFAULT' || !matches || !sprites) return;
 
-    const id = parseInt(matches[2]);
+    const id = parseInt(matches[1]);
     if (sizes[id][0]) {
-        const width = 10 * parseInt(matches[1]);
+        const width = 10 * parseInt(matches[3]);
+        
+        // find the smallest spritesheet we've got that's >= size requested
         let size = 0;
         for (let i = 1; i < sizes[id].length; i++) {
             if (width <= sizes[id][i]) {
                 size = i;
             } else break;
         }
-        console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
-
+        //console.log('requested ' + matches[1] + '-' + matches[3] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
+        
+        // stretch that spritesheet to the requested size
+        
         const canvas = document.createElement('canvas');
         canvas.width = width;
         canvas.height = tileSheetHeightLookup[id][width];
