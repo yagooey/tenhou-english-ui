@@ -83,7 +83,7 @@ const exactTranslation = {
     '三色同順': {
         'DEFAULT': 'Sanshoku doujun',
         'EMA_ENG': 'Mixed Triple Chow',
-        'FRA_TRAD': 'Tout caché tiré',
+        'FRA_TRAD': 'Trois suites mixtes',
     },
     '對對和': {
         'DEFAULT': 'Toitoi',
