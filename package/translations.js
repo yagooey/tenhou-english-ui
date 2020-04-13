@@ -34,7 +34,6 @@ const exactTranslation = {
         'DEFAULT': 'Menzen tsumo',
         'EMA_ENG': 'Self-drawn fully concealed',
         'FRA_TRAD': 'Tout caché tiré',
-        'VIE': 'Menzen Tsumo',
     },
     '裏ドラ': {
         'DEFAULT': 'Uradora',
@@ -2325,12 +2324,13 @@ const exactTranslation = {
         'DEFAULT': 'Select whether the tiles of your hand should be larger, or smaller, when in landscape mode.',
         'POL': 'Wybierz, czy w trybie poziomym kamienie w twojej ręce powinny być większe, czy mniejsze.',
     },
-    '設定を有効にするには、再接続する必要があります。
-再接続してもよろしいですか？': {
-        'DEFAULT': 'You must reconnect for the settings to take effect.
-Are you sure you want to reconnect?',
-        'POL': 'Musisz połączyć się od nowa, by zmiany zostały wprowadzone.
-Czy na pewno chcesz się połączyć ponownie?',
+    '設定を有効にするには、再接続する必要があります': {
+        'DEFAULT': 'You must reconnect for the settings to take effect',
+        'POL': 'Musisz połączyć się od nowa, by zmiany zostały wprowadzone',
+    },
+    '再接続してもよろしいですか？': {
+        'DEFAULT': 'Are you sure you want to reconnect?',
+        'POL': 'Czy na pewno chcesz się połączyć ponownie?',
     },
 };
 
