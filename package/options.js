@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (ignored) => {
+﻿document.addEventListener('DOMContentLoaded', (ignored) => {
 
     const languages = ['en', 'fr', 'vi'];
     let thisForm = document.forms.optionform;
@@ -100,8 +100,7 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         altTranslation: 'off',
         toggle: false,
     }, function(items) {
-        browser_lang = items.language.substr(0,2);
-        thisForm.language.value = (browser_lang === 'fr') ? 'fr' : (browser_lang === 'vi') ? 'vi' : 'en';
+        thisForm.language.value = (items.language.substr(0,2) === 'fr') ? 'fr' : ((items.language.substr(0,2) === 'vi') ? 'vi' : 'en');
         thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;
         thisForm.useToggler.checked = items.toggle;

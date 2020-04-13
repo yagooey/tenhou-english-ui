@@ -1,14 +1,15 @@
 const exactTranslation = {
+
+    // Yaku
+
     '流局滿貫': {
         'DEFAULT': 'Nagashi Mangan',
-        'VIE': 'Nagashi mangan',
     },
     '立直': {
         'DEFAULT': 'Riichi',
         'EMA_ENG': 'Riichi',
         'ENG': 'Ready-riichi',
         'FRA_TRAD': 'Main prête: riichi',
-        'VIE': 'Riichi',
     },
     '赤ドラ': {
         'DEFAULT': 'Akadora',
@@ -20,26 +21,22 @@ const exactTranslation = {
         'DEFAULT': 'Tanyao',
         'EMA_ENG': 'All simples',
         'FRA_TRAD': 'Main simple: tanyao',
-        'VIE': 'Tanyao',
     },
     '断幺九': {
         'DEFAULT': 'Tanyao',
         'EMA_ENG': 'All simples',
         'FRA_TRAD': 'Main simple: tanyao',
-        'VIE': 'Tanyao',
     },
     '平和': {
         'DEFAULT': 'Pinfu',
         'EMA_ENG': 'Pinfu',
         'ENG': 'Pinfu no-point',
         'FRA_TRAD': 'Main plate: pinfu',
-        'VIE': 'Pinfu',
     },
     '門前清自摸和': {
         'DEFAULT': 'Menzen tsumo',
         'EMA_ENG': 'Self-drawn fully concealed',
         'FRA_TRAD': 'Tout caché tiré',
-        'VIE': 'Tsumo',
     },
     '裏ドラ': {
         'DEFAULT': 'Uradora',
@@ -50,12 +47,10 @@ const exactTranslation = {
     '一發': {
         'DEFAULT': 'Ippatsu',
         'EMA_ENG': 'One-shot',
-        'VIE': 'Ippatsu',
     },
     '一発': {
         'DEFAULT': 'Ippatsu',
         'EMA_ENG': 'One-shot',
-        'VIE': 'Ippatsu',
     },
     '場風 東': {
         'DEFAULT': 'Bakaze Ton',
@@ -85,18 +80,16 @@ const exactTranslation = {
         'DEFAULT': 'Honitsu',
         'EMA_ENG': 'Half flush',
         'FRA_TRAD': 'Main de couleur mixte',
-        'VIE': 'Honitsu',
     },
     '一盃口': {
         'DEFAULT': 'Iipeikou',
         'EMA_ENG': 'Pure Double Chow',
         'FRA_TRAD': 'Deux suites identiques',
-        'VIE': 'Iipeikou',
     },
     '三色同順': {
         'DEFAULT': 'Sanshoku doujun',
         'EMA_ENG': 'Mixed Triple Chow',
-        'FRA_TRAD': 'Tout caché tiré',
+        'FRA_TRAD': 'Trois suites mixtes',
         'VIE': 'Sanshoku',
     },
     '對對和': {
@@ -104,14 +97,12 @@ const exactTranslation = {
         'EMA_ENG': 'All pungs',
         'FRA_DEFT': 'Toïtoï',
         'FRA_TRAD': 'Tous brelans: toïtoï',
-        'VIE': 'Toitoi',
     },
     '対々和': {
         'DEFAULT': 'Toitoi',
         'EMA_ENG': 'All pungs',
         'FRA_DEFT': 'Toïtoï',
         'FRA_TRAD': 'Tous brelans: toïtoï',
-        'VIE': 'Toitoi',
     },
     '自風 東': {
         'DEFAULT': 'Jikaze Ton',
@@ -123,13 +114,11 @@ const exactTranslation = {
         'DEFAULT': 'Chiitoitsu',
         'EMA_ENG': '7 pairs',
         'FRA_TRAD': 'Sept paires',
-        'VIE': 'Chiitoitsu',
     },
     '七対子': {
         'DEFAULT': 'Chiitoitsu',
         'EMA_ENG': '7 pairs',
         'FRA_TRAD': 'Sept paires',
-        'VIE': 'Chiitoitsu',
     },
     '自風 南': {
         'DEFAULT': 'Jikaze Nan',
@@ -147,7 +136,6 @@ const exactTranslation = {
         'DEFAULT': 'Suukantsu',
         'EMA_ENG': '4 kongs',
         'FRA_TRAD': 'Quatre carrés',
-        'VIE': 'Suukantsu',
     },
     '自風 北': {
         'DEFAULT': 'Jikaze Pei',
@@ -159,14 +147,12 @@ const exactTranslation = {
         'DEFAULT': 'Chinitsu',
         'EMA_ENG': 'Full flush',
         'FRA_TRAD': 'Main de couleur pure',
-        'VIE': 'Chinitsu',
     },
     '三暗刻': {
         'DEFAULT': 'Sanankou',
         'EMA_ENG': '3 concealed pungs',
         'FRA_DEFT': 'Sanankō',
         'FRA_TRAD': 'Trois brelans cachés',
-        'VIE': 'Sanankou',
     },
     '河底撈魚': {
         'DEFAULT': 'Houtei raoyui',
@@ -178,13 +164,11 @@ const exactTranslation = {
         'DEFAULT': 'Chanta',
         'EMA_ENG': 'Outside hand',
         'FRA_TRAD': 'Trois brelans cachés',
-        'VIE': 'Chanta',
     },
     '混全帯幺九': {
         'DEFAULT': 'Chanta',
         'EMA_ENG': 'Outside hand',
         'FRA_TRAD': 'Main externe mixte',
-        'VIE': 'Chanta',
     },
     '海底摸月': {
         'DEFAULT': 'Haitei raoyue',
@@ -202,12 +186,10 @@ const exactTranslation = {
     '兩立直': {
         'DEFAULT': 'Double riichi',
         'EMA_ENG': 'Double riichi',
-        'VIE': 'Double riichi',
     },
     '両立直': {
         'DEFAULT': 'Double riichi',
         'EMA_ENG': 'Double riichi',
-        'VIE': 'Double riichi',
     },
     '場風 南': {
         'DEFAULT': 'Bakaze Nan',
@@ -232,80 +214,68 @@ const exactTranslation = {
         'EMA_ENG': 'Little 3 dragons',
         'FRA_DEFT': 'Shōsangen',
         'FRA_TRAD': 'Trois petits dragons',
-        'VIE': 'Shousangen',
     },
     '混老頭': {
         'DEFAULT': 'Honroutou',
         'EMA_ENG': 'Only terminals & honours',
         'FRA_DEFT': 'Honrōtō',
         'FRA_TRAD': 'Main terminale mixte',
-        'VIE': 'Honroutou',
     },
     '槍槓': {
         'DEFAULT': 'Chankan',
         'EMA_ENG': 'Robbing a kong',
         'FRA_TRAD': 'Voler un kan',
-        'VIE': 'Chankan',
     },
     '一氣通貫': {
         'DEFAULT': 'Ikkitsuukan',
         'EMA_ENG': 'Pure straight',
         'FRA_DEFT': 'Ikkitsūkan',
         'FRA_TRAD': 'La grande suite',
-        'VIE': 'Ittsuu',
     },
     '一気通貫': {
         'DEFAULT': 'Ikkitsuukan',
         'EMA_ENG': 'Pure straight',
         'FRA_DEFT': 'Ikkitsūkan',
         'FRA_TRAD': 'La grande suite',
-        'VIE': 'Ittsuu',
     },
     '二盃口': {
         'DEFAULT': 'Ryanpeikou',
         'EMA_ENG': 'Twice pure double chow',
         'FRA_DEFT': 'Ryanpeikō',
         'FRA_TRAD': '2 x 2 suites identiques',
-        'VIE': 'Ryanpeikou',
     },
     '三色同刻': {
         'DEFAULT': 'Sanshoku doukou',
         'EMA_ENG': 'Triple Pung',
         'FRA_DEFT': 'Sanshoku dōkō',
         'FRA_TRAD': 'Brelans tricolores',
-        'VIE': 'Sanshoku doukou',
     },
     '大三元': {
         'DEFAULT': 'Daisangen',
         'EMA_ENG': '3 Big Dragons',
         'FRA_TRAD': 'Trois grands dragons',
-        'VIE': 'Daisangen',
     },
     '純全帶么九': {
         'DEFAULT': 'Junchan',
         'EMA_ENG': 'Terminals in all sets',
         'FRA_TRAD': 'Main externe pure',
-        'VIE': 'Junchan',
     },
     '純全帯幺九': {
         'DEFAULT': 'Junchan',
         'EMA_ENG': 'Terminals in all sets',
         'FRA_TRAD': 'Main externe pure',
-        'VIE': 'Junchan',
     },
     '四暗刻': {
         'DEFAULT': 'Suuankou',
         'EMA_ENG': '4 concealed pungs',
         'FRA_DEFT': 'Sūankō',
         'FRA_TRAD': 'Quatre brelans cachés',
-        'VIE': 'Suuankou',
     },
     '國士無雙': {
         'DEFAULT': 'Kokushi musou',
         'EMA_ENG': '13 orphans',
         'FRA_DEFT': 'Kokushi musō',
         'FRA_TRAD': '13 orphelins',
-        'VIE': 'Kokushi',
     },
     '國士無雙13面': {
         'DEFAULT': 'Kokushi musou 13-men',
@@ -319,7 +289,6 @@ const exactTranslation = {
         'EMA_ENG': '13 orphans',
         'FRA_DEFT': 'Kokushi musō',
         'FRA_TRAD': '13 orphelins',
-        'VIE': 'Kokushi',
     },
     '国士無双１３面': {
         'DEFAULT': 'Kokushi musou 13 men',
@@ -333,62 +302,53 @@ const exactTranslation = {
         'EMA_ENG': 'Little 4 winds',
         'FRA_DEFT': 'Shōsūshii',
         'FRA_TRAD': 'Quatre petits vents',
-        'VIE': 'Shousuushii',
     },
     '字一色': {
         'DEFAULT': 'Tsuuiisou',
         'EMA_ENG': 'All honours',
         'FRA_DEFT': 'Tsūiisō',
         'FRA_TRAD': 'Tous honneurs',
-        'VIE': 'Tsuuiisou',
     },
     '三槓子': {
         'DEFAULT': 'Sankantsu',
         'EMA_ENG': '3 kongs',
         'FRA_TRAD': 'Trois carrés',
-        'VIE': 'Sankantsu',
     },
     '四暗刻單騎': {
         'DEFAULT': 'Suuankou tanki',
         'EMA_ENG': '4 concealed pungs (single wait)',
         'FRA_DEFT': 'Sūankō tanki',
         'FRA_TRAD': '4 brelans cachés (att. unique)',
-        'VIE': 'Suuankou tanki',
     },
     '四暗刻単騎': {
         'DEFAULT': 'Suuankou tanki',
         'EMA_ENG': '4 concealed pungs (single wait)',
         'FRA_DEFT': 'Sūankō tanki',
         'FRA_TRAD': '4 brelans cachés (att. unique)',
-        'VIE': 'Suuankou tanki',
     },
     '綠一色': {
         'DEFAULT': 'Ryuuiisou',
         'EMA_ENG': 'All green',
         'FRA_DEFT': 'Ryūiisō',
         'FRA_TRAD': 'Main verte',
-        'VIE': 'Ryuuiisou',
     },
     '緑一色': {
         'DEFAULT': 'Ryuuiisou',
         'EMA_ENG': 'All green',
         'FRA_DEFT': 'Ryūiisō',
         'FRA_TRAD': 'Main verte',
-        'VIE': 'Ryuuiisou',
     },
     '九蓮宝燈': {
         'DEFAULT': 'Chuuren poutou',
         'EMA_ENG': '9 gates',
         'FRA_DEFT': 'Chūren pōtō',
         'FRA_TRAD': 'Neuf lanternes',
-        'VIE': 'Chuuren poutou',
     },
     '九蓮寶燈': {
         'DEFAULT': 'Chuuren poutou',
         'EMA_ENG': '9 gates',
         'FRA_DEFT': 'Chūren pōtō',
         'FRA_TRAD': 'Neuf lanternes',
-        'VIE': 'Chuuren poutou',
     },
     '純正九蓮宝燈': {
         'DEFAULT': 'Junsei chuuren poutou',
@@ -409,63 +369,52 @@ const exactTranslation = {
         'EMA_ENG': 'All terminals',
         'FRA_DEFT': 'Chinrōtō',
         'FRA_TRAD': 'Main terminale pure',
-        'VIE': 'Chinroutou',
     },
     '地和': {
         'DEFAULT': 'Chiihou',
         'EMA_ENG': 'Earth\'s blessing',
         'FRA_DEFT': 'Chiihō',
         'FRA_TRAD': 'Départ miraculeux (non-d.)',
-        'VIE': 'Chiihou',
     },
     '大四喜': {
         'DEFAULT': 'Daisuushi',
         'EMA_ENG': 'Big 4 winds',
         'FRA_DEFT': 'Daisūshii',
         'FRA_TRAD': 'Quatre grands vents',
-        'VIE': 'Daisuushii',
     },
     '天和': {
         'DEFAULT': 'Tenhou',
         'EMA_ENG': 'Heaven\'s blessing',
         'FRA_DEFT': 'Tenhō',
         'FRA_TRAD': 'Départ miraculeux (donneur)',
-        'VIE': 'Tenhou',
     },
     '人和': {
         'DEFAULT': 'Renhou',
         'EMA_ENG': 'Man\'s blessing',
         'FRA_DEFT': 'Renhō',
         'FRA_TRAD': 'Départ miraculeux (écart)',
-        'VIE': 'Renhou',
     },
     '数え役満': {
         'DEFAULT': 'Kazoe-yakuman',
         'EMA_ENG': 'Counted yakuman',
         'FRA_TRAD': 'Yakuman compté',
-        'VIE': 'Kazoe yakuman',
     },
     '滿貫': {
         'DEFAULT': 'Mangan',
-        'VIE': 'Mangan',
     },
     '跳滿': {
         'DEFAULT': 'Haneman',
-        'VIE': 'Haneman',
     },
     '倍滿': {
         'DEFAULT': 'Baiman',
         'FRA_DEFT': 'Baïman',
-        'VIE': 'Baiman',
     },
     '三倍滿': {
         'DEFAULT': 'Sanbaiman',
         'FRA_DEFT': 'Sanbaïman',
-        'VIE': 'Sanbaiman',
     },
     '役滿': {
         'DEFAULT': 'Yakuman',
-        'VIE': 'Yakuman',
     },
     '点∀': {
         'DEFAULT': 'Points ∀',
@@ -473,6 +422,9 @@ const exactTranslation = {
         'FRA_TRAD': 'points tous',
         'VIE': 'mỗi người',
     },
+
+    // Main
+
     'オンライン対戦麻雀 天鳳 / ランキング': {
         'DEFAULT': 'Tenhou / Rankings',
         'ENG': 'Tenhou / Monthly statistics',
@@ -519,17 +471,17 @@ const exactTranslation = {
     '【入力方法の調整を行っています】': {
         'DEFAULT': 'Input method has been successfully changed',
         'FRA_DEFT': 'La méthode d\'entrée vient d\'être ajustée',
-        'VIE': '(where?)',
+        'VIE': 'Đã thay đổi cách nhập dữ liệu.',
     },
     '希望の入力方法ではない場合には': {
         'DEFAULT': 'If your desired input method is not chosen, ',
         'FRA_DEFT': 'Si votre méthode d\'entrée désirée n\'est pas choisi, ',
-        'VIE': '(where?)',
+        'VIE': 'Nếu chưa chọn được cách nhập như mong muốn,',
     },
     '「設定」から変更をお願いいたします。': {
         'DEFAULT': 'you can change it via settings.',
         'FRA_DEFT': 'vous pouvez ajuster vos réglages.',
-        'VIE': '(where?)',
+        'VIE': 'bạn có thể chỉnh lại trong phần Setting.',
     },
     '新規ID': {
         'DEFAULT': 'New ID',
@@ -539,7 +491,6 @@ const exactTranslation = {
     'フリテン': {
         'DEFAULT': 'Furiten',
         'FRA_TRAD': 'Main contrainte',
-        'VIE': 'Furiten',
     },
     '男': {
         'DEFAULT': 'Male',
@@ -559,7 +510,6 @@ const exactTranslation = {
     '設定': {
         'DEFAULT': 'Settings',
         'FRA_DEFT': 'Réglages',
-        'VIE': 'Settings',
     },
     'ロビーの移動': {
         'DEFAULT': 'Change lobby',
@@ -589,7 +539,7 @@ const exactTranslation = {
     '入力してあるIDをクリアしますがよろしいですか？IDを紛失しないようにコピーしてください。': {
         'DEFAULT': 'Clear the login ID field? Please consider keeping a copy of the ID to avoid losing it',
         'FRA_DEFT': 'Effacer le champ de connexion? Veuillez penser à garder une copie de votre ID pour ne pas le perdre',
-        'VIE': 'Bạn có muốn xoá mã đăng nhập hiện tại không? Hãy chắc chắn bạn đã lưu lại mã đăng nhập để tránh bị mất.',
+        'VIE': 'Bạn có muốn xoá mã đăng nhập hiện tại không?',
     },
     '※アプリ版以外で作成したIDも使用可能です。': {
         'DEFAULT': '* IDs created with application version can also be used',
@@ -624,7 +574,7 @@ const exactTranslation = {
     '登録に失敗しまし': {
         'DEFAULT': 'Registration unsuccessful',
         'FRA_DEFT': 'Inscription échouée',
-        'VIE': 'Đăng kí thất bại',
+        'VIE': 'Đăng kí thất bại.',
     },
     'この接続元からは一定期間アクセスできません': {
         'DEFAULT': 'This connection source is temporarily blocked by our server,',
@@ -659,12 +609,12 @@ const exactTranslation = {
     'この機能は個室では利用できません': {
         'DEFAULT': 'This feature is unavaliable in private lobbies',
         'FRA_DEFT': 'Cette fonction est indisponible en salle privée',
-        'VIE': '(where?)',
+        'VIE': 'Không thể sử dụng tính năng này ở phòng riêng.',
     },
     'ランキング戦ロビーに移動してください': {
         'DEFAULT': 'Please use the public lobby instead',
         'FRA_DEFT': 'Veuillez joindre la salle publique alors',
-        'VIE': '(where?)',
+        'VIE': 'Vui lòng quay lại phòng chơi chung.',
     },
     '通報に失敗しました': {
         'DEFAULT': 'Report not submitted',
@@ -689,22 +639,22 @@ const exactTranslation = {
     '大会ロビーの作成が完了しました': {
         'DEFAULT': 'Tournament lobby created',
         'FRA_DEFT': 'Salle de tournoi créée',
-        'VIE': 'Đã tạo phòng chơi giải',
+        'VIE': 'Đã tạo phòng chơi giải.',
     },
     '大会ロビーの作成に失敗しました': {
         'DEFAULT': 'Unable to create tournament lobby',
         'FRA_DEFT': 'Incapable de créer une salle de tournoi',
-        'VIE': 'Tạo phòng chơi giải thất bại',
+        'VIE': 'Tạo phòng chơi giải thất bại.',
     },
     '予約中は牌譜を閲覧できません': {
         'DEFAULT': 'Unable to view replays while queuing for a game',
         'FRA_DEFT': 'Incapable de voir les rejeux lorsqu\'en attente',
-        'VIE': 'Không thể xem replay khi đang tìm trận đấu',
+        'VIE': 'Không thể xem replay khi đang tìm trận đấu.',
     },
     '予約中は観戦できません': {
         'DEFAULT': 'Unable to spectate while queuing for a game',
         'FRA_DEFT': 'Incapable de voir une partie en cours lorsqu\'en attente',
-        'VIE': 'Không thể xem live khi đang tìm trận đấu',
+        'VIE': 'Không thể xem live khi đang tìm trận đấu.',
     },
     '必要な有効期限が不足しています': {
         'DEFAULT': 'A renewal of subscription is required',
@@ -719,47 +669,46 @@ const exactTranslation = {
     'ID互換のないロビーへは移動できません': {
         'DEFAULT': 'Incompatible Lobby ID',
         'FRA_DEFT': 'Le code de salle est incompatible',
-        'VIE': 'Mã lobby sai',
+        'VIE': 'Mã lobby sai.',
     },
     '一時的に使用している外部IDの有効期限が切れました': {
         'DEFAULT': 'This external ID is already expired',
         'FRA_DEFT': 'Cet identifiant externe est expiré',
-        'VIE': '(where?)',
+        'VIE': 'ID hết hạn.',
     },
     '参加に必要な条件を満たしていません': {
         'DEFAULT': 'You do not meet the requirements for participation',
         'FRA_DEFT': 'Vous ne répondez pas aux normes pour participer',
-        'VIE': 'Bạn không đủ điều kiện tham gia',
+        'VIE': 'Bạn không đủ điều kiện tham gia.',
     },
     '外部IDでは利用できません': {
         'DEFAULT': 'Usage of external ID is not allowed',
         'FRA_DEFT': 'Les ID externes ne sont pas permis',
-        'VIE': '(where?)',
+        'VIE': 'ID không hợp lệ.',
     },
     'このロビーでは参加登録は行えません': {
         'DEFAULT': 'Registration cannot be done in this lobby',
         'FRA_DEFT': 'L\'inscription ne peut être faite dans cette salle',
-        'VIE': '(where?)',
+        'VIE': 'Không đăng kí được ở phòng này.',
     },
     '参加登録が完了しました': {
         'DEFAULT': 'Registration completed',
         'FRA_DEFT': 'Inscription complétée',
-        'VIE': 'Đăng kí thành công',
+        'VIE': 'Đăng kí thành công.',
     },
     'すでに参加登録が完了しています': {
         'DEFAULT': 'Registered for participation has already been completed',
         'FRA_DEFT': 'Vous êtes déjà inscrit pour participer',
-        'VIE': '(where?)',
+        'VIE': 'Bạn đã hoàn thành đăng kí.',
     },
     'このルールへの予約は許可されていません': {
         'DEFAULT': 'Unable to queue game with the selected rule set',
         'FRA_DEFT': 'Impossible d\'attendre pour le mode de jeu choisi',
-        'VIE': '(where?)',
+        'VIE': 'Không thể chơi được chế độ này.',
     },
     '段位戦の上級/特上卓では、不正防止のため対戦人数が100人未満のルールを予約するには有料会員の有効期限の残りが91日以上必要です': {
         'DEFAULT': 'In an effort to prevent cheating in Joukyuu and Tokujou, games with less than 100 active players cannot be queued unless you have an active subscription with atleast 91 days remaining.',
         'FRA_DEFT': 'Pour prévenir la triche en salles avancée et élite, les modes avec moins de 100 joueurs actifs sont indisponibles pour attendre sauf en ayant un abonnement actif avec au moins 91 jours restants.',
-        'VIE': '(no longer applied)',
     },
     '接続数が8000人以下の場合のみ予約が許可されています': {
         'DEFAULT': 'You may only queue for a game when the number of connections is 8000 or less',
@@ -781,6 +730,9 @@ const exactTranslation = {
         'FRA_DEFT': 'Si le jeu est en cours, veuillez attendre sa fin avant d\'y accéder',
         'VIE': 'Vui lòng thử lại sau chốc lát.',
     },
+
+    // Error messages 1001 ~ 1006, 1019, 1021
+
     'プレーヤ名が正しくありません。プレーヤ名には使用できない文字があります。(ERR1001)': {
         'DEFAULT': 'The player name is incorrect. There are characters that can not be used for the player name. (ERR 1001)',
         'FRA_DEFT': 'Le pseudo est invalide. Il y a des caractères refusés qui sont inutilisables pour un pseudo. (ERR 1001)',
@@ -826,6 +778,9 @@ const exactTranslation = {
         'FRA_DEFT': 'Aucune réponse du serveur de connexion (ERR 1021)',
         'VIE': 'Không có phản hồi từ server. (Lỗi 1021)',
     },
+
+    // Settings
+
     '環境': {
         'DEFAULT': 'Environment',
         'FRA_DEFT': 'Environnement',
@@ -834,7 +789,7 @@ const exactTranslation = {
     '/ 設定': {
         'DEFAULT': '/ Settings',
         'FRA_DEFT': '/ Réglages',
-        'VIE': '/ Settings',
+        'VIE': '/ Setting',
     },
     '画面方向:回転': {
         'DEFAULT': 'Screen orientation:Rotate',
@@ -897,7 +852,7 @@ const exactTranslation = {
         'VIE': 'Hiện tường: Không',
     },
     'SEなし': {
-        'DEFAULT': 'Suppress sound effects',
+        'DEFAULT': 'No SE',
         'FRA_DEFT': 'Sans son',
         'VIE': 'Tắt tiếng',
     },
@@ -956,6 +911,9 @@ const exactTranslation = {
         'FRA_DEFT': 'Options en jeu: du bouton',
         'VIE': 'Các nút chức năng: Không',
     },
+
+    // Practice play game modes
+
     '四般東喰赤速': {
         'DEFAULT': '4P tonpuusen fast',
         'EMA_ENG': '4P E-only fast',
@@ -1013,8 +971,8 @@ const exactTranslation = {
         'VIE': 'Tonpuu 4 người, nhanh, 3 bot tự đánh quân bốc được, shuugi',
     },
     '三若東速祝５': {
-        'DEFAULT': '3P tonpuusen fast + shuugi',
-        'EMA_ENG': '3P E-only fast + shuugi',
+        'DEFAULT': '3P tonpuusen fast + shuugi ',
+        'EMA_ENG': '3P E-only fast + shuugi ',
         'FRA_DEFT': '3P tonpūsen rapide + shūgi',
         'FRA_TRAD': '3P jeu d\'un vent rapide + shūgi',
         'VIE': 'Tonpuu 3ng shuugi',
@@ -1033,6 +991,9 @@ const exactTranslation = {
         'FRA_TRAD': '※Montrer/cacher les modes sans tanyao ouvert',
         'VIE': 'Hiện/Ẩn chế độ Tanyao kín',
     },
+
+    // Game rules
+
     '東風+4局サドンデス': {
         'DEFAULT': 'Tonpuusen + 4 rounds of sudden death',
         'EMA_ENG': 'East-only + 4 rounds of sudden death',
@@ -1049,6 +1010,22 @@ const exactTranslation = {
         'FRA_TRAD': 'Partie normale + 4 mains en fusillade',
         'VIE': 'Hanchan + gió Tây nếu dưới 30000',
     },
+    '東風+3局サドンデス': {
+        'DEFAULT': 'Tonpuusen + 3 rounds of sudden death',
+        'EMA_ENG': 'East-only + 3 rounds of sudden death',
+        'ENG': 'East',
+        'FRA_DEFT': 'Tonpūsen + 3 mains en fusillade',
+        'FRA_TRAD': 'Partie d\'un vent + 3 mains en fusillade',
+        'VIE': 'Tonpuu + gió Nam nếu dưới 30000',
+    },
+    '東南+3局サドンデス': {
+        'DEFAULT': 'Hanchan + 3 rounds of sudden death',
+        'EMA_ENG': 'East & South + 3 rounds of sudden death',
+        'ENG': 'East & South',
+        'FRA_DEFT': 'Hanchan + 3 mains en fusillade',
+        'FRA_TRAD': 'Partie normale + 3 mains en fusillade',
+        'VIE': 'Hanchan + gió Tây nếu dưới 30000',
+    },
     'ウマ': {
         'DEFAULT': 'Uma',
         'ENG': 'Placement bonus',
@@ -1063,7 +1040,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Compteur',
         'VIE': 'Honba',
     },
-    '後': {
+    '後': { // status of minkan dora
         'DEFAULT': 'after',
         'ENG': 'after discard',
         'FRA_DEFT': 'après écart',
@@ -1105,6 +1082,9 @@ const exactTranslation = {
         'FRA_TRAD': 'Fin subite sur main prête',
         'VIE': 'Kết thúc khi cái tenpai',
     },
+
+    // Lobby and game
+
     '収支': {
         'DEFAULT': 'Income',
         'ENG': 'Parlor income',
@@ -1163,7 +1143,6 @@ const exactTranslation = {
     '(段位戦、雀荘戦)': {
         'DEFAULT': '(Ranked, Parlor)',
         'FRA_DEFT': '(Classé, casino)',
-        'VIE': '(blank)',
     },
     'イベント会場１': {
         'DEFAULT': 'Event Venue 1',
@@ -1221,7 +1200,7 @@ const exactTranslation = {
         'VIE': 'Sắp xong:',
     },
     '有効期限:': {
-        'DEFAULT': 'Expire:',
+        'DEFAULT': 'Expire: ',
         'FRA_DEFT': 'Expire le:',
         'VIE': 'Hết hạn VIP:',
     },
@@ -1327,12 +1306,12 @@ const exactTranslation = {
     '※段位戦４人打ち合算戦績': {
         'DEFAULT': '※Summary of ranked 4P games',
         'FRA_DEFT': '※Sommaire des jeux classés 4P',
-        'VIE': 'Thống kê chơi xếp hạng 4 người',
+        'VIE': 'Thống kê chơi Xếp hạng 4 người',
     },
     '※段位戦３人打ち合算戦績': {
         'DEFAULT': '※Summary of ranked 3P games',
         'FRA_DEFT': '※Sommaire des jeux classés 3P',
-        'VIE': 'Thống kê chơi xếp hạng 3 người',
+        'VIE': 'Thống kê chơi Xếp hạng 3 người',
     },
     '※表示する対戦ルールを選択してください': {
         'DEFAULT': 'Choose a game type to display its stats',
@@ -1493,7 +1472,7 @@ const exactTranslation = {
     },
     '画像や音声がロードされていて正常に描画/再生可能かを確認するための機能です。もし異常があればゲームの進行に支障が出る場合がありますので、このページをリロードしてください。': {
         'DEFAULT': 'You may use this feature to test whether image and sound files can be properly loaded. If there exists any abnormality which may hinder the progress of the game, please refresh this page.',
-        'FRA_DEFT': 'Vous pouvez utiliser cette fonctionnalité pour tester si les fichiers son/image chargent bien. S\'il existe an accroc qui peut affecterle progrès du jeu, veuiller rafraîchir la page.',
+        'FRA_DEFT': 'Vous pouvez utiliser cette fonctionnalité pour tester si les fichiers son/image chargent bien. S\'il existe an accroc qui peut affecterle progrès du jeu, veuiller rafraîchir la page. ',
         'VIE': 'Bạn có thể dùng chế độ này để thử xem âm thanh và hình ảnh đã vừa ý chưa.',
     },
     '上級卓の入場条件(１級以上または有効期限60日以上)を満たしていません※七段R2000以上は入場できません': {
@@ -1710,6 +1689,9 @@ const exactTranslation = {
         'FRA_DEFT': 'Yaku',
         'VIE': 'Yaku',
     },
+
+    // Double yakuman (incomplete)
+
     '小四喜 字一色': {
         'DEFAULT': 'Shousuushi + Tsuuiisou',
         'EMA_ENG': 'Little 4 winds + All honours',
@@ -1766,6 +1748,10 @@ const exactTranslation = {
         'FRA_TRAD': '4 petits vents + 4 brealns cachés en att. simple',
         'VIE': 'Shousuushi + Suuankou',
     },
+
+
+    // replays
+
     '天鳳牌譜再生': {
         'DEFAULT': 'Game replay',
         'FRA_DEFT': 'Génération de rejeu',
@@ -1788,11 +1774,9 @@ const exactTranslation = {
     },
     '上家': {
         'DEFAULT': '↺',
-        'VIE': '↺',
     },
     '下家': {
         'DEFAULT': '↻',
-        'VIE': '↻',
     },
     '手牌 OFF': {
         'DEFAULT': 'Show only front hand.',
@@ -1817,17 +1801,17 @@ const exactTranslation = {
     '- 右/左クリック … 進む/戻る': {
         'DEFAULT': '- Right / left click: Step forward / backward',
         'FRA_DEFT': '- Clic droit / gauche: Avancer / Reculer',
-        'VIE': '(wrong)',
+        'VIE': 'Click trái: Tiến, Click phải: Lùi',
     },
     '- 右クリック … 進む': {
         'DEFAULT': '- Right click: Step forward',
         'FRA_DEFT': '- Clic droit: Avancer',
-        'VIE': '(wrong)',
+        'VIE': 'Click trái: Tiến',
     },
     '- 左クリック … 戻る': {
         'DEFAULT': '- Left click: Step backward',
         'FRA_DEFT': 'Clic gauche: Reculer',
-        'VIE': '(wrong)',
+        'VIE': 'Click phải: Lùi',
     },
     '- ボタン/クリック長押し … オートリピート': {
         'DEFAULT': '- Long press: Step continuously',
@@ -1844,6 +1828,9 @@ const exactTranslation = {
         'FRA_DEFT': '- Panneau central: Montrer scores',
         'VIE': 'Chính giữa: Chênh lệch điểm',
     },
+
+    // promotion
+
     '認定': {
         'DEFAULT': 'Promotion',
         'FRA_DEFT': 'Promotion',
@@ -1951,6 +1938,8 @@ const exactTranslation = {
         'FRA_TRAD': 'Vous avez été promu au titre « d\'Immortel »',
         'VIE': 'Bạn đã được thăng cấp lên: Tenhou',
     },
+
+    // 3 player mahjong
     '認定段位/級位    :    サンマ ９級': {
         'DEFAULT': 'You have been promoted to: 9 kyuu (3P)',
         'FRA_DEFT': 'Vous avez été promu au rang de 9-kyū (3P)',
@@ -2078,38 +2067,8 @@ const exactTranslation = {
         'FRA_DEFT': 'L\'Association de pêche saumonnière de Tenhou',
         'VIE': 'Ban quản trị Tenhou',
     },
-    '参加予約': {
-        'DEFAULT': 'Queue',
-        'FRA_DEFT': 'Réserver',
-        'VIE': 'Tìm trận đấu',
-    },
-    '四琥東速祝０': {
-    },
-    '四琥東速祝２': {
-    },
-    '四琥東速祝５': {
-    },
-    '四琥南祝０': {
-    },
-    '四琥南祝２': {
-    },
-    '四琥南祝５': {
-    },
-    '三琥東速祝５': {
-    },
-    '三琥南祝５': {
-    },
-    '四暗刻単騎 緑一色': {
-        'DEFAULT': 'Suuankou + Ryuuiisou',
-        'EMA_ENG': '4 concealed pungs + All Green',
-        'FRA_DEFT': 'Sūankō tanki + Ryūiisō',
-        'FRA_TRAD': '4 brelans cachés en att. simple + Main verte',
-        'VIE': 'Suuankou tanki + Ryuuiisou',
-    },
-    'SELECT GAME': {
-        'DEFAULT': 'SELECT GAME',
-    },
 };
+
 
 const partialTranslation = {
     '鳴きなし': {
@@ -2133,6 +2092,23 @@ const partialTranslation = {
         'FRA_DEFT': 'Auto-écart',
         'VIE': 'Tự đánh quân bốc',
     },
+    '1位 ': {
+        'DEFAULT': '1st ',
+        'FRA_DEFT': '1er ',
+    },
+    '2位 ': {
+        'DEFAULT': '2nd ',
+        'FRA_DEFT': '2e ',
+    },
+    '3位 ': {
+        'DEFAULT': '3rd ',
+        'FRA_DEFT': '3e ',
+    },
+    '4位 ': {
+        'DEFAULT': '4th ',
+        'FRA_DEFT': '4e ',
+    },
+
     '四般東喰赤速': {
         'DEFAULT': '4 Ippan Tonpu Fast',
         'EMA_ENG': '4P Novice E Fast',
@@ -2719,115 +2695,115 @@ const partialTranslation = {
         'DEFAULT': '9級',
         'ENG': '9k',
         'FRA_DEFT': '9k',
-        'VIE': '9 kyuu',
+        'VIE': '9k',
     },
     '８級': {
         'DEFAULT': '8級',
         'ENG': '8k',
         'FRA_DEFT': '8k',
-        'VIE': '8 kyuu',
+        'VIE': '8k',
     },
     '７級': {
         'DEFAULT': '7級',
         'ENG': '7k',
         'FRA_DEFT': '7k',
-        'VIE': '7 kyuu',
+        'VIE': '7k',
     },
     '６級': {
         'DEFAULT': '6級',
         'ENG': '6k',
         'FRA_DEFT': '6k',
-        'VIE': '6 kyuu',
+        'VIE': '6k',
     },
     '５級': {
         'DEFAULT': '5級',
         'ENG': '5k',
         'FRA_DEFT': '5k',
-        'VIE': '5 kyuu',
+        'VIE': '5k',
     },
     '４級': {
         'DEFAULT': '4級',
         'ENG': '4k',
         'FRA_DEFT': '4k',
-        'VIE': '4 kyuu',
+        'VIE': '4k',
     },
     '３級': {
         'DEFAULT': '3級',
         'ENG': '3k',
         'FRA_DEFT': '3k',
-        'VIE': '3 kyuu',
+        'VIE': '3k',
     },
     '２級': {
         'DEFAULT': '2級',
         'ENG': '2k',
         'FRA_DEFT': '2k',
-        'VIE': '2 kyuu',
+        'VIE': '2k',
     },
     '１級': {
         'DEFAULT': '1級',
         'ENG': '1k',
         'FRA_DEFT': '1k',
-        'VIE': '1 kyuu',
+        'VIE': '1k',
     },
     '初段': {
         'DEFAULT': '初段',
         'ENG': '1d',
         'FRA_DEFT': '1d',
-        'VIE': '1 dan',
+        'VIE': '1d',
     },
     '二段': {
         'DEFAULT': '二段',
         'ENG': '2d',
         'FRA_DEFT': '2d',
-        'VIE': '2 dan',
+        'VIE': '2d',
     },
     '三段': {
         'DEFAULT': '三段',
         'ENG': '3d',
         'FRA_DEFT': '3d',
-        'VIE': '3 dan',
+        'VIE': '3d',
     },
     '四段': {
         'DEFAULT': '四段',
         'ENG': '4d',
         'FRA_DEFT': '4d',
-        'VIE': '4 dan',
+        'VIE': '4d',
     },
     '五段': {
         'DEFAULT': '五段',
         'ENG': '5d',
         'FRA_DEFT': '5d',
-        'VIE': '5 dan',
+        'VIE': '5d',
     },
     '六段': {
         'DEFAULT': '六段',
         'ENG': '6d',
         'FRA_DEFT': '6d',
-        'VIE': '6 dan',
+        'VIE': '6d',
     },
     '七段': {
         'DEFAULT': '七段',
         'ENG': '7d',
         'FRA_DEFT': '7d',
-        'VIE': '7 dan',
+        'VIE': '7d',
     },
     '八段': {
         'DEFAULT': '八段',
         'ENG': '8d',
         'FRA_DEFT': '8d',
-        'VIE': '8 dan',
+        'VIE': '8d',
     },
     '九段': {
         'DEFAULT': '九段',
         'ENG': '9d',
         'FRA_DEFT': '9d',
-        'VIE': '9 dan',
+        'VIE': '9d',
     },
     '十段': {
         'DEFAULT': '十段',
         'ENG': '10d',
         'FRA_DEFT': '10d',
-        'VIE': '10 dan',
+        'VIE': '10d',
     },
     '天鳳位': {
         'DEFAULT': '天鳳位',
@@ -2837,8 +2813,8 @@ const partialTranslation = {
         'VIE': 'Tenhou',
     },
     '巡目': {
-        'DEFAULT': 'Turn',
-        'FRA_DEFT': 'Tour',
+        'DEFAULT': ' Turn',
+        'FRA_DEFT': ' Tour',
         'VIE': 'Lượt',
     },
     '枚': {
@@ -2847,7 +2823,7 @@ const partialTranslation = {
         'VIE': 'shuugi',
     },
     '速': {
-        'DEFAULT': 'fast',
+        'DEFAULT': ' fast',
         'FRA_DEFT': 'rapude',
         'VIE': 'nhanh',
     },
@@ -3087,8 +3063,8 @@ const partialTranslationForStats = {
         'VIE': 'Bảng xếp hạng R 3ng',
     },
     '全ルール': {
-        'DEFAULT': 'list of top-ranked players',
-        'FRA_DEFT': 'liste des meilleurs 4P+3P',
+        'DEFAULT': ' list of top-ranked players',
+        'FRA_DEFT': ' liste des meilleurs 4P+3P',
         'VIE': 'Bảng xếp hạng',
     },
     '在位数': {
@@ -3125,13 +3101,13 @@ const partialTranslationForStats = {
         'VIE': 'Người chơi',
     },
     '残り': {
-        'DEFAULT': 'More:',
-        'FRA_DEFT': 'Reste',
+        'DEFAULT': 'More: ',
+        'FRA_DEFT': 'Reste ',
         'VIE': 'Xem thêm',
     },
     '件を表示': {
-        'DEFAULT': '- show',
-        'FRA_DEFT': '- voir',
+        'DEFAULT': ' - show',
+        'FRA_DEFT': ' - voir',
         'VIE': '(blank)',
     },
     '満貫未満': {
@@ -3710,6 +3686,9 @@ const tooltips = {
         'FRA_TRAD': '3P, phénix, hanchan, restreint',
         'VIE': 'Phượng 3ng Hanchan Tanyao kín',
     },
+
+    // ranks
+    // nulls are there to prevent tooltips being shown on those elements
     '新人': {
         'DEFAULT': 'rookie',
         'ENG': null,
@@ -3816,4 +3795,3 @@ const tooltips = {
         'VIE': 'Tenhou',
     },
 };
-
