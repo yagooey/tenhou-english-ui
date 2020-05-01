@@ -1,19 +1,25 @@
-document.addEventListener('DOMContentLoaded', (ignored) => {
+﻿document.addEventListener('DOMContentLoaded', (ignored) => {
 
-    const languages = ['en', 'fr'];
+    const languages = ['en', 'fr', 'vi', 'pl'];
     let thisForm = document.forms.optionform;
     const sprites = {
         'DEFAULT': {
             'short_en': 'Standard',
             'short_fr': 'Standard',
+            'short_vi': 'Mặc định',
+            'short_pl': 'Standardowe',
         },
         'english': {
             'short_en': 'Labelled',
             'short_fr': 'indices',
+            'short_vi': 'Thêm số',
+            'short_pl': 'Z oznaczeniami',
         },
         'bright':  {
             'short_en': 'Brighter',
             'short_fr': 'Plus clairs',
+            'short_vi': 'Sáng',
+            'short_pl': 'Rozjaśnione',
         },
     };
 
@@ -97,7 +103,8 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         altTranslation: 'off',
         toggle: false,
     }, function(items) {
-        thisForm.language.value = (items.language.substr(0,2) === 'fr') ? 'fr' : 'en';
+        let lng = items.language.substr(0,2);
+        thisForm.language.value = ['fr','vi','pl'].includes(lng) ? lng : 'en';
         thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;
         thisForm.useToggler.checked = items.toggle;
@@ -105,6 +112,7 @@ document.addEventListener('DOMContentLoaded', (ignored) => {
         toggleLanguage();
         toggleAltDisplay();
         updateWithNewOptions(items);
+        saveOptions();
     });
 
 
