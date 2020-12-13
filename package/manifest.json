@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extensionName__",
-    "version": "8.0",
+    "version": "8.1",
     "default_locale": "en",
     "description": "__MSG_extensionDescription__",
     "icons": {
@@ -31,7 +31,7 @@
         "webRequest",
         "webRequestBlocking",
         "*://tenhou.net/*",
-        "*://p.mjv.jp/*"
+        "*://cdn.tenhou.net/*"
     ],
     "background": {
         "scripts": [
@@ -43,6 +43,7 @@
         {
             "matches": [
                 "*://tenhou.net/3*",
+                "*://tenhou.net/4*",
                 "*://tenhou.net/5*",
                 "*://tenhou.net/sc/*",
                 "*://tenhou.net/ranking.html",

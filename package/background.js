@@ -16,7 +16,7 @@ function showIconForTab(tab) {
 chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
     for (let tab of tabs) {
         showIconForTab(tab);
-    };
+    }
 });
 
 chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => showIconForTab(tab));
@@ -54,11 +54,10 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
      * Group 1: 1 digit, Sprite ID
      * Group 2: 2 digits, Don't know what these do; for now, they're both zero
      * Group 3: 3 digits, Width of image divided by 10
-     * Group 4: 18 hex digits, Colours of tiles (ignored here)
      */
-    const spriteUrlRegex = /view{1,2}([0-4])([0-4]){2}([0-9]{3})([0-9a-f]{18})\.png$/;
+    const spriteUrlRegex = /vieww([0-4])00([0-9]{3})\.png$/;
 
-    // details.url is something like: http://p.mjv.jp/5/img/vieww000053003300ffffff000000.png
+    // details.url is something like: https://cdn.tenhou.net/3/res/img/20201203/vieww000055.png
     const matches = spriteUrlRegex.exec(details.url);
 
     if (tileset === 'DEFAULT' || !matches || !sprites) return;
@@ -66,7 +65,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     const id = parseInt(matches[1]);
 
     if (sizes[id][0]) {
-        const width = 10 * parseInt(matches[3]);
+        const width = 10 * parseInt(matches[2]);
 
         // find the smallest spritesheet we've got that's >= size requested
         let size = 0;
@@ -76,7 +75,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
             } else break;
         }
 
-        // console.log('requested ' + matches[1] + '-' + matches[3] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
+        // console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
 
         // use canvas to resize the spritesheet to the desired dimensions
         const canvas = document.createElement('canvas');
@@ -88,7 +87,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
         return { redirectUrl: canvas.toDataURL() };
     }
 }, {
-    urls: ['*://p.mjv.jp/5/img/view*'],
+    urls: ['https://cdn.tenhou.net/*/res/img/*/view*'],
     types: ['image'],
 }, ['blocking']);
 
