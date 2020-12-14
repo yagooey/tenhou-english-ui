@@ -1216,7 +1216,7 @@ const exactTranslation = {
         'POL': 'Punkt widzenia',
     },
     '局': {
-        'DEFAULT': 'Round',
+        'DEFAULT': 'Rnd',
         'FRA_DEFT': 'Ronde',
         'VIE': 'Vòng',
         'POL': 'Runda',
@@ -2331,6 +2331,32 @@ const exactTranslation = {
     '再接続してもよろしいですか？': {
         'DEFAULT': 'Are you sure you want to reconnect?',
         'POL': 'Czy na pewno chcesz się połączyć ponownie?',
+    },
+    '東風戦': {
+        'DEFAULT': 'tonpuusen',
+        'EMA_ENG': 'East-only',
+    },
+    '東南戦': {
+        'DEFAULT': 'hanchan',
+        'EMA_ENG': 'East-South',
+    },
+    '喰アリ赤': {
+        'DEFAULT': '4p standard',
+    },
+    '喰アリ赤速': {
+        'DEFAULT': '4p fast',
+    },
+    '三喰赤': {
+        'DEFAULT': '3p',
+    },
+    '三喰赤速': {
+        'DEFAULT': '3p fast',
+    },
+    '喰断ナシ': {
+        'DEFAULT': '4p X kuitan, red 5s',
+    },
+    '喰断アリ': {
+        'DEFAULT': '4p X red 5s',
     },
 };
 
