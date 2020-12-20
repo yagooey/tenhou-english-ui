@@ -51,3 +51,17 @@ div.fixed-select.sscl {
 #sc0 > span, #sc1 > span, #sc2 > span, #sc3 > span {
     font-family: cwTeX-Q-Kai-T;
 }
+
+.TournamentOptionisOn {
+    font-weight: bold;
+}
+
+.TournamentOptionisOn::after {
+    color: #080;
+    content: '✔';
+}
+
+.TournamentOptionisOff::after {
+    color: #400;
+    content: '✖';
+}

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extensionName__",
-    "version": "8.1",
+    "version": "8.2",
     "default_locale": "en",
     "description": "__MSG_extensionDescription__",
     "icons": {
@@ -45,6 +45,8 @@
                 "*://tenhou.net/3*",
                 "*://tenhou.net/4*",
                 "*://tenhou.net/5*",
+                "*://tenhou.net/cs/edit*",
+                "*://tenhou.net/make_lobby*",
                 "*://tenhou.net/sc/*",
                 "*://tenhou.net/ranking.html",
                 "*://tenhou.net/stat/*"
