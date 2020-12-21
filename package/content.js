@@ -1,5 +1,4 @@
-/* jshint esversion: 6 */
-/* global window,chrome,MutationObserver,exactTranslation,partialTranslation,tooltips,partialTranslationForStats,tournaments */
+/* global window,chrome,MutationObserver*/
 
 'use strict';
 
@@ -9,7 +8,6 @@ let lastTranslationSeen = '';
 let thisPartialTable = {};
 let thisExactTable = {};
 let thisTooltipTable = {};
-let thisTournamentsTable = {};
 let tableStore = {};
 let mainTranslation = 'off';
 let altTranslation = 'off';
@@ -75,7 +73,6 @@ function getTranslationSets() {
         thisPartialTable = tableStore[lastTranslationSeen].partial;
         thisStatsTable = tableStore[lastTranslationSeen].stats;
         thisTooltipTable = tableStore[lastTranslationSeen].tooltip;
-        thisTournamentsTable = tableStore[lastTranslationSeen].tournaments;
     } else {
         let setsToCombine = translation.split(',');
         const overlay = function(tableIn) {
@@ -99,27 +96,18 @@ function getTranslationSets() {
         thisPartialTable = overlay(partialTranslation);
         thisStatsTable = overlay(partialTranslationForStats);
         thisTooltipTable = overlay(tooltips);
-        thisTournamentsTable = overlay(tournaments);
 
         tableStore[lastTranslationSeen] = {
             exact: thisExactTable,
             partial: thisPartialTable,
             stats: thisStatsTable,
             tooltip: thisTooltipTable,
-            tournaments: thisTournamentsTable,
         };
     }
 
-    if (window.location.href.indexOf('/3') === -1 
-            && window.location.href.indexOf('/4') === -1) {
-        if (window.location.href.indexOf('/make_lobby.html') === -1
-            && window.location.href.indexOf('/cs/edit') === -1) {
-            Object.assign(thisPartialTable, thisStatsTable);
-        } else {
-            Object.assign(thisPartialTable, thisTournamentsTable);
-        }
+    if (window.location.href.indexOf('/3') === -1) {
+        Object.assign(thisPartialTable, thisStatsTable);
     }
-
 
     // Sort by key length, so that when performing partial matching,
     // the entry with more matching characters will have priority
@@ -218,34 +206,10 @@ function setToObserve() {
     mutationObserver.observe(document.documentElement, observerSettings);
 }
 
-function catchRadio(el) {
-    let newClass;
-    if (el.parentElement.innerText === 'On' && el.checked) {
-        newClass = 'TournamentOptionisOn';
-    } else if (el.parentElement.innerText === 'Off' && el.checked) {
-        newClass = 'TournamentOptionisOff';
-    } else {
-        return;
-    }
-        
-    el.parentElement.parentElement.parentElement.childNodes[0].className = 'r ' + newClass;
-}
-
 function onMutate(mutations) {
     mutationObserver.disconnect();
     if (getTranslationSets()) {
         mutations.forEach((oneMutation) => translateTextBeneathANode(oneMutation.target, false, true));
-    }
-    if (window.location.pathname.includes('/cs/edit')) {
-        document.querySelectorAll("form[name=fe] input[type=radio]").forEach(function isItOn(el) {
-            catchRadio(el);
-            el.addEventListener('change', () => catchRadio(el));
-            if (el.parentElement.innerText === 'Off' &&
-                el.parentElement.parentElement.parentElement.children[2].innerText === 'Off' ) {
-                // move the OFF radio button so that it always comes before the ON radio button
-                el.parentElement.parentElement.parentElement.children[0].after(el.parentElement.parentElement);
-            }
-        });
     }
     setToObserve();
 }
