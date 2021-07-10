@@ -13,11 +13,13 @@
                 <span class="i18n_fr">Ensemble de tuiles</span>
                 <span class="i18n_vi">Quân bài</span>
                 <span class="i18n_pl">Zestaw kamieni</span>
+                <span class="i18n_es">ZZZ</span>
             </legend>
             <span class="i18n_en">(Takes effect next time a tenhou page is reloaded)<br></span>
             <span class="i18n_fr">(Prend effet après l'actualisation d'une page Tenhou)<br></span>
             <span class="i18n_vi">(Chỉ có tác dụng sau khi thoát ra vào lại Tenhou)<br></span>
             <span class="i18n_pl">(Zmiana zostanie wprowadzona po odświeżeniu Tenhou)<br></span>
+            <span class="i18n_es">ZZZ</span>
         </fieldset>
 
         <fieldset id='languageSelecter'>
@@ -33,6 +35,9 @@
             </label>
             <label>
                 <input type="radio" name="language" value="pl"><strong>Polski</strong>
+            </label>
+            <label>
+                <input type="radio" name="language" value="es"><strong>Español</strong>
             </label>
         </fieldset>
 
@@ -84,6 +89,16 @@
             </label>
         </fieldset>
 
+        <fieldset class="i18n_es">
+            <legend>What level of translation?</legend>
+            <label>
+                <input type="radio" name="translation" value="off"><strong>None</strong>: <i>(字一色, ウマ, 祝儀, 鳳)</i>
+            </label>
+            <label>
+                <input type="radio" name="translation" value="DEFAULT,ES"><strong>Español</strong><i></i>
+            </label>
+        </fieldset>
+        
         <fieldset class="i18n_pl">
             <legend>Które tłumaczenie wybrać?</legend>
             <label>
@@ -99,6 +114,7 @@
             <span class='i18n_en'>Display secondary translation when holding down the <kbd>&lt;Ctrl&gt;</kbd> key.</span>
             <span class='i18n_fr'>Montrer la traduction secondaire en survolant un terme et appuyant <kbd>&lt;Ctrl&gt;</kbd></span>
             <span class='i18n_vi'>Chuyển qua chế độ dịch phụ khi nhấn phím <kbd>&lt;Ctrl&gt;</kbd></span>
+            <span class='i18n_es'><kbd>&lt;Ctrl&gt;</kbd></span>
             <span class='i18n_pl'>Wyświetl drugorzędne tłumaczenie po przytrzymaniu klawisza <kbd>&lt;Ctrl&gt;</kbd></span>
         </label>
 
@@ -117,6 +133,7 @@
                         <span class='i18n_fr'>Pas traduit</span>
                         <span class='i18n_vi'>Không dịch</span>
                         <span class='i18n_pl'>Nieprzetłumaczone</span>
+                        <span class='i18n_es'>Untranslated</span>
                     </strong>
                 </label>
                 <label>
@@ -145,6 +162,11 @@
             <div class='languageBlock'>
                 <label>
                     <input type="radio" name="toggleTo" value="DEFAULT,POL"><strong>Polski</strong>
+                </label>
+            </div>
+            <div class='languageBlock'>
+                <label>
+                    <input type="radio" name="toggleTo" value="DEFAULT,ES"><strong>Español</strong>
                 </label>
             </div>
         </fieldset>

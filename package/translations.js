@@ -7,6 +7,7 @@ const exactTranslation = {
         'EMA_ENG': 'Riichi',
         'ENG': 'Riichi',
         'FRA_TRAD': 'Main prête: riichi',
+        'ES': 'TEST-DELETE THIS',
     },
     '赤ドラ': {
         'DEFAULT': 'Akadora',

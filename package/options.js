@@ -1,6 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', (ignored) => {
 
-    const languages = ['en', 'fr', 'vi', 'pl'];
+    const languages = ['en', 'fr', 'vi', 'pl', 'es'];
     let thisForm = document.forms.optionform;
     const sprites = {
         'DEFAULT': {
@@ -104,7 +104,7 @@
         toggle: false,
     }, function(items) {
         let lng = items.language.substr(0,2);
-        thisForm.language.value = ['fr','vi','pl'].includes(lng) ? lng : 'en';
+        thisForm.language.value = ['fr','vi','pl','es'].includes(lng) ? lng : 'en';
         thisForm.tileset.value = items.tileset;
         thisForm.translation.value = items.translation;
         thisForm.useToggler.checked = items.toggle;
