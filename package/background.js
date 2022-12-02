@@ -1,3 +1,6 @@
+/* jshint esversion: 6 */
+/* globals chrome */
+ 
 chrome.runtime.onInstalled.addListener(function(object) {
     // show options screen on install
     if (chrome.runtime.OnInstalledReason.INSTALL === object.reason) {
@@ -7,13 +10,13 @@ chrome.runtime.onInstalled.addListener(function(object) {
 
 // show the addon button for one tab
 function showIconForTab(tab) {
-    if (tab.url.includes('tenhou.net')) {
+    if (tab.url.includes('tenhou.net') || tab.url.includes('ron2.jp')) {
         chrome.pageAction.show(tab.id);
     }
 }
 
 // on initialisation, show the addon button for all tenhou tabs
-chrome.tabs.query({ url: '*://tenhou.net/*' }, (tabs) => {
+chrome.tabs.query({ url: '*://tenhou.net/*|*://ron2.jp/*' }, (tabs) => {
     for (let tab of tabs) {
         showIconForTab(tab);
     }
@@ -49,7 +52,7 @@ function updateTileset(options, sender = null, sendResponse = null) {
 chrome.runtime.onMessage.addListener(updateTileset);
 
 // Replace tile sprite sheets with custom sprite sheets
-chrome.webRequest.onBeforeRequest.addListener((details) => {
+function tileCallback(details) {
     /**
      * Group 1: 1 digit, Sprite ID
      * Group 2: 2 digits, Don't know what these do; for now, they're both zero
@@ -75,7 +78,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
             } else break;
         }
 
-        // console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
+        console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
 
         // use canvas to resize the spritesheet to the desired dimensions
         const canvas = document.createElement('canvas');
@@ -86,10 +89,16 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
         canvas2d.drawImage(sprites[id][size], 0, 0, width, canvas.height);
         return { redirectUrl: canvas.toDataURL() };
     }
-}, {
-    urls: ['https://cdn.tenhou.net/*/res/img/*/view*'],
+}
+
+let tileFilter =  {
+    urls: ['https://cdn.tenhou.net/*/img/view*'],
     types: ['image'],
-}, ['blocking']);
+};
+
+let tileOptions = ['blocking'];
+
+chrome.webRequest.onBeforeRequest.addListener(tileCallback, tileFilter, tileOptions);
 
 // on load of extension
 chrome.storage.local.get({ tileset: 'DEFAULT' }, (items) => updateTileset(items));

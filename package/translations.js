@@ -442,6 +442,7 @@ const exactTranslation = {
         'ENG': 'Blessing of Earth',
         'FRA_DEFT': 'Chiihō',
         'FRA_TRAD': 'Départ miraculeux (non-d.)',
+        'VIE': 'Thiên ù',
     },
     '大四喜': {
         'DEFAULT': 'Daisuushi',
@@ -463,6 +464,7 @@ const exactTranslation = {
         'ENG': 'Blessing of Man',
         'FRA_DEFT': 'Renhō',
         'FRA_TRAD': 'Départ miraculeux (écart)',
+        'VIE': 'Địa ù',
     },
     '数え役満': {
         'DEFAULT': 'Kazoe-yakuman',
@@ -1070,6 +1072,28 @@ const exactTranslation = {
         'VIE': 'Các nút chức năng: Không',
         'POL': 'Opcje gry: Po naciśnięciu przycisku',
     },
+    
+    '四Ｗ東赤暗:': {
+        'DEFAULT': '4P, WRC Rules, Tonpuusen, Akadora',
+        'EMA_ENG': '4P, WRC Rules, East, Red dora',
+    },
+    '四Ｗ南赤暗': {
+        'DEFAULT': '4P, WRC Rules, Hanchan, Akadora',
+        'EMA_ENG': '4P, WRC Rules, East + South, Red dora',
+    },
+    '三Ｗ南赤暗': {
+        'DEFAULT': '3P, WRC Rules, Hanchan, Akadora',
+        'EMA_ENG': '3P, WRC Rules, East + South, Red dora',
+    },
+    '4人打ち WRC 東風 赤アリ': {
+        'DEFAULT': '4P, WRC Rules, Tonpuusen, Akadora',
+        'EMA_ENG': '4P, WRC Rules, East, Red dora',
+    },
+    '3人打ち WRC 東風 赤アリ': {
+        'DEFAULT': '3P, WRC Rules, Tonpuusen, Akadora',
+        'EMA_ENG': '3P, WRC Rules, East, Red dora',
+    },
+
     '四般東喰赤速': {
         'DEFAULT': '4P tonpuusen fast',
         'EMA_ENG': '4P E-only fast',
@@ -2431,9 +2455,81 @@ const exactTranslation = {
     '天鳳 / 大会ロビーの編集': {
         'DEFAULT': 'Tenhou: editing tournament',
     },
+    '公式卓': {
+        'DEFAULT': 'Play',
+    },
+    'プロ情報': {
+        'DEFAULT': 'Professionals',
+    },
+    '※6桁の認証番号が送信されます。': {
+        'DEFAULT': 'A 6-digit code will be sent to your email address for email verification',
+    },
+    '認証コード(半角6桁の数字)': {
+        'DEFAULT': 'Please enter the 6-digit code that we emailed to you',
+    },
+    '利用可能です(OK)': {
+        'DEFAULT': 'Username is available',
+    },
+    '利用できません(UNAVAILABLE)': {
+        'DEFAULT': 'Unavailable: already in use',
+    },
+    '希望のプレーヤ名を入力してください。': {
+        'DEFAULT': 'Please enter your player name',
+    },
+    'ゲーム表示プレーヤ名(ニックネーム)': {
+        'DEFAULT': 'Player nickname for in-game display',
+    },
+    '利用規約': {
+        'DEFAULT': 'Agreement (untranslated)',
+    },
+    'パスワードを設定してください。': {
+        'DEFAULT': 'Please set the password.'
+    },
+    '表示する': {
+        'DEFAULT': 'show password',
+    },
+    '※パスワードは6文字以上で入力してください': {
+        'DEFAULT': 'At least 6 characters',
+    },
+    '会員情報の登録/更新が完了しました。': {
+        'DEFAULT': 'Registration successful',
+    },
+    '4人打ち WRC 東風 赤アリ': {
+        'DEFAULT': '4p WRC tonpu Red 5s',
+    },
+    '3人打ち WRC 東風 赤アリ': {
+        'DEFAULT': '3p WRC tonpu Red 5s',
+    },
+    'IDまたはパスワードが正しくありません。パスワードの再設定は以下の会員ページで行えます。': {
+        'DEFAULT': 'The ID or password is incorrect. You can reset your password on the member page below.'
+    },
 };
 
+/*
+    '': {
+        'DEFAULT': '',
+    },
+*/
+
 const partialTranslation = {
+    '※3文字以上8文字以下。使用禁止文字があります。': {
+        'DEFAULT': '3-8 characters, no spaces or hyphens.x',
+    },
+    '※天鳳のプレーヤ名を使用する場合には半角19文字のIDを入力してください。': {
+        'DEFAULT': 'If using your tenhou ID, use the full 19 character code IDXXX-YYY',
+    },
+    'イベント': {
+        'DEFAULT': 'Event ',
+    },
+    '三W南赤暗': {
+        'DEFAULT': '3P hanchan, red 5s',
+    },
+    '四W東赤暗': {
+        'DEFAULT': '4P tonpu, red 5s',
+    },
+    '四W南赤暗': {
+        'DEFAULT': '4P hanchan, red 5s',
+    },
     '鳴きなし': {
         'DEFAULT': 'No call',
         'FRA_DEFT': 'Sans appels',
