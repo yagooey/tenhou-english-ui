@@ -48,30 +48,12 @@ function tileCallback(details) {
     const matches = spriteUrlRegex.exec(details.url);
     if (tileset === 'DEFAULT' || !matches ) return;
 
-    let headers = details.requestHeaders;
     const id = parseInt(matches[1]);
     const width = 10 * parseInt(matches[2]);
     
-    let url = `https://mahjong.ie/tiles/tiles.php?set=${tileset}&id=${id}&w=${width}`;
-    
-    let key = 'sec-fetch-mode';
-    let substitute = { name: key,  value: 'no-cors' };
-    let todo = true;
-
+    let url = `https://mahjong.ie/files/tiles/tiles.php?set=${tileset}&id=${id}&w=${width}`;
     console.log(url);
-
-    for (let idx of headers.keys()) {
-        if (todo && headers[idx].name.toLowerCase() === key) {
-            headers[idx] = substitute;
-            todo = false;
-            break;
-        }
-    }
-    if (todo) {
-        headers.push(substitute);
-    }
-    console.log(headers);
-    return { redirectUrl: url, requestHeaders: headers };
+    return { redirectUrl: url };
 
 }
 
@@ -81,11 +63,10 @@ let tileFilter =  {
 };
 
 let tileOptions = [
-    'requestHeaders',
     'blocking'
     ];
 
-chrome.webRequest.onBeforeSendHeaders.addListener(tileCallback, tileFilter, tileOptions); // onBeforeRequest
+chrome.webRequest.onBeforeRequest.addListener(tileCallback, tileFilter, tileOptions); // or onBeforeSendHeaders
 
 // on load of extension
 chrome.storage.local.get({ tileset: 'DEFAULT' }, (items) => updateTileset(items));
