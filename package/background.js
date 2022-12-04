@@ -1,6 +1,8 @@
 /* jshint esversion: 6 */
 /* globals chrome */
  
+let tileset;
+ 
 chrome.runtime.onInstalled.addListener(function(object) {
     // show options screen on install
     if (chrome.runtime.OnInstalledReason.INSTALL === object.reason) {
@@ -24,28 +26,10 @@ chrome.tabs.query({ url: '*://tenhou.net/*|*://ron2.jp/*' }, (tabs) => {
 
 chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => showIconForTab(tab));
 
-let tileset = 'DEFAULT';
-let sprites;
-let sizes;
-const tileSizePrefixes = { 0: '', 1: 'm', 2: 's' }; // descending size order
+chrome.storage.local.get('tileset', (val) => tileset = val.tileset || 'DEFAULT');
 
-// retrieve the right spritesheets from those that are packed with the extension
-function updateTileset(options, sender = null, sendResponse = null) {
+function updateTileset(options, sender=null, sendResponse=null) {
     tileset = options.tileset;
-    sprites = {};
-    sizes = [];
-    if (tileset === 'DEFAULT') return;
-    for (let i = 0; i < 5; i++) {
-        sprites[i] = {};
-        sizes[i] = [];
-        for (let size in tileSizePrefixes) {
-            sprites[i][size] = new Image();
-            sprites[i][size].src = chrome.runtime.getURL('sprites.' + tileset + '/' + i + tileSizePrefixes[size] + '.png');
-            sprites[i][size].onload = () => {
-                sizes[i][size] = sprites[i][size].width;
-            };
-        }
-    }
 }
 
 // listen for messages about the user changing their options
@@ -60,45 +44,48 @@ function tileCallback(details) {
      */
     const spriteUrlRegex = /vieww([0-4])00([0-9]{3})\.png$/;
 
-    // details.url is something like: https://cdn.tenhou.net/3/res/img/20201203/vieww000055.png
+    // details.url is something like: https://cdn.tenhou.net/3/img/20201203/vieww000055.png
     const matches = spriteUrlRegex.exec(details.url);
+    if (tileset === 'DEFAULT' || !matches ) return;
 
-    if (tileset === 'DEFAULT' || !matches || !sprites) return;
-
+    let headers = details.requestHeaders;
     const id = parseInt(matches[1]);
+    const width = 10 * parseInt(matches[2]);
+    
+    let url = `https://mahjong.ie/tiles/tiles.php?set=${tileset}&id=${id}&w=${width}`;
+    
+    let key = 'sec-fetch-mode';
+    let substitute = { name: key,  value: 'no-cors' };
+    let todo = true;
 
-    if (sizes[id][0]) {
-        const width = 10 * parseInt(matches[2]);
+    console.log(url);
 
-        // find the smallest spritesheet we've got that's >= size requested
-        let size = 0;
-        for (let i = 1; i < sizes[id].length; i++) {
-            if (width <= sizes[id][i]) {
-                size = i;
-            } else break;
+    for (let idx of headers.keys()) {
+        if (todo && headers[idx].name.toLowerCase() === key) {
+            headers[idx] = substitute;
+            todo = false;
+            break;
         }
-
-        console.log('requested ' + matches[1] + '-' + matches[2] + '; using ' + id + tileSizePrefixes[size] + ' ' + sizes[id][size]);
-
-        // use canvas to resize the spritesheet to the desired dimensions
-        const canvas = document.createElement('canvas');
-        canvas.width = width;
-        canvas.height = tileSheetHeightLookup[id][width];
-        const canvas2d = canvas.getContext('2d');
-        canvas2d.clearRect(0, 0, width + 1, canvas.height + 1);
-        canvas2d.drawImage(sprites[id][size], 0, 0, width, canvas.height);
-        return { redirectUrl: canvas.toDataURL() };
     }
+    if (todo) {
+        headers.push(substitute);
+    }
+    console.log(headers);
+    return { redirectUrl: url, requestHeaders: headers };
+
 }
 
 let tileFilter =  {
-    urls: ['https://cdn.tenhou.net/*/img/view*'],
+    urls: ['https://cdn.tenhou.net/*/img/vieww*'],
     types: ['image'],
 };
 
-let tileOptions = ['blocking'];
+let tileOptions = [
+    'requestHeaders',
+    'blocking'
+    ];
 
-chrome.webRequest.onBeforeRequest.addListener(tileCallback, tileFilter, tileOptions);
+chrome.webRequest.onBeforeSendHeaders.addListener(tileCallback, tileFilter, tileOptions); // onBeforeRequest
 
 // on load of extension
 chrome.storage.local.get({ tileset: 'DEFAULT' }, (items) => updateTileset(items));

@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extensionName__",
-    "version": "9.1.0",
+    "version": "9.1.1",
     "default_locale": "en",
     "description": "__MSG_extensionDescription__",
     "icons": {
@@ -32,7 +32,6 @@
         "webRequestBlocking",
         "*://tenhou.net/*",
         "*://ron2.jp/*",
-        "*://*",
         "*://cdn.tenhou.net/*"
     ],
     "background": {
@@ -44,6 +43,7 @@
     "content_scripts": [
         {
             "matches": [
+                "*://mahjong.ie/*",
                 "*://ron2.jp/3*",
                 "*://tenhou.net/3*",
                 "*://tenhou.net/4*",
