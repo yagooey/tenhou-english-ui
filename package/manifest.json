@@ -36,8 +36,7 @@
     ],
     "background": {
         "scripts": [
-            "background.js",
-            "tile-sheet-height.js"
+            "background.js"
         ]
     },
     "content_scripts": [

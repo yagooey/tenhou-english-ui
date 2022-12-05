@@ -12,10 +12,6 @@
         "64": "icons/tenhou-64.png",
         "128": "icons/tenhou-128.png"
     },
-        "content_security_policy": {
-  		"extension_pages": "...",
- 	 	"sandbox": "..."
-	},
     "action": {
         "default_icon": {
             "16": "icons/tenhou-16.png",
@@ -35,8 +31,8 @@
     ],
     "permissions": [
         "storage",
-        "tabs",
         "activeTab",
+        "declarativeContent",
         "declarativeNetRequest",
         "declarativeNetRequestWithHostAccess"
     ],
@@ -44,7 +40,7 @@
         "service_worker": "serviceworker.js"
     },
     "content_security_policy": {
-        "extension_pages": "default-src 'self'; connect-src * data: blob: filesystem:; style-src 'self' data: 'unsafe-inline'; img-src 'self' data: mahjong.ie "
+        "extension_pages": "default-src 'self'; connect-src * data: blob: ; style-src 'self' data: 'unsafe-inline'; img-src 'self' data: mahjong.ie "
     },
     "content_scripts": [
         {
