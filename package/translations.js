@@ -2802,6 +2802,10 @@ const exactTranslation = {
         'DEFAULT': '4p fast',
         'ES': '4j rápido',
     },
+    '喰アリ赤光': {
+        'DEFAULT': '4p 🗲',
+        'ES': '4j 🗲',
+    },
     '三喰赤': {
         'DEFAULT': '3p',
         'ES': '3j',

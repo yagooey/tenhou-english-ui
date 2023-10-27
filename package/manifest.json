@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "__MSG_extensionName__",
-    "version": "9.3.1",
+    "version": "10.3.2",
     "default_locale": "en",
     "description": "__MSG_extensionDescription__",
     "icons": {
@@ -12,7 +12,7 @@
         "64": "icons/tenhou-64.png",
         "128": "icons/tenhou-128.png"
     },
-    "page_action": {
+    "action": {
         "default_icon": {
             "16": "icons/tenhou-16.png",
             "19": "icons/tenhou-19.png",
@@ -24,20 +24,20 @@
         "default_popup": "options.html",
         "default_title": "__MSG_popupTitle__"
     },
-    "permissions": [
-        "storage",
-        "tabs",
-        "activeTab",
-        "webRequest",
-        "webRequestBlocking",
+    "host_permissions": [
         "*://tenhou.net/*",
         "*://ron2.jp/*",
         "*://cdn.tenhou.net/*"
     ],
+    "permissions": [
+        "storage",
+        "declarativeNetRequest"
+    ],
     "background": {
-        "scripts": [
-            "background.js"
-        ]
+        "service_worker": "serviceworker.js"
+    },
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'; connect-src * data: blob: ; style-src 'self' data: 'unsafe-inline'; img-src 'self' data: mahjong.ie "
     },
     "content_scripts": [
         {
@@ -61,7 +61,6 @@
         }
     ],
     "options_ui": {
-        "chrome_style": true,
         "page": "options.html"
     }
 }
