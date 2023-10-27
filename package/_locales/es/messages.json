@@ -1,0 +1,17 @@
+{
+    "extensionName": {
+        "message": "Tenhou en Español",
+        "description": "The description of the extension, displayed in the web store."
+    },
+
+    "extensionDescription": {
+        "message": "Traducir el texto del cliente web HTML5 de Tenhou (japonés => Español)",
+        "description": "The description of the extension, displayed in the web store."
+    },
+
+    "popupTitle": {
+        "message": "Opciones de traducción",
+        "description": "popup title"
+    }
+
+}

@@ -2,7 +2,7 @@
 /* globals chrome */
 
 chrome.runtime.onInstalled.addListener(function(object) {
-    
+    /*
     // Clear all rules to ensure only our expected rules are set
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
         let rule = {
@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(function(object) {
         chrome.declarativeContent.onPageChanged.addRules([rule]);
         // console.log('icon should have been added now'); // TODO icon still not added, don't know why
     });
-
+    */
     // show options screen on install
     if (chrome.runtime.OnInstalledReason.INSTALL === object.reason) {
         chrome.runtime.openOptionsPage();

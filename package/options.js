@@ -8,18 +8,21 @@
             'short_fr': 'Standard',
             'short_vi': 'Mặc định',
             'short_pl': 'Standardowe',
+            'short_es': 'Estandar',
         },
         'english': {
             'short_en': 'Labelled',
             'short_fr': 'indices',
             'short_vi': 'Thêm số',
             'short_pl': 'Z oznaczeniami',
+            'short_es': 'Simbolos',
         },
         'bright':  {
             'short_en': 'Brighter',
             'short_fr': 'Plus clairs',
             'short_vi': 'Sáng',
             'short_pl': 'Rozjaśnione',
+            'short_es': 'Contraste',
         },
     };
 

@@ -1,0 +1,32 @@
+Change the UI text on the Tenhou riichi mahjong HTML5 Web Client from Japanese to English, French, Vietnamese or Polish, and optionally replace the tileset with a custom tileset. Note that tileset replacement only works on /3, not on /4
+
+mj.apply.sci@gmail.com
+
+https://gitlab.com/ApplySci/tenhou-english-ui
+
+The author of the original tenhou-english-ui plugin is retiring it, and this is its replacement.
+
+
+Play Tenhou in the language of your choice!
+
+This is the latest version of the Tenhou English UI, which updates the original plugin from Mai.
+
+And use custom tilesets - labelled with Western numbers & letters, or brightened with stronger colours.
+
+Available languages:
+- English
+- Français
+- Tiếng Việt
+- Polski
+
+After installing this extension, head to http://tenhou.net/3/ to see the result.
+
+Note: This will not work for the Flash client
+
+Special thanks:
+Mai (Project founder)
+Dimitrieh (UX contributor)
+TrollOfNova (French)
+Starfire (Vietnamese)
+Kraków Chombo Club (Polish)
+kvaps (Logo)

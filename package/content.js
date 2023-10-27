@@ -13,6 +13,7 @@ let mainTranslation = 'off';
 let altTranslation = 'off';
 let usingAltTranslation = false;
 let toggleTranslationOff;
+let isT4 = document.URL.includes('/4/');
 
 const observerSettings = {
     characterData: true,
@@ -206,8 +207,37 @@ function setToObserve() {
     mutationObserver.observe(document.documentElement, observerSettings);
 }
 
+function addLogLinks(oneNode) {
+    let hlist = oneNode.querySelectorAll("a.bt3[href*='://tenhou.net/0/?log=']");
+    if (hlist.length) {
+        hlist.forEach(function(elem) {
+            let thisLink = elem.href.replace('/0/', '/' + (isT4 ? 4 : 3) + '/');
+            let newAnchor = document.createElement('a');
+            let span = document.createElement('span');
+
+            newAnchor.style.cssText = "text-decoration:none;padding:0.3em;";
+            newAnchor.className = 'bt3';
+            newAnchor.href = '#';
+            newAnchor.innerText = '📋';
+            newAnchor.onclick = function() {
+                navigator.clipboard.writeText(thisLink);
+                alert(`log link copied to clipboard:\n${thisLink}`);
+                return false;
+            };
+
+            span.style.cssText = "float:right;margin-top:-2.3em;margin-right:-2.3em;";
+            span.append(newAnchor);
+
+            let parentEl = elem.parentElement;
+            parentEl.style.width='92%';
+            parentEl.append(span);
+        });
+    }
+}
+
 function onMutate(mutations) {
     mutationObserver.disconnect();
+    mutations.forEach((oneMutation) => addLogLinks(oneMutation.target));
     if (getTranslationSets()) {
         mutations.forEach((oneMutation) => translateTextBeneathANode(oneMutation.target, false, true));
     }

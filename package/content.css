@@ -40,11 +40,17 @@ div.fixed-select.sscl {
     font-size: 0.6em;
 }
 
-#panes button {
+[data-panesel^="d"] > div > div > div > table + div {
+    /* top info panel when hovering over JOIN buttton */
+    font-size: 67%;
+}
+
+[data-pane^="d"] button {
+    /* room selectors in main menu, and top menu when hovering over JOIN buttton */
     font-size: 130%;
 }
 
-#panes .select-wrapper button {
+[data-pane="d2"] .select-wrapper button {
     width:16em !important;
 }
 

@@ -17,7 +17,7 @@ CLIENT_SECRET_FILE = 'tenhou.json'
 APPLICATION_NAME = 'Google Sheets API ApplySci'
 
 SPREADSHEET = '19ljobfecXWJV-m5Rba5HM6BJ_x689KU2mguC-YxhhbQ'
-LANGUAGE_COUNT = 8
+LANGUAGE_COUNT = 9
 SHEETS = {
     '1. Exact!A:I': 'exactTranslation',
     '2. Partial': 'partialTranslation',
