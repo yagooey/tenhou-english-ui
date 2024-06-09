@@ -2830,6 +2830,48 @@ const exactTranslation = {
         'DEFAULT': 'Tenhou: editing tournament',
         'ES': 'Tenhou: Editar torneo',
     },
+    '※予告なく仕様が変更される場合があります': {
+        'DEFAULT': 'Specifications may change without notice',
+    },
+    '高宮プロ(βテスト版)': {
+        'DEFAULT': 'Takamiya Pro Beta Test Version',
+    },
+    'スキンβ': {
+        'DEFAULT': 'Skin - beta',
+    },
+    'なし': {
+        'DEFAULT': 'none',
+    },
+    '朝比奈ゆり杯': {
+        'DEFAULT': 'Asahina Yuri Cup',
+    },
+    'プロ情報': {
+        'DEFAULT': 'Pros online',
+    },
+    '会員ページ': {
+        'DEFAULT': 'My account',
+    },
+    '四麻R': {
+        'DEFAULT': '4p R',
+    },
+    '三麻R': {
+        'DEFAULT': '3p R',
+    },
+    '詳細': {
+        'DEFAULT': 'Details',
+    },
+    '４人打 東風戦': {
+        'DEFAULT': '4P E-only, vs bots',
+    },
+    '３人打 東風戦': {
+        'DEFAULT': '3P E-only, vs bots',
+    },
+    '４人打 東風戦 公式ルール': {
+        'DEFAULT': '4P E-only, vs bots, JPML-A (no-fun) rules',
+    },
+    '公式卓': {
+        'DEFAULT': 'Play',
+    },
 };
 
 const partialTranslation = {
@@ -3701,6 +3743,24 @@ const partialTranslation = {
         'ES': '3 players, Fénix',
         'POL': '3P, Houou',
         'RUS_DEFT': 'на 3-ых, феникс',
+    },
+    '４人東風戦': {
+        'DEFAULT': '4 players, Tonpu',
+        'ENG': '4P E only',
+    },
+    '４人東南戦': {
+        'DEFAULT': '4 players, Hanchan',
+        'ENG': '4P E+S',
+    },
+    '３人東南戦': {
+        'DEFAULT': '3 players, Hanchan',
+        'ENG': '3P E+S',
+    },
+    'イベント卓': {
+        'DEFAULT': 'Special event',
+    },
+    'イベント': {
+        'DEFAULT': 'Event ',
     },
     '新人': {
         'DEFAULT': '新人',

@@ -4,8 +4,10 @@
     background-color: #eee;
 }
 
+
 #yaku0,#yaku1,#yaku2,#yaku3,#yaku4,#yaku5,#yaku6,#yaku7,#yaku8,#yaku9,#yaku10,#yaku11,#yaku12,#yaku13,#yaku14,#yaku15,#yaku16,#yaku17,#yaku18,#yaku19,.yk {
     font-size: 0.7em !important;
+    white-space: pre-wrap;
 }
 
 #translationfloater {
