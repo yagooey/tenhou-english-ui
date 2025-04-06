@@ -1,0 +1,2 @@
+- Ichihime (cat) translation
+- Change the 1s
