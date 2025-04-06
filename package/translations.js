@@ -9,7 +9,8 @@ const exactTranslation = {
         'EMA_ENG': 'Riichi',
         'ENG': 'Riichi',
         'FRA_TRAD': 'Main prête: riichi',
-        'ES': 'Riichi',
+        'ES': 'Riichinyaa',
+        'ICHIHIME': 'Riichinyaa',
     },
     '赤ドラ': {
         'DEFAULT': 'Akadora',
@@ -25,6 +26,7 @@ const exactTranslation = {
         'ENG': 'All Inside',
         'FRA_TRAD': 'Main simple: tanyao',
         'ES': 'Mano simple',
+        'ICHIHIME': 'Tanyaano',
     },
     '断幺九': {
         'DEFAULT': 'Tanyao',
@@ -32,6 +34,7 @@ const exactTranslation = {
         'ENG': 'All Inside',
         'FRA_TRAD': 'Main simple: tanyao',
         'ES': 'Mano simple',
+        'ICHIHIME': 'Tanyaao',
     },
     '平和': {
         'DEFAULT': 'Pinfu',
@@ -78,7 +81,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du tour: Est',
         'VIE': 'Đông (gió vòng)',
         'ES': 'Viento de ronda: E',
-        'ICHIHIME': 'Tong',
+        'ICHIHIME': 'Ton',
     },
     '役牌 中': {
         'DEFAULT': 'Yakuhai Chun',
