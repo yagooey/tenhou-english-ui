@@ -1,2 +1,2 @@
-- Ichihime (cat) translation
-- Change the 1s
+- Ichihime (cat) translation, done for the most part
+- Change the tileset

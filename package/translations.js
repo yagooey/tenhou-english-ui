@@ -2,6 +2,7 @@ const exactTranslation = {
     '流局滿貫': {
         'DEFAULT': 'Nagashi Mangan',
         'ES': 'Nagashi Mangan',
+        'ICHIHIME': 'Nagashi Nyangan',
     },
     '立直': {
         'DEFAULT': 'Riichi',
@@ -38,6 +39,7 @@ const exactTranslation = {
         'ENG': 'Pinfu',
         'FRA_TRAD': 'Main plate: pinfu',
         'ES': 'Pinfu',
+        'ICHIHIME': 'Pyanfu',
     },
     '門前清自摸和': {
         'DEFAULT': 'Menzen tsumo',
@@ -45,6 +47,7 @@ const exactTranslation = {
         'ENG': 'Fully Concealed',
         'FRA_TRAD': 'Tout caché tiré',
         'ES': 'Mano oculta',
+        'ICHIHIME': 'Tsumonyaa',
     },
     '裏ドラ': {
         'DEFAULT': 'Uradora',
@@ -59,12 +62,14 @@ const exactTranslation = {
         'EMA_ENG': 'One-shot',
         'ENG': 'Unbroken',
         'ES': 'Ippatsu',
+        'ICHIHIME': 'Ippats',
     },
     '一発': {
         'DEFAULT': 'Ippatsu',
         'EMA_ENG': 'One-shot',
         'ENG': 'Unbroken',
         'ES': 'Ippatsu',
+        'ICHIHIME': 'Ippats',
     },
     '場風 東': {
         'DEFAULT': 'Bakaze Ton',
@@ -73,6 +78,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du tour: Est',
         'VIE': 'Đông (gió vòng)',
         'ES': 'Viento de ronda: E',
+        'ICHIHIME': 'Tong',
     },
     '役牌 中': {
         'DEFAULT': 'Yakuhai Chun',
@@ -89,6 +95,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Brelan de valeur: Vert',
         'VIE': 'Hatsu',
         'ES': 'Dragones (Verdess)',
+        'ICHIHIME': 'Hats',
     },
     '役牌 白': {
         'DEFAULT': 'Yakuhai Haku',
@@ -97,6 +104,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Brelan de valeur: Blanc',
         'VIE': 'Haku',
         'ES': 'Dragones (Blancos)',
+        'ICHIHIME': 'Hak',
     },
     '混一色': {
         'DEFAULT': 'Honitsu',
@@ -104,6 +112,7 @@ const exactTranslation = {
         'ENG': 'Common Flush',
         'FRA_TRAD': 'Main de couleur mixte',
         'ES': 'Mano semi-pura',
+        'ICHIHIME': 'Honyitsu',
     },
     '一盃口': {
         'DEFAULT': 'Iipeikou',
@@ -119,6 +128,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Trois suites mixtes',
         'VIE': 'Sanshoku',
         'ES': 'Triple chi mixto',
+        'ICHIHIME': 'Nyanshoku doujun',
     },
     '對對和': {
         'DEFAULT': 'Toitoi',
@@ -143,6 +153,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du joueur: Est',
         'VIE': 'Đông (chỗ ngồi)',
         'ES': 'Viento de jugador: E',
+        'ICHIHIME': 'Tong',
     },
     '七對子': {
         'DEFAULT': 'Chiitoitsu',
@@ -150,6 +161,7 @@ const exactTranslation = {
         'ENG': 'Seven Pairs',
         'FRA_TRAD': 'Sept paires',
         'ES': 'Siete pares',
+        'ICHIHIME': 'Chiitoi',
     },
     '七対子': {
         'DEFAULT': 'Chiitoitsu',
@@ -157,6 +169,7 @@ const exactTranslation = {
         'ENG': 'Seven Pairs',
         'FRA_TRAD': 'Sept paires',
         'ES': 'Siete pares',
+        'ICHIHIME': 'Chiitoi',
     },
     '自風 南': {
         'DEFAULT': 'Jikaze Nan',
@@ -165,6 +178,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du joueur: Sud',
         'VIE': 'Nam (chỗ ngồi)',
         'ES': 'Viento de jugador: S',
+        'ICHIHIME': 'Nyan',
     },
     '自風 西': {
         'DEFAULT': 'Jikaze Sha',
@@ -173,6 +187,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du joueur: Ouest',
         'VIE': 'Tây (chỗ ngồi)',
         'ES': 'Viento de jugador: O',
+        'ICHIHIME': 'Sha',
     },
     '四槓子': {
         'DEFAULT': 'Suukantsu',
@@ -188,6 +203,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du joueur: Nord',
         'VIE': 'Bắc (chỗ ngồi)',
         'ES': 'Viento de jugador: N',
+        'ICHIHIME': 'Pei',
     },
     '清一色': {
         'DEFAULT': 'Chinitsu',
@@ -203,6 +219,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Sanankō',
         'FRA_TRAD': 'Trois brelans cachés',
         'ES': 'Tres pon ocultos',
+        'ICHIHIME': 'Nyanankou',
     },
     '河底撈魚': {
         'DEFAULT': 'Houtei raoyui',
@@ -211,6 +228,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Dernier écart',
         'VIE': 'Houtei',
         'ES': 'Fondo del mar',
+        'ICHIHIME': 'Houtei',
     },
     '混全帶么九': {
         'DEFAULT': 'Chanta',
@@ -218,6 +236,7 @@ const exactTranslation = {
         'ENG': 'Common Ends',
         'FRA_TRAD': 'Trois brelans cachés',
         'ES': 'Mano terminal mixta',
+        'ICHIHIME': 'Nyanta',
     },
     '混全帯幺九': {
         'DEFAULT': 'Chanta',
@@ -225,6 +244,7 @@ const exactTranslation = {
         'ENG': 'Common Ends',
         'FRA_TRAD': 'Main externe mixte',
         'ES': 'Mano terminal mixta',
+        'ICHIHIME': 'Nyanta',
     },
     '海底摸月': {
         'DEFAULT': 'Haitei raoyue',
@@ -233,6 +253,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Dernière pioche',
         'VIE': 'Haitei',
         'ES': 'Fondo del río',
+        'ICHIHIME': 'Haitei',
     },
     '嶺上開花': {
         'DEFAULT': 'Rinshan kaihou',
@@ -242,18 +263,21 @@ const exactTranslation = {
         'FRA_TRAD': 'V. après un carré',
         'VIE': 'Rinshan',
         'ES': 'Después del kan',
+        'ICHIHIME': 'Rinyan',
     },
     '兩立直': {
         'DEFAULT': 'Double riichi',
         'EMA_ENG': 'Double riichi',
         'ENG': 'Double Riichi',
         'ES': 'Doble riichi',
+        'ICHIHIME': 'Double rii',
     },
     '両立直': {
         'DEFAULT': 'Double riichi',
         'EMA_ENG': 'Double riichi',
         'ENG': 'Double Riichi',
         'ES': 'Doble riichi',
+        'ICHIHIME': 'Double rii',
     },
     '場風 南': {
         'DEFAULT': 'Bakaze Nan',
@@ -262,6 +286,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du tour: Sud',
         'VIE': 'Nam (gió vòng)',
         'ES': 'Viento de ronda: S',
+        'ICHIHIME': 'Nyan',
     },
     '場風 西': {
         'DEFAULT': 'Bakaze Shaa',
@@ -270,6 +295,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du tour: Ouest',
         'VIE': 'Tây (gió vòng)',
         'ES': 'Viento de ronda: O',
+        'ICHIHIME': 'Sha',
     },
     '場風 北': {
         'DEFAULT': 'Bakaze Pei',
@@ -278,6 +304,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Vent du tour: Nord',
         'VIE': 'Bắc (gió vòng)',
         'ES': 'Viento de ronda: N',
+        'ICHIHIME': 'Pei',
     },
     '小三元': {
         'DEFAULT': 'Shousangen',
@@ -286,6 +313,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Shōsangen',
         'FRA_TRAD': 'Trois petits dragons',
         'ES': 'Tres pequeños dragones',
+        'ICHIHIME': 'Shounyangen',
     },
     '混老頭': {
         'DEFAULT': 'Honroutou',
@@ -301,6 +329,7 @@ const exactTranslation = {
         'ENG': 'Robbing a Quad',
         'FRA_TRAD': 'Voler un kan',
         'ES': 'Robar un kan',
+        'ICHIHIME': 'Nyankan',
     },
     '一氣通貫': {
         'DEFAULT': 'Ikkitsuukan',
@@ -310,6 +339,7 @@ const exactTranslation = {
         'FRA_TRAD': 'La grande suite',
         'VIE': 'Ittsuu',
         'ES': 'Escalera',
+        'ICHIHIME': 'Ittsuu',
     },
     '一気通貫': {
         'DEFAULT': 'Ikkitsuukan',
@@ -319,6 +349,7 @@ const exactTranslation = {
         'FRA_TRAD': 'La grande suite',
         'VIE': 'Ittsuu',
         'ES': 'Escalera',
+        'ICHIHIME': 'Ittsuu',
     },
     '二盃口': {
         'DEFAULT': 'Ryanpeikou',
@@ -327,6 +358,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Ryanpeikō',
         'FRA_TRAD': '2 x 2 suites identiques',
         'ES': 'Dos veces doble chi puro',
+        'ICHIHIME': 'Nyanpeikou',
     },
     '三色同刻': {
         'DEFAULT': 'Sanshoku doukou',
@@ -335,6 +367,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Sanshoku dōkō',
         'FRA_TRAD': 'Brelans tricolores',
         'ES': 'Pon triple',
+        'ICHIHIME': 'Nyanshoku doukou',
     },
     '大三元': {
         'DEFAULT': 'Daisangen',
@@ -343,6 +376,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Trois grands dragons',
         'VIE': 'Daisangen',
         'ES': 'Tres grandes dragones',
+        'ICHIHIME': 'Dainyangen',
     },
     '純全帶么九': {
         'DEFAULT': 'Junchan',
@@ -350,6 +384,7 @@ const exactTranslation = {
         'ENG': 'Perfect Ends',
         'FRA_TRAD': 'Main externe pure',
         'ES': 'Mano terminal pura',
+        'ICHIHIME': 'Junyan',
     },
     '純全帯幺九': {
         'DEFAULT': 'Junchan',
@@ -357,6 +392,7 @@ const exactTranslation = {
         'ENG': 'Perfect Ends',
         'FRA_TRAD': 'Main externe pure',
         'ES': 'Mano terminal pura',
+        'ICHIHIME': 'Junyan',
     },
     '四暗刻': {
         'DEFAULT': 'Suuankou',
@@ -365,6 +401,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Sūankō',
         'FRA_TRAD': 'Quatre brelans cachés',
         'ES': 'Cuatro pon ocultos',
+        'ICHIHIME': 'Suunyankou',
     },
     '國士無雙': {
         'DEFAULT': 'Kokushi musou',
@@ -383,6 +420,7 @@ const exactTranslation = {
         'FRA_TRAD': '13 orphelins (13 att.)',
         'VIE': 'Kokushi 13 mặt',
         'ES': '13 huérfanos (13 esp.)',
+        'ICHIHIME': 'Kokushi juusanyan',
     },
     '国士無双': {
         'DEFAULT': 'Kokushi musou',
@@ -401,6 +439,7 @@ const exactTranslation = {
         'FRA_TRAD': '13 orphelins (13 att.)',
         'VIE': 'Kokushi 13 mặt',
         'ES': '13 huérfanos (13 esp.)',
+        'ICHIHIME': 'Kokushi juusanyan',
     },
     '小四喜': {
         'DEFAULT': 'Shousuushi',
@@ -425,6 +464,7 @@ const exactTranslation = {
         'ENG': 'Three quads',
         'FRA_TRAD': 'Trois carrés',
         'ES': 'Tres kans',
+        'ICHIHIME': 'Nyankantsu',
     },
     '四暗刻單騎': {
         'DEFAULT': 'Suuankou tanki',
@@ -433,6 +473,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Sūankō tanki',
         'FRA_TRAD': '4 brelans cachés (att. unique)',
         'ES': 'Cuatro pon ocultos (esp. par)',
+        'ICHIHIME': 'Suunyankou tanki',
     },
     '四暗刻単騎': {
         'DEFAULT': 'Suuankou tanki',
@@ -441,6 +482,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Sūankō tanki',
         'FRA_TRAD': '4 brelans cachés (att. unique)',
         'ES': 'Cuatro pon ocultos (esp. par)',
+        'ICHIHIME': 'Suunynakou tanki',
     },
     '綠一色': {
         'DEFAULT': 'Ryuuiisou',
@@ -465,6 +507,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Chūren pōtō',
         'FRA_TRAD': 'Neuf lanternes',
         'ES': 'Nueve puertas',
+        'ICHIHIME': 'Nyanren poutou',
     },
     '九蓮寶燈': {
         'DEFAULT': 'Chuuren poutou',
@@ -473,6 +516,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Chūren pōtō',
         'FRA_TRAD': 'Neuf lanternes',
         'ES': 'Nueve puertas',
+        'ICHIHIME': 'Nyanren poutou',
     },
     '純正九蓮宝燈': {
         'DEFAULT': 'Junsei chuuren poutou',
@@ -482,6 +526,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Neuf lanternes (9 att.)',
         'VIE': 'Chuuren poutou 9 mặt',
         'ES': 'Nueve puertas (9 esp.)',
+        'ICHIHIME': 'Nyansei nyanren poutou',
     },
     '純正九蓮寶燈': {
         'DEFAULT': 'Junsei chuuren poutou',
@@ -491,6 +536,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Neuf lanternes (9 att.)',
         'VIE': 'Chuuren poutou 9 mặt',
         'ES': 'Nueve puertas (9 esp.)',
+        'ICHIHIME': 'Nyansei nyanren poutou',
     },
     '清老頭': {
         'DEFAULT': 'Chinroutou',
@@ -537,28 +583,34 @@ const exactTranslation = {
         'EMA_ENG': 'Counted yakuman',
         'FRA_TRAD': 'Yakuman compté',
         'ES': 'Yakuman por puntos',
+        'ICHIHIME': 'Kazoe yakunyan',
     },
     '滿貫': {
         'DEFAULT': 'Mangan',
         'ES': 'Mangan',
+        'ICHIHIME': 'Nyangan',
     },
     '跳滿': {
         'DEFAULT': 'Haneman',
         'ES': 'Haneman',
+        'ICHIHIME': 'Hanenyan',
     },
     '倍滿': {
         'DEFAULT': 'Baiman',
         'FRA_DEFT': 'Baïman',
         'ES': 'Baiman',
+        'ICHIHIME': 'Bainyan',
     },
     '三倍滿': {
         'DEFAULT': 'Sanbaiman',
         'FRA_DEFT': 'Sanbaïman',
         'ES': 'Sanbaiman',
+        'ICHIHIME': 'Sanbainyan',
     },
     '役滿': {
         'DEFAULT': 'Yakuman',
         'ES': 'Yakuman',
+        'ICHIHIME': 'Yakunyan',
     },
     '点∀': {
         'DEFAULT': 'Points ∀',
@@ -2003,22 +2055,26 @@ const exactTranslation = {
         'FRA_DEFT': 'Tsumo',
         'VIE': 'Tsumo',
         'ES': 'Tsumo',
+        'ICHIHIME': 'Tsumonyaa',
     },
     'ロン': {
         'DEFAULT': 'Ron',
         'FRA_DEFT': 'Ron',
         'ES': 'Ron',
+        'ICHIHIME': 'Ronyaa',
     },
     'パオ': {
         'DEFAULT': 'Pao',
         'FRA_DEFT': 'Pao',
         'VIE': 'Phạt đền',
         'ES': 'Pao',
+        'ICHIHIME': 'Paonyaa',
     },
     'リーチ': {
         'DEFAULT': 'Riichi',
         'FRA_DEFT': 'Riichi',
         'ES': 'Riichi',
+        'ICHIHIME': 'Riichinyaa',
     },
     '流局': {
         'DEFAULT': 'Ryuukyoku',
@@ -2078,6 +2134,7 @@ const exactTranslation = {
         'FRA_DEFT': 'Kan',
         'VIE': 'Kan',
         'ES': 'Kan',
+        'ICHIHIME': 'Kanyaa',
     },
     '終了': {
         'DEFAULT': 'Quit',
@@ -2100,6 +2157,7 @@ const exactTranslation = {
         'FRA_TRAD': 'Pas tenpai',
         'VIE': 'Noten',
         'ES': 'Noten',
+        'ICHIHIME': 'Notennyaa',
     },
     ' 鳴き': {
         'DEFAULT': 'Call',
@@ -2113,24 +2171,28 @@ const exactTranslation = {
         'EMA_ENG': 'Pung',
         'FRA_DEFT': 'Pon',
         'ES': 'Pon',
+        'ICHIHIME': 'Ponyaa',
     },
     'チー': {
         'DEFAULT': 'Chii',
         'EMA_ENG': 'Chow',
         'FRA_DEFT': 'Chii',
         'ES': 'Chii',
+        'ICHIHIME': 'Chiinyaa',
     },
     '槓': {
         'DEFAULT': 'Kan',
         'EMA_ENG': 'Kong',
         'FRA_DEFT': 'Kan',
         'ES': 'Kan',
+        'ICHIHIME': 'Kanyaa',
     },
     'キタ': {
         'DEFAULT': 'Kita',
         'FRA_DEFT': 'Kita',
         'FRA_TRAD': 'Remplace',
         'ES': 'Kita',
+        'ICHIHIME': 'Peinyaa',
     },
     '終局': {
         'DEFAULT': 'End',
